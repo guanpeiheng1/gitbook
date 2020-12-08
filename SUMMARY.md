@@ -6,3 +6,7 @@
 
 * [123](technology/123.md)
 
+## Life
+
+* [Untitled](life/untitled.md)
+
