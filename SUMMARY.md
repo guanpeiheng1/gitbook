@@ -1,9 +1,9 @@
 # Table of contents
 
 * [Initial page](README.md)
-* [456](untitled.md)
+* [456](456.md)
 
 ## Technology
 
-* [123](technology/untitled.md)
+* [123](technology/123.md)
 
