@@ -6,6 +6,7 @@ Becoming a super hero is a fairly straight forward process:
 
 ```
 $ give me super-powers
+hello
 ```
 
 {% hint style="info" %}
