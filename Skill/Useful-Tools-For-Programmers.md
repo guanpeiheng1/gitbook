@@ -1,5 +1,6 @@
+# Notion教程
+
 ```
-Notion教程：
 https://zhuanlan.zhihu.com/p/49263306
 https://sspai.com/post/57464
 ```
