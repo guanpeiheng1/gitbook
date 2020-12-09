@@ -6,9 +6,9 @@
 
 * [Android使用技巧总结](Android/Android-Skills.md)
 
-## Chromium OS
+## Chrome OS
 
-* [安装Chromium OS到硬盘实现双启动](Chromium OS/Chromium-OS-Installation.md)
+* [安装Chromium OS到硬盘实现双启动](ChromeOS/Chromium-OS-Installation.md)
 
 ## Computer
 

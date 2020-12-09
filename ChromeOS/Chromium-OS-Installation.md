@@ -1,17 +1,3 @@
----
-title: 安装Chromium OS到硬盘实现双启动
-categories: Chromium OS
-abbrlink: Chromium-OS-Installation
-date: 2019-11-25 22:24:29
-tags:
----
-
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g9apspq7y8j30u00mijs7.jpg)
-
-Chromium OS是Google开发的一款基于Linux内核的系统，需要连网才能使用，整个系统的架构等同于一个Chromium浏览器。
-
-<!-- more -->
-
 # 安装Chromium OS
 
 将Chromium的镜像利用Etcher拷录到U盘中。重启进入USB的Chromium OS，激活Google账号需要使用`代理`，可通过Google搜索`免费代理节点`找到。
