@@ -51,7 +51,6 @@
 * [全平台使用技巧总结](Skill/AllOS-Skills.md)
 * [公众号使用指南](Skill/Subscription-Use.md)
 * [利用Hexo在Github上搭建博客](Skill/Building-Blog-With-Hexo.md)
-* [程序员工具集合及使用](Skill/Useful-Tools-For-Programmers.md)
 
 ## Study
 
