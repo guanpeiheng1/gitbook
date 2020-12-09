@@ -25,6 +25,11 @@
 
 * [安装Chromium OS到硬盘实现双启动](ChromeOS/Chromium-OS-Installation.md)
 
+## Computer
+
+* [Mac和Linux下终端优化](Computer/Terminal-Optimization.md)
+* [刷写BIOS和调整整机性能的操作](Computer/BIOS-Editing-And-Flashing.md)
+
 ## iOS
 
 * [iOS使用技巧总结](iOS/iOS-Skills.md)
