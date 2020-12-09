@@ -12,7 +12,7 @@ https://paytonguan.github.io/
 
 ```
 
-
+* [刷写BIOS和调整整机性能的操作](Computer/BIOS-Editing-And-Flashing.md)
 * [程序员工具集合及使用](Skill/Useful-Tools-For-Programmers.md)
 * [各种系统的安装与配置](Computer/OS-Installation.md)
 * [多方式引导启动系统](Computer/Multiple-Methods-To-Start-OS.md)

@@ -28,7 +28,6 @@
 ## Computer
 
 * [Mac和Linux下终端优化](Computer/Terminal-Optimization.md)
-* [刷写BIOS和调整整机性能的操作](Computer/BIOS-Editing-And-Flashing.md)
 
 ## iOS
 
