@@ -11,6 +11,9 @@ https://paytonguan.github.io/
 以下文章未迁移。
 
 ```
+## Study
+* [代码题选摘](Computer/Some-Codes.md)——存在本地，未上传
+
 ## Computer
 * [刷写BIOS和调整整机性能的操作](Computer/BIOS-Editing-And-Flashing.md)
 ```
