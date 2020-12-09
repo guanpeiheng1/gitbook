@@ -11,19 +11,6 @@ https://paytonguan.github.io/
 以下文章未迁移。
 
 ```
-## Windows
-
-* [Windows使用技巧总结](Windows/Windows-Skills.md)
-* [Windows各版本系统的安装及配置](Windows/Windows-Installation.md)
-
-## Linux
-
-* [Linux系统的安装与配置](Linux/Linux-Installation.md)
-
-## Chrome OS
-
-* [安装Chromium OS到硬盘实现双启动](ChromeOS/Chromium-OS-Installation.md)
-
 ## Computer
 
 * [Mac和Linux下终端优化](Computer/Terminal-Optimization.md)
