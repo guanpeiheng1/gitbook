@@ -1,6 +1,6 @@
 # 首页
 
-* [写在前面](README.md)
+* [Payton's blog](README.md)
 
 ## World
 
@@ -28,6 +28,9 @@
 ## Computer
 
 * [Mac和Linux下终端优化](Computer/Terminal-Optimization.md)
+* [各种系统的安装与配置](Computer/OS-Installation.md)
+* [多方式引导启动系统](Computer/Multiple-Methods-To-Start-OS.md)
+* [系统和硬件的相关知识及维护](Computer/Knowledge-About-OS-And-Hardware.md)
 
 ## iOS
 
