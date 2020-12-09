@@ -24,3 +24,16 @@
 ## Chrome OS
 
 * [安装Chromium OS到硬盘实现双启动](ChromeOS/Chromium-OS-Installation.md)
+
+## iOS
+
+* [iOS使用技巧总结](iOS/iOS-Skills.md)
+
+## Android
+
+* [Android使用技巧总结](Android/Android-Skills.md)
+
+## Study
+
+* [学习进程整理](Study/Study-Process.md)
+* [计算机技术相关知识与操作](Study/Knowledge-About-CS.md)
