@@ -6,8 +6,6 @@
 
 * [Google正确食用指南](World/Google正确食用指南.md)
 
-## Hackintosh
-
 ## Mac
 
 * [黑苹果的安装与配置](Mac/黑苹果的安装与配置.md)
