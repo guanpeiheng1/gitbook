@@ -1,0 +1,144 @@
+# 图文排版
+
+## 编辑器自动保存
+
+点击Chrome浏览器的TamperMonkey扩展程序，选择`添加新脚本`，复制以下内容并保存即可。
+
+```
+// ==UserScript==
+// @name         微信推文编辑器自动保存
+// @version      0.1
+// @description  微信推文编辑器自动保存
+// @author       内咸禾方皇
+// @match        https://mp.weixin.qq.com/*
+// @grant        none
+// @run-at       document-end
+// ==/UserScript==
+(function() {
+    'use strict';
+    var time = window.setInterval(function(){document.querySelector("#js_submit").click()},60000);
+})();
+```
+
+## Markdown to 公众号一键转换器
+
+```
+https://knb.im/mp/
+```
+
+# 公众号开发
+
+## 服务器绑定
+
+服务器用于处理发送到公众号的消息请求，并完成消息发送。
+
+准备好VPS后通过SSH连接，以CentOS为例，进入root用户后执行以下命令以安装必要依赖。
+
+```
+yum install vim
+yum install libxml2
+yum install libxslt
+yum install python
+pip install --upgrade pip
+
+// 对于python2
+pip install web.py==0.51
+// 对于python3
+pip install web.py
+
+pip install lxml
+```
+
+完成后输入以下命令新建py文件。
+
+```
+vim main.py
+```
+
+内容如下。
+
+```
+# -*- coding: utf-8 -*-
+# filename: main.py
+import web
+from handle import Handle
+
+urls = (
+    '/wx', 'Handle',
+)
+
+if __name__ == '__main__':
+    app = web.application(urls, globals())
+    app.run()
+```
+
+保存后继续新建文件。
+
+```
+vim handle.py
+```
+
+内容如下，其中token可任意填写。
+
+```
+# -*- coding: utf-8 -*-
+# filename: handle.py
+
+import hashlib
+import web
+
+class Handle(object):
+    def GET(self):
+        try:
+            data = web.input()
+            if len(data) == 0:
+                return "hello, this is handle view"
+            signature = data.signature
+            timestamp = data.timestamp
+            nonce = data.nonce
+            echostr = data.echostr
+            token = "xxxx" #可任意
+
+            list = [token, timestamp, nonce]
+            list.sort()
+            sha1 = hashlib.sha1()
+            map(sha1.update, list)
+            hashcode = sha1.hexdigest()
+            print "handle/GET func: hashcode, signature: ", hashcode, signature
+            if hashcode == signature:
+                return echostr
+            else:
+                return ""
+        except Exception, Argument:
+            return Argument
+```
+
+保存后运行以下命令执行脚本。如果提示socket错误，则需要开启80端口。
+
+```
+python main.py 80
+```
+
+在浏览器输入以下链接以访问刚才运行脚本所搭建的网页，若显示`hello, this is handle view`，则成功。
+
+```
+http://[外网IP]/wx
+```
+
+进入公众号后台并选择开发-基本配置-修改配置，内容如下，然后提交即可。
+
+```
+URL / http://[外网IP]/wx
+Token / 刚才填写的内容
+消息加解密方式 / 明文模式
+```
+
+# 参考教程
+
+## 公众号开发指南
+
+```
+https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Getting_Started_Guide.html
+```
+
+
