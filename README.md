@@ -11,6 +11,5 @@ https://paytonguan.github.io/
 以下文章未迁移。
 
 ```
-* [程序员工具集合及使用](Skill/Useful-Tools-For-Programmers.md)
 * [刷写BIOS和调整整机性能的操作](Computer/BIOS-Editing-And-Flashing.md)
 ```
