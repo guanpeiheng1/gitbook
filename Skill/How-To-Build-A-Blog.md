@@ -1,4 +1,4 @@
-# 搭建博客
+# Gitbook+Github
 
 ```
 // 利用gitbook搭建博客
@@ -26,8 +26,79 @@ git push origin master
 文件夹为group
 文件夹内每一个md为一个页面
 
+部署后不行的话要重新去连接一下giuhub
+
+要想本地预览：
+切换到gitbook目录，运行gitbook serve
 
 
+https://blog.csdn.net/weixin_42349568/article/details/108414441
+
+安装过程出现if (cb) cb.apply(this, arguments),cb.apply is not a function：
+安装时到它写的目录（/Users/paytonguan/.nvm/versions/node/v14.15.1/lib/node_modules/gitbook-cli/node_modules/npm/node_modules/graceful-fs/polyfills.js），注释掉调用这个函数的三个代码：
+
+fs.stat = statFix(fs.stat)
+fs.fstat = statFix(fs.fstat)
+fs.lstat = statFix(fs.lstat)
+
+这个函数的作用是用来修复node.js的一些bug，安装完以后不可以取消注释
+
+https://cloud.tencent.com/developer/article/1441125
+
+预览时RangeError: Maximum call stack size exceeded
+
+书目录下新建book.json，写以下信息：
+
+{
+    "plugins": ["-lunr"]
+}
+
+
+
+```
+
+# Hexo+Github
+
+```
+Github Pages每个用户只能有一个主域名
+但是可以有很多个子域名
+
+开启方法：新建一个项目，名称任意，Settings-Github Pages，选一个branch，随便选一个主题就可以了
+该域名为[用户名].github.io/[仓库名]
+
+如果新建一个仓库，名称为[用户名].github.io，那么得到的域名地址是
+[用户名].github.io
+
+
+对于Hexo，
+需要修改的地方：Hexo根目录的config.yml，
+
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
+url: https://paytonguan.github.io/blog/
+root: /blog/
+permalink: posts/:abbrlink.html
+permalink_defaults: en
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: git
+  repo: https://github.com/paytonguan/blog.git
+  branch: master
+
+# Backup
+backup:
+  type: git     
+  message: backup for hexo blog
+  repository:  
+    github: git@github.com:paytonguan/blog.git,source
+
+hexo clean，hexo g -d即可
 ```
 
 ## 搭建前的准备
@@ -308,7 +379,7 @@ code {
 ```
 // 文章末尾添加「本文结束」标记
 passage_end_tag:
-	enabled: true
+  enabled: true
 ```
 
 ### 添加Mathjax公式支持
@@ -684,4 +755,3 @@ https://www.jianshu.com/p/f054333ac9e6
 ```
 http://theme-next.iissnan.com/
 ```
-

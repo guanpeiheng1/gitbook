@@ -6,11 +6,14 @@
 
 * [Google正确食用指南](World/How-To-Access-Google.md)
 
+## Hackintosh
+
 ## Mac
 
+* [黑苹果](Mac/Hackintosh.md)
+    * [黑苹果的安装与配置](Mac/Hackintosh-Installation.md)
+    * [黑苹果的进阶操作](Mac/Hackintosh-Advanced-Configuration.md)
 * [Mac使用技巧总结](Mac/Mac-Skills.md)
-* [黑苹果的安装与配置](Mac/Hackintosh-Installation.md)
-* [黑苹果的进阶操作](Mac/Hackintosh-Advanced-Configuration.md)
 
 ## Windows
 
@@ -54,7 +57,7 @@
 * [Node环境的搭建与使用](Skill/Node-Installation.md)
 * [全平台使用技巧总结](Skill/AllOS-Skills.md)
 * [公众号使用指南](Skill/Subscription-Use.md)
-* [利用Hexo在Github上搭建博客](Skill/Building-Blog-With-Hexo.md)
+* [个人博客的搭建](Skill/How-To-Build-A-Blog.md)
 * [程序员工具集合及使用](Skill/Useful-Tools-For-Programmers.md)
 
 ## Other

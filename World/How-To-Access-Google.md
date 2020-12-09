@@ -304,6 +304,11 @@ https://lancellc.gitbook.io/clash/clash-config-file/an-example-configuration-fil
 其次在“Final”选择默认规则：DIRECT表示直连，PROXY走代理。个人建议使用直连，如果网站打不开再选择代理。
 在主界面点击“设置”，设置启用系统代理和选择代理模式：代理模式有全局、基于规则路由和直连，(可以认为)对应其他客户端的全局模式、PAC模式和禁用系统代理。绝大多数情况建议使用规则模式。
 
+https://blog.csdn.net/yyws2039725/article/details/90675347
+
+生成终端代理命令：
+只能在当前终端执行一次，退出后就需要重新设置
+
 
 
 
