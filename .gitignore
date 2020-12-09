@@ -16,3 +16,5 @@ npm-debug.log*
 
 # 不排除.gitignore:
 !.gitignore
+
+Some-Codes.md
