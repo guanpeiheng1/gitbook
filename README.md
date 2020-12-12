@@ -16,4 +16,7 @@ https://paytonguan.github.io/
 
 ## Computer
 * [刷写BIOS和调整整机性能的操作](Computer/刷写BIOS和调整整机性能的操作.md)
+
+## Skill
+* [程序员工具集合及使用](Skill/程序员工具集合及使用.md)
 ```
