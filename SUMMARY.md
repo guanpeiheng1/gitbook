@@ -1,49 +1,50 @@
-# 首页
+# Table of contents
 
 * [Payton's blog](README.md)
 
 ## World
 
-* [Google正确食用指南](World/Google正确食用指南.md)
+* [Google正确食用指南](world/how-to-access-google.md)
 
 ## Mac
 
-* [黑苹果的安装与配置](Mac/黑苹果的安装与配置.md)
-* [黑苹果的进阶操作](Mac/黑苹果的进阶操作.md)
-* [Mac使用技巧总结](Mac/Mac使用技巧总结.md)
+* [黑苹果](mac/hackintosh/README.md)
+  * [黑苹果的安装与配置](mac/hackintosh/hackintosh-installation.md)
+  * [黑苹果的进阶操作](mac/hackintosh/hackintosh-advanced-configuration.md)
+* [Mac使用技巧总结](mac/mac-skills.md)
 
 ## Windows
 
-* [Windows使用技巧总结](Windows/Windows使用技巧总结.md)
-* [Windows各版本系统的安装及配置](Windows/Windows各版本系统的安装及配置.md)
+* [Windows使用技巧总结](windows/windows-skills.md)
+* [Windows各版本系统的安装及配置](windows/windows-installation.md)
 
 ## Linux
 
-* [Linux系统的安装与配置](Linux/Linux系统的安装与配置.md)
+* [Linux系统的安装与配置](linux/linux-installation.md)
 
 ## Chrome OS
 
-* [安装Chromium OS到硬盘实现双启动](ChromeOS/安装Chromium OS到硬盘实现双启动.md)
+* [安装Chromium OS到硬盘实现双启动](chrome-os/chromium-os-installation.md)
 
 ## Computer
 
-* [Mac和Linux下终端优化](Computer/Mac和Linux下终端优化.md)
-* [各种系统的安装与配置](Computer/各种系统的安装与配置.md)
-* [多方式引导启动系统](Computer/多方式引导启动系统.md)
-* [系统和硬件的相关知识及维护](Computer/系统和硬件的相关知识及维护.md)
+* [Mac和Linux下终端优化](computer/terminal-optimization.md)
+* [各种系统的安装与配置](computer/os-installation.md)
+* [多方式引导启动系统](computer/multiple-methods-to-start-os.md)
+* [系统和硬件的相关知识及维护](computer/knowledge-about-os-and-hardware.md)
 
 ## iOS
 
-* [iOS使用技巧总结](iOS/iOS使用技巧总结.md)
+* [iOS使用技巧总结](ios/ios-skills.md)
 
 ## Android
 
-* [Android使用技巧总结](Android/Android使用技巧总结.md)
+* [Android使用技巧总结](android/android-skills.md)
 
 ## Study
 
-* [学习进程整理](Study/学习进程整理.md)
-* [计算机技术相关知识与操作](Study/计算机技术相关知识与操作.md)
+* [学习进程整理](study/study-process.md)
+* [计算机技术相关知识与操作](study/knowledge-about-cs.md)
 
 ## Skill
 
@@ -58,4 +59,5 @@
 
 ## Other
 
-* [娱乐圈相关实体资料收集](Other/娱乐圈相关实体资料收集.md)
+* [娱乐圈相关实体资料收集](other/information-about-stars.md)
+
