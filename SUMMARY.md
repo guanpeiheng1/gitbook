@@ -23,7 +23,7 @@
 
 ## Chrome OS
 
-* [安装Chromium OS到硬盘实现双启动](ChromeOS/安装Chromium\20OS到硬盘实现双启动.md)
+* [安装Chromium OS到硬盘实现双启动](ChromeOS/安装Chromium%20OS到硬盘实现双启动.md)
 
 ## Computer
 
@@ -50,7 +50,7 @@
 * [Git和Github的安装与使用](Skill/Git和Github的安装与使用.md)
 * [Kindle的使用](Skill/Kindle的使用.md)
 * [Matlab的使用](Skill/Matlab的使用.md)
-* [Sublime 3的使用](Skill/Sublime\203的使用.md)
+* [Sublime 3的使用](Skill/Sublime%203的使用.md)
 * [Node环境的搭建与使用](Skill/Node环境的搭建与使用.md)
 * [全平台使用技巧总结](Skill/全平台使用技巧总结.md)
 * [公众号使用指南](Skill/公众号使用指南.md)
