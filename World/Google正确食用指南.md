@@ -14,6 +14,14 @@ Google是一个强大的搜索引擎，本文主要介绍访问Google的方法�
 
 # 相关知识
 
+## 原生/广播IP
+
+原生IP指由当地ISP运营商提供的本地IP，广播IP是IP分配机构指派在某个地区使用的IP。可通过以下网站查看IP地址的归属地，归属地与服务器所在地一致的为原生IP。
+
+```
+https://bgp.he.net/
+```
+
 ## 运行模式
 
 | 类型     | 说明                                         |
@@ -29,6 +37,8 @@ Google是一个强大的搜索引擎，本文主要介绍访问Google的方法�
 每台服务器都有一个`IP地址`，比如百度的IP地址是14.215.177.39，Google的IP地址经常变动。为了便于记忆，用域名把每个IP地址一一对应，这种对应则需要`DNS`。向DNS提供域名，DNS返回正确的IP地址，即可访问到正确的网站。高墙则建在用户和网站之间。可通过以下方式完成与外网的连接。
 
 ### SSH隧道
+
+SSH原本用于UNIX类系统的远程登录和管理。由于SSH可以通过客户端软件，在本地做一个SOCKS代理进行加密转发，因此也被用于网络代理。配合浏览器插件和自动列表，可实现对不同网址有选择性地代理。
 
 有一台支持SSH的墙外服务器后，在客户端执行如下命令即可打通隧道。
 
@@ -59,10 +69,6 @@ OpenVPN是一个基于SSL加密的纯应用层VPN协议，是SSL VPN的一种，
 OpenVPN客户端软件可以很方便地配合路由表，实现不同线路（如国内和国外）的路由选择，实现一部分IP走VPN，另一部分IP走原网络。
 
 OpenVPN目前已被墙用流量特征识别等技术手段侦测并受到严重封杀。
-
-#### SSH隧道协议
-
-SSH原本用于UNIX类系统的远程登录和管理。由于SSH可以通过客户端软件，在本地做一个SOCKS代理进行加密转发，因此也被用于网络代理。配合浏览器插件和自动列表，可实现对不同网址有选择性地代理。
 
 #### 协议比较
 
@@ -121,7 +127,7 @@ HTTP协议属于应用层，而SOCKS协议属于传输层。传输层在网络�
 
 包括`v2ray`、`shadowsocks（SS）`、`shadowsocksR（SSR）`、`wireguard`、`brook`、`outline`等，这些协议隐蔽性相对较高，加密方式相对完善。现SSR遭封禁严重，v2ray和SS是主流协议。
 
-这些协议都是通过连接到一台墙未封禁的国外服务器，让该服务器访问被墙封锁的网站后返回相应数据，从而达到翻墙的目的，这些服务器一般称为VPS。`VPS（Virtual Private Server，虚拟专用服务器）`可以理解为安装到电脑上的虚拟机，这些虚拟机相互独立。
+这些协议都是通过连接到一台墙未封禁的国外服务器，让该服务器访问被墙封锁的网站后返回相应数据，从而达到翻墙的目的，向国外服务器传输数据的过程是加密的、不具有明显特征的。这些服务器一般称为VPS，`VPS（Virtual Private Server，虚拟专用服务器）`可以理解为安装到电脑上的虚拟机，这些虚拟机相互独立。
 
 #### Shaadowsocks
 
@@ -135,9 +141,21 @@ Shadowsocks有服务端和客户端。客户端监听1080端口，并将数据�
 
 `机场`指提供节点服务的供应商。`节点`可以理解为服务器，机场会通过`Subscribe`提供等级不同的节点，形式是一个`URL`。
 
+可通过以下链接查看各机场测速结果。
+
+```
+https://www.duyaoss.com/
+```
+
 ## 安全须知
 
 不要使用360系和百度系的产品，其会自动上报IP地址，很容易使所用服务器遭到封禁。不要用国内浏览器，推荐用`Google Chrome`或`Microsoft Edge`。浏览器可打开`不跟踪`请求，且可将系统语言改为服务器所在地语言会进一步提升安全性。同时尽量减少让国内网站走代理的情况出现，会增加被墙几率。
+
+浏览网页时可通过以下插件，强制使用HTTPS。
+
+```
+https://www.eff.org/https-everywhere
+```
 
 ## 墙封锁技术
 
@@ -172,7 +190,7 @@ https://github.com/gfwlist/gfwlist
 
 目前的代理软件基本都在使用TCP协议进行传输。TCP协议要传输数据先要进行握手，而当墙对海外代理服务器回程TCP阻断的时候，就会导致代理客户端与服务端无法完成握手，自然也无法使用代理。
 
-墙通过分析流量特征判断该链接为代理的可能性，当可能性达到不同的程度时，墙做出不同的处理。其逻辑举例如下（10%/50%/80%等仅用作举例）：
+墙通过分析流量特征判断该链接为代理的可能性，当可能性达到不同的程度时，墙做出不同的处理。其逻辑举例如下（10%/50%/80%等仅用作举例），
 
 检测到一个链接是代理的可能性低于10%，那么就无视；高于10%，则将IP的相关信息（及收集的证据、特征等）记录到数据库中，当下次再发现这个链接时，继续去收集证据判断是否为代理，若代理几率降低则无视，否则进一步关注；高于50%，可能单独封一个端口（代理端口），若换个端口后继续做代理，则进一步关注，到了80%，所有端口都被封禁。
 
@@ -260,6 +278,12 @@ https://iyideng.cloud/
 https://52bp.org/index.html
 https://vpncn.blogspot.com/
 https://doubibackup.com/
+https://www.vpsdawanjia.com/
+https://program-think.blogspot.com/
+https://program-think.medium.com/
+
+// 已遍历至2020-10-29【2020年双11活动集中分享！看这里就够了！】
+https://51.ruyo.net/
 ```
 
 ### 免费VPS
@@ -272,195 +296,284 @@ https://www.youneed.win/
 ### 待整理
 
 ```
+Cloud Torrent
+https://github.com/jpillora/cloud-torrent
+
+一键脚本（逗比）：
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/cloudt.sh && chmod +x cloudt.sh && bash cloudt.sh
+
+
+Peerflix Server
+https://github.com/asapach/peerflix-server
+
+一键脚本（逗比）：
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/pserver.sh && chmod +x pserver.sh && bash pserver.sh
+
+
+GoGo Tunnel
+
+一键脚本（逗比）：
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/gogo.sh && chmod +x gogo.sh && bash gogo.sh
+
+
+Socat
+
+一键脚本（逗比）：
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/socat.sh && chmod +x socat.sh && bash socat.sh
+
+
+HaProxy
+
+一键脚本（逗比）：
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/haproxy.sh && chmod +x haproxy.sh && bash haproxy.sh
+
+
+iptables 端口转发
+
+一键脚本（逗比）：
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/iptables-pf.sh && chmod +x iptables-pf.sh && bash iptables-pf.sh
+
+
+SimpleHTTPServer
+
+一键脚本（逗比）：
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/pythonhttp.sh && chmod +x pythonhttp.sh && bash pythonhttp.sh
+
+
+iptables 垃圾邮件(SPAM)/BT/PT 一键封禁
+
+一键脚本（逗比）：
+wget -4qO- raw.githubusercontent.com/ToyoDAdoubi/doubi/master/Get_Out_Spam.sh|bash
+
+
+
+https://toutyrater.github.io/
+https://guide.v2fly.org/
+
+
 https://program-think.blogspot.com/2010/04/howto-cover-your-tracks-0.html
-https://program-think.blogspot.com/2009/09/break-through-gfw-with-tor.html
-https://program-think.medium.com/%E5%A6%82%E4%BD%95%E7%BF%BB%E5%A2%99-%E7%B3%BB%E5%88%97-%E5%85%B3%E4%BA%8E-tor-%E7%9A%84%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94-daa1115ac300
-https://blog.csdn.net/Angle_Cal/article/details/78249612s
+
+https://blog.csdn.net/Angle_Cal/article/details/78249612
 
 // Privoxy教程
 https://www.cnblogs.com/hongdada/p/10787924.html
-```
 
-```
-Surge for Mac
-破解：
-https://blog.cat73.org/20190528/2019052801.surge3-crack/
-https://gist.github.com/whyliam/a27bae053207dcb4c46bb5c9cf8ef274
-```
-
-
-```
-https://wiki.kache.moe/2019/12/11/macOS-ClashX/
-https://merlinblog.xyz/wiki/ClashX.html
-
-ClashX Pro:
-https://github.com/yichengchen/clashX/releases/tag/1.31.1
-https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public
-https://github.com/V2RaySSR/Tools/blob/master/clash.yaml
-
-远程配置：配置-托管配置-管理
-配置文件（可填写服务器信息）：
-https://github.com/V2RaySSR/Tools/blob/master/clash.yaml
-https://www.hijk.pw/clash_template.yaml 
-https://lancellc.gitbook.io/clash/clash-config-file/an-example-configuration-file
-
-也可https://bianyuan.xyz/生成
-然后ClashX内配置-打开本地配置文件夹，选择配置好的配置文件并使用
-
-点击 ClashX 状态栏图标，将「出站模式」选为「规则判断」，在「Proxy」或「Global」策略组中可以选择自己喜欢的线路，然后点击「设置为系统代理」即可开始使用。
-注：「Proxy」策略组是用于访问国际互联网的默认策略，一般情况下，所有国际网络的访问都通过该策略组中选择的节点进行连接。
-
-点击状态栏上小猫咪图标-》控制台，进入ClashX主界面
-在主界面选择代理规则：
-
-首先在主界面的PROXY里选择使用的节点：默认是“自动选择快速节点”，也可以指定使用某个节点。
-
-其次在“Final”选择默认规则：DIRECT表示直连，PROXY走代理。个人建议使用直连，如果网站打不开再选择代理。
-在主界面点击“设置”，设置启用系统代理和选择代理模式：代理模式有全局、基于规则路由和直连，(可以认为)对应其他客户端的全局模式、PAC模式和禁用系统代理。绝大多数情况建议使用规则模式。
-
-
-
-
-策略组的特性：
-可以包含节点或其他策略组
-具有多种不同的策略类型
-服务于规则
-不同策略组的作用：
-Global (或Proxy，视配置文件具体情况而定)：主要规则代理分组，需手动选定一个你要使用的节点作为默认的节点。无其它修改的话，所有国际网络的访问都通过该策略组中选择的节点进行连接。
-Netflix：指Netflix流媒体的分组，如选择香港节点，则显示港区内容。其它地区的同理。
-Spotify：指Spotify流媒体的分组，仅用于加速访问。Spotify执行锁区政策，根据账号注册时所在地进行内容展示，更换节点并不能显示其它地区的版权内容。
-YouTube：指YouTube流媒体的分组，使用不同的线路将展示不同地区的特色内容。
-Telegram：指Telegram（电报）的分组，国内手机号注册的用户选择新加坡线路也许可以加速（注意：是也许。因为+86号段注册的电报用户数据都在新加坡数据中心）。
-China：访问中国大陆网站所用的策略。大陆用户请选择 DIRECT （直接连接）；海外用户请选择回国线路。
-Auto：软件每隔一段时间会自动进行测试并排序，自动评选出延迟最低的节点，当其它策略组里选择了 auto 策略，那么效果就是该策略组将每隔一段时间自动切换到延迟最低的线路。
-（如果你有登陆脸书、IG等社交媒体，不建议使用该策略，以免由于IP变动造成风控，甚至封号。）
-fallback：可用性策略。与故障转移类似，按照节点顺序选择第一个可用节点。
-```
-
-
-
-```
-// 订阅转换：
-Sub-store教程：
-https://github.com/Peng-YM/Sub-Store
-https://www.notion.so/Sub-Store-6259586994d34c11a4ced5c406264b46
-https://github.com/Peng-YM/Sub-Store/tree/master/config
-
--添加
-1. Loon
-打开 Loon 并点击下方 配置 栏，点击 插件
-+，URL：
-https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Loon.plugin
-确保 PROXY 栏右侧区域不出现任何文字，点击 保存 即可
-或手动配置：
-[MITM]
-hostname=sub.store
-
-[Script]
-http-request https?:\/\/sub\.store script-path=https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/sub-store.js, requires-body=true, timeout=120, tag=Sub-Store
-
-2. Surge
-目前iOS商店版本的bug未修复，暂时无法使用。TF用户直接使用模块。
-模块订阅，外部资源刷新
-https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Surge.sgmodule
-
-3. QX
-QX暂时需要通过backend方式使用，添加如下配置。注意，HTTP backend开关需要打开！
-
-[http_backend]
-https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/sub-store.js, tag=Sub-Store, path=/, enabled=true
-
--访问
-Loon & Surge
-浏览器打开以下网址，可添加到主屏幕：
-https://sub-store.vercel.app
-QuanX
-通过JSBox版本：从JSBox的Erots商店获取，一些有用的脚本：
+JSBox一些有用的脚本：
 https://github.com/LiuGuoGY/JSBox-addins
 https://xteko.com/redir?name=Light%20Store&url=https%3A%2F%2Fraw.githubusercontent.com%2FZiGmaX809%2FJsBoxLib%2Fmaster%2FLight_Store%2FLight%2520Store.box
-在JSBox打开脚本，点击设置，查看环境是不是quanx，不是的话就要切回quanx
 
 
-使用：
-订阅，+号，填写订阅名称和地址，设置好后点进去可以看到节点
-可以多个订阅组合在一起，合并成一个不订阅，订阅-文件夹符号即可
+```
 
-本地解析：
-在要修改的订阅三个点-编辑，
-常用选项：过滤节点
-节点操作：添加各个过滤模式，同一类型过滤模式可以添加多个，会按照顺序执行
-保留模式下关键词过滤只能单个匹配，需要添加多个过滤器实现多关键词
-过滤模式则可匹配多个词
-关键词重命名可以一次操作多个关键词
-脚本操作可以远程脚本或者本地脚本，脚本库：
-https://github.com/Peng-YM/Sub-Store/tree/master/scripts
+### 关于Docker的说明
+
+yml文件可用于安装大部分镜像:
 
 
-// 其余同类型作品：
-Surgio：
-https://surgio.js.org/
-https://github.com/surgioproject/surgio
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: v2-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: v2-app
+  template:
+    metadata:
+      labels:
+        app: v2-app
+    spec:
+      containers:
+      - image: gingko/v2ray-nginx-websocket
+        name: v2-app
 
-subconverter：
-https://github.com/tindy2013/subconverter
+---
 
-ConfigConverter:
-https://github.com/ImSingee/ConfigConverter
+apiVersion: v1
+kind: Service
+metadata:
+  name: v2-app
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  type: ClusterIP  
+  ports:
+  - name: "http-port-tcp"
+    port: 8080
+  selector:
+    app: v2-app
+```
 
-// 订阅类型转换
-https://bianyuan.xyz/
+
+
+镜像（Docker）是只读的，可在hub docker上找到，相当于打包好的系统，部署到服务器后即可直接使用。部署到服务器即为容器（Container）。
+
+将文件中的`v2-app`改为另一个名称，`pch18/baota:clear`更换为其他容器，`port: 8888`改为容器内暴露端口，其中暴露端口可看相关镜像的说明。
+
+保存后执行以下命令部署即可。
+
+```
+kubectl apply -f [yml文件路径]
+```
+
+仓库和示例如下。
+
+```
+https://github.com/pch18-docker/baota
+```
+
+#### 搭建宝塔
+
+完成后通过所给的网站即可访问。用户名为`username`，密码为`password`。
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bt-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bt-app
+  template:
+    metadata:
+      labels:
+        app: bt-app
+    spec:
+      containers:
+      - image: baiyuetribe/baota-mini
+        name: bt-app
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: bt-app
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  type: ClusterIP  
+  ports:
+  - name: "http-port-tcp"
+    port: 8888
+  selector:
+    app: bt-app
+```
+
+#### 搭建Google镜像网站
+
+完成后通过所给的网站即可访问。
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: google-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: google-app
+  template:
+    metadata:
+      labels:
+        app: google-app
+    spec:
+      containers:
+      - image: jim3ma/google-mirror
+        name: google-app
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: google-app
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  type: ClusterIP  
+  ports:
+  - name: "http-port-tcp"
+    port: 80
+  selector:
+    app: google-app
+```
+
+#### 搭建Linux
+
+完成后通过所给的网站即可访问，默认以root身份登录。密码为`vncpassword`。
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: google-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ubuntu-app
+  template:
+    metadata:
+      labels:
+        app: ubuntu-app
+    spec:
+      containers:
+      - image: fallfor/ubuntuvnc
+        name: ubuntu-app
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ubuntu-app
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  type: ClusterIP  
+  ports:
+  - name: "http-port-tcp"
+    port: 6901
+  selector:
+    app: ubuntu-app
+```
+
+可用的其他镜像如下，默认以非root身份登录。密码也为`vncpassword`。
+
+```
+consol/centos-xfce-vnc
+consol/ubuntu-xfce-vnc
+consol/centos-icewm-vnc
+consol/ubuntu-icewm-vnc
 ```
 
 # 现成工具
 
-## 谷歌镜像网站
+## 电脑端软件
+
+### 翻墙Chrome浏览器
 
 ```
-自建：
-https://github.com/aploium/zmirror
+// 适用于XP以上系统
+https://github.com/Alvin9999/new-pac/wiki/%E9%AB%98%E5%86%85%E6%A0%B8%E7%89%88
+
+// 适用于XP
+https://github.com/Alvin9999/new-pac/wiki/%E4%BD%8E%E5%86%85%E6%A0%B8%E7%89%88
 ```
 
+### 翻墙Firefox浏览器
 
 ```
-http://google.seek68.cn/
-https://x.glgoo.top/scholar/
-https://ac.scmor.com/
-https://v2ray.party/
-http://scholar.hedasudi.com/
-https://ac.scmor.com/
-https://google2.jiongjun.cc/
+https://github.com/Alvin9999/new-pac/wiki/%E7%81%AB%E7%8B%90%E7%BF%BB%E5%A2%99%E6%B5%8F%E8%A7%88%E5%99%A8
 ```
 
-库如下。
-
-```
-https://www.uedbox.com/post/54776/
-```
-
-## 电脑端
-
-### Chrome插件
-
-#### 谷歌访问助手破解版
-
-为Chrome插件，解压后拖到`扩展程序`即可。
-
-```
-https://www.lanzous.com/ial9x8b
-```
-
-#### 其余插件
-
-```
-http://googlehelper.net/
-http://www.ggfwzs.com/
-https://setupvpn.com/download/
-https://tunnello.com/
-```
-
-### 软件
-
-#### 无界浏览
+### 无界浏览
 
 ```
 // Windows
@@ -470,98 +583,89 @@ https://www.lanzous.com/i4eyu4b
 https://www.lanzous.com/i4eyt1c
 ```
 
-#### JJQQKK
+### Hotspot Shield
 
-现只能免费使用三天。
+可在美区的Mac App Store找到。
 
-```
-https://github.com/jjqqkk/chromium
-```
-
-#### 翻墙工具包
-
-```
-https://github.com/Alvin9999/new-pac/wiki
-```
-
-#### VPN Plus/Hotspot Shield
-
-可在`美区`的Mac App Store找到。注意，尽管第一款软件在中区Mac App Store有上架，但下载后无法使用。
-
-#### OpenVPN
-
-一般不使用。
-
-```
-https://www.vpngate.net/en/howto_l2tp.aspx
-https://www.vpnbook.com/freevpn
-https://docs.getfoxyproxy.org/index.php/Main_Page
-https://www.freeopenvpn.org/en/cf/usa.php
-https://www.sparklabs.com/viscosity/
-```
-
-#### 其余电脑端软件
+### windscribe
 
 ```
 https://chn.windscribe.com/download
+```
+
+### ProtonVPN
+
+```
 https://protonvpn.com/download
+```
+
+### Psiphon
+
+```
 https://psiphon.ca/
-https://privatix.com/
-https://tuxler.com/
+```
+
+### IPUnblock
+
+```
 http://ipunblock.com/
 ```
 
-#### TunSafe
-
-使用WireGuard协议的高性能且安全的VPN客户端。
+### tuxler
 
 ```
-https://tunsafe.com/
-https://hoochanlon.github.io/fq-book/#/vpn/classical-vpn
+https://tuxler.com/
 ```
 
-### SSH隧道
-
-#### 使用
+### Privatix
 
 ```
-https://hoochanlon.github.io/fq-book/#/proxy/SSH-Tunnel
-```
-
-#### 客户端
-
-```
-https://www.bitvise.com/ssh-client-download
-```
-
-#### 公用账号
-
-```
-https://skyssh.com/
-https://www.mytunneling.com/
-https://bestvpnssh.com/
-https://fullssh.com/
-https://www.sshagan.net/
-https://www.portssh.com/
-https://www.jetssh.com/
-http://free-ssh.xyz/
-https://sshkit.com/
-https://www.monthlyssh.com/ssh
-https://speedssh.com/
-https://sshdropbear.net/
-https://fastssh.com/
-https://createssh.com/
-https://cloudssh.us/
+https://privatix.com/
 ```
 
 ### WireGuard
 
+打开以下链接以下载客户端。
+
 ```
-https://www.wireguard.com/
-https://hoochanlon.github.io/fq-book/#/vpn/wireguard
+https://www.wireguard.com/install/
 ```
 
-## 手机端
+打开WireGuard，选择add empty tunnel，复制public key。打开以下链接并将刚才的内容复制到your wireguard public key，点击Add key继续。
+
+```
+https://cryptostorm.is/wireguard
+```
+
+将生成的配置文件复制到WireGuard的public key下方配置信息框内，并删除以下字段。点击active激活即可。
+
+```
+[Interface]
+PrivateKey = YOUR_PRIVATE_KEY
+```
+
+### OpenVPN
+
+下载以下客户端。
+
+```
+https://openvpn.net/download-open-vpn/
+```
+
+也可下载以下第三方客户端。
+
+```
+https://www.sparklabs.com/viscosity/
+```
+
+可通过以下网站获取OpenVPN的配置文件。下载配置文件后导入到客户端即可。
+
+```
+https://www.vpnbook.com/freevpn
+https://www.vpngate.net/en/
+```
+
+## 手机端软件
 
 ### Betternet/VPN 360
 
@@ -577,7 +681,7 @@ iOS版可在美区的App Store找到。安卓版下载地址如下。
 
 ### 老王VPN
 
-可在Google Play下载。
+可在Google Play下载。若能连接到Google Play，可找到非常多类似的软件。
 
 ```
 https://www.lanzous.com/i4ezbla
@@ -589,21 +693,75 @@ https://www.lanzous.com/i4ezbla
 https://b.lausera.com/c-1/a-agWjQ/
 ```
 
-### 其余Android软件
+## 谷歌镜像
+
+### 基本知识
+
+#### 分类
+
+镜像网站有如下类别。
+
+| 种类 |                                                   含义                                                   |
+|------|----------------------------------------------------------------------------------------------------------|
+| F1   | 通过服务器（如Nginx）反向代理，服务器在海外或为IPV6                                                      |
+| F2   | 通过爬虫程序实时爬取并展示Google搜索的结果页                                                             |
+| F3   | 通过定时全量数据同步，进行镜像分身，达到持久化的镜像，例如composer镜像或npm镜像，谷歌镜像不能使用这种方法 |
+
+#### 和代理的区别
+
+代理是设置代理服务器，代理服务器转发下载请求，从而实现类似谷歌镜像的需求。
+
+镜像是镜像站点已经提前镜像（下载）了资源，访问时直接从它的服务器上获取资源。
+
+### 网站
 
 ```
-https://play.google.com/store/apps/details?id=free.vpn.unblock.proxy.turbovpn&hl=zh_CN
-https://play.google.com/store/apps/details?id=net.upx.proxy.browser&hl=zh_CN
-https://play.google.com/store/apps/details?id=com.findtheway&hl=zh_CN
-https://play.google.com/store/apps/details?id=com.fast.free.unblock.secure.vpn&hl=zh_CN
-https://play.google.com/store/apps/details?id=free.vpn.unblock.proxy.vpnpro&hl=zh_CN
-https://play.google.com/store/apps/details?id=com.tunsafe.app&hl=zh_CN
-https://play.google.com/store/apps/details?id=com.opera.max.global&hl=zh_CN
-https://play.google.com/store/apps/details?id=com.github.shadowsocks&hl=zh_CN
-https://play.google.com/store/apps/details?id=com.v2ray.ang&hl=zh_CN
-https://play.google.com/store/apps/details?id=vpn.look.www.sharevpn&hl=zh_CN
-https://play.google.com/store/apps/details?id=easyvpn.free.vpn.unblock.proxy&hl=zh_CN
-https://play.google.com/store/apps/details?id=in.teleplus&hl=zh
+https://www.gosearchresults.com/
+https://www.lovec.ltd/
+https://www.sanzhima.com/
+http://g.histsci.org/
+http://google.seek68.cn/
+https://x.glgoo.top/scholar/
+https://ac.scmor.com/
+https://v2ray.party/
+http://scholar.hedasudi.com/
+https://ac.scmor.com/
+https://google2.jiongjun.cc/
+https://siguso.com/google/
+https://ac.scmor.com/
+https://coderschool.cn/1853.html
+```
+
+## Chrome插件
+
+### 谷歌访问助手破解版
+
+```
+https://www.lanzous.com/ial9x8b
+```
+
+### Ghelper
+
+```
+http://googlehelper.net/
+```
+
+### Chrome商店访问助手
+
+```
+http://www.ggfwzs.com/
+```
+
+### SetupVPN
+
+```
+https://setupvpn.com/download/
+```
+
+### Tunhello
+
+```
+https://tunnello.com/
 ```
 
 ## 代理
@@ -640,29 +798,29 @@ https://proxyscrape.com/proxy-checker
 
 #### 设置软件代理
 
-以网易云音乐为例，点击`设置`-`工具`，在代理选项卡下有三个选项，若选择使用IE代理设置，则需要提前设置好IE的代理。如果选择`自定义代理`，则在下拉菜单中选择代理类型，并输入服务器与端口（比如说所得结果为`1.2.3.4:5`，则服务器地址为`1.2.3.4`，端口为`5`），保存即可。
+以网易云音乐为例，点击设置-工具，在代理选项卡下有三个选项，若选择使用IE代理设置，则需要提前设置好IE的代理。如果选择自定义代理，则在下拉菜单中选择代理类型，并输入服务器与端口（比如说所得结果为`1.2.3.4:5`，则服务器地址为1.2.3.4，端口为5），保存即可。
 
 #### 设置IE代理
 
-打开IE，点击右上方`设置`-`Internet选项`，选择`连接`-`局域网设置`，勾选`为LAN使用代理服务器`，填好地址和端口，并勾选`对于本机地址不使用代理服务器`，保存并退出。
+打开IE，点击右上方设置-Internet选项，选择连接-局域网设置，勾选`为LAN使用代理服务器`，填好地址和端口，并勾选`对于本机地址不使用代理服务器`，保存并退出。
 
 #### 设置全局代理
 
-打开系统的`设置`-`网络和Internet`-`代理`，选择`使用代理服务器`，填好地址和端口，并保存。
+打开系统的设置-网络和Internet-代理，选择`使用代理服务器`，填好地址和端口，并保存。
 
 #### 设置浏览器代理
 
-以Chrome为例，打开`Chrome网上应用店`，搜索`SwitchyOmega`并安装（需要外网环境）。
+以Chrome为例，打开Chrome网上应用店，搜索`SwitchyOmega`并安装（需要外网环境）。
 
-下载完成后点击插件的`选项`，进入配置页面。点击情景模式的`proxy`，填写代理协议、代理服务器和端口。点击`auto switch`，切换规则只留`proxy`，默认情景模式设为`直接连接`，在导入在线规则列表下，点击`添加规则列表`并填入下面网址，点击`立即更新情景模式`，保存后退出。此时可以禁用系统设置中的网络代理。
+下载完成后点击插件的选项，进入配置页面。点击情景模式的`proxy`，填写代理协议、代理服务器和端口。点击`auto switch`，切换规则只留`proxy`，默认情景模式设为`直接连接`，在导入在线规则列表下，点击`添加规则列表`并填入下面网址，点击`立即更新情景模式`，保存后退出。此时可以禁用系统设置中的网络代理。
 
-点击插件，选择`auto switch`或`proxy`，即可访问外网。其中proxy相当于`全局模式`，auto switch相当于`PAC模式`。
+点击插件，选择auto switch或proxy，即可访问外网。其中proxy相当于全局模式，auto switch相当于PAC模式。
 
 ```
 https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 ```
 
-## 应急使用
+## 机场及公用节点
 
 ### 友明互联
 
@@ -680,9 +838,16 @@ http://idc.ymhlw.cn/index.php/buy/index/
 https://www.renzhijia.com/buy/index/7/
 ```
 
+### Goflyway免费账号
+
+```
+https://github.com/Alvin9999/new-pac/wiki/Goflyway%E5%85%8D%E8%B4%B9%E8%B4%A6%E5%8F%B7
+```
+
 ### 公用节点
 
 ```
+https://freevpn4you.net/ru/free-proxy.php
 https://github.com/hugetiny/awesome-vpn/blob/master/READMECN.md
 https://free-ss.site/
 https://yzzz.ml/freessr/
@@ -700,40 +865,69 @@ https://www.go2free.xyz/
 https://gdmi.weebly.com/3118523398online.html
 https://free.yitianjianss.com/
 https://ssrtool.us/tool/free_ssr
+https://github.com/Alvin9999/new-pac/wiki/ss%E5%85%8D%E8%B4%B9%E8%B4%A6%E5%8F%B7
+https://github.com/Alvin9999/new-pac/wiki/v2ray%E5%85%8D%E8%B4%B9%E8%B4%A6%E5%8F%B7
+http://ss.pythonic.life/
+https://www.vpngate.net/cn/
 ```
 
-# 反代网站
+## SSH隧道
 
-## 现成网站
+### 使用
 
-```
-http://webproxy.to/
-https://weboas.is/
-https://www.croxyproxy.com/
-```
-
-## 自行搭建
-
-通过cloudflare的worker项目，可以建立一个简单的代理项目。打开第一个网页，完成注册后登录。然后打开第二个网页并点击`Start building`，子域名可以任意填写，计划选择免费，并创建worker。
+打开以下链接以创建账号。
 
 ```
-https://dash.cloudflare.com/
-https://workers.cloudflare.com/
+https://www.speedssh.com/
 ```
 
-进入worker页面，更改三级域名，删除原始脚本。然后打开以下网页，复制代码到worker的脚本处，点击下方`保存并部署`，然后进行预览。使用时直接输入域名对应的网址即可。
+下载以下客户端并输入从上述网站获取的SSH信息，22为SSH默认端口。登录后进入Services，勾选`SOCKS/HTTP proxy forwarding`，然后按照设置代理的方式进行设置即可。
 
 ```
-https://github.com/yangmyc/jsproxy/blob/master/cf-worker/index.js
+https://www.bitvise.com/ssh-client-download
 ```
 
-其余同类型仓库如下。
+也可通过以下网站获取SSH账号。
 
 ```
-https://github.com/netptop/siteproxy
+https://skyssh.com/
+https://www.mytunneling.com/
+https://bestvpnssh.com/
+https://fullssh.com/
+https://www.sshagan.net/
+https://www.portssh.com/
+https://www.jetssh.com/
+http://free-ssh.xyz/
+https://sshkit.com/
+https://www.monthlyssh.com/ssh
+https://speedssh.com/
+https://sshdropbear.net/
+https://fastssh.com/
+https://createssh.com/
+https://cloudssh.us/
+```
+
+## 获取工具的方式
+
+### 搜索引擎
+
+使用github/qwant/telegram搜索相关翻墙软件的关键词，可使用similarsitesearch查询相似站点。
+
+### 邮件
+
+有些提供翻墙工具的公司/组织会开设一个邮箱，用于自动回复科学上网工具以及页面镜像地址，如发送标题`help`到`get@psiphon3.com`。
+
+### P2P下载
+
+连上某个eMule服务器后即可搜索Tor等相关工具。
+
+```
+https://www.emule-project.net/home/perl/general.cgi?l=42
 ```
 
 # 自建服务器
+
+通过国外服务器上搭建专门的翻墙协议，实现翻墙效果。
 
 ## Google Cloud Platform
 
@@ -747,23 +941,34 @@ https://github.com/netptop/siteproxy
 
 #### 创建防火墙规则
 
-点击菜单中的`VPC网络`-`防火墙规则`，进入防火墙规则页面后，点击`创建防火墙规则`，进入防火墙规则创建界面。
+点击菜单中的VPC网络-防火墙规则，进入防火墙规则页面后，点击`创建防火墙规则`，进入防火墙规则创建界面，配置如下。完成配置后点击创建即可。
 
-名称改为`entrance`（其他名称也可以），优先级设为`1`，流量方向为`入站`，对匹配项执行的操作选择`允许`，目标选择`网络中的所有实例`，来源IP地址范围填写`0.0.0.0/0`，协议和端口选`全部允许`，点击`创建`即可。
+|        项目        |        值        |
+|--------------------|------------------|
+| 名称               | entrance         |
+| 优先级             | 1                |
+| 流量方向           | 入站             |
+| 对匹配项执行的操作 | 允许             |
+| 目标               | 网络中的所有实例 |
+| 来源IP地址范围     | 0.0.0.0/0        |
+| 协议和端口         | 全部允许         |
+
 
 同理，再创建一个防火墙实例，名称改为`exit`，流量方向为`出站`，其余与上面的一致，保存。
 
 #### 创建VM实例
 
-点击菜单中的`Compute Engine`-`VM实例`，点击`创建`，进入VM实例创建页面。
+点击菜单中的Compute Engine-VM实例，点击创建，进入VM实例创建页面，配置如下。
 
-名称任意，区域建议选择`asia-east2（香港）`或`asia-east1（台湾）`，地区任意，机器类型选择`微型`，防火墙勾选`允许HTTP流量`、`允许HTTPS流量`。
+|   项目   |                     值                     |
+|----------|--------------------------------------------|
+| 区域     | 建议asia-east2（香港）或asia-east1（台湾） |
+| 机器类型 | 建议微型                                   |
+| 防火墙   | 勾选允许HTTP流量、允许HTTPS流量            |
+| **网络** |                                            |
+| 网络标记 | 刚才创建好的防火墙规则（enterance、exit）  |
 
-下面的标签页切换到`网络`一栏，在`网络标记`一栏填入刚才创建好的两个防火墙规则的名字，点击最下方的`创建`，完成VM实例创建。
-
-创建完成后会出来一个内部IP和一个外部IP，打开命令提示符（Win+R后cmd回车），输入`ping 外部IP`（比如`ping 35.XXX.XXX.XXX`），查看ping值。
-
-如果ping值过大，则再创建一个新的实例，直到得到一台ping值小的服务器。注意不要把原来的实例删除，不然会分配到同一台服务器。正常服务器ping值在100ms以内。
+创建完成后会有一个内部IP和一个外部IP，打开命令提示符，输入`ping [外部IP]`查看ping值。如果ping值过大，则再创建一个新的实例，直到得到一台ping值小的服务器，注意不要把原来的实例删除，不然会分配到同一台服务器。正常服务器ping值在100ms以内。
 
 #### 搭建v2ray协议
 
@@ -778,8 +983,6 @@ bash <(curl -s -L https://git.io/v2ray.sh)
 
 ##### 协议配置
 
-具体协议配置如下。
-
 ###### TCP协议
 
 在一键脚本配置协议时选择默认的`TCP`协议即可。TCP协议速度快，但有被封端口的风险。
@@ -788,7 +991,7 @@ bash <(curl -s -L https://git.io/v2ray.sh)
 
 该协议安全性高，但需要域名且速度不及TCP协议。
 
-进入以下网站并注册一个cloudflare账号，然后把刚才注册的域名加进去，添加时选择免费套餐即可。
+进入以下网站并注册一个cloudflare账号，然后把注册好的域名加进去，添加时选择免费套餐。
 
 ```
 https://www.cloudflare.com/zh-cn/
@@ -797,6 +1000,8 @@ https://www.cloudflare.com/zh-cn/
 向域名的`DNS`添加一个A记录，Name为二级域名，比如`hk.nionguan.ga`，Value为服务器的IP地址，注册时`Proxy status`点成`DNS Only`。
 
 然后到购买域名网页的后台，更改域名的Nameserver为cloudflare中指定的网址。更改完成后返回cloudflare，点击`Done, Check...`并等待生效。
+
+完成网站配置后，在脚本配置协议时选择WS+TLS协议即可。
 
 ##### 多用户配置
 
@@ -812,7 +1017,7 @@ vim /etc/v2ray/config.json
 
 ```
 "inbounds": [{
-  "port": 8089, // 高稳定用户
+  "port": 8089, // WS+TLS
   "protocol": "vmess",
   "settings": {
     "clients": [{
@@ -827,7 +1032,7 @@ vim /etc/v2ray/config.json
     }
   }
 }, {
-  "port": 8288, // 普通用户
+  "port": 8288, // TCP
   "protocol": "vmess",
   "settings": {
     "clients": [{
@@ -846,9 +1051,9 @@ sudo systemctl restart v2ray
 
 ##### 配置分享
 
-得到v2ray配置信息后复制，并输入`v2ray ssqr`生成二维码，便于以后使用。
+得到v2ray配置信息后复制，并输入`v2ray ssqr`生成二维码，以得到客户端配置。客户端配置方法可查看客户端配置一节。
 
-### 使用
+### 功能
 
 #### 快照
 
@@ -885,7 +1090,7 @@ https://ide.goorm.io/
 bash <(curl -s -L https://raw.githubusercontent.com/guleonseon/goorm-auto/master/install.sh)
 ```
 
-回到VPS设置页，在Port Forwarding处填写`1080`并点击完成。在客户端添加以下配置即可。
+回到VPS设置页，在Port Forwarding处填写`1080`并点击完成。客户端配置如下。
 
 ```
 类型 / socks5
@@ -1148,9 +1353,14 @@ TLS / 打开，允许不安全
 
 注意，安装完成后千万不要运行bbrplus加速脚本，否则将导致服务器无法连接。
 
-## Okteto（失效）
+## ~~Okteto~~
 
-### 注册
+现Okteto政策已不允许将云用于搭建代理。
+
+### 失效教程
+
+<details>
+<summary></summary>
 
 打开以下网页并用Github登录。
 
@@ -1184,8 +1394,6 @@ macOS下进入终端，Windows下管理员身份运行cmd，执行以下命令�
 okteto login
 okteto namespace
 ```
-
-### 搭建v2ray
 
 新建文本文件，名称为`v2ray.yml`，内容如下。
 
@@ -1242,155 +1450,12 @@ kubectl apply -f [yml文件路径]
 TLS / 打开，允许不安全
 额外ID / 100
 ```
+</details>
 
-### 关于Docker的说明
+### 失效教程（旧版）
 
-上述yml文件可用于安装大部分镜像。镜像（Docker）是只读的，可在hub docker上找到，相当于打包好的系统，部署到服务器后即可直接使用。部署到服务器即为容器（Container）。
-
-将文件中的`v2-app`改为另一个名称，`pch18/baota:clear`更换为其他容器，`port: 8888`改为容器内暴露端口，其中暴露端口可看相关镜像的说明。
-
-保存后执行以下命令部署即可。
-
-```
-kubectl apply -f [yml文件路径]
-```
-
-仓库和示例如下。
-
-```
-https://github.com/pch18-docker/baota
-```
-
-#### 搭建宝塔
-
-完成后通过所给的网站即可访问。用户名为`username`，密码为`password`。
-
-```
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: bt-app
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: bt-app
-  template:
-    metadata:
-      labels:
-        app: bt-app
-    spec:
-      containers:
-      - image: baiyuetribe/baota-mini
-        name: bt-app
-
----
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: bt-app
-  annotations:
-    dev.okteto.com/auto-ingress: "true"
-spec:
-  type: ClusterIP  
-  ports:
-  - name: "http-port-tcp"
-    port: 8888
-  selector:
-    app: bt-app
-```
-
-#### 搭建Google镜像网站
-
-完成后通过所给的网站即可访问。
-
-```
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: google-app
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: google-app
-  template:
-    metadata:
-      labels:
-        app: google-app
-    spec:
-      containers:
-      - image: jim3ma/google-mirror
-        name: google-app
-
----
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: google-app
-  annotations:
-    dev.okteto.com/auto-ingress: "true"
-spec:
-  type: ClusterIP  
-  ports:
-  - name: "http-port-tcp"
-    port: 80
-  selector:
-    app: google-app
-```
-
-#### 搭建Linux
-
-完成后通过所给的网站即可访问，默认以root身份登录。密码为`vncpassword`。
-
-```
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: google-app
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: ubuntu-app
-  template:
-    metadata:
-      labels:
-        app: ubuntu-app
-    spec:
-      containers:
-      - image: fallfor/ubuntuvnc
-        name: ubuntu-app
-
----
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: ubuntu-app
-  annotations:
-    dev.okteto.com/auto-ingress: "true"
-spec:
-  type: ClusterIP  
-  ports:
-  - name: "http-port-tcp"
-    port: 6901
-  selector:
-    app: ubuntu-app
-```
-
-可用的其他镜像如下，默认以非root身份登录。密码也为`vncpassword`。
-
-```
-consol/centos-xfce-vnc
-consol/ubuntu-xfce-vnc
-consol/centos-icewm-vnc
-consol/ubuntu-icewm-vnc
-```
-
-### 已失效教程
+<details>
+<summary></summary>
 
 打开以下仓库并fork到自己的Github上。
 
@@ -1420,20 +1485,22 @@ https://github.com/byxiaopeng/okteto-reboot
 路径 / /ws
 TLS / 打开，允许不安全
 ```
+</details>
 
-## Kubesail（失效）
+## ~~Kubesail~~
 
 现在需要自行提供服务器。
 
-### 申请
+### 失效教程
+
+<details>
+<summary></summary>
 
 打开以下链接并完成注册。
 
 ```
 https://kubesail.com
 ```
-
-### 搭建
 
 打开以下链接，Fork一份到自己的Github。然后在Kubesail后台点击`Repos`，确认已经连接到自己的Github账号。
 
@@ -1464,20 +1531,22 @@ AlterID / 64
 路径 / /ws
 TLS / 打开，且允许不安全
 ```
+</details>
 
-## IBM Cloud（失效）
+## ~~IBM Cloud~~
 
 免费30天，免费期后会自动注销账号。
 
-### 注册
+### 失效教程
+
+<details>
+<summary></summary>
 
 打开以下链接进行注册即可。
 
 ```
 https://cloud.ibm.com/
 ```
-
-### 搭建
 
 进入后台并点击`创建资源`，创建一个Cloud Foundray下的公共应用程序。区域选择达拉斯，套餐选择256MB，配置资源选择Go，名称填ibmyes，完成创建。
 
@@ -1530,36 +1599,21 @@ https://github.com/CCChieh/IBMYes
 ```
 
 保存后点击上方Actions，应当看到IBM Cloud Auto Restart在执行。如果没有此Action，到自己仓库的/.github/workflows/ibm.yml，随便编辑后点击`Start commit`即可看到。
+</details>
 
 # 客户端配置
 
-## 使用
-
-### iOS端说明
-
-未越狱iOS端没有官方的v2ray客户端。常用的第三方客户端有Shadowrocket、Quantumult和Kitsunebi等，均需在美区App Store下载。
-
-#### Kitsunebi
-
-支持v2ray（WS/TCP）、Shadowsocks。
-
-打开Kitsunebi，选择下方的`服务器`，点击右上方`+`号并选择`扫二维码`，扫描刚才生成的二维码，即可导入服务器配置。然后把操作模式改到`Rule`，传出代理选择刚才添加的服务器。完成设置后，在状态页开启VPN开关即可。
-
-#### Shadowrocket
-
-支持v2ray（WS/TCP）、Shadowsocks、Trojan。
-
-#### Quantumult
-
-支持v2ray（WS/TCP）、Shadowsocks。
+## 连接到服务器
 
 ### v2ray
 
-#### Windows（高于XP）
+#### Windows XP以上
 
 ##### v2rayN
 
-下载v2rayN-Core.zip，解压并打开`v2rayN.exe`。点击服务器，选择`扫描屏幕上的二维码`，客户端会自动扫描刚才生成的二维码并添加配置信息。如果无法生成二维码，则点击`添加Vmess服务器`，手动输入刚才保存的配置信息。右键点击新增的服务器，选择`设为活动服务器`。然后在v2ray的托盘图标点击右键，勾选`启用http代理`，并在http代理模式中选择`PAC模式`，即可上网。
+下载v2rayN-Core.zip，解压并打开`v2rayN.exe`。点击服务器，选择扫描屏幕上的二维码，客户端会自动扫描刚才生成的二维码并添加配置信息。如果无法生成二维码，则点击添加Vmess服务器，手动输入刚才保存的配置信息。
+
+右键点击新增的服务器，选择设为活动服务器。然后在v2ray的托盘图标点击右键，勾选启用http代理，并在http代理模式中选择PAC模式即可。
 
 ```
 https://github.com/2dust/v2rayN/releases/
@@ -1575,7 +1629,9 @@ https://github.com/2dust/v2rayN/releases/
 https://github.com/Alvin9999/new-pac/wiki/%E4%BD%8E%E5%86%85%E6%A0%B8%E7%89%88
 ```
 
-提取压缩包中的v2ray文件夹，并修改里面的config.json为如下内容。
+该包中v2ray和goflyway均可用。对于goflyway，双击打开后可见本地代理，在浏览器中填写相应地址即可。
+
+此处以v2ray包进行说明。提取压缩包中的v2ray文件夹，并修改里面的config.json为如下内容。
 
 ```
 {
@@ -1699,11 +1755,36 @@ https://github.com/Alvin9999/new-pac/wiki/%E4%BD%8E%E5%86%85%E6%A0%B8%E7%89%88
 }
 ```
 
-精简文件夹，只保留doc文件夹、config.json、geoip.dat、geosite.dat、vpoint_socks_vmess.json、vpoint_vmess_freedom.json、v2ctl.exe、v2ctl.exe.sig、v2ray.exe、v2ray.exe.sig、w2vray.exe、w2ray.exe.sig。此时双击v2ray.exe即跳出v2ray窗口，示意v2ray已经运行。若运行wv2ray.exe，则不显示窗口，在后台静默运行。
+精简文件夹，只保留以下文件。双击v2ray.exe即跳出v2ray窗口，示意v2ray已经运行。若运行wv2ray.exe，则不显示窗口，在后台静默运行。
 
-##### 使用
+```
+├── doc
+│   └── ...
+├── config.json
+├── geoip.dat
+├── geosite.dat
+├── vpoint_socks_vmess.json
+├── vpoint_vmess_freedom.json
+├── v2ctl.exe
+├── v2ctl.exe.sig
+├── v2ray.exe
+├── w2vray.exe
+└── w2ray.exe.sig
+```
 
-同理，这时v2ray已经把服务器映射到本地代理127.0.0.1:1080，注意类型为`http`。XP中可以配置IE代理，类型选择`http`，服务器地址为`127.0.0.1`，端口为`1080`。也可在Chrome浏览器中使用SwitchOmega配置。
+##### 设置代理
+
+###### 软件代理
+
+同理，这时v2ray已经把服务器映射到本地代理127.0.0.1:1080，注意类型为http。XP中可以配置IE代理，也可在Chrome浏览器中使用SwitchOmega配置，配置如下。
+
+```
+类型 / http
+服务器地址 / 127.0.0.1
+端口 / 1080
+```
+
+###### 全局代理
 
 若需要实现全局翻墙，则需要用到翻墙工具Proxifier。
 
@@ -1723,19 +1804,19 @@ taskkill /f /im wv2ray.exe
 
 由于Proxifier支持socks5协议，而SwitchOmega在XP下并不支持，因此若v2ray选用socks5协议，只能实现全局翻墙而不能实现单一浏览器翻墙。
 
-除了v2ray包，Alvin9999的AllNew包中goflyway代理工具也可用。双击打开后可见本地代理，在浏览器中填写相应地址即可。
-
 #### Mac
 
 ##### v2rayX
 
-与Windows客户端的配置类似。下载zip包并解压，将`V2RayX.app`复制到应用程序文件夹后打开，点击菜单中的`Configure`，输入刚才保存的服务器配置信息。然后在`Servers`中选择刚才新建的服务器，确保v2ray code处于`load`状态，并勾选`PAC Mode`，配置完成。
+与Windows客户端的配置类似。打开APP后点击菜单中的Configure，输入刚才保存的服务器配置信息。然后在Servers中选择刚才新建的服务器，确保v2ray code处于load状态，并勾选PAC Mode，配置完成。
 
 ```
 https://github.com/insisttech/v2rayX-copy/releases
 ```
 
 ##### v2rayU
+
+与v2rayX类似，但提供订阅功能。
 
 ```
 https://github.com/yanue/V2rayU/releases/
@@ -1745,7 +1826,7 @@ https://github.com/yanue/V2rayU/releases/
 
 ##### v2rayNG
 
-下载`app-universal-release.apk`，安装到手机并打开。点击上方`+`号并选择`从二维码导入配置`，扫描前面生成的二维码，这样服务器配置就添加进来了。同理，如果二维码无法生成，则点击`手动输入`。
+下载app-universal-release.apk，安装到手机并打开。点击上方+号并选择从二维码导入配置，扫描从服务端获取的二维码即可。也可点击手动输入进行导入。
 
 然后点击左上角的菜单，选择设置，在路由模式中选择`绕过中国大陆`。回到主页面，点击右下角的启动按钮，允许连接。
 
@@ -1763,7 +1844,7 @@ Linux没有图形客户端，故须按照以下配置。
 https://github.com/v2ray/v2ray-core/releases
 ```
 
-打开终端并输入命令，下载好的脚本会放于终端工作路径（默认为主文件夹，即`/home/用户名`）。若go.sh无法下载，可使用文末附有的代码。
+打开终端并输入命令，下载好的脚本会放于终端工作路径。若无法下载，可使用文末附有的代码。
 
 ```
 wget https://install.direct/go.sh
@@ -1921,7 +2002,13 @@ sudo systemctl start v2ray
 sudo systemctl status v2ray
 ```
 
-这时v2ray已经把服务器映射到本地代理127.0.0.1:1080，按照配置系统代理的方式即可使用，类型选择`Socks5`，服务器地址为`127.0.0.1`，端口为`1080`。配置系统代理后就可以配置浏览器代理，以后使用时，可以只打开浏览器代理，而关闭系统代理。
+这时v2ray已经把服务器映射到本地代理127.0.0.1:1080，按照配置代理的方式即可。
+
+```
+类型 / Socks5
+服务器地址 / 127.0.0.1
+端口 / 1080
+```
 
 ### Shadowsocks
 
@@ -1958,7 +2045,7 @@ https://github.com/shadowsocks/shadowsocks-android/releases/
 #### Linux
 
 ```
-https://github.com/shadowsocks/shadowsocks-qt5/releases/
+https://github.com/shadowsocks/shadowsocks-qt5/
 ```
 
 ### Trojan
@@ -1977,7 +2064,344 @@ https://github.com/shadowsocks/shadowsocks-qt5/releases/
 https://github.com/trojan-gfw/igniter/releases/
 ```
 
-### 全平台
+
+### WireGuard
+
+可使用TunSafe。注意该软件为全局代理软件。
+
+打开以下链接并下载`Standalone TunSafe-TAP Installer 9.21.2`和`TunSafe 1.4 Standalone Zip for 64-bit systems`。
+
+```
+https://tunsafe.com/download
+```
+
+下载完成后需要获取配置文件。打开软件，选择File-Browse in Explorer，打开配置文件并选择对应节点即可。
+
+### iOS端说明
+
+未越狱iOS端没有各协议的官方客户端。常用的第三方客户端有Shadowrocket、Quantumult和Kitsunebi等，均需在美区App Store下载。
+
+#### Kitsunebi
+
+支持v2ray（WS/TCP）、Shadowsocks。
+
+打开Kitsunebi，选择服务器，点击右上方+号并选择扫二维码。然后把操作模式改到`Rule`，传出代理选择刚才添加的服务器。完成设置后，在状态页开启VPN开关即可。
+
+#### Shadowrocket
+
+支持v2ray（WS/TCP）、Shadowsocks、Trojan。
+
+#### Quantumult
+
+支持v2ray（WS/TCP）、Shadowsocks。
+
+### 电脑端全平台程序
+
+#### Clash
+
+Clash可用于多个平台。各平台之间的配置文件通用。
+
+##### 下载
+
+###### Mac
+
+可用ClashX和ClashX Pro。ClashX Pro相比ClashX增加了增强模式，可通过以下链接下载。
+
+```
+// ClashX
+https://github.com/yichengchen/clashX/releases/
+
+// ClashX Pro
+https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public
+```
+
+##### 基本配置
+
+ClashX通过配置文件配置订阅、策略组和分流。打开后点击配置-托管配置-管理，添加远程配置文件，即可远程下载。
+
+如果没有远程配置文件，可通过以下链接获取配置模版，也可从附录中获取当前使用的模版。
+
+```
+https://lancellc.gitbook.io/clash/clash-config-file/an-example-configuration-file
+https://github.com/V2RaySSR/Tools/blob/master/clash.yaml
+https://github.com/V2RaySSR/Tools/blob/master/clash.yaml
+https://www.hijk.pw/clash_template.yaml 
+```
+
+其中需要替换的是`proxies`部分，如下。
+
+```
+proxies:
+  # Shadowsocks
+  # The supported ciphers (encryption methods):
+  #   aes-128-gcm aes-192-gcm aes-256-gcm
+  #   aes-128-cfb aes-192-cfb aes-256-cfb
+  #   aes-128-ctr aes-192-ctr aes-256-ctr
+  #   rc4-md5 chacha20-ietf xchacha20
+  #   chacha20-ietf-poly1305 xchacha20-ietf-poly1305
+  - name: "ss1"
+    type: ss
+    server: server
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: "password"
+    # udp: true
+
+  - name: "ss2"
+    type: ss
+    server: server
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: "password"
+    plugin: obfs
+    plugin-opts:
+      mode: tls # or http
+      # host: bing.com
+
+  - name: "ss3"
+    type: ss
+    server: server
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: "password"
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket # no QUIC now
+      # tls: true # wss
+      # skip-cert-verify: true
+      # host: bing.com
+      # path: "/"
+      # mux: true
+      # headers:
+      #   custom: value
+
+  # vmess
+  # cipher support auto/aes-128-gcm/chacha20-poly1305/none
+  - name: "vmess"
+    type: vmess
+    server: server
+    port: 443
+    uuid: uuid
+    alterId: 32
+    cipher: auto
+    # udp: true
+    # tls: true
+    # skip-cert-verify: true
+    # servername: example.com # priority over wss host
+    # network: ws
+    # ws-path: /path
+    # ws-headers:
+    #   Host: v2ray.com
+
+  - name: "vmess-h2"
+    type: vmess
+    server: server
+    port: 443
+    uuid: uuid
+    alterId: 32
+    cipher: auto
+    network: h2
+    tls: true
+    h2-opts:
+      host:
+        - http.example.com
+        - http-alt.example.com
+      path: /
+  
+  - name: "vmess-http"
+    type: vmess
+    server: server
+    port: 443
+    uuid: uuid
+    alterId: 32
+    cipher: auto
+    # udp: true
+    # network: http
+    # http-opts:
+    #   # method: "GET"
+    #   # path:
+    #   #   - '/'
+    #   #   - '/video'
+    #   # headers:
+    #   #   Connection:
+    #   #     - keep-alive
+
+  # socks5
+  - name: "socks"
+    type: socks5
+    server: server
+    port: 443
+    # username: username
+    # password: password
+    # tls: true
+    # skip-cert-verify: true
+    # udp: true
+
+  # http
+  - name: "http"
+    type: http
+    server: server
+    port: 443
+    # username: username
+    # password: password
+    # tls: true # https
+    # skip-cert-verify: true
+    # sni: custom.com
+
+  # Snell
+  # Beware that there's currently no UDP support yet
+  - name: "snell"
+    type: snell
+    server: server
+    port: 44046
+    psk: yourpsk
+    # version: 2
+    # obfs-opts:
+      # mode: http # or tls
+      # host: bing.com
+
+  # Trojan
+  - name: "trojan"
+    type: trojan
+    server: server
+    port: 443
+    password: yourpsk
+    # udp: true
+    # sni: example.com # aka server name
+    # alpn:
+    #   - h2
+    #   - http/1.1
+    # skip-cert-verify: true
+
+  # ShadowsocksR
+  # The supported ciphers (encryption methods): all stream ciphers in ss
+  # The supported obfses:
+  #   plain http_simple http_post
+  #   random_head tls1.2_ticket_auth tls1.2_ticket_fastauth
+  # The supported supported protocols:
+  #   origin auth_sha1_v4 auth_aes128_md5
+  #   auth_aes128_sha1 auth_chain_a auth_chain_b  
+  - name: "ssr"
+    type: ssr
+    server: server
+    port: 443
+    cipher: chacha20-ietf
+    password: "password"
+    obfs: tls1.2_ticket_auth
+    protocol: auth_sha1_v4
+    # obfs-param: domain.tld
+    # protocol-param: "#"
+    # udp: true
+```
+
+也可通过订阅链接转换的方式获取，具体见翻墙进阶部分。
+
+将配置文件保存为yaml后，打开ClashX的配置-打开本地配置文件夹，复制配置文件到此目录，然后在ClashX的配置中选择文件。
+
+完成配置导入后，将出站模式选为规则判断，并勾选`设置为系统代理`即可使用。
+
+##### 局域网共享
+
+勾选配置-允许局域网连接，即可开启局域网共享。在控制台可查看端口，一般为8090。查看本机IP地址并记录，然后对连接到同一局域网即同一Wi-Fi下的设备设置代理`[IP地址]:8090`，即可使用本机的翻墙代理。
+
+#### Surge
+
+##### 下载
+
+###### Mac
+
+```
+https://www.nssurge.com/
+```
+
+将以下内容保存为surge.sh，放置位置与Surge应用程序同级，用终端运行`bash [surge.sh路径]`即可。注意，对于最新版Surge，破解后过一段时间会闪退，因为该脚本的原理是修改时间，最新版的Surge会自动检测时间。断网后可保持Surge不闪退，但这也就无法正常使用。
+
+```
+#!/usr/bin/env bash
+
+cd $(dirname "$0")
+
+read -sp "Password: " pwd
+echo
+rm -rf ~/Library/Application Support/com.nssurge.surge-*
+echo "${pwd}" | sudo -S date 010110002018
+nohup ./Surge.app/Contents/MacOS/Surge &
+sleep 20
+echo "${pwd}" | sudo -S sntp -sS time.apple.com.
+```
+
+##### 基本配置
+
+开启系统代理，出站模式为规则判断。
+
+##### 配置文件
+
+可以直接套用iOS的surge配置文件。
+
+##### 模块
+
+若导入iOS端Surge的模块到Mac端时报错，则检查模块是否有以下语句，有则删除即可。
+
+```
+#!system=ios
+```
+
+##### 远程控制
+
+iOS的Surge可控制Mac的Surge。在Mac修改Surge的配置文件，添加以下行，其中password可以修改为其它内容。
+
+```
+external-controller-access = password@0.0.0.0:6155
+```
+
+打开iOS端的Surge，添加远程控制器，IP填写Mac端的IP，端口为6155，密码为password部分的内容，配置完成即可。
+
+##### 第三方工具
+
+常用的第三方工具有YASD和xurge。以YASD为例说明其使用方法。
+
+打开以下网站，点击添加新主机，参数为Surge配置文件的[general]模块下的http-api，一般为0.0.0.0或127.0.0.1，保存即可使用。
+
+```
+http://yasd.nerdynerd.org/home
+```
+
+##### 软路由
+
+###### 通过代理
+
+Surge开启时，会自动开启http和socks5代理，实现局域网共享。在启动日志中可看到`SOCKS5 代理服务已启动，监听在 127.0.0.1，端口号 6153`和`HTTP 代理服务已启动，监听在 127.0.0.1，端口号 6152`的记录。
+
+对于同一网络下的设备，若该设备需要翻墙，则在该设备上手动设置代理即可，其中服务器IP为安装有Surge的电脑IP，端口在记录中可查询到。
+
+###### 通过增强模式
+
+即网关模式、协议转换器，可以实现网络间的相互连接。
+
+点击系统偏好设置-网络，选择当前使用的网络，点击高级-TCP/IP，在配置IPV4下选择手动，然后即可开启Surge的增强模式。
+
+对于同一网络下的设备，若该设备需要翻墙，则在该设备上手动设置代理，其中服务器IP填写同网段内任意一个设备的IP，子网掩码保持不变（255.255.255.0），路由器地址/网关地址为
+Mac的IP，DNS为Mac中网络偏好设置-DNS服务器下的记录，该DNS由surge创建，一般为198.18.0.2。
+
+###### 通过DHCP服务器模式
+
+该方法不需要配置代理设备，只需在Mac端配置即可。但配置出错会导致连接该网络的所有设备瘫痪。
+
+要启用该功能，需要关闭现有的DHCP，因为DHCP将由Surge接管。DHCP通常由路由器提供，需要参考路由器的配置页面。
+
+在Surge的配置中，需手动配置至少一个有效的DNS服务器，即Surge DNS不能全部指向内网。
+
+本设备不应断电或断网，否则将影响其余所有设备，因此Surge会强制禁止电脑休眠。本设备应使用有线连接网络，无线网络可能导致严重的性能问题。
+
+完成如上配置后，即可在Surge中点击设置-DHCP服务器，开启后记录详细网络参数以防配置错误。回到设备页，可以看到所有连接到该网络的设备。对于要设置翻墙的设备，右键点击使用surge作为网关即可。
+
+##### 常见问题
+
+###### 与AdGuard冲突
+
+关闭surge系统代理。保证http和socks5代理打开的情况下，打开增强模式。在adguard的高级设置中，将adguard的上游代理（upstream.proxy）设置为surge的代理端（socks5://locaalhost:6153），不要打开udp即可。
+
+也可通过另一种方式。进入Adguard高级设置并点击恢复默认，首选项关闭自动过滤应用程序流量，打开http代理。进入系统网络偏好设置，点击高级-代理-网页代理（HTTP），填入adguard的http代理内容，然后正常启动Surge即可。
 
 #### Trojan-Qt5
 
@@ -2000,7 +2424,7 @@ https://qv2ray.github.io/
 https://github.com/v2ray/v2ray-core/releases
 ```
 
-打开Qv2ray，点击`首选项`-`内核设置`，将`核心可执行文件路径`设置刚才所新建的文件夹下的v2ray.exe目录（Mac为v2ray文件），`V2ray资源目录`设置为刚才所新建的文件夹下的目录，然后点击`核心验证`确认配置完成。
+打开Qv2ray，点击首选项-内核设置，将`核心可执行文件路径`设置刚才所新建的文件夹下的v2ray.exe目录（Mac为v2ray文件），`V2ray资源目录`设置为刚才所新建的文件夹下的目录，然后点击`核心验证`确认配置完成。
 
 ## 二级代理
 
@@ -2010,83 +2434,32 @@ https://github.com/v2ray/v2ray-core/releases
 
 准备好客户端及其副本。打开客户端并连接中转节点，然后打开另一个客户端，将会提示端口被占用，因为默认端口均为1080。因此修改本客户端的本地端口为1081或其它值，然后设置该客户端连接服务器节点，代理模式选择全局模式即可。
 
+
 # 翻墙进阶
+
+## 可用性检查
+
+### IP连通性
+
+可通过以下网站测试IP的连通性。
+
+```
+https://www.vps234.com/ipchecker/
+http://ping.pe/
+https://torch.njs.app/
+https://www.ipaddress.com/
+https://www.ip-adress.com/
+https://whoer.net/zh
+https://tuna.moe/help/dns/
+```
+
+如果IP不通，则需要更换IP。如果IP全通，但翻墙连不上，则一般为端口被封，更换端口即可。
 
 ## 订阅链接
 
-为防止配置更改导致的失效问题，可通过制作订阅的方式。更新订阅即可更新服务器配置，无需逐个修改。
-
-### 制作
-
-由于大部分v2ray客户端的分享链接采用v2rayN标准，因此需先在v2rayN上完成各服务器的配置。选中所有需要配置成订阅的服务器，右键选择`批量导出分享URL至剪贴板`，然后打开以下网站，将刚才复制的内容编码成BASE64。
-
-```
-https://tool.oschina.net/encrypt?type=3
-```
-
-编码完成后回到Github并新建文件，文件名任意，后缀为txt。将编码后的内容复制到文本区域，保存后点击`Commit changes`，成功后点击`Raw`，复制得到的网址，即为所得订阅链接。本链接可用于大部分客户端。
-
-对于Quantumult，由于其使用自有标准，因此无法使用以上链接。可通过以下网站生成适用于Quantumult的订阅，其中`订阅链接`填写从v2rayN得到的URL，远程配置选择`No-Urltest`，并勾选`输出为Node List`，得到链接。可直接用该链接作为订阅URL，也可在浏览器打开该链接下载文件得到文件内容。
-
-```
-https://sud.bianhuabai.xyz/
-```
-
-也可手动完成本操作。在已经配置好服务器的Quantumult上获取服务器的分享链接，删除`vmess://`前缀后放到上述BASE64网站进行解码，解码内容应如下所示。
-
-```
-[名称] = vmess, [地址], [端口], [加密方式], [UUID], [选项]
-```
-
-对于vmess节点，在后面加上`, group=[名称]`，例子如下所示。注意，对于vmess节点，每一个订阅需要有唯一的group名称，否则在订阅更新时会被覆盖。若为ss节点，则无需进行操作。
-
-```
-example = vmess, 1.2.3.4, 1234, aes-128-cfb, "12345678-8765-4321-1234-123456789abc", over-tls=false, certificate=1, group=TCP
-```
-
-重新编码为BASE64并添加`vmess://`前缀，得到一个可用的链接。其余服务器同理，从而得到一系列可用的链接。将这些链接进行一次BASE64编码即可。如果手动编辑后的连接不可用，则尝试在后面加一个空格，再编码为BASE64并添加`vmess://`前缀。
-
-注意，通过上述一键生成配置网站所生成的文件已经经过处理，但每一个订阅都使用同一个group名称，从而会导致服务器的覆盖。因此需要手动解码，解码一次后得到服务器列表，去掉`vmess://`前缀后解码得到服务器信息，更改group后再次编码即可。
-
-### 发布
-
-#### 放到Github上
-
-登录Github并新建一个Repository，类型为Public，需勾选`Initialize this repository with a README`，完成创建。删除README以减少被搜索出来的几率。
-
-在仓库内新建一个文本文档并编辑，将上面制作好的订阅内容复制进去后保存。然后点击`Raw`，跳转到的链接即为订阅地址。
-
-#### 放到自有服务器上
-
-用SSH连接到服务器，新建一个php文档，内容如下。
-
-```
-<?php
-$str = file_get_contents("./res.txt", "r") or die("Unable to open file!"); echo base64_encode($str);
-?>
-```
-
-新建名称为`res.txt`的文本文件，将上面制作好的订阅内容复制进去即可。php文档的地址即为订阅地址。
-
-### 使用
-
-如果配置无法更新，则需先连接到翻墙环境。
-
-#### Quantumult
-
-点击`设置`-`订阅`，选择右上角的`+`，添加服务器配置，填写订阅URL即可。
-
-#### Shadowrocket
-
-点击右上角`+`号，类型选择Subscribe即可。
-
-#### Kitsunebi
-
-点击服务器，选择右上角的`+`，点击`订阅`，填写订阅URL即可。
-
 ### 格式
 
-以下为经base64解码后的格式。
+去掉前缀并经base64解码后，可得到不同协议的节点配置格式。
 
 #### Shadowsocks
 
@@ -2098,12 +2471,9 @@ ss://method:password@server:port
 
 ```
 ssr://ip:port:protocol:method:blending:password/?remarks=othertext
-```
 
-其余形式如下。其中obfsparam、protoparam、group、remarks可选。
-
-```
-159.65.1.189:5252:auth_sha1_v4:rc4-md5:http_simple:NTJzc3IubmV0/?obfsparam=&protoparam=&group=d3d3LnNzcnNoYXJlLmNvbQ&remarks=RE1fTm9kZQ
+// 其余形式如下，其中obfsparam、protoparam、group、remarks可选
+ssr://159.65.1.189:5252:auth_sha1_v4:rc4-md5:http_simple:NTJzc3IubmV0/?obfsparam=&protoparam=&group=d3d3LnNzcnNoYXJlLmNvbQ&remarks=RE1fTm9kZQ
 ```
 
 #### v2ray
@@ -2122,11 +2492,238 @@ ssr://ip:port:protocol:method:blending:password/?remarks=othertext
 }
 ```
 
+### 转换
+
+#### 边缘转换
+
+网址如下。
+
+```
+https://bianyuan.xyz/
+```
+
+以生成适用于Quantumult的订阅为例，`订阅链接`填写`vmess://`开头的链接或机场订阅，远程配置选择`No-Urltest`，并勾选`输出为Node List`，得到链接。
+
+可直接将得到的链接作为订阅URL，也可在浏览器打开该链接下载文件得到文件内容。
+
+#### QuantumultX-Surge-API
+
+网页版地址如下。
+
+```
+https://dove.589669.xyz/web
+```
+
+用法可查看以下链接。
+
+```
+https://github.com/KOP-XIAO/QuantumultX-Surge-API
+```
+
+#### Surgio
+
+```
+https://surgio.js.org/
+https://github.com/surgioproject/surgio
+```
+
+#### ConfigConverters
+
+```
+https://github.com/ImSingee/ConfigConverter
+```
+
+#### subconverter
+
+```
+https://github.com/tindy2013/subconverter
+```
+
+### 制作
+
+为防止服务器配置更改导致节点失效，可通过制作订阅的方式。更新订阅即可更新服务器配置，无需逐个修改。
+
+#### 通用方法
+
+在Github上新建仓库，以用于存放配置文件。
+
+以v2ray节点为例，由于大部分v2ray客户端的分享链接采用v2rayN标准，因此需先在v2rayN上完成各服务器的配置。选中所有需要配置成订阅的服务器，右键选择`批量导出分享URL至剪贴板`，然后打开以下网站，将刚才复制的内容编码成BASE64。
+
+```
+https://tool.oschina.net/encrypt?type=3
+```
+
+编码完成后回到Github并新建文件，文件名任意，后缀为txt。将编码后的内容复制到文本区域，保存后点击`Commit changes`，成功后点击`Raw`，复制得到的网址，即为所得订阅链接。本链接可用于大部分客户端。
+
+#### 特殊处理
+
+##### Quantumult
+
+Quantumult无法使用以上链接，可通过订阅链接转换中的方式完成转换。需要注意，通过一键生成配置网站所生成的文件已经过处理，但每一个订阅都使用同一个group名称，从而会导致多个订阅链接更新时服务器的覆盖。因此需要手动base64解码，解码一次后得到服务器列表，去掉`vmess://`前缀后再次解码得到服务器信息，更改group后重新编码，即得到可用链接。
+
+也可手动完成本操作。在已经配置好服务器的Quantumult上获取服务器的分享链接，删除`vmess://`前缀后放到上述BASE64网站进行解码，解码内容应如下所示。
+
+```
+[名称] = vmess, [地址], [端口], [加密方式], [UUID], [选项]
+```
+
+对于Vmess节点，在后面加上`, group=[名称]`，例子如下所示。注意，对于vmess节点，每一个订阅需要有唯一的group名称，否则在订阅更新时会被覆盖。若为Shadowsocks节点，则无需进行操作。
+
+```
+example = vmess, 1.2.3.4, 1234, aes-128-cfb, "12345678-8765-4321-1234-123456789abc", over-tls=false, certificate=1, group=TCP
+```
+
+重新编码为BASE64并添加`vmess://`前缀，得到一个可用的链接。其余服务器同理，从而得到一系列可用的链接，将这些链接进行一次BASE64编码即可。
+
+如果手动编辑后的连接不可用，则尝试在后面加一个空格，再编码为BASE64并添加`vmess://`前缀。
+
+对于Shadowsocks节点，则按照以下格式编写ss可用链接，将所有可用链接进行一次BASE64编码即可。
+
+```
+ss://[base64编码后的method:password]@[地址]:[端口]&group=[组名]#[名称]
+```
+
+##### Surge
+
+Surge订阅格式如下所示，注意不能进行base64解码。
+
+```
+// Vmess
+[名称] = vmess, [地址], [端口], username=[用户名], ws=true/false, (ws-path=[路径], ws-headers=[Host:地址],) tls=true/false
+
+// Shadowsocks
+[名称] = ss, [地址], [端口]&group=[组名], encrypt-method=[加密方式], password=[密码], tfo=true/false, udp-relay=true/false
+```
+
+#### 链接发布
+
+##### 放到Github上
+
+登录Github并新建一个Repository，类型为Public，需勾选`Initialize this repository with a README`，完成创建。删除README以减少被搜索出来的几率。
+
+在仓库内新建一个文本文档并编辑，将上面制作好的订阅内容复制进去后保存。然后点击`Raw`，跳转到的链接即为订阅地址。
+
+##### 放到自有服务器上
+
+用SSH连接到服务器，新建一个php文档，内容如下。
+
+```
+<?php
+$str = file_get_contents("./res.txt", "r") or die("Unable to open file!"); echo base64_encode($str);
+?>
+```
+
+新建名称为`res.txt`的文本文件，将上面制作好的订阅内容复制进去即可。php文档的地址即为订阅地址。
+
+
+
+
+## 反代网站
+
+反代通过访问本网站，而本网站再访问其它网站的方式实现翻墙。
+
+### 现成网站
+
+```
+https://search.snopyta.org/
+http://webproxy.to/
+https://weboas.is/
+https://www.croxyproxy.com/
+```
+
+### 自行搭建
+
+#### jsproxy
+
+仓库如下。
+
+```
+https://github.com/EtherDream/jsproxy
+```
+
+##### 搭建到Cloudflare Worker
+
+打开第一个网页，完成注册后登录。然后打开第二个网页并点击`Start building`，子域名可以任意填写，计划选择免费，并创建worker。
+
+```
+https://dash.cloudflare.com/
+https://workers.cloudflare.com/
+```
+
+进入worker页面，更改三级域名，删除原始脚本。然后打开以下网页，复制代码到worker的脚本处，点击下方`保存并部署`，然后进行预览。使用时直接输入域名对应的网址即可。
+
+```
+https://github.com/EtherDream/jsproxy/blob/master/cf-worker/index.js
+```
+
+#### siteproxy
+
+部署方法与jsproxy基本一致。仓库如下。
+
+```
+https://github.com/netptop/siteproxy
+```
+
+#### zmirror
+
+需要VPS，通过以下脚本一键部署。仓库如下。
+
+```
+https://github.com/aploium/zmirror
+https://github.com/aploium/zmirror-onekey
+```
+
+##### Ubuntu
+
+支持Ubuntu 14.04、15.04(不支持HTTP2)、15.10、16.04+和Debian 8(不支持HTTP/2)。推荐Ubuntu 16.04 x86_64。
+
+```
+https://github.com/yumin9822/zmirror-docker/blob/master/zmirror-ubuntu.sh
+```
+
+##### Debian
+
+```
+https://github.com/yumin9822/zmirror-docker/blob/master/zmirror-debian.sh
+```
+
+##### CentOS 6
+
+```
+https://github.com/yumin9822/zmirror-docker/blob/master/zmirror-centos6.sh
+```
+
+#### jenssegers/proxy
+
+可通过composer安装。
+
+```
+composer require jenssegers/proxy
+```
+
+仓库如下。
+
+```
+https://github.com/jenssegers/php-proxy
+```
+
 ## 服务器加速
 
-### BBR Plus
+### BBR
 
-在服务器输入以下命令以安装脚本。注意需要先安装BBR Plus内核，安装过程中弹框需选择`NO`。
+#### 一键安装脚本
+
+逗比版。
+
+```
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/bbr.sh && chmod +x bbr.sh && bash bbr.sh
+```
+
+### 全类型
+
+#### 一键安装脚本
+
+在服务器输入以下命令以安装脚本。以安装BBR Plus为例，需要先安装BBR Plus内核，安装过程中弹框需选择`NO`。
 
 ```
 wget --no-check-certificate -O tcp.sh https://github.com/cx9208/Linux-NetSpeed/raw/master/tcp.sh && chmod +x tcp.sh && ./tcp.sh
@@ -2157,13 +2754,316 @@ addEventListener(
 
 点击`保存`后，在客户端配置中复制一份原来的配置，把域名换成workers服务器的域名即可。原来的配置仍然可用。
 
+## 处理DNS污染
+
+可通过Accesser。以Mac为例，打开第一个链接并下载源码，解压后打开第二个链接下载dnscrypt-proxy，放到解压好的文件夹的dnscrypt目录下。
+
+```
+https://github.com/URenko/Accesser
+https://github.com/jedisct1/dnscrypt-proxy/releases
+```
+
+打开终端并运行以下命令。
+
+```
+brew install openssl
+pip3 install tld dnspython tornado
+env ARCHFLAGS="-arch x86_64" LDFLAGS="-L/usr/local/opt/openssl/lib" CFLAGS="-I/usr/local/opt/openssl/include" pip install cryptography
+pip3 install pyopenssl
+```
+
+打开网络偏好设置，选择当前连接的网络并点击`高级`，选择代理-自动代理配置，填写以下URL后保存。
+
+```
+http://127.0.0.1:7654/pac/
+```
+
+终端切换到源码目录并运行以下命令，在弹出的窗口点击导入证书，下载后双击安装。在弹出的`钥匙串访问`对话框中双击刚才安装的证书，在`信任`下选择始终信任。保持网页打开，即可访问受到DNS污染的网站。
+
+```
+python3 accesser.py
+```
+
 ## Vmware虚拟机使用代理
 
 虚拟机使用宿主机代理，不用设置额外VMware的转发，只需添加代理的地址与端口。手机也能使用虚拟机所配置的本机代理服务器，不需要同宿主机设置专属的VMware转发。
 
 除默认配置的仅主机模式外，宿主机使用VPN会影响全局网络，虚拟机可以直接访问互联网。在NAT模式中，虚拟机通过宿主机器所在的公网网络来访问互联网（目前在墙内），Vmware使用代理软件转发端口监听任意地址，主机在代理中配置同一公网内的局域网IP与端口，完成网络之间的互联共享。在NAT模式中不考虑使用VPN或代理的情况下，IP地址是完全一致的。
 
-虚拟机采用的是非全局性的独立网络，也因此在虚拟机使用VPN并不能使宿主机也能够访问互联网，但能够进行相关配置。在Vmware中开启翻墙软件，安装Privoxy并配置相关参数为`0.0.0.0:8118`，将所有HTTP流量再转发至本机代理，然后在系统设置的代理中设置以上参数。打开命令行并通过`ipconfig`查看虚拟机的IP地址。在Vmware软件中设置端口映射，然后在主机的系统设置的代理中填入Vmware的IP地址和端口即可。
+虚拟机采用的是非全局性的独立网络，也因此在虚拟机使用VPN并不能使宿主机也能够访问互联网，但能够进行相关配置。
+
+在Vmware中开启翻墙软件。下载Privoxy，该软件可将sock协议转换为http/https协议。
+
+```
+https://www.privoxy.org/
+```
+
+安装后配置相关参数为`0.0.0.0:8118`，将所有HTTP流量再转发至本机代理，然后在系统设置的代理中设置以上参数。打开命令行并通过`ipconfig`查看虚拟机的IP地址。在Vmware软件中设置端口映射，然后在主机的系统设置的代理中填入Vmware的IP地址和端口即可。
+
+## 翻墙协议
+
+### Shadowsocks
+
+#### 一键安装脚本
+
+```
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/ss-go.sh && chmod +x ss-go.sh && bash ss-go.sh
+```
+
+#### 原版
+
+```
+https://github.com/shadowsocks/shadowsocks/tree/master
+```
+
+#### go-shadowsocks2
+
+以Go语言编写的Shadowsocks实现。
+
+```
+https://github.com/shadowsocks/go-shadowsocks2
+```
+
+#### shadowsocks-libev
+
+Shadowsocks的轻量化实现。
+
+```
+https://github.com/shadowsocks/shadowsocks-libev
+```
+
+可使用一键脚本安装，仓库如下。
+
+```
+https://github.com/lrinQVQ/script
+```
+
+### ShadowsocksR
+
+#### 一键安装脚本
+
+##### 脚本一
+
+```
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+```
+
+##### 脚本二
+
+```
+https://github.com/the0demiurge/CharlesScripts/blob/master/charles/bin/ssr
+```
+
+##### 脚本三
+
+逗比版，支持单端口/多端口切换和管理。
+
+```
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+```
+
+#### 原版
+
+安装完成后，输入ssr help可以查看详细的命令列表。
+
+##### 方法一
+
+```
+sudo apt install aptitude && sudo aptitude full-upgrade && sudo reboot
+sudo aptitude install git
+sudo aptitude install python-pip
+sudo aptitude install curl libcurl3 libcurl3-dev php5-curl
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo aptitude full-upgrade && sudo apt-get install yarn
+sudo yarn global add ssr-helper
+sudo aptitude full-upgrade
+cd ~
+sudo git clone -b manyuser https://github.com/shadowsocksr-backup/shadowsocksr.git
+ssr config ~/shadowsocksr
+```
+
+##### 方法二
+
+```
+sudo apt install aptitude && sudo aptitude full-upgrade && sudo reboot
+sudo aptitude install git
+sudo aptitude install npm
+sudo aptitude install python-pip
+sudo npm install -g ssr-helper
+sudo aptitude full-upgrade
+cd ~
+sudo git clone -b manyuser https://github.com/shadowsocksr-backup/shadowsocksr.git
+ssr config ~/shadowsocksr
+```
+
+### V2ray
+
+#### 一键安装脚本
+
+##### 脚本一
+
+```
+// 安装
+source <(curl -sL https://multi.netlify.app/v2ray.sh) --zh
+
+// 升级
+source <(curl -sL https://multi.netlify.app/v2ray.sh) -k
+
+// 卸载
+source <(curl -sL https://multi.netlify.app/v2ray.sh) --remove
+```
+
+##### 脚本二
+
+一键部署WebSocket+Tls+Nginx+Web。
+
+```
+wget -N --no-check-certificate -q -O install.sh "https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install.sh" && chmod +x install.sh && bash install.sh
+```
+
+##### 脚本三（原版）
+
+```
+// 安装
+bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
+
+// 卸载
+bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh) --remove
+```
+
+#### V2ray.Fun
+
+V2ray控制脚本。
+
+```
+https://github.com/v2ray-fun/v2ray.fun
+https://github.com/FunctionClub/V2ray.Fun
+```
+
+### brook
+
+#### 一键安装脚本
+
+##### 脚本一
+
+```
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/brook.sh && chmod +x brook.sh && bash brook.sh
+```
+
+##### 脚本二
+
+```
+curl -L https://github.com/txthinking/brook/releases/download/v20200909/brook_linux_amd64 -o /usr/bin/brook
+chmod +x /usr/bin/brook
+// 启动brook并增加守护进程，端口设置为9999，密码设置为password
+setsid ./brook server -l :9999 -p password
+```
+
+### trojan
+
+#### 一键安装脚本
+
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/atrandys/trojan/master/trojan_mult.sh)"
+```
+
+
+### WireGuard
+
+#### 一键安装脚本
+
+```
+curl -O https://raw.githubusercontent.com/atrandys/wireguard/master/wg_mult.sh && chmod +x wg_mult.sh && ./wg_mult.sh
+```
+
+安装完成后需要下载/etc/wireguard/client.conf到本地。可通过以下命令直接打开该文件，然后复制文本内容至本地。
+
+```
+cat /etc/wireguard/client.conf
+```
+
+也可通过以下命令下载文件。
+
+```
+yum -y install lrzsz
+sz /etc/wireguard/client.conf
+```
+
+使用客户端时配置文件选择刚才下载的conf即可。
+
+### 全平台快速搭建
+
+#### ProxySU
+
+适用于Windows。打开以下链接以下载ProxySU。
+
+```
+https://github.com/proxysu/ProxySU
+```
+
+完成后在本地打开，按照流程进行即可。
+
+## 相关命令
+
+### 关闭防火墙
+
+适用于CentOS。
+
+```
+// 查看防火墙状态
+firewall-cmd --state
+
+// 停止防火墙
+systemctl stop firewalld.service
+
+// 禁止防火墙开机启动
+systemctl disable firewalld.service
+```
+
+### 修改中国时区
+
+```
+\cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+```
+
+### 利用NTP同步时间协议
+
+```
+// CentOS
+yum install ntp ntpdate -y
+// Ubuntu/Debian
+apt-get install ntp ntpdate -y
+
+service ntpd stop
+ntpdate us.pool.ntp.org
+service ntpd start
+```
+
+### 提示curl: command not found
+
+未安装curl导致。通过以下命令安装。
+
+```
+// ubuntu/debian系统
+apt-get update -y && apt-get install curl -y
+
+// centOS系统
+yum update -y && yum install curl -y
+```
+
+### 提示wget: command not found
+
+未安装wget导致。通过以下命令安装。
+
+```
+// ubuntu/debian系统
+apt-get update -y && apt-get install -y wget
+
+// centOS系统
+yum update -y && yum install -y wget
+```
+
 # 服务器进阶
 
 ## SSH连接
@@ -2293,6 +3193,16 @@ ps -aux | grep python3
 kill [PID]
 ```
 
+也可通过pm2的方式。安装pm2管理器后运行以下命令即可。
+
+```
+pm2 start [test.py] --name [name]
+pm2 save
+pm2 startup
+```
+
+结束运行的命令与上面一致。
+
 ## 网盘文件下载
 
 ### Google Drive
@@ -2317,6 +3227,15 @@ wget --no-check-certificate ‘https://docs.google.com/uc?export=download&id=FIL
 wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=FILEID' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=FILEID" -O FILENAME && rm -rf /tmp/cookies.txt
 ```
 
+#### 通过gdown
+
+在终端输入以下命令即可。
+
+```
+pip install gdown
+gdown https://drive.google.com/uc?id=[文件ID]
+```
+
 #### 通过gdown脚本
 
 下载以下脚本。
@@ -2329,15 +3248,6 @@ https://raw.githubusercontent.com/circulosmeos/gdown.pl/with-resume/gdown.pl
 
 ```
 ./gdown.pl [文件链接] [重命名的文件名]
-```
-
-#### 通过gdown
-
-在终端输入以下命令即可。
-
-```
-pip install gdown
-gdown https://drive.google.com/uc?id=[文件ID]
 ```
 
 ## 创建图形界面系统
@@ -2402,73 +3312,250 @@ https://remotedesktop.google.com/access/
 
 安装完成后，通过SSH连接服务器并运行`matlab`即可调用matlab。
 
-## 端口限速
+## 端口限制上行网速
 
-教程如下。
+在命令行输入以下命令，检查`iptables`和`tc`是否被安装，若未安装则通过apt等软件包管理器安装。
 
 ```
-https://51.ruyo.net/2877.html
+iptables -V
+tc -V
+```
+
+通过以下命令查看网卡。需要找到外网网卡，可通过IP地址判断。
+
+```
+ifconfig
+```
+
+以eth0为例，命令如下。
+
+```
+// 清理iptables Mangle规则
+iptables -t mangle -F
+
+// 清理eth0上原有的队列类型
+tc qdisc del dev eth0 root
+
+// 给eth0添加一个根规则
+tc qdisc add dev eth0 root handle 1: htb default 1
+
+// 创建根类（100mbps替换成服务器的实际带宽）
+tc class add dev eth0 parent 1: classid 1:1 htb rate 100mbps
+
+// 创建支类限速（以下数据根据需要进行替换）
+// rate1500Kbit代表最大带宽1536Kbit/s
+// ceil 2048Kbit代表突发带宽2048Kbit/s
+// ceil>=rate
+// 1:5指每5秒钟检查一次
+tc class add dev eth0 parent 1:1 classid 1:5 htb rate 1500Kbit ceil 2048Kbit prio 1
+
+// 创建过滤器（flowid和上一条的classid对应）
+tc filter add dev eth0 parent 1:0 prio 1 protocol ip handle 5 fw flowid 1:5
+
+// 借助iptables针对端口限速（80为端口号）
+iptables -A OUTPUT -t mangle -p tcp --sport 80 -j MARK --set-mark 5
+
+// 限制多端口
+// iptables -A OUTPUT -t mangle -p tcp --sport 80,25,443,8989 -j MARK --set-mark 5
+
+// 限制10000-20000端口
+// iptables -A OUTPUT -t mangle -p tcp --sport 10000:20000 -j MARK --set-mark 5
 ```
 
 ## 挂机赚钱
 
 ### Vagex
 
-教程如下。
+在命令行输入以下命令以安装容器。
 
 ```
-https://51.ruyo.net/3290.html
+docker run -d --name alpine-ssh-xfce4-vnc -p 22:22 -p 3389:3389 charliev5/alpine-desktop
+```
+
+安装完成后通过远程桌面连接到服务器，然后用Firefox打开以下网址，注册后安装插件并重启浏览器即可。
+
+```
+https://vagex.com/
+```
+
+可通过以下命令检查是否正常运行。
+
+```
+wget https://raw.githubusercontent.com/WangCharlie/alpine-ssh-xfce4-vnc/master/check.sh
+sh check.sh
 ```
 
 ### eBesucher
+
+官网如下。
 
 ```
 https://www.ebesucher.com/
 ```
 
-教程如下。
-
-```
-https://51.ruyo.net/5383.html
-```
-
 ### Google Adsense
+
+需要有个人网站。可用西联汇款收款。
 
 ```
 https://www.google.com.tw/intl/zh-CN_cn/adsense/start/?utm_campaign=redirect-301
 ```
 
-教程如下。
+# 特殊工具
+
+## Tor
+
+Tor是经过层层加密的浏览器，从使用者本机直到出口节点的传输是强加密的，其他人无法偷窥到真实网络流量，除非Tor软件本身出现严重安全漏洞，或者碰到的出口节点是蜜罐节点（或称为陷阱节点），即故意引诱用户攻击的目标。
+
+Tor主要用于隐匿上网身份，也可用于伪装别国网民、隐匿公网IP、保护隐私等。Tor的官方Wiki如下。
 
 ```
-https://51.ruyo.net/12240.html
+https://gitlab.torproject.org/legacy/trac/-/wikis/home
 ```
 
-# 常见问题
+### 原理
 
-## 提示curl: command not found
+#### Tor联网
 
-服务器未安装curl导致。通过以下命令安装。
+当Tor客户端启动之后，会首先连接Tor的目录服务器，从目录服务器中获取全球的Tor节点信息。访问网站时，Tor客户端会随机挑选三个节点用于中转，如下。
+
+| 节点类型 |                    特点                    |
+|----------|--------------------------------------------|
+| 入口节点 | 直接与本机或前置代理（若使用双重代理）相连 |
+| 中间节点 | 介于入口节点和出口节点之间，该节点威胁最小 |
+| 出口节点 | 直接与访问的目标网站相连，该节点威胁最大   |
+
+只有出口节点会看到用户的上网行为，包括访问的网站、从该网站传输的流量等。其它节点完全无法了解上网行为。
+
+如果这个网站使用HTTPS协议，出口节点看到的原始流量是HTTPS的密文。但如果这个网站使用HTTP 协议，那么出口节点看到的原始流量是HTTP的明文。
+
+Tor为了加强隐匿性，会动态变化中转线路，每隔一段时间随机挑选三个节点，重新构造一条传输线路。因为线路动态变化，出口节点自然也动态变化，所以即使出口节点偷窥上网行为，也只能看到一个短暂的片段。
+
+#### 流量混淆
+
+若ISP和墙在监控流量，则可以判断出在使用Tor。因此需要使用流量混淆，把Tor流量伪装成其它的上网流量。出于软件架构方面的考虑，流量混淆通过插件的方式来提供，因为混淆流量的方式是多种多样的。
+
+meek是常用的流量混淆插件，可以把Tor流量伪装成访问云计算平台的流量。当数据流量到达云计算平台之后，会经过一系列中转，最终转向真正访问的网站。由于传输流量经过伪装，墙比较难区分伪装的Tor流量和真正访问云计算的普通流量，而且meek依赖的云计算平台都是亚马逊、微软等大公司提供，墙不会轻易封锁其公网IP。
+
+### 使用
+
+#### 配置
+
+打开以下链接下载并安装。Mac也可直接通过Homebrew安装，但通过此方法安装的Tor并没有图形界面。
 
 ```
-// ubuntu/debian系统
-apt-get update -y && apt-get install curl -y
+https://www.torproject.org/download/
+```
 
-// centOS系统
-yum update -y && yum install curl -y
+也可通过发送标题为`help`的邮件到`gettor@torproject.org`获取。
+
+安装完成后需要寻找支持HTTPS代理或Socks代理的代理，注意不能是HTTP代理。可以通过公共代理节点，也可通过在本地挂翻墙软件实现，大部分翻墙软件都可以与Tor组合。打开翻墙软件后，从配置中查看代理类型、代理地址和端口，比如SOCKS5代理的`localhost:1081`。
+
+注意，GoAgent是Google Agent Engine（GAE）翻墙工具的一种，似乎只提供HTTP代理，没有提供原生的HTTPS代理，因此不能用作Tor的代理节点。
+
+打开Tor后点击配置，勾选`我所在的国家对Tor进行了审查`，并选择`选择内置网桥`。勾选`使用代理访问互联网`，填入上面查询的内容，然后连接即可。
+
+#### 验证
+
+可通过以下链接判断当前是否在使用Tor。
+
+```
+https://check.torproject.org/
+```
+
+#### 屏蔽节点
+
+为避免蜜罐节点，可通过修改Tor的配置文件，规避特定地区的节点。打开Tor的配置文件torrc，添加以下内容。其中ExcludeNodes表示排除这些地区的节点，StrictNodes表示强制执行。
+
+如果不设置strictnode 1，Tor首先也会规避ExcludeNodes列出的这些地区，但如果Tor找不到可用的线路，就会去尝试位于排除列表中的节点。如果设置了strictnode 1，即使Tor找不到可用的线路，也不会去尝试这些地区的节点。
+
+```
+ExcludeNodes  {cn},{hk},{mo}
+StrictNodes  1
+```
+
+其余代码如下，可根据需求自行获取。
+
+```
+北朝鲜 / {kp}
+伊朗 / {ir}
+叙利亚 / {sy}
+巴基斯坦 / {pk}
+古巴 / {cu}
+越南 / {vn}
+```
+
+#### 共享Tor通道
+
+打开Tor的配置文件torrc，新增以下内容。
+
+```
+SocksListenAddress 0.0.0.0:9150
+// SOCKSPort  0.0.0.0:9150
+```
+
+重启Tor后，Tor的监听端口将绑定到0.0.0.0，即任何地址（任何机器）都可以连接到Tor 的监听端口。可能需要修改防火墙配置，允许Tor监听端口的TCP连入。
+
+#### 特殊说明
+
+Tor可以打开特有的onion域名链接，导航如下。注意抵制诱惑。
+
+```
+https://thehiddenwiki.org/
+```
+
+## ZeroNet
+
+也称零网，利用比特币加密和BT技术提供不受审查的网络与通信的BT平台。ZeroNet默认不匿名，用户可以通过内置的Tor功能进行匿名化。ZeroNet需要全局翻墙才能使用。
+
+打开以下链接并下载软件包，双击打开即可。
+
+```
+https://zeronet.io/
+```
+
+### ZeroMe
+
+打开后点击ZeroMe，点击右上角允许请求权限，进入请求认证证书界面，输入用户名后即可授权成功。点击`在用户数据库中搜索`可查看已注册用户并拉入黑名单，点击右上角的`0`图标可回到控制台首页，在设置中也可管理屏蔽用户。再次进入ZeroMe，选择已注册好的账户并下载相关组件，完成之后加入即可。
+
+### 备份用户数据
+
+若将Zeronet整个文件夹删除，重新载入则失去对当前账户的所有权且无法找回，因此需备份users.json文件。
+
+重新载入时，打开ZeroNet让其生成data文件夹，复制已备份好的users.json文件放置在data文件夹。重启ZeroNet并打开ZeroMe，下载完数据库点击授权，再重启ZeroNet打开ZeroMe即可。
+
+### 网址导航
+
+若遇到site Blocked或disable proxy，将`www.zerogate.tk`换成127.0.0.1:43110即可。
+
+```
+// 零搜索
+https://www.zerogate.tk/lingdu.bit
+
+// 零123导航
+https://www.zerogate.tk/0123.bit
+
+// 海盗湾种子站
+http://127.0.0.1:43110/1PLAYgDQboKojowD3kwdb3CtWmWaokXvfp/
+
+// Kindle电子书
+http://127.0.0.1:43110/1KHCBG6dmbKXTZNenfwhWZ5x3oDyYyHSD4
+
+// 中文主题
+http://127.0.0.1:43110/1NzWeweqJ32aRVdM5UzFnYCszuvG5xV3vS
 ```
 
 # 附录
 
 ## 通过信用卡验证
 
-使用VPS服务需要VISA或Mastercard的卡，不同VPS的验证标准不同。
+使用VPS服务需要VISA或Mastercard的卡，不同VPS供应商的验证标准不同。
 
 ### 免费虚拟卡
 
 #### 香港全球付预付卡（MasterCard）
 
-可通过GCP（2018年）验证。
+可通过2018年GCP验证，不可通过2019年及以后的GCP验证。
 
 ```
 https://www.globalcash.hk/v4/
@@ -2476,17 +3563,14 @@ https://www.globalcash.hk/v4/
 
 #### 香港拍住赏预付卡（MasterCard）
 
-未验证。
-
-需要香港号码。在iOS下载`拍住赏`即可。
+需要香港号码，在App Store下载`拍住赏`即可。
 
 #### Yandex Money（MasterCard）
 
-未验证。
+提供免费万事达虚拟信用卡，一年有效期。GCP、DO、Vultr均无法通过验证。
 
 ```
 https://money.yandex.ru/
-https://51.ruyo.net/3338.html
 ```
 
 #### Uquid（VISA）
@@ -2495,7 +3579,6 @@ https://51.ruyo.net/3338.html
 
 ```
 https://uquid.com/uquid-card
-https://51.ruyo.net/4976.html
 ```
 
 ### 付费虚拟卡
@@ -2510,18 +3593,20 @@ https://card.easypayx.com/card/cards
 
 #### 香港neat借记卡（MasterCard）
 
-```
-https://www.vpsdawanjia.com/1817.html
-```
+激活后若超过半年未使用，将从第七个月开始收取休眠费。
+
+从App Store下载`neat`，把手机语言改成英语。打开APP并注册，添加收卡地址时会提示只能寄到商业地址，且用顺丰快递收取36到43人民币的邮费，但实际是可以寄到私人地址的，且通过Hong Kong post免费邮寄。
 
 #### 中国银行长城跨境通单标储蓄卡（Visa/MasterCard）
 
-可通过GCP（2019年）验证。
+可通过2019年GCP验证。
 
 #### 爱汇国际旅支卡（MasterCard）
 
+用微信打开以下链接，点击`我要旅支卡`，跳转后点击添加新卡即可。
+
 ```
-https://www.vpsdawanjia.com/566.html
+https://www.ihui.com/alliance/share/43cc72a60e694fdeb775d9566c04e4fc.html
 ```
 
 ## 获取美国号码
@@ -2530,274 +3615,62 @@ https://www.vpsdawanjia.com/566.html
 
 ### 虚拟号码
 
-免费号码可使用TextNow。
+免费号码可使用TextNow、TextPlus、HeyWire、Ring4、TalkU、TextMe、TextFree、TextNow、Talkatone、Dingtone、Pinger等。
 
 ### Google Voice
 
-TextPlus、HeyWire、Ring4、TalkU、TextMe、TextFree、TextNow、Talkatone、Dingtone、Pinger的虚拟号码已无法通过Google Voice验证。最新方法如下。
+包括以上的虚拟号码基本已无法通过Google Voice验证。
+
+#### 注册
+
+##### 失效教程
+
+<details>
+<summary></summary>
+
+全程挂美国全局代理，浏览器用无痕模式。通过以下付费接码网站接收Google Voice验证码，购买时类型选择Google Voice。
 
 ```
-https://github.com/masonme/GoogleVoice
+// verfirywithsms
+https://verifywithsms.com/
+
+
+// PVA Deals，购买Non VolP Numbers
+https://pvadeals.com/product/non-voip/
 ```
+</details>
 
-保号教程如下。
+#### 保号
 
-```
-https://www.vpsdawanjia.com/1452.html
-https://51.ruyo.net/3660.html
-```
+如果超过六个月没有拨打或者接听电话，也没有发出或接收过短信，号码就会被回收。可利用IFTTT自动接收和发送短信以保号。
 
-## 机场测速
+##### 自动发送短信
 
-```
-https://www.duyaoss.com/
-```
-
-## IP检查
-
-### IP连通性
-
-可通过以下网站测试IP的连通性。
+注册IFTTT账号后打开以下链接，分别设置时区和Google Voice号码。
 
 ```
-https://www.vps234.com/ipchecker/
-http://ping.pe/
-https://torch.njs.app/
-https://www.ipaddress.com/
-https://www.ip-adress.com/
-https://whoer.net/zh
-https://tuna.moe/help/dns/
+https://ifttt.com/services/date_and_time/settings
+https://ifttt.com/sms
 ```
 
-如果IP全通，但翻墙连不上，则一般为端口被封，更换端口即可。
-
-### 原生IP和广播IP
-
-原生IP指由当地ISP运营商提供的本地IP。而广播IP是IP分配机构指派在某个地区使用的IP。
-
-可通过以下网站查看IP地址的归属地。归属地与服务器所在地一致的为原生IP。
+打开以下链接以新建一个Applet。
 
 ```
-https://bgp.he.net/
+https://ifttt.com/create/
 ```
 
-## 获取翻墙的方式
+点If This后的Add，并选择Date&Time。有多种触发条件，根据自己的实际需求选择。再点Then that后的Add，选择SMS，并自定义短信内容。创建完打开该Applet即可。
 
-### 利用搜索引擎
+##### 自动回复短信
 
-使用github/qwant/telegram搜索相关翻墙软件的关键词。
+登录Google Voice，进入Settings—>Settings—>Forward messages to email，打开将短信转发到Gmail邮箱。完成后Google Voice收到的短信都会以邮件的形式发送到Gmail邮箱，邮件标题为`New text message from [发送者]`，发件人是后缀为`@txt.voice.google.com`的邮箱，前缀里包含短信发送方和接收方的号码。
 
-顺带使用similarsitesearch查询相似站点。
-
-### 通过发送Email
-
-有些提供爱国软件的公司/组织会开设一个邮箱，用于自动回复科学上网工具以及页面镜像地址，如发送标题为`help`给`get@psiphon3.com`。
-
-### 通过P2P下载
-
-连上某个eMule服务器后即可搜索Tor等相关工具。
+仍打开上面的链接新建一个Applet，If this添加Gmail，并选择`[Inactive] New email in inbox from search`，内容填写`txt.voice.google.com`。然后Then that添加Gmail，并选择`Send an email`，按照以下内容配置，然后打开该Applet即可。
 
 ```
-https://www.emule-project.net/home/perl/general.cgi?l=42
-```
-
-## 解决DNS污染
-
-打开以下链接并下载源码。
-
-```
-https://github.com/URenko/Accesser
-```
-
-解压后打开以下链接下载dnscrypt-proxy，放到解压好的文件夹的dnscrypt目录下。
-
-```
-https://github.com/jedisct1/dnscrypt-proxy/releases
-```
-
-打开终端并运行以下命令。
-
-```
-brew install openssl
-pip3 install tld dnspython tornado
-env ARCHFLAGS="-arch x86_64" LDFLAGS="-L/usr/local/opt/openssl/lib" CFLAGS="-I/usr/local/opt/openssl/include" pip install cryptography
-pip3 install pyopenssl
-```
-
-对于Mac，打开网络偏好设置，选择当前连接的网络并点击`高级`，选择代理-自动代理配置，填写以下URL后保存。
-
-```
-http://127.0.0.1:7654/pac/
-```
-
-终端切换到源码目录并运行以下命令，在弹出的窗口点击导入证书，下载后双击安装。在弹出的`钥匙串访问`对话框中国双击刚才安装的证书，在`信任`下选择始终信任。
-
-保持网页打开，即可访问受到DNS污染的网站。
-
-## Tor
-
-```
-
-```
-
-Tor是经过层层加密的浏览器。Tor从使用者本机直到出口节点的传输是强加密的，其他人无法偷窥到真实网络流量，除非Tor软件本身出现严重安全漏洞或者碰到的出口节点是蜜罐，即故意引诱用户攻击的目标。但若此时ISP和墙在监控流量，可以判断出在使用Tor。
-
-流量混淆把Tor流量伪装成其它的上网流量，让监控者看不出在用Tor。meek是常用的流量混淆插件。
-
-Tor主要用于隐匿上网身份，也可用于伪装别国网民、隐匿公网IP等。
-
-### 配置
-
-打开以下链接下载并安装。Mac也可直接通过Homebrew安装，但通过此方法安装的Tor并没有图形界面。
-
-```
-https://www.torproject.org/download/
-```
-
-也可通过发送标题为`help`的邮件到`gettor@torproject.org`获取。
-
-安装完成后挂翻墙软件，然后从配置中查看代理类型、代理地址和端口，比如SOCKS5代理的`localhost:1081`。打开后点击配置，勾选`我所在的国家对Tor进行了审查`，并选择`选择内置网桥`。勾选`使用代理访问互联网`，填入上面查询的内容，然后连接即可。
-
-### 使用
-
-Tor可以打开特有的onion域名链接，导航如下。注意抵制诱惑。
-
-```
-https://thehiddenwiki.org/
-```
-
-### 其余类似浏览器
-
-```
-https://www.puffin.com/
-https://softstribe.com/app/pc/download-install-net-upx-proxy-browser-windows-mac-os
-https://getcocoon.com/support/download
-https://www.webfreer.com/how.php
-https://proxybrowser.xyz/
-```
-
-## ZeroNet
-
-零网，托管了很多热门网站。
-
-```
-https://zeronet.io/
-https://hoochanlon.github.io/fq-book/#/browse/zeronet
-https://github.com/hoochanlon/w3-goto-world/blob/master/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E3%80%81%E6%9A%97%E7%BD%91%E3%80%81%E9%9B%B6%E7%BD%91/%E9%9B%B6%E7%BD%91%E4%B8%8E%E6%9A%97%E7%BD%91/reademe.md
-```
-
-# 存档
-
-## 翻墙协议
-
-### go-shadowsocks2
-
-```
-https://github.com/shadowsocks/go-shadowsocks2
-```
-
-### shadowsocks-libev自动安装脚本
-
-```
-https://github.com/lrinQVQ/script
-https://github.com/shadowsocks/shadowsocks-libev
-```
-
-## 工具
-
-### ProxySU
-
-```
-https://github.com/proxysu/windows
-```
-
-### V2ray.Fun
-
-基于Web的V2ray控制面板，需要使用纯净的VPS系统安装。
-
-```
-wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/V2ray.Fun/master/install.sh && bash install.sh
-```
-
-### Finalspeed
-
-```
-https://github.com/ucoker/finalspeed
-```
-
-### zmirror-onekey
-
-部署Google镜像。
-
-```
-https://github.com/aploium/zmirror-onekey
-```
-
-### BarbaTunnel
-
-点对点非独立的隧道。连接OpenVPN的操作并不成功。
-
-```
-https://github.com/BarbaTunnelCoder/BarbaTunnel/
-```
-
-### Cloak
-
-Cloak不是独立的代理程序。而是通过将代理工具的流量伪装为普通的Web浏览流量来工作。
-
-```
-https://github.com/cbeuw/Cloak
-```
-
-### privoxy
-
-将sock协议转换为http/https协议。
-
-```
-https://www.privoxy.org/
-```
-
-## 插件
-
-### openwrt-fanqiang
-
-OpenWrt的Shadowsocks插件。
-
-```
-https://github.com/softwaredownload/openwrt-fanqiang
-https://fanqiang.software-download.name/
-```
-
-### v2ray-plugin
-
-基于v2ray的SIP003插件。
-
-```
-https://github.com/shadowsocks/v2ray-plugin
-```
-
-### GoQuiet
-
-shadowsocks的混淆插件。
-
-```
-https://github.com/cbeuw/GoQuiet/wiki/GoQuiet
-```
-
-### simple-tls
-
-用于Shadowsocks（或其他TCP）连接的简单TLS包装器。
-
-```
-https://github.com/IrineSistiana/simple-tls
-```
-
-### obfuscated-openssh-patches
-
-向OpenSSH添加握手混淆的补丁。
-
-```
-https://github.com/zinglau/obfuscated-openssh-patches
+To address / 点Add ingredient，选FromAddress
+Body / 短信内容
+Attachment URL / 清空
 ```
 
 ## 脚本
@@ -2812,7 +3685,7 @@ wget -qO- --no-check-certificate https://raw.githubusercontent.com/oooldking/scr
 wget https://raw.githubusercontent.com/oooldking/script/master/superspeed.sh && chmod +x superspeed.sh && ./superspeed.sh
 ```
 
-### v2ray配置脚本
+### v2ray配置
 
 复制以下代码到文本编辑器并另存为go.sh，放在工作目录即可使用。
 
@@ -3406,4 +4279,108 @@ https://doubibackup.com/wkcjzpyd-2.html
 
 ```
 https://www.itengli.com/ss-relay/
+```
+
+## macOS - ClashX 使用教程
+
+```
+https://wiki.kache.moe/2019/12/11/macOS-ClashX/
+```
+
+## ClashX教程 | macOS上好看又好用的科学上网工具
+
+```
+https://merlinblog.xyz/wiki/ClashX.html
+```
+
+## 如何对Linux服务器的端口限速？
+
+```
+https://51.ruyo.net/2877.html
+```
+
+## 免费Docker容器来挂机Vagex赚美刀
+
+```
+https://51.ruyo.net/3290.html
+```
+
+## 国内申请Google Adsense账号以及完成首笔收款
+
+```
+https://51.ruyo.net/12240.html
+```
+
+## 2020Google镜像大全，谷歌镜像网址
+
+```
+https://www.uedbox.com/post/54776/
+```
+
+## 香港实体预付万事达借记卡neat注册申请指南
+
+```
+https://www.vpsdawanjia.com/1817.html
+```
+
+## 注册Google Voice方案，成功率较高
+
+```
+https://github.com/masonme/GoogleVoice
+```
+
+## 使用IFTTT让Google Voice自动回复短信来保号
+
+```
+https://www.vpsdawanjia.com/1452.html
+```
+
+## Accesser
+
+```
+https://urenko.github.io/Accesser/
+```
+
+## “如何翻墙”系列：关于 Tor 的常见问题解答
+
+```
+https://program-think.blogspot.com/2013/11/tor-faq.html
+```
+
+## w3-goto-world/reademe.md
+
+```
+https://hoochanlon.github.io/fq-book/#/browse/zeronet
+https://github.com/hoochanlon/w3-goto-world/blob/master/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E3%80%81%E6%9A%97%E7%BD%91%E3%80%81%E9%9B%B6%E7%BD%91/%E9%9B%B6%E7%BD%91%E4%B8%8E%E6%9A%97%E7%BD%91/reademe.md
+```
+
+## SSH-Tunnel
+
+```
+https://hoochanlon.github.io/fq-book/#/proxy/SSH-Tunnel
+```
+
+## Clash For Windows 小贴士：允许局域网 @320资源私享家
+
+```
+https://www.hottg.com/www_320nle_com/133/zh-TW.html
+```
+
+## Surge Mac 3 无限试用方案
+
+```
+https://blog.cat73.org/20190528/2019052801.surge3-crack/
+https://gist.github.com/whyliam/a27bae053207dcb4c46bb5c9cf8ef274
+```
+
+## Alvin9999/new-pac Wiki
+
+```
+https://github.com/Alvin9999/new-pac/wiki
+```
+
+## shuuzhoou/doubi: 一个逗比写的各种逗比脚本~
+
+```
+https://github.com/shuuzhoou/doubi
 ```

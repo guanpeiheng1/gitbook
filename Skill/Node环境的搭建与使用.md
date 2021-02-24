@@ -14,7 +14,7 @@ Node是一个JavaScript运行环境，很多模块都需要依赖node。npm是�
 
 # 安装
 
-## 通过nvm安装（推荐）
+## 通过nvm
 
 仓库如下。
 
@@ -42,7 +42,7 @@ nvm install --lts
 nvm install node
 ```
 
-## 通过官方安装包安装
+## 通过官方安装包
 
 打开下面官方网站，下载安装包进行安装。
 
@@ -111,7 +111,7 @@ npm ls --depth 0
 npm ls -g --depth 0
 ```
 
-## 删除项目所有依赖
+## 删除项目缓存
 
 ```
 npm cache verify
@@ -187,7 +187,7 @@ npm install
 
 ## 提示找不到<CoreFoundation/CoreFoundation.h>或其它库文件
 
-在终端输入以下命令即可。
+对于Mac，在终端输入以下命令即可。
 
 ```
 csrutil disable

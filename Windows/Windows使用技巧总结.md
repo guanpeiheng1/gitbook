@@ -12,42 +12,6 @@ Windows相关技巧。
 
 <!-- more -->
 
-# 常见问题
-
-## 分区表错误导致硬盘无法识别
-
-进入DOS版的Diskgenius并修复分区表即可。注意，WinPE的Diskgenius无效。
-
-## 删除文件显示「访问被拒绝」
-
-对于XP系统，需要先选择菜单栏的`工具`，点击`文件夹选项`，切换到`查看`选项卡，取消勾选`使用简单文件共享`后确定。在需要操作的文件上右键选择`属性`，切换到`安全`选项卡，点击`高级`，切换到`所有者`选项卡，选择`Administrators`并勾选`替换子容器及对象的所有者`，确定即可。
-
-如果仍然不行，则在`安全`选项卡上点击`添加`，选择`高级`，点击`立即查找`，然后一路`确定`即可。
-
-## Windows 10下忘记密码
-
-准备Windows 10安装U盘，从U盘启动后点击下一步-修复计算机-疑难解答-命令提示符。用`dir`命令查看系统盘符（假设为C盘），然后输入以下命令。
-
-```
-C:
-cd Windows/System32
-ren sethc.exe AAA.exe
-ren cmd.exe sethc.exe
-```
-
-重启到登录界面，按五次Shift进入命令行，输入以下命令以启用内置管理员账户并重置密码。
-
-```
-net user Administrator /active:yes 
-net user Administrator [新密码]
-```
-
-进入系统后将Windows/System32下的sethc.exe重命名为cmd.exe，AAA.exe重命名为sethc.exe。
-
-## XP系统无法访问/拒绝访问文件夹
-
-以管理员身份登录，打开资源管理器，选择菜单工具-文件夹选项，单击`查看`选项卡，取消勾选`使用简单共享`。右键单击不能打开的文件夹，从弹出菜单中选择`属性`，单击安全-高级，选择`将所有者更改为下方的用户`，选中下方的`替换子容器及对象的所有者`，单击`应用`。单击权限-添加，在`选择用户或组`中单击高级-立即查找。选择要给予权限的用户，连续单击两次`确定`，直到出现`权限项目`对话框。在`权限`中的`完全控制`右侧选择`允许`，连续单击确定直到关闭所有对话框即可。
-
 # 系统技巧
 
 ## 获取超级管理员权限
@@ -127,30 +91,37 @@ Windows Registry Editor Version 5.00
 
 ## 虚拟Wi-Fi功能
 
-适用于Win7及以上系统。
+适用于Win7及以上系统。以管理员身份运行命令提示符，运行以下命令以启用虚拟无线网卡。
 
 ```
-https://hoochanlon.github.io/fq-book/#/append/win7-wifi
-https://www.connectify.me/
+netsh wlan set hostednetwork mode=allow ssid=”Win7 AP WOW!” key=wifimima
+```
+
+打开网络与共享中心，进入适配器选项。如果在运行上述命令后没有出现虚拟无线网卡，就说明真实网卡不支持该功能。若出现该网卡，可继续以下操作。
+
+选择已连接到互联网的网络，右键点击属性-共享，勾选`允许其他网络用户通过此计算机的Internet连接来连接`并选择刚才开启的虚拟网卡，同时勾选`允许其他网络用户控制或禁用贡献的Internet连接`。
+
+继续在命令提示符运行以下命令以开启无线网络。开启后连接该无线网络即可。
+
+```
+netsh wlan start hostednetwork
 ```
 
 ## 设置Hyper-V
 
-Hyper-V为Windows自带的虚拟机软件。打开控制面板，选择程序和功能-启用或关闭Windows功能，勾选`Hyper-V`，确定并安装即可。
+Hyper-V为Windows自带的虚拟机软件。打开控制面板，选择程序和功能-启用或关闭Windows功能，勾选Hyper-V，确定并安装即可。
 
 ## 设置Linux子系统
 
 ### 安装
 
-进入系统设置，点击更新和安全-针对开发人员，选择`开发人员模式`。打开控制面板，选择程序和功能-启用或关闭Windows功能，勾选`适用于Linux的Windows子系统`，确定并安装。打开Windows应用商店，搜索`Linux`，安装并打开Ubuntu。注意需要经常在命令行界面敲回车键，以确认其安装情况。
+进入系统设置，点击更新和安全-针对开发人员，选择开发人员模式。打开控制面板，选择程序和功能-启用或关闭Windows功能，勾选`适用于Linux的Windows子系统`，确定并安装。打开Windows应用商店，搜索Linux，安装并打开Ubuntu。注意需要经常在命令行界面敲回车键，以确认其安装情况。
+
+完成安装后可直接通过打开应用启动Linux，也可打开命令行并输入`bash`。
 
 ### 基本配置
 
-直接打开上述安装好的应用即可，也可打开命令行并输入`bash`。输入以下命令以重置root用户的密码。
-
-```
-sudo reboot
-```
+#### 更换软件源
 
 依次输入以下命令以备份并打开源配置文件。
 
@@ -173,11 +144,9 @@ sudo vim /etc/apt/sources.list
 apt-get update
 ```
 
-### 更新为WSL2
+#### 更新为WSL2
 
-Windows 10 19041及更高版本可进行此更新。
-
-打开以下链接并点击Linux内核更新包，下载并安装。
+Windows 10 19041及更高版本可进行此更新。打开以下链接并点击Linux内核更新包，下载并安装。
 
 ```
 https://docs.microsoft.com/zh-cn/windows/wsl/wsl2-kernel
@@ -191,9 +160,7 @@ wsl.exe --set-version Ubuntu 2
 wsl.exe --set-default-version 2
 ```
 
-### 图形界面
-
-#### 对于WSL1
+#### WSL1图形界面
 
 ##### 安装
 
@@ -218,7 +185,7 @@ sudo service xrdp restart
 
 在Windows打开`远程桌面连接`，计算机名称为`[本机IP]:3390`，登录即可。注意图形界面运行时需保证终端运行，且`xrdp`服务处于开启状态。
 
-#### 对于WSL2
+#### WSL2图形界面
 
 ##### 安装
 
@@ -231,7 +198,9 @@ sudo apt-get install tasksel -y
 sudo tasksel
 ```
 
-选择`Ubuntu Desktop`，然后用Tab键选择OK，回车确定。如果突然退出，遇到`tasksel: apt-get failed (100)`，这时要重新运行上面最后一条命令，并且重新选择`Ubuntu Desktop`。安装完成会出现`xserver-xorg install`。
+选择`Ubuntu Desktop`，然后用Tab键选择OK，回车确定。
+
+如果突然退出，遇到`tasksel: apt-get failed (100)`，则需要重新运行上面最后一条命令，并且重新选择`Ubuntu Desktop`。安装完成会出现`xserver-xorg install`。
 
 继续输入以下命令。
 
@@ -253,10 +222,15 @@ sudo vncpasswd
 sudo -u lightdm vncpasswd
 // 如果窗口管理器选择的是GDM，则输入sudo -u gdm vncpasswd
 sudo mv /usr/bin/Xorg /usr/bin/Xorg_old
+```
+
+通过以下命令编辑Xorg文件。
+
+```
 sudo vim /usr/bin/Xorg
 ```
 
-将以下内容写入Xorg文件。
+内容如下，保存并退出。
 
 ```
 #!/bin/bash
@@ -297,6 +271,11 @@ sudo chmod 0755 /usr/bin/Xorg
 curl -s https://packagecloud.io/install/repositories/arkane-systems/wsl-translinux/script.deb.sh | sudo bash
 sudo apt-get install -y systemd-genie
 sudo mkdir /usr/lib/genie/
+```
+
+通过以下命令编辑deviated-preverts.conf文件。
+
+```
 sudo vim /usr/lib/genie/deviated-preverts.conf
 ```
 
@@ -312,6 +291,11 @@ sudo vim /usr/lib/genie/deviated-preverts.conf
 
 ```
 genie -s
+```
+
+通过以下命令编辑lightdm.conf文件。
+
+```
 sudo vim /etc/lightdm/lightdm.conf
 ```
 
@@ -340,36 +324,22 @@ sudo service lightdm restart
 https://sourceforge.net/projects/vcxsrv/
 ```
 
-连接前先在Linux的终端输入以下命令。
+连接前在Linux的终端输入以下命令。
 
 ```
 genie -s
 hostname -I | awk '{print $1}'
 ```
 
-记住输出的IP地址。打开VcXsrv，选择One window without titlebar后点击下一步，然后选择Open session via XDMCP后点击下一步。在Connect to host输入框中输入刚才的吧IP地址后点击下一步。选择Clipboard和Disable access control，取消选择Native opengl，然后点击下一步，完成即可。
+记住输出的IP地址。打开VcXsrv，选择One window without titlebar后点击下一步，然后选择Open session via XDMCP后点击下一步。在Connect to host输入框中输入刚才的IP地址后点击下一步。选择Clipboard和Disable access control，取消选择Native opengl，然后点击下一步，完成即可。
 
-## 共享
-
-### 设置打印机共享
+## 打印机共享
 
 在连接有打印机的主机上设置打印机为共享。
 
-在需要连接共享打印机的电脑上打开控制面板，选择`程序和功能`-`启用或关闭Windows功能`，勾选`打印与文件服务`、`SMB 1.0/CIFS文件共享支持`，确定并安装。然后打开设备管理器，对于较老的打印机，需点击`操作`-`添加过时硬件`，选择手动从列表选择，找到打印机并点击下一步。然后选择`创建新端口`，端口类型为`Local Port`，端口名称为`\\[IP地址]\[打印机名称]`。添加后选择`从磁盘安装`，选择驱动程序中的INF文件后，在列表中点击对应打印机的型号，完成安装即可。
+在需要连接共享打印机的电脑上打开控制面板，选择程序和功能-启用或关闭Windows功能，勾选打印与文件服务、SMB 1.0/CIFS文件共享支持，确定并安装。然后打开设备管理器，对于较老的打印机，需点击操作-添加过时硬件，选择手动从列表选择，找到打印机并点击下一步。
 
-### 访问Mac共享
-
-在Mac打开设置，选择`共享`-`文件共享`，点击`选项`，勾选两个复选框，并勾选用于共享的用户。回到设置页面，打开`网络偏好设置`，选择活跃的连接，点击`高级`-`WINS`，输入Windows的工作组名称，一般为WORKGROUP。在Windows端打开运行，输入`\\[Mac的IP地址]`即可访问。
-
-## Win 9.x内核进入DOS
-
-### Windows 98
-
-启动时按Ctrl。
-
-### Windows 95 / ME
-
-启动时按F8。
+然后选择创建新端口，端口类型为Local Port，端口名称为`\\[IP地址]\[打印机名称]`。添加后选择`从磁盘安装`，选择驱动程序中的INF文件后，在列表中点击对应打印机的型号，完成安装即可。
 
 ## 开启卓越模式电源计划
 
@@ -379,26 +349,19 @@ hostname -I | awk '{print $1}'
 powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
 ```
 
-## XP系统制作CAB压缩/自解压缩包
-
-在运行输入IExpress，选择Create new Self Extraction Directive file，然后选择打包类型后添加文件即可。
-
-
 ## 删除「添加或删除程序」里的无用选项
 
 Win+R调出运行框，输入regedit，定位到HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall，将要删除的软件对应的键删除即可。
 
-## 取消按Ctrl+Alt+Del登录
+## 登录相关
 
-进入控制面板，双击管理工具，选择本地安全策略，点击`安全设置`-`本地策略`-`安全选项`，在右侧选择`交互式登录：无须按Ctrl+Alt+Del`，启用即可。
+### 取消按Ctrl+Alt+Del登录
 
-## 开启自动登录
+进入控制面板，双击管理工具，选择本地安全策略，点击安全设置-本地策略-安全选项，在右侧选择`交互式登录：无须按Ctrl+Alt+Del`，启用即可。
+
+### 开启自动登录
 
 Win+R打开`运行`，输入`control userpasswords2`后回车，取消勾选`要使用本机，用户必须输入用户名和密码`即可。
-
-## 批量安装补丁
-
-在cmd下输入补丁的完整路径，并在其后加上`/q`参数即可。加`/?`参数能够查看补丁支持的参数选项，对于大部分补丁而言，也可使用`/passive /norestart`。
 
 ## 运行库安装
 
@@ -412,23 +375,9 @@ https://pan-yz.chaoxing.com/external/m/file/337329473334308864
 https://pan-yz.chaoxing.com/external/m/file/337350294375264256
 ```
 
-## DOS常用命令
+## 停止自动更新
 
-### doskey命令
-
-为命令提供别名。
-
-```
-// 定义
-doskey a=echo hello
-
-// 使用
-a // 显示hello
-```
-
-## 停止Windows 10自动更新
-
-### 一般方法
+### 通过删除文件
 
 卸载升级相关软件后，打开系统盘并删除以下文件。
 
@@ -445,13 +394,53 @@ C:\Windows\SoftwareDistribution\Download\*
 https://www.lanzoux.com/iUuXtez2fde
 ```
 
-### 把网络设为按流量计费的连接
+### 通过把网络设为按流量计费的连接
 
 打开网络和Internet属性，选择更改连接属性，打开`设为按流量计费的连接`即可。
 
-### 禁止系统自动下载更新程序
+### 通过禁止系统自动下载更新程序
 
-在此电脑上右键点击属性，选择高级系统设置-硬件吧-设备安装设置，在`是否要自动下载适合你设备的制造商应用和自定义图标`选择否即可。
+在此电脑上右键点击属性，选择高级系统设置-硬件-设备安装设置，在`是否要自动下载适合你设备的制造商应用和自定义图标`选择否即可。
+
+## 破解登录密码
+
+准备Windows 10安装U盘，从U盘启动后点击下一步-修复计算机-疑难解答-命令提示符。用`dir`命令查看系统盘符（假设为C盘），然后输入以下命令。
+
+```
+C:
+cd Windows/System32
+ren sethc.exe AAA.exe
+ren cmd.exe sethc.exe
+```
+
+重启到登录界面，按五次Shift进入命令行，输入以下命令以启用内置管理员账户并重置密码。
+
+```
+net user Administrator /active:yes 
+net user Administrator [新密码]
+```
+
+进入系统后将Windows/System32下的sethc.exe重命名为cmd.exe，AAA.exe重命名为sethc.exe。
+
+## 桌面美化
+
+可通过以下软件。
+
+```
+http://www.apumiao.com/
+```
+
+## 重置网络设置
+
+打开命令行并输入以下命令即可。
+
+```
+netsh winsock reset(需要管理员身份，输完之后重启)
+ipconfig/release
+ipconfig/renew
+ipconfig/displaydns
+ipconfig/flushdns
+```
 
 # 操作技巧
 
@@ -461,7 +450,7 @@ https://www.lanzoux.com/iUuXtez2fde
 
 ## 批量修改后缀名
 
-复制以下代码到记事本，并另存为bat文件，使用时双击打开即可，注意，本bat文件对文件夹内的所有文件均适用。
+复制以下代码到记事本，并另存为bat文件，使用时双击打开即可。注意，本bat文件对文件夹内的所有文件均适用。
 
 ```
 // 修改gif为jpg
@@ -475,11 +464,11 @@ ren *.* *.jpg
 
 ## Google Chrome
 
-### 打开暗黑模式
+### 暗黑模式
 
 在Chrome快捷方式上右键点击属性，在`目标`的后面添加`--force-dark-mode`即可。
 
-### 打开实验功能
+### 实验功能
 
 在Chrome的地址栏输入以下链接打开实验功能页。
 
@@ -489,25 +478,14 @@ chrome://flags
 
 常用功能如下。
 
-```
-// Overlay Scrollbars
-自动收起滚动条
-
-// Flash Overlay Scrollbars When Mouse Enter
-滚动条跟随鼠标移动出现
-
-// Smooth Scrolling
-平滑滚动
-
-// Tab Hover Cards
-悬停标签页显示网址
-
-// Desktop PWAs
-桌面版Chrome支持PWA应用
-
-// Parallel downloading
-提升下载速度
-```
+|                    项目                   |           含义          |
+|-------------------------------------------|-------------------------|
+| Overlay Scrollbars                        | 自动收起滚动条          |
+| Flash Overlay Scrollbars When Mouse Enter | 滚动条跟随鼠标移动出现  |
+| Smooth Scrolling                          | 平滑滚动                |
+| Tab Hover Cards                           | 悬停标签页显示网址      |
+| Desktop PWAs                              | 桌面版Chrome支持PWA应用 |
+| Parallel downloading                      | 提升下载速度            |
 
 ## 百度云盘加速
 
@@ -567,7 +545,9 @@ https://greasyfork.org/zh-CN/scripts/378301-%E7%BD%91%E7%9B%98%E5%8A%A9%E6%89%8B
 http://byu5.cn/baiduwp/
 ```
 
-### 雷鸟下载（暂时失效）
+### 雷鸟下载
+
+暂时失效。
 
 ```
 https://thunderbird.lanzous.com/b01bdspaj
@@ -579,7 +559,7 @@ https://thunderbird.lanzous.com/b01bdspaj
 
 ```
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
-# 或
+// 或
 iwr -useb get.scoop.sh | iex
 ```
 
@@ -591,8 +571,8 @@ scoop install aria2
 
 常用命令如下。
 
-| 命令                                   | 说明                 |
-| -------------------------------------- | -------------------- |
+|                  命令                  |         说明         |
+|----------------------------------------|----------------------|
 | scoop help                             | 帮助                 |
 | scoop install [软件名]                 | 安装软件             |
 | scoop install [软件名]@[版本号]        | 安装制定版本软件     |
@@ -604,13 +584,12 @@ scoop install aria2
 | scoop uninstall [软件名]               | 卸载                 |
 | scoop list > F:/scoop/ScoopAppList.txt | 导出软件列表         |
 | scoop reset [软件名]                   | 版本切换             |
-|                                        |                      |
 
 软件库推荐如下。
 
 ```
-scoop bucket add main # 默认
-scoop bucket add extras # 推荐
+scoop bucket add main // 默认
+scoop bucket add extras // 推荐
 scoop bucket add versions
 scoop bucket add nightlies
 scoop bucket add nirsoft
@@ -619,7 +598,7 @@ scoop bucket add nerd-fonts
 scoop bucket add nonportable
 scoop bucket add java
 scoop bucket add games
-scoop bucket add jetbrains # 推荐
+scoop bucket add jetbrains // 推荐
 scoop bucket add echo https://github.com/echoiron/echo-scoop
 scoop bucket add dorado https://github.com/chawyehsu/dorado
 scoop bucket add dodorz https://github.com/dodorz/scoop-bucket
@@ -629,13 +608,27 @@ scoop bucket add dodorz https://github.com/dodorz/scoop-bucket
 
 ### 激活
 
-#### 激活方法
+#### 方法
 
-主流的激活工具均为KMS激活，会安装KMS密钥。通过Kmspico或Microsoft Toolkit可以激活Office 2010。
+主流的激活工具均为KMS激活，会安装KMS密钥。通过Kmspico或Microsoft Toolkit可以激活Office 2010。也可用KMS Activator、microKMS等。
 
-由于Office安装完成后带有Retail密钥，因此KMS密钥安装完成后，如果无法激活，则需先删除Retail密钥。
+由于Office安装完成后带有Retail密钥，因此KMS密钥安装完成后，如果无法激活，需先删除Retail密钥。
 
-#### 激活密钥
+```
+// KMSpico
+https://www.pcsoft.com.cn/soft/41721.html
+
+// KMS Activator
+https://www.jb51.net/softs/116555.html
+
+// Microsoft Toolkit
+http://www.downza.cn/soft/187399.html
+
+// microKMS
+https://www.jb51.net/softs/451557.html
+```
+
+#### 密钥
 
 ##### Office 97
 
@@ -673,15 +666,107 @@ J2MV9-JYYQ6-JM44K-QMYTH-8RB2W
 
 ### 使用
 
-#### Word分屏浏览
+#### 分屏浏览
 
-选择`视图`选项卡，点击`拆分窗口`即可。
+选择视图-拆分窗口即可。
+
+#### 特殊字符
+
+|   特殊字符  |      含义      |
+|-------------|----------------|
+| ^?          | 任意单个字符   |
+| ^#          | 任意单个数字   |
+| ^$          | 任意英文字母   |
+| ^p          | 段落标记       |
+| ^l          | 手动换行符     |
+| ^g或^1      | 图形           |
+| ^+          | 1/4长划线      |
+| ^j          | 长划线         |
+| ^q          | 短划线         |
+| ^t          | 制表符         |
+| ^           | 脱字号         |
+| ^v          | 分栏符         |
+| ^b          | 分节符         |
+| ^n          | 省略号         |
+| ^i          | 全角省略号     |
+| ^z          | 无宽非分隔符   |
+| ^x          | 无宽可选分隔符 |
+| ^s          | 不间断空格     |
+| ^~          | 不间断连字符   |
+| ^%          | 段落符号       |
+| ^           | 分节符（§）    |
+| ^f或^2      | 脚注标记       |
+| ^-          | 可选连字符     |
+| ^w          | 空白区域       |
+| ^m          | 手动分页符     |
+| ^e          | 尾注标记       |
+| ^d          | 域             |
+| ^Unnnn      | Unicode字符    |
+| ^u8195      | 全角空格       |
+| ^32或^u8194 | 半角空格       |
+| ^a或^5      | 批注           |
 
 #### 通配符
 
-##### 选取包含特定字符的一行
+要查找已被定义为通配符的字符，需该字符前键入反斜杠`\`。
 
-将手动换行符变为换行符，即^l全部替换为^p。然后查找与替换中勾选`使用通配符`，查找内容填写`[特定字符](*)^13`（[特定字符]替换为对应内容），搜索范围为`全文档`即可。
+如果使用了通配符，在查找文字时会大小写敏感。如果希望查找大写和小写字母的任意组合，需要使用方括号通配符。如输入`[Hh]*[Tt]`可找到heat、Hat或HAT，而用`H*t`找不到heat。
+
+使用通配符时，Word只查找整个单词。如搜索e*r可找到enter，但不会找到entertain。如输入`<(e*r)`可找到enter和entertain。
+
+在查找图形时，Word只查找嵌入图形，而不能查找浮动图形。在默认情况下，Word会将导入的图形以嵌入图形的方式插入到文档中。
+
+如果包含可选连字符代码，Word只会找到在指定位置带有可选连字符的文字。如果省略可选连字符代码，Word将找到所有匹配的文字，包括带有可选连字符的文字。
+
+##### 列表
+
+|      通配符      |           含义          |
+|------------------|-------------------------|
+| ?                | 任意单个字符            |
+| [ - ]            | 指定范围内任意单个字符  |
+| [0-9]            | 任意单个数字            |
+| [.0-9]           | 任意单个带小数点数字    |
+| [!0-9]           | 所有非数字字符          |
+| [a-zA-Z]         | 任意英文字母            |
+| [a-z]            | 任意全小写英文字母      |
+| [A-Z]            | 任意全大写英文字母      |
+| [^1-^127]        | 所有西文字符            |
+| [!^1-^127]       | 所有中文汉字和中文标点  |
+| [一-龥]或[一-﨩] | 所有中文汉字            |
+| [!一-龥^1-^127]  | 所有中文标点            |
+| [!x-z]           | 指定范围外任意单个字符  |
+| *                | 任意字符串              |
+| @                | 1个以上前一字符或表达式 |
+| { n }            | n个前一字符或表达式     |
+| { n, }           | n个以上前一字符或表达式 |
+| { n,m }          | n到m个前一字符或表达式  |
+| ^t               | 制表符                  |
+| ^s               | 不间断空格              |
+| ^13              | 段落标记                |
+| ^l或^11          | 手动换行符              |
+| ( )              | 表达式                  |
+| <                | 单词开头                |
+| < >              | 单词开头/结尾           |
+| ^g               | 图形                    |
+| ^q               | 1/4长划线               |
+| ^+               | 长划线                  |
+| ^=               | 短划线                  |
+| ^^               | 脱字号                  |
+| ^n或^14          | 分栏符                  |
+| ^m               | 分节符/分页符           |
+| ^i               | 省略号                  |
+| ^j               | 全角省略号              |
+| ^z               | 无宽非分隔符            |
+| ^x               | 无宽可选分隔符          |
+| ^~               | 不间断连字符            |
+| ^=               | 短划线                  |
+| ^%               | 分节符（§）             |
+
+##### 常用示例
+
+###### 选取包含特定字符的一行
+
+将手动换行符变为换行符，即^l全部替换为^p。查找与替换中勾选使用通配符，查找内容填写`[内容](*)^13`，搜索范围为全文档即可。
 
 # 常用工具
 
@@ -699,6 +784,8 @@ https://www.52pojie.cn/thread-1086314-1-1.html
 
 ### Snipaste
 
+有贴图功能。
+
 ```
 https://www.snipaste.com/
 ```
@@ -709,15 +796,11 @@ https://www.snipaste.com/
 https://getsharex.com/
 ```
 
-教程如下。
-
-```
-https://posts.careerengine.us/p/5ad5f9e21a02813ca670cce0
-https://post.smzdm.com/p/698344/
-https://www.xiaoz.me/archives/8132
-```
-
 ### FSCapture
+
+```
+https://dl.pconline.com.cn/download/409863.html
+```
 
 ## 系统维护
 
@@ -739,12 +822,6 @@ http://www.xue51.com/soft/15383.html
 
 ```
 https://www.ranwenzw.com/xiazai/49240.html
-```
-
-### Revo Uninstaller
-
-```
-https://www.jb51.net/softs/654861.html
 ```
 
 ### CleanMyPC
@@ -785,6 +862,7 @@ https://www.lanzoux.com/ic9h9da
 ### Revo Uninstaller Pro
 
 ```
+https://www.jb51.net/softs/654861.html
 https://www.lanzoux.com/ic9h98f
 ```
 
@@ -818,11 +896,15 @@ https://www.onlinedown.net/soft/106556.htm
 
 ### CPU-Z
 
+查看CPU配置。
+
 ```
 https://www.cpuid.com/
 ```
 
 ### GPU-Z
+
+查看GPU配置。
 
 ```
 https://www.techpowerup.com/download/gpu-z/
@@ -844,13 +926,7 @@ https://download.pchome.net/system/benchmark/download-3641.html
 https://www.diskgenius.cn/
 ```
 
-## 压缩包解密工具
-
-```
-https://axu.lanzous.com/icbt77g
-```
-
-## 压缩工具
+## 文件压缩
 
 ### Bandizip
 
@@ -866,11 +942,12 @@ https://ltribe.lanzous.com/iw8h3e30u0h
 ```
 // 企业版离线密钥
 20380808-ENT000002-0E34A52561-166371E0
+
 // 专业版离线密钥
 20380808-PRO0BFAEBFDAE23C425E-173E2DF1
 ```
 
-## 拷录工具
+## 镜像拷录
 
 ### UltraISO
 
@@ -890,7 +967,7 @@ https://ltribe.lanzous.com/iw8h3e30u0h
 http://rufus.ie/
 ```
 
-## 文本编辑工具
+## 文本编辑
 
 ### WinHex
 
@@ -916,7 +993,7 @@ Soar360@live.com
 GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE8qHqNY5QaaRxmO3YSMHxlv2EYpjdwLcPwfeTG7kUdnhKE0vVy4RidP6Y2wZ0q74f47fzsZo45JE2hfQBFi2O9Jldjp1mW8HUpTtLA2a5/sQytXJUQl/QKO0jUQY4pa5CCx20sV1ClOTZtAGngSOJtIOFXK599sBr5aIEFyH0K7H4BoNMiiDMnxt1rD8Vb/ikJdhGMMQr0R4B+L3nWU97eaVPTRKfWGDE8/eAgKzpGwrQQoDh+nzX1xoVQ8NAuH+s4UcSeQ==
 ```
 
-## 本地搜索工具
+## 本地搜索
 
 ### Everything
 
@@ -954,7 +1031,7 @@ https://tianruoocr.cn/
 https://www.cr173.com/soft/794471.html
 ```
 
-## 密码破解工具
+## 密码破解
 
 ### Accent RAR
 
@@ -972,7 +1049,13 @@ ZIP文件密码破解工具。
 https://www.lanzous.com/i5mxkza
 ```
 
-## 图片放大工具
+### 压缩包解密
+
+```
+https://axu.lanzous.com/icbt77g
+```
+
+## 图片放大
 
 ### Waifu2x
 
@@ -986,7 +1069,7 @@ https://github.com/AaronFeng753/Waifu2x-Extension-GUI/releases
 https://ltribe.lanzous.com/icUNjdo4o1g
 ```
 
-## 终端美化工具
+## 终端美化
 
 ### FluentTerminal
 
@@ -996,7 +1079,7 @@ https://ltribe.lanzous.com/icUNjdo4o1g
 https://github.com/felixse/FluentTerminal
 ```
 
-## 网络调试工具
+## 网络调试
 
 ### PsPing
 
@@ -1006,40 +1089,62 @@ https://github.com/felixse/FluentTerminal
 https://download.sysinternals.com/files/PSTools.zip
 ```
 
-教程如下。
+下载后放到C:\Windows\System32，在命令行输入psping即可开始使用。可输入以下命令查询具体命令。
 
 ```
-https://51.ruyo.net/15171.html
-https://docs.microsoft.com/zh-cn/sysinternals/downloads/psping
-https://blog.51cto.com/wujianwei/2274120
+// ICMP PING
+psping -? i
+
+// TCP PING
+psping -? t
+
+// 响应延迟
+psping -? l
+
+// 带宽测试
+psping -? b
+```
+
+示例如下。
+
+```
+// ICMP PING
+psping -4 -n 10 -w 2 -h 10 www.baidu.com
+
+// TCP PING
+psping -4 -n 10 -w 2 -h 10 www.baidu.com:443
+
+// 响应延迟
+psping -l 1500 -n 300 -h 10 51.ruyo.net:443
+
+// 带宽测试
+psping -b -l 1500 -n 300 -h 10 51.ruyo.net:443
 ```
 
 ### TCPing
 
-检测端口是否开启和TCP延迟的工具。
-
-#### 安装
-
-##### Windows
-
-复制tcping.exe到C:\Windows\System32\即可。在命令行输入`tcping`以调用。
+检测端口是否开启和TCP延迟的工具。对于Windows，可通过以下链接下载，然后复制tcping.exe到C:\Windows\System32，在命令行输入`tcping`以调用。
 
 ```
 https://www.elifulkerson.com/projects/tcping.php
 ```
 
-##### Mac
-
-通过Homebrew安装即可。
+对于Mac，通过Homebrew安装即可。
 
 ```
 brew install tcping
 ```
 
-#### 教程
+对于Linux，可在终端执行以下命令以安装。
 
 ```
-https://51.ruyo.net/14528.html
+yum install -y tcptraceroute
+yum install -y bc
+ 
+cd /usr/bin
+wget http://www.vdberg.org/~richard/tcpping
+chmod +x tcpping
+mv tcpping tcping
 ```
 
 ### FinalShell
@@ -1048,6 +1153,32 @@ https://51.ruyo.net/14528.html
 
 ```
 http://www.hostbuf.com/t/989.html
+```
+
+## 流程图
+
+### draw.io
+
+```
+https://www.lanzoux.com/iQUObgedhrc
+```
+
+### Processist
+
+```
+https://www.lanzoux.com/idmOCgedlsh
+```
+
+### Dia
+
+```
+https://www.lanzoux.com/i5E9bgedkng
+```
+
+### ClickCharts
+
+```
+https://www.lanzoux.com/ii7PNgedi8j
 ```
 
 ## 其它
@@ -1088,6 +1219,74 @@ https://www.lanzoux.com/iMtkjfcey0f
 https://www.lanzoux.com/iyl7Ig6ilxe
 ```
 
+### 远程关机
+
+```
+https://ltribe.lanzoui.com/iDJjmjekfpi
+```
+
+### Teambition云盘直链解析平台
+
+直接打开以下链接即可使用。
+
+```
+https://teambition.icu/
+```
+
+也可在服务器自行搭建。对于Linux，在终端运行以下命令。
+
+```
+wget https://one.blob.core.chinacloudapi.cn/badyun/teambition/v0.01/app
+chmod +x ./app
+./app
+```
+
+然后在宝塔面板后台添加反向代理，代理名称为5213，目标URL为http://127.0.0.1/5213，发送域名为$host。
+
+然后执行以下命令以让程序在后台运行。
+
+```
+nohup ./app &
+```
+
+对于Windows，下载以下应用并运行即可。
+
+```
+https://one.blob.core.chinacloudapi.cn/badyun/teambition/v0.01/app.exe
+```
+
+### 好司机下载器
+
+提供电脑端大型游戏下载。
+
+```
+https://wwi.lanzous.com/i6FHJk3b1di
+```
+
+### 全能抢购神器
+
+```
+https://lanren.lanzous.com/iJPgojk0lfa
+```
+
+### 增强版Chrome
+
+```
+https://shuax.com/project/chrome/
+```
+
+# 常见问题
+
+## 分区表错误导致硬盘无法识别
+
+进入DOS版的Diskgenius并修复分区表即可。注意，WinPE的Diskgenius无效。
+
+## 删除文件显示「访问被拒绝」
+
+对于XP系统，需要先选择菜单栏的工具-文件夹选项-查看，取消勾选`使用简单文件共享`后确定。在需要操作的文件上右键选择属性-安全-高级-所有者，选择`Administrators`并勾选`替换子容器及对象的所有者`，确定即可。
+
+如果仍然不行，则点击安全-添加-高级-立即查找，然后一路确定即可。
+
 # 参考教程
 
 ## 安装好电驴插件后，怎么用来下ED2K
@@ -1119,4 +1318,34 @@ https://ywnz.com/linuxjc/7219.html
 ```
 https://www.chengxuzhilu.com/2395.html
 https://www.most-useful.com/ubuntu-20-04-desktop-gui-on-wsl-2-on-surface-pro-4.html
+```
+
+## Word查找替换详细用法及通配符一览表
+
+```
+https://www.cnblogs.com/whchensir/p/5768030.html
+```
+
+## 用Win7，电脑就是路由器
+
+```
+https://hoochanlon.github.io/fq-book/#/append/win7-wifi
+```
+
+## 微软PsPing适用于Windows平台的网络测试工具
+
+```
+https://51.ruyo.net/15171.html
+```
+
+## TCPing 一款检测端口是否开启和TCP延迟的工具
+
+```
+https://51.ruyo.net/14528.html
+```
+
+## Teambition云盘直链解析平台 支持多用户，支持永久直链，支持列目录
+
+```
+https://www.52pojie.cn/thread-1320716-1-1.html
 ```

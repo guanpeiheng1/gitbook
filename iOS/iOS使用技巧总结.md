@@ -5,7 +5,6 @@ abbrlink: iOS-Skills
 date: 2020-03-20 19:06:29
 tags:
 
-
 ---
 
 ![](https://tva1.sinaimg.cn/large/007S8ZIlgy1gega76v20ij315d0u045g.jpg)
@@ -19,3102 +18,129 @@ tags:
 ```
 http://www.iosre.com/
 https://appletech752.com/index.html
-
-
-
-游戏破解新插件：iGameGod
-https://iosgods.com/topic/134184-introducing-igamegod-cheat-engine-speed-manager-auto-touch-more/
-https://iosgods.com/topic/134186-igamegod-speed-manager-adjust-the-speed-of-your-games/
-https://iosgods.com/topic/134185-igamegod-auto-touch-record-and-replay-your-touches/
-
-
-新的越狱源：
-cydia.kiiimo.org
-
+https://blog.royli.dev/
 ```
-
-# 硬件操作
-
-## Home键失灵
-
-越狱后可安装CCSettings插件在控制中心添加主屏幕按钮，或安装Activator插件实现手势操作。
-
-## 电源键失灵
-
-可通过爱思助手完成重启。
-
-# 系统操作
-
-## 恢复模式
-
-### 进入
-
-#### 正常方法
-
-彻底关闭设备，并且将设备与PC断开连接。长按Home键的同时将设备连接到计算机，不要松开Home键，直到在设备屏幕上看到`连接到iTunes`的图片。
-
-#### 按键失灵时的方法
-
-用爱思助手即可。
-
-### 退出
-
-按住电源键十秒即可。通过爱思助手进入的则需要通过爱思助手退出。
-
-## 让手机进入DFU模式，连接手机并输入以下命令进行刷机。  
-
-### 进入
-
-#### 正常方法
-
-把设备连接到PC后关闭设备，同时按住Home键和电源键十秒后松开电源键，继续按住Home键，直到在电脑上看到识别到DFU状态下的USB设备。
-
-#### 按键失灵时的方法
-
-##### 法一
-
-把设备连接到Windows后下载以下压缩包，解压后双击`DFU.bat`即可。
-
-```
-https://feng-bbs-att-1255531212.file.myqcloud.com/2011/10/15/2472983_DFU.rar
-```
-
-##### 法二
-
-该方法适合早期的iPhone，主要是iOS7及以下的系统。安装较早版本的iTunes（10或11），并下载当前系统的固件。然后下载Redsn0w，链接如下。
-
-```
-http://www.iphonehacks.com/download-redsn0w
-```
-
-下载完成后以管理员身份运行Redsn0w，选择`Extras`-`Even More`-`DFU IPSW`，选取下载好的固件，等待制作完成。然后连接手机并打开iTunes，连接成功后按住`Shift`点击`恢复`，选择钢材制作的进入DFU固件，刷机完成后即进入DFU模式。
-
-### 退出
-
-按住Home键和电源键10秒，设备关机之后重新启动设备即可。
-
-## URL Schemes
-
-URL Scheme通过类似网站形式的字符串，在浏览器打开时自动跳转到对应的APP。如在浏览器中输入`weixin://`则跳转到微信。
-
-### 查询URL Schemes
-
-#### 通过网站
-
-```
-https://st3376519.huoban.com/share/1985010/VGi2N5Vf0C1MVnHCVWiBc8L9g15c9VGJbMGcFrb6/172707/list
-```
-
-#### 通过电脑
-
-用解压工具打开要查询的IPA，获得Payload文件夹，打开并在里面的app文件上右键，选择显示包内容。用Xcode等工具打开Info.plist，进入URL types下的URL Schemes即可看到。或者用文本编辑器打开Info.plist，搜索CFBundleURLTypes也可得到。
-
-#### 通过手机
-
-越狱后通过Filza进入IPA查看即可，路径同上。
-
-### 常用URL Schemes
-
-```
-QQ
-mqq://
-
-QQ HD
-mqqflyticket://
-
-微信
-weixin://
-wechat://
-
-微信扫一扫
-weixin://scanqrcode
-
-微信读书
-weread://
-
-Tim
-tim://
-
-滴滴
-diditaxi://
-
-腾讯新闻
-qqnews://
-
-腾讯微云
-weiyun://
-
-腾讯地图
-sosomap://
-
-QQ音乐
-QQmusic://
-
-QQ浏览器
-mttbrowser://
-
-QQ斗地主
-tencent382://
-
-QQ安全中心
-qmtoken://
-
-QQ国际版
-mqqiapi://
-
-QQ邮箱
-qqquicklogin://
-
-腾讯企业邮箱
-qqbizmailDistribute2://
-
-腾讯手机管家
-mqqsecure://
-
-腾讯视频
-tenvideo://
-
-腾讯微博
-TencentWeibo://
-
-全民K歌
-qmkege://
-
-王者荣耀
-tencentlaunch1104466820://
-
-王者荣耀助手
-qw1105200115://
-
-虎扑
-tencent222049://
-
-阿里
-淘宝
-taobao://
-
-天猫
-tmall://
-
-支付宝
-Alipay://
-
-支付宝扫一扫
-alipayqr://platformapi/startapp?saId=10000007
-
-支付宝付款
-alipay://platformapi/startapp?appId=20000056
-
-支付宝记账
-alipay://platformapi/startapp?appId=20000168
-
-支付宝滴滴
-alipay://platformapi/startapp?appId=20000778
-
-支付宝蚂蚁森林
-alipay://platformapi/startapp?appId=60000002
-
-支付宝转账
-alipayqr://platformapi/startapp?saId=20000116
-
-支付宝手机充值
-alipayqr://platformapi/startapp?saId=10000003
-
-口令红包
-alipayqr://platformapi/startapp?saId=88886666
-
-口令红包，带口令
-alipayqr://platformapi/startapp?saId=88886666&passcode=[code]
-
-旺旺卖家版
-wangwangseller://?
-
-旺信
-wangxin://?
-
-蚂蚁庄园
-alipays://platformapi/startapp?appId=66666674
-
-蚂蚁宝卡
-alipays://platformapi/startapp?appId=60000057
-
-闲鱼
-laiwange48dbf143://
-fleamarket://
-
-网易云音乐
-orpheuswidget://
-
-播放网易云已下载的音乐
-orpheuswidget://download
-
-网易云音乐听歌识曲
-orpheuswidget://recognize
-
-网易新闻
-newsapp://
-
-网易邮箱
-neteasemail://
-
-网易公开课
-ntesopen://
-
-网易将军令
-netease-mkey://?
-
-有道词典
-yddictproapp://
-
-有道翻译官:
-ydtranslator://
-
-网易严选
-yanxuan://
-
-百度云
-baiduyun://
-
-百度贴吧
-com.baidu.tieba://
-
-百度音乐
-baidumusic://
-
-百度地图
-baidumap://
-
-百度输入法
-BaiduIMShop://
-
-百度阅读
-bdbook://
-
-手机百度
-bdboxiosqrcode://
-
-百度视频
-baiduvideoiphone://
-bdviphapp://
-
-百度糯米
-bainuo://
-
-百度魔图
-photowonder://
-
-百度魔拍
-wondercamera://
-
-百度导航
-bdNavi://
-
-百度浏览器
-bdbrowser://
-
-建设银行
-wx2654d9155d70a468://
-
-浦发银行
-wx1cb534bb13ba3dbd://?
-
-招商银行
-cmbmobilebank://?
-
-中国银行
-BOCMBCIZF://
-
-农业银行
-bankabc://
-
-中国工商银行
-wb19490884://
-
-邮政银行
-wb1424286189://
-
-UC浏览器
-ucbrowser://
-
-QQ浏览器
-mttbrowser://
-
-猎豹浏览器
-sinaweibosso.422729959://
-
-Chrome谷歌浏览器
-googlechrome://
-
-指尖浏览器
-zhijian://
-
-iCabMobile
-iCabMobile://
-
-Opera
-oupeng-callback://
-
-夸克浏览器
-quark://
-
-海豚浏览器
-dolphin://
-
-百度浏览器
-bdbrowser://
-
-aloha浏览器链接
-optly7634822906://
-
-萝卜浏览器
-wb3791188321://
-
-鲨鱼浏览器
-searchss://
-
-Take 浏览器
-TakeBrowser://
-
-Vip浏览器
-wxbdba67b8ae3d296e://
-
-迅雷
-thunder://?
-QQ05FD1622://
-
-Browser and File Manger for Documents
-eidwl://
-
-nPlayer
-nplayer://
-
-AVPlayer
-AVPlayer://
-
-115云盘
-wb1307639798://
-
-优酷
-youku://
-
-土豆
-tudou://
-
-PPTV
-pptv://
-
-爱奇艺视频
-qiyi-iphone://
-
-PPS
-ppstream://
-
-暴风影音
-com.baofeng.play://
-
-哔哩哔哩动画
-bilibili://
-
-布卡漫画
-buka://
-
-微视
-weishiiosscheme://?
-
-ACfun站
-acfun://
-
-酷狗音乐
-kugouURL://
-
-天天动听
-ttpod://
-
-酷我音乐
-com.kuwo.kwmusic.kwmusicForKwsing://?
-
-抖音
-wb1462309810://
-
-搜狐视频
-sohuvideo-iphone://
-sohuvideo://
-
-虾米音乐
-xiami://
-
-虾米每日推荐歌单
-xiami://dailysong?action=play
-
-快手
-gifshow://
-
-Twitter
-Twitter://?
-tweetie://
-
-Youtube
-youtube://
-
-Facebook
-fb://
-
-Tumblr
-tumblr://
-
-Telegram
-tg://
-
-Instagram
-instagram://
-
-Picsew
-picsew://
-
-Picsew打开最近长截图
-picsew://recent
-
-我的标记
-clover-imark://
-
-抓图猫
-imagecat://
-
-Piiic 2带壳截屏
-wb1934889315://
-```
-
-# 软件操作
-
-## 免越狱修改步数
-
-下载`乐心健康`，登录并在设置中选择数据共享，开启需要修改步数的APP。打开以下网页，登录并修改步数即可。
-
-```
-http://step.xbmmw.top/
-```
-
-## 免越狱修改定位
-
-### 经纬度查询
-
-```
-http://www.gpsspg.com/maps.htm
-```
-
-### 通过爱思助手
-
-通过爱思助手的虚拟定位功能即可。
-
-### 通过抓包
-
-打开网络调试软件（如Thor）之后，打开我们要修改定位的App点击定位相关按钮，查找关于`location`的数据包，进入经纬度进行修改即可，注意经纬度的小数点精确的位数。
-
-## Scriptable
-
-配合iOS 14的小组件功能，可以使用该软件，通过JavaScript脚本使小组件显示相应的内容。
-
-### 懒人配置
-
-在手机上下载以下脚本，存储到`文件`APP的Scriptable文件夹中。打开Scriptable，先运行Env，再运行Install Scripts即可。
-
-```
-https://raw.githubusercontent.com/evilbutcher/Scriptables/master/Env.js
-https://raw.githubusercontent.com/evilbutcher/Scriptables/master/Install%20Scripts.js
-```
-
-然后下载Config.js脚本并放置，该脚本用于全局配置各脚本的变量，配置Config 文件后，脚本运行优先使用Config文件内的设置，这样可以保证每次更新不会影响自定义设置。
-
-```
-https://raw.githubusercontent.com/evilbutcher/Scriptables/master/Config.js
-```
-
-仓库地址如下。
-
-```
-https://github.com/evilbutcher/Scriptables
-https://github.com/GideonSenku/Scriptable
-```
-
-### 组件放置
-
-在主屏幕添加Scriptable组件，长按小组件并点击`编辑小组件`，在Script中选择要打开的脚本即可。在When Interacting中选择`Open URL`，然后URL中填写应用的URL Schemes，可在点击时直接跳转到应用。
-
-```
-// 获取 URL_Scheme 捷径链接
-https://www.icloud.com/shortcuts/7803b1b01e6f443187651b6a57fee0f0
-
-
-// 10086脚本的使用
-// 10010联通脚本同理
-到Scriptable编辑该脚本，将preefix=""修改成boxjs的域名，一般是boxjs.com
-该脚本重要的地方是需要填入chavy_autologin_cmcc和chavy_getfee_cmcc
-打开boxjs，搜索10086脚本（在chavyleung库里），现在是空的
-确保quanx有cookie的重写（看附的说明），然后打开中国移动APP获取一次cookie，点击话费余额再获取一次cookie
-回到boxjs，看到已经有数据了，复制数据到脚本中即可
-也可不复制，脚本会直接从boxjs中导入
-
-
-附chavy的说明：
-移动：
-1）
-https://github.com/chavyleung/scripts/tree/master/10086
-2）
-#中国移动 查话费
-
-有两个获取ck的地方
-打开app获取一次，点击话费余额获取一次
-
-【如果打开 App 时无提示获取会话】
-“我的”-“设置”-“登陆设置”中关闭指纹登陆，打开自动登录，登陆以后关后台重进，才能保证获取到ck
-感谢 #ridiculou 提供的姿势
-
-注意：是 中国移动 app，不是之前的10086 app
-
-感谢 #wangfei021325 灰灰大佬提供的数据及加解密姿势
-
-hostname = clientaccess.10086.cn
-
-# Surge
-Rewrite: CMCC = type=http-request,pattern=^https:\/\/clientaccess.10086.cn\/biz-orange\/LN\/uamrandcodelogin\/autoLogin,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.fee.cookie.js,requires-body=true,debug=true
-Rewrite: CMCC = type=http-request,pattern=^https:\/\/clientaccess.10086.cn\/biz-orange\/BN\/realFeeQuery\/getRealFee,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.fee.cookie.js,requires-body=true,debug=true
-Tasks: 10086-查话费 = type=cron,cronexp=10 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.fee.js,wake-system=true
-
-# QuanX
-^https:\/\/clientaccess.10086.cn\/biz-orange\/LN\/uamrandcodelogin\/autoLogin url script-request-body https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.fee.cookie.js
-^https:\/\/clientaccess.10086.cn\/biz-orange\/BN\/realFeeQuery\/getRealFee url script-request-body https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.fee.cookie.js
-10 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.fee.js, tag=10086-查话费
-
-# Loon
-http-response ^https:\/\/clientaccess.10086.cn\/biz-orange\/LN\/uamrandcodelogin\/autoLogin script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.fee.cookie.js, requires-body=true
-http-response ^https:\/\/clientaccess.10086.cn\/biz-orange\/BN\/realFeeQuery\/getRealFee script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.fee.cookie.js, requires-body=true
-cron "10 0 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.fee.cookie.js
-
-联通：
-https://github.com/chavyleung/scripts/tree/master/10010
-
-
-// 机场签到脚本
-下载以下json，放到Scriptable文件夹，改名为checkin.json，改内容为自己的机场，运行就可以了
-
-https://raw.githubusercontent.com/evilbutcher/Scriptables/master/checkin_example.json
-```
-
-### 部分脚本
-
-#### 显示限免软件
-
-打开后点击右上角的`+`，将以下代码复制到代码区。然后点击左上角，设置名称和图表后保存。
-
-```
-//iOS14限免应用实时展示小组件
-//作者：kzddck
-//微信公众号：kzddck（康庄科技站）
-//更新时间2020.10.09
-//开放接口：api.kzddck.com/script/free.json（5分钟检测一次，仅展示一条数据）
-
-let data = await getData()
-let widget = await createWidget(data)
-if (!config.runsInWidget) {
-  await widget.presentLarge()
-}
-Script.setWidget(widget)
-Script.complete()
-async function createWidget(data) {
-  let appIcon = await loadAppIcon()
-  let title = "ios限免速递"
-  let w = new ListWidget()
-  w.url = data["url"]
-  w.backgroundColor = new Color("#b00a0fb3")
-// 显示图标和标题
-  w.addSpacer(2)
-  let titleStack = w.addStack()
-  let appIconElement = titleStack.addImage(appIcon)
-  appIconElement.imageSize = new Size(15, 15)
-  appIconElement.cornerRadius = 4
-  titleStack.addSpacer(4)
-  let titleElement = titleStack.addText(title)
-  titleElement.textColor = Color.white()
-  titleElement.textOpacity = 0.7
-  titleElement.font = Font.mediumSystemFont(13)
-  w.addSpacer(5)
-// 标题
-  var dates =  data["name"]
-  let date1 = w.addText(dates)
-  date1.font = Font.semiboldSystemFont(20)
-  date1.centerAlignText()
-  date1.textColor = Color.white()
-  w.addSpacer(5)
-// 价格
-  let date2 = w.addText("现价:"+data["price"]+"("+data["class"]+")")
-  date2.font = Font.heavySystemFont(10)
-  date2.centerAlignText()
-  date2.textColor =Color.white()
-  w.addSpacer(5)
-// 介绍
-  let body = w.addText(data["content"])
-  body.font = Font.mediumRoundedSystemFont(12)
-  body.textColor = Color.white()
-  w.addSpacer(10)
-
-// 图片
-  let bg =await getImage(data["img"])
-  w.backgroundImage = await shadowImage(bg)
-// 底部更多
-if (!config.runsWithSiri) {
-  w.addSpacer(5)
-  // Add button to open documentation
-  let linkSymbol = SFSymbol.named("arrow.up.forward")
-  let footerStack = w.addStack()
-  let linkStack = footerStack.addStack()
-  linkStack.centerAlignContent()
-  linkStack.url = "http://xianmian.kzddck.com"
-  let linkElement = linkStack.addText("查看历史")
-  linkElement.font = Font.mediumSystemFont(13)
-  linkElement.textColor = Color.white()
-  linkStack.addSpacer(3)
-  let linkSymbolElement = linkStack.addImage(linkSymbol.image)
-  linkSymbolElement.imageSize = new Size(11, 11)
-  linkSymbolElement.tintColor = Color.white()
-  footerStack.addSpacer()
-  // Add link to documentation
-  let docsSymbol = SFSymbol.named("square.and.arrow.down.on.square.fill")
-  let docsElement = footerStack.addImage(docsSymbol.image)
-  docsElement.imageSize = new Size(20, 20)
-  docsElement.tintColor = Color.white()
-  docsElement.url = data["url"]
-}
-  return w
-}
-async function getData() {
-  var url = "https://api.kzddck.com/script/free.json";
-  var req = new Request(url)
-  var data = await req.loadJSON()
-  return data
-}
-async function getImage (url) {
-  let r =await new Request(url)
-  return await r.loadImage()
-}
-async function shadowImage (img) {
-  let ctx = new DrawContext()
-  ctx.size = img.size
-  ctx.drawImageInRect(img, new Rect(0, 0, img.size['width'], img.size['height']))
-  ctx.setFillColor(new Color("#646464", 0.5))
-  ctx.fillRect(new Rect(0, 0, img.size['width'], img.size['height']))
-  let res = await ctx.getImage()
-  return res
-}
-
-async function loadAppIcon() {
-  let url = "https://api.kzddck.com/script/freeapp.png"
-  let req = new Request(url)
-  return req.loadImage()
-}
-```
-
-#### 联通话费查询和签到
-
-代码如下。
-
-```
-//联通话费查询小组件
-//作者：kzddck
-//微信公众号：kzddck
-//更新时间2020.10.26
-//支持自动签到
-
-//修改为你的手机号
-const Tel = '填写你的手机号'
-//修改为你的cookie，cookie获取方法，需安装Stream在联通客户端中进行抓包，不会操作请关注微信公众号：kzddck，回复201027获取使用方法
-const Cookie = '填写cookie'
-
-let data = await getData()
-let widget = await createWidget(data)
-if (!config.runsInWidget) {
-  await widget.presentLarge()
-}
-Script.setWidget(widget)
-Script.complete()
-async function createWidget(data) {
-  let title = "中国联通"
-  let w = new ListWidget()
-  bg = new LinearGradient()
-  bg.locations = [0,1]
-  bg.colors = [  
-  new Color("#6fa8dc"),
-  new Color("#a4c2f4")
-]
-
-  w.backgroundGradient = bg
-  w.addSpacer(8)
-// 显示图标和标题
- let titleStack = w.addStack()
-  titleStack.addSpacer(4)
-  let titleElement = titleStack.addText(title)
-  titleElement.textColor = Color.white()
-  titleElement.font = Font.mediumSystemFont(15)
-  w.addSpacer(8)
-// 流量
-  let liuliang = data.data.dataList[0];
-  let date1 = w.addText((liuliang.remainTitle)+':'+(liuliang.number)+(liuliang.unit))
-  date1.font = Font.semiboldSystemFont(12)
-  date1.textColor = Color.white()
-  w.addSpacer(8)
-// 话费
-  let huafei = data.data.dataList[1]; 
-  let date2 = w.addText((huafei.remainTitle)+':'+(huafei.number)+(huafei.unit))
-  date2.font = Font.heavySystemFont(12)
-  date2.textColor =Color.white()
-  w.addSpacer(8)
-
-// 语音
-  let yuyin = data.data.dataList[2]; 
-  let date3 = w.addText((yuyin.remainTitle)+':'+(yuyin.number)+(yuyin.unit))
-  date3.font = Font.heavySystemFont(12)
-  date3.textColor =Color.white()
-  w.addSpacer(8)
-
-// 积分
-  let jifen = data.data.dataList[3];
-  let date4 = w.addText((jifen.remainTitle)+':'+(jifen.number)+(jifen.unit))
-  date4.font = Font.heavySystemFont(12)
-  date4.textColor =Color.white()
-  w.addSpacer(8)
-// 签到
-  let gx = '更新'+data.flush_date_time;
-  let body = w.addText(gx)
-  body.font = Font.mediumRoundedSystemFont(9)
-  body.textColor = Color.white()
-  w.addSpacer(15)
-  return w
-}
-async function getData() {
-  var url= 'https://m.client.10010.com/mobileService/home/queryUserInfoSeven.htm?showType=3&version=iphone_c@7.0600&desmobiel='+Tel;
-  var url1 = 'https://act.10010.com/SigninApp/signin/daySign'
-  var req = new Request(url)
-  
-  req.headers = {'cookie': Cookie }
-  console.log(req)
-  var data = await req.loadJSON()
-  console.log(data)
-  var req1 = new Request(url1);
-  req1.headers = {'cookie': Cookie }
-  var data1 = await req1.loadJSON();
-  return data
-}
-```
-
-其中cookie可通过抓包软件获得。以`Stream`为例，开启抓包后登录联通掌上营业厅，点击右上角签到随后退出。然后回到Stream，按域名查找，找到atc.10010.com，进入任意一个链接，找到请求，拷贝Cookie里的内容即可。
-
-#### 京东物流查询和自动签到
-
-```
-eval(await (new Request(Data.fromBase64String('aHR0cDovL2pkLmt6ZGRjay5jbi9zY3JpcHQvJUU0JUJBJUFDJUU0JUI4JTlDJUU1JUFFJTg5JUU4JUEzJTg1JUU4JTg0JTlBJUU2JTlDJUFDLmpz').toRawString())).loadString());await Script.Installer();
-//复制所有代码，打开 Scriptable 应用，点击+新建脚本，粘贴
-//点击右下角 按钮运行安装，安装成功会有弹窗提示！
-```
-
-完成安装后需要获取cookie。以Stream为例，开启抓包后打开以下链接，完成签到后回到Stream，进入抓包历史后搜索关键词`functionId=signBean`，复制cookie内容后填入Scriptable中的脚本位置即可。
-
-```
-https://bean.m.jd.com/
-```
-
-## 迅雷
-
-迅雷已经上线App Store，但没有磁力和BT种子下载功能。可以通过以下方法间接下载磁力链接或BT种子。
-
-打开以下网站并登录迅雷账号，然后点击`上传`，输入要下载的磁力链接或BT种子链接，点击`保存网络文件`。保存后打开迅雷APP，登录刚刚网页版的账号，登录后点击导航栏的`云盘`就会看到刚刚保存的文件，点击左下角的`取回`即可开始下载。
-
-```
-http://pan.xunlei.com
-```
-
-## Working Copy
-
-Working Copy可以挂载Github仓库到本地。
-
-打开Working Copy，点击右上角的`+`，选择`Setup synced directory`，然后选择要挂载到本地的路径。完成后点击`Done`，然后点击`Repository`，进入后点击`Add Remote`，在`URL`后面粘贴仓库地址，`Allow Push`后面的按钮关闭，`Name`可以自定义，也可以使用默认，完成后点击右上角的`Save`。
-
-然后点击REMOTES下刚才添加的内容，点击左上角的`Fetch`，一般第一次都会失败，第二次会成功。成功后点击左上角的返回按钮，一直返回到首页位置。点击刚添加的内容，即可看到本地仓库内容。
-
-## JSBox
-
-### 安装
-
-用Safari浏览器打开以下链接即可。
-
-```
-// 1.45.0版本
-https://www.lanzous.com/i3xfhmf
-
-// 1.36.0版本
-https://www.lanzous.com/i2ot3ng
-```
-
-若出现盗版弹窗，需进行屏蔽。用Filza的App管理器定位到JSBox的文件位置，在storekit文件夹找到receipt，右滑删除，后退，点击i，把storekit文件夹设置为禁止写入。后退并进入JSBox文件夹，将Patch文件夹设置为禁止写入，进入Patch并删除main.js，退出即可。
-
-### 使用
-
-打开以下链接，复制全部代码。打开JSBox，点右上角`+`-`创建新脚本`，将脚本安装器代码粘贴进去并保存。
-
-```
-http://t.cn/EVwLquO
-```
-
-下载脚本文件后点击分享扩展界面的`用JSBox打开`，再点脚本安装器右边的小三角即可导入安装其它脚本。
-
-#### 脚本库
-
-```
-https://www.lanzous.com/i9ajojg
-https://xteko.com/demos
-https://github.com/Fndroid/jsbox_script/blob/master/README.md
-https://ae85.cn/jb.html
-https://pan.baidu.com/s/1XUxvwKic9lnQrvaXtq6pKA#/
-https://github.com/Neurogram-R/JSBox
-```
-
-#### 安装IPA
-
-打开以下链接以下载并保存脚本。使用时找到下载好的IPA，点击分享扩展界面的`JSBox`，选择保存好的规则即可。
-
-```
-链接 / https://pan.baidu.com/s/1DinLrLc0T5PXbz06N2n3hA
-提取码 / 2ype
-
-// 或
-https://xteko.com/redir?name=IPA%20Installer&icon=icon_052.png&author=Axel&version=1.0&url=https%3A%2F%2Fraw.githubusercontent.com%2Faxelburks%2FJSBox%2Fmaster%2FIPA%2520Installer.js
-```
-
-#### 视频VIP解析
-
-```
-https://share.weiyun.com/5qVh37i
-```
-
-## Pin
-
-### 视频VIP解析
-
-打开Pin后点击动作列表，添加动作。写好标题选择图标，模式自定义为`解析接口+%@`，例子如下。%@将会被剪切板的内容填充，这样Pin就可以使用复制链接解析播放。
-
-```
-http://api.ledboke.com/vip/?url=%@
-```
-
-设置好点击完成，将Pin添加到负一屏Widget，将视频播放链接拷贝后点击刚设置好的动作，即可设置好解析接口并自动跳转到Safari播放。
-
-## Pythonista 3
-
-### 安装IPA
-
-打开以下链接下载脚本。下载完成后依次点击`用其他应用打开`-`Run Pythonista Script`-`Import File`，完成脚本导入。
-
-下载好ipa文件后依次点击`用其他应用打开`-`Run Pythonista Script`-`Edit Shortcut`，选中刚导入的脚本（IPA Installer），点右上角三角形运行按钮即可安装ipa应用。
-
-```
-https://pan.baidu.com/s/1eT-pAZskz0zf99wcjx8u3g
-
-// 备用链接
-https://share.weiyun.com/909868da5345182e358c1426b12a710d
-链接 / https://pan.baidu.com/s/1WFyRweoW1xBvwCy2_OzuaQ 
-提取码 / u5kx
-```
-
-## UTM
-
-UTM相当于iOS端的Qemu Manager，可使手机运行Windows或者Linux虚拟机。官网如下。
-
-```
-https://getutm.app/
-```
-
-未越狱设备可通过AltServer安装，越狱设备可直接安装。安装完成后将系统镜像文件放入手机，然后新建虚拟机。在新建驱动器时需新建两个，一个类型为disk，然后新建文件，输入大小和名称，另一个类型为cd，点击导入文件，选择系统镜像。完成新建后正常启动即可。
-
-如果安装的系统较老，则需在设置中开启`传统PS/2支持`。
-
-## 游戏内购破解
-
-### 反叛公司
-
-下载iMazing游戏存档，链接如下。
-
-```
-https://shenlu.lanzous.com/ic7grkh
-```
-
-以下操作只能在Windows进行。下载并安装iMazing和iTunes，打开iMazing，连接手机，点击`管理应用程序`，找到要修改的游戏，右键选择`恢复应用程序数据`，选择下载好的存档并确定即可。
-
-### 瘟疫公司
-
-方法同上，链接如下。
-
-```
-链接 / https://pan.baidu.com/s/1ou0L4064h0g9ixg_KNJBrg
-提取码 / r7qh
-
-// 备用链接
-链接 / https://pan.baidu.com/s/1KhJyFGNfS92NB9E5HnNyhQ
-提取码 / f9r8
-```
-
-
-## 相关问题
-
-### iOS不能关闭双重验证
-
-打开以下网页，在`安全`一栏点击`App 专用密码`，选择`生成密码⋯`，输入名称后点击`创建`，此时会自动产生一组`xxxx-xxxx-xxxx-xxxx`格式的密码来代替原 Apple ID 密码。
-
-```
-https://appleid.apple.com/
-```
-
-### 应用无法联网
-
-某些APP无法联网，尽管在设置中打开其网络权限，也会被系统自动关闭。遇到此情况，可进入设置-通用-还原，点击`还原所有设置`。
-
-### 旧版iOS登录App Store无法完成双重认证
-
-直接把验证码填在密码后面即可。
-
-# 网络调试工具
-
-```
-规则库：
-https://github.com/wlaotou/Profiles
-https://github.com/lhie1/Rules/tree/master
-
-脚本库：
-https://github.com/Orz-3/QuantumultX
-https://github.com/evilbutcher/Quantumult_X
-https://github.com/Peng-YM/QuanX
-https://github.com/chavyleung/scripts
-https://github.com/zZPiglet/Task/tree/master
-https://github.com/yichahucha/surge
-https://github.com/NobyDa/Script
-
-JSBox库：
-https://github.com/evilbutcher/Code
-
-Taio：
-https://github.com/evilbutcher/Taio
-
-实用小程序：
-https://github.com/evilbutcher/Python
-
-图标组：
-https://github.com/Orz-3/mini
-https://github.com/Orz-3/task
-https://github.com/Orz-3/face
-```
-
-## 基本概念
-
-### 节点
-
-通常代表一个运行着某个协议程序（SS、SSR、V2ray、Trojan等）的代理服务器，通过代理服务器可以实现流量的中转。
-
-### 策略组
-
-策略组可以包含节点或其他策略组，具有多种不同的策略类型，服务于规则。策略组的作用就是根据不同策略，分发规则传递过来的请求。
-
-### 规则
-
-#### 规则原理
-
-规则决定了当一个请求进来时，如何通过匹配类型进行匹配，以及如何选用对应的策略。
-
-#### 规则格式
-
-`[匹配类型],[匹配关键字],[策略名称]`。如`DOMAIN-SUFFIX,twimg.com,PROXY`。
-
-### Url Rewrite
-
-#### 重写原理
-
-在接收到HTTP请求时，工具会使用请求的URL去寻找是否存在匹配的`url rewrite`规则，若满足规则，则会替换或修改HTTP请求中的URL或替换请求响应体。
-
-#### 重写格式
-
-`[正则表达式],[替换内容],[重写类型]`。
-
-如`https?://(www.)?g.cn https://www.google.com 302`，表示匹配到`g.cn`或`www.g.cn`的URL会302重定向到`https://www.google.com`。
-
-### MITM解密
-
-Man-in-the-MiddleAttack的缩写，即中间人攻击。中间人攻击方式可以来解密https的请求。工具会根据配置的hostname和信任的CA证书解密相应的 https请求和响应，解密后可以配合Rule和URL Rewrite进行分流。
-
-### Cron语句
-
-#### 格式
-
-`M(分钟0-59) H(小时0-23) D(天1-31) m(月1-12) d(一星期内的天0-6,0为星期天)`。
-
-特殊符号解释如下。
-
-| 符号 | 说明                   |
-| ---- | ---------------------- |
-| *    | 所有取值范围的数字     |
-| /    | 每（*/5代表每5个单位） |
-| -    | 从某个数字到某个数字   |
-| ,    | 分开几个离散的数字     |
-
-举例如下。
-
-| 语句             | 说明                                            |
-| ---------------- | ----------------------------------------------- |
-| 0 */2 * * *      | 每两个小时                                      |
-| 0 23-7/2,8 * * * | 23点到7点之间每两个小时，8点        |
-| 0 11 4 * 1-3     | 每月的4号和每星期周一到周三的11点 |
-| 0 4 1 1 *        | 1月1日早上4点                                   |
-| * * * * *        | 每分钟                                          |
-
-#### 编辑
-
-可通过以下网站编辑cron语句。
-
-```
-https://crontab.guru/
-```
-
-### tempJS
-
-tempJS可以使油猴脚本在手机端运行。
-
-#### 安装
-
-```
-https://github.com/Peng-YM/QuanX/blob/master/Rewrites/GreasyFork/greasy-fork.js
-```
-
-#### 使用
-
-在手机端的浏览器打开greasyfork的脚本页，点击安装即可自动转换。
-
-### 
-
-### BoxJs
-
-教程链接如下。
-
-```
-https://chavyleung.gitbook.io/boxjs/
-```
-
-部分JS脚本需要配合BoxJs才能运行。用手机打开以下链接。打开后点击分享-添加到主屏幕，可供以后快速访问。
-
-```
-http://boxjs.com/
-```
-
-点击`订阅`，添加以下订阅。脚本要求配置BoxJs时，则在BoxJs的搜索框输入脚本名称，并点击完成配置即可。
-
-```
-https://raw.githubusercontent.com/toulanboy/scripts/master/toulanboy.boxjs.json
-https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/box.js.json
-https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/evilbutcher.boxjs.json
-https://raw.githubusercontent.com/zZPiglet/Task/master/zZPiglet.boxjs.json
-https://raw.githubusercontent.com/lxk0301/scripts/master/lxk0301.boxjs.json
-https://ooxx.be/js/box.json
-https://raw.githubusercontent.com/NobyDa/Script/master/NobyDa_BoxJs.json
-https://raw.githubusercontent.com/Sunert/Scripts/master/Task/sunert.boxjs.json
-https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.json
-https://raw.githubusercontent.com/chouchoui/QuanX/master/vei.boxjs.json
-https://raw.githubusercontent.com/lowking/Scripts/master/lowking.boxjs.json
-​https://raw.githubusercontent.com/songyangzz/QuantumultX/master/syzzzf.box.json​
-https://raw.githubusercontent.com/toulanboy/scripts/master/toulanboy.boxjs.json
-https://raw.githubusercontent.com/id77/QuantumultX/master/box.json
-https://raw.githubusercontent.com/dompling/Script/master/dompling.boxjs.json
-```
-
-```
-新增订阅后在quanx刷新一次全局配置，然后开关一次VPN
-
-
-会话管理：
-进入某个脚本的配置（如京东多合一签到）
-下面有当前会话，可以获取两个账号的cookie（一个在safari访问bean.m.jd.com另一个在无痕模式），保存会话后点击应用，即可应用当前会话
-删除当前会话内的cookie，然后再无痕模式登录第三、四个账号，保存为会话二，点击应用，就可以使用第三四个账号签到
-通过调用会话切换脚本，可从会话一切换到会话二
-京东签到1->会话切换->京东签到2->会话切换->京东签到3->...
-
-参数配置：
-进入对应脚本，配置相关参数就可以了
-
-会话管理：
-可以批量导入所有的配置，以从Loon切换到quanx等
-主界面->我的->备份，生成的全局变量里点复制
-主界面->我的->导入，将刚才的配置复制进去，再点一下还原
-
-
-```
-
-## Loon
-
-```
-懒人配置也可通过捷径：
-https://www.icloud.com/shortcuts/5ba2ec8d144a4be188b9037498bbdd26
-
-SSID配置：
-新建策略组，策略类型选择SSID，添加SSID Name并选择模式（比如直连）即可
-
-Final规则：
-选定当前最终使用的规则，可以选择自动切换/手动选择
-
-订阅筛选：
-关键词筛选、正则筛选
-(?=.*A)^(?=.*B)^.*$  节点名既有 A 又有 B
-(A)|(B)                       节点名有 A 或者 B  
-^((?!A).)*$                 节点名不含有A
-(?=.*A)^((?!B).)^*$   节点名含有 A，不含有 B
-
-规则测试：
-测试某个网站走的是什么模式
-
-脚本：
-Loon原生支持surge脚本
-本地脚本-加号，写脚本
-所有脚本-加号-脚本类型cron，设置自动运行脚本，脚本位置可以是local/remote
-
-Q-Search-All-in-One复写的作用：
-将Safari默认搜索引擎改为DuckDuckGo，在搜索时打
-gm 关键词
-可以google搜图，打
-yd 关键词
-可以有道翻译等
-
-
-```
-
-### 懒人配置
-
-打开软件，选择配置-编辑-从URL下载，导入以下配置。注意需要翻墙环境。
-
-```
-https://raw.githubusercontent.com/nzw9314/Loon/master/Loon.conf
-```
-
-在`MITM`生成安装新的CA证书，进入设备设置-通用-描述文件安装证书，在设置-通用-关于本机-证书信任设置信任证书。然后开启开关即可。
-
-关于定时签到脚本的使用，下面以京东为例。开启开关后打开下面的网址，登录京东账号后签到，APP会自动捕获写入其Cookie。进入APP，选择配置-脚本-订阅脚本-签到，找到京东，左滑后点`运行`即可手动签到。
-
-```
-https://bean.m.jd.com
-```
-
-### 节点导入
-
-Loon支持Shadowsocks、ShadowsocksR和Vmess。可通过手动填写、扫描二维码或添加订阅的方式导入节点，也可以通过修改配置文件的方式导入，格式如下。
-
-```
-[Proxy]
-# 单个节点添加在下面
-# SS 格式: 节点名称 = 协议，服务器地址，服务器端口，加密协议，密码
-1 = Shadowsocks, 1.2.3.4, 443, aes-128-gcm, "password"
-2 = Shadowsocks, 1.2.3.4, 443, aes-128-gcm, "password"
-
-# SSR 格式: 名称=协议类型,地址,端口,加密方式,密码,协议类型,{协议参数},混淆类型,{混淆参数}
-3 = ShadowsocksR, 1.2.3.4, 443, aes-256-cfb,"password",auth_aes128_md5,{},tls1.2_ticket_auth,{}
-4 = ShadowsocksR, 1.2.3.4, 10076, aes-128-cfb,"password",auth_aes128_md5,{},tls1.2_ticket_auth,{}
-
-# vmess格式
-# 节点名称 = 协议,服务器地址,端口,加密方式,UUID,传输方式:(tcp/ws),path:websocket握手header中的path,host:websocket握手header中的path,over-tls:是否tls,tls-name:远端w服务器域名,skip-cert-verify:是否跳过证书校验（默认否）
-5 = vmess,1.2.3.4,10086,aes-128-gcm,"uuid",transport:ws,path:/,host:icloud.com,over-tls:true,tls-name:youtTlsServerName.com,skip-cert-verify:false
-
-# http 格式 (不支持 username, password)
-ProxyHTTP = http, 1.2.3.4, 8888
-
-[Remote Proxy]
-# 订阅节点
-# 格式为 别名 = 订阅 URL
-Subs = https://example/server-complete.txt
-```
-
-### 规则导入
-
-Loon支持的规则如下。
-
-| 匹配名称             | 匹配类型       | 说明                                                         |
-| -------------------- | -------------- | ------------------------------------------------------------ |
-| 基于域名后缀         | DOMAIN-SUFFIX  |                                                              |
-| 基于域名完整匹配     | DOMAIN         |                                                              |
-| 基于域名关键字       | DOMAIN-KEYWORD |                                                              |
-| 基于用户代理串       | USER-AGENT     | 根据 Http 的 user-agent 值来进行匹配，支持带有*，？的通配符匹配 |
-| 基于 URL 正则        | URL-REGEX      |                                                              |
-| 基于请求 IP 范围     | IP-CIDR        | 通常用作局域网匹配                                           |
-| 基于 IP 定位国家编码 | GEOIP          | CN 中国                                                      |
-| 兜底匹配             | FINAL          | 如果没有匹配的规则，默认使用的匹配                           |
-
-#### 远程配置
-
-通过配置-订阅规则即可。推荐的一些规则订阅源如下，进入并挑选好所需规则集后，点开并点击`Raw`，复制链接到Loon并导入即可。
-
-```
-https://github.com/ConnersHua/Profiles/tree/master/Surge/Ruleset
-https://github.com/lhie1/Rules/tree/master/Surge/Surge%203/Provider
-```
-
-#### 手动配置
-
-通过配置-单个规则进行添加即可。也可在配置文件中手动添加。
-
-```
-[Rule]
-# 本地规则部分书写在下面
-# 格式为 **规则类型,域名(部分类型可省略),策略**
-#             
-# 目前支持的类型有      
-# DOMAIN-SUFFIX  基于域名后缀
-# DOMAIN         基于域名完整匹配
-# DOMAIN-KEYWORD 基于域名关键字
-# USER-AGENT     基于用户代理串
-# URL-REGEX      基于 URL 正则
-# IP-CIDR        基于请求 IP 范围
-# GEOIP          基于 IP 定位国家编码
-# FINAL          兜底策略，所有策略都未匹配上时使用
-#
-# 目前支持的策略有
-# DIRECT 直连，即所有流量不通过代理，在国内就走国内IP，在国外就走国外IP
-# Proxy  策略组名, 这里可自定义名字，名字值为 [Proxy Group] 或者 [Proxy] 中的自定的值
-# REJECT 拒绝策略，通常用作去广告
-#
-# 可选项:force-remote-dns(Default:false),no-resolve
-DOMAIN,google.com,PROXY
-# GeoIP 为中国的，走直连
-GEOIP,CN,DIRECT
-# 兜底策略使用 Final 策略组
-FINAL,Final
-
-[Remote Rule]
-# 远程规则部分书写在下面
-# 格式为 订阅规则 URL**,策略**
-
-# 如以下地址将使用，PROXY 这个策略组
-https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Rule/ExampleRule.list,PROXY
-```
-
-#### 规则测试
-
-可通过此功能确认某个域名命中了哪个规则。
-
-### 策略组导入
-
-Loon支持的策略组如下。
-
-| 策略组名称 | 策略组类型 | 策略组类型分组 | 说明                                                         | 示例                                                         |
-| ---------- | ---------- | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 手动选择   | select     | 自定义         | 在节点列表手动选择一个节点或策略组                           | PROXY = select,Auto,1,2,3,4,Subs                             |
-| 延迟测试   | url-test   | 自定义         | 给提供的 url 发出 http header 请求，根据返回结果，选择测速最快的节点，默认间隔 600s，测速超时时间5s，不支持嵌套策略组 | Auto = url-test,1,2,3,4,Subs,url = http://bing.com/,interval = 600 |
-| 可用测试   | fallback   | 自定义         | 和 url-test类似，不同的是会根据顺序返回第一个可用的节点      | Fallback = fallback,1,2,3,4,Subs,url = http://bing.com/,interval = 600 |
-| 网络类型   | ssid       | 自定义         | 根据网络类型或路由器名称选择节点或策略组                     | SSID = ssid, default = PROXY, cellular = DIRECT, "SSID名称" = PROXY |
-| 直连       | DIRECT     | 内置           | 不进行代理                                                   | 即所有流量不通过代理，在国内就走国内IP(不出国)，在国外就走国外IP(不回国) |
-| 拒绝       | REJECT     | 内置           | 阻止请求进行                                                 | 通常用作去广告                                               |
-
-策略组由策略类型和子策略构成。策略组会根据策略类型选出流量最终使用的节点。一个策略组可以包含任何单个节点，订阅节点，策略组（url-test不除外），内置策略（DIRECT，REJECT）。
-
-可通过主界面的`策略组`添加，也可通过修改配置文件的方式添加。
-
-```
-[Proxy Group]
-# 以下为策略组定义
-# 支持 select、url-test、fallback、ssid 这几种类型
-
-# 基于用户 UI 选择
-PROXY = select,Auto,1,2,3,4,Subs
-
-# url-test模式，给提供的 url 发出 http header 请求，根据返回结果，选择测速最快的节点，默认间隔 600s，测速超时时间5s，为了避免资源浪费，建议节点数不要过多，只支持单个节点和远端节点，其他会被忽略
-Auto = url-test,1,2,3,4,Subs,url = http://bing.com/,interval = 600
-
-# fallback 模式，和 url-test类似，不同的是会根据顺序返回第一个可用的节点，为了避免资源浪费，建议节点数不要过多，只支持单个节点和远端节点，其他会被忽略
-Fallback = fallback,1,2,3,4,Subs,url = http://bing.com/,interval = 600
-
-# 别名 = ssid，默认 = 策略组名， 蜂窝 = 策略， ssid名称 = 策略组名
-SSID = ssid, default = PROXY, cellular = DIRECT, "DivineEngine" = PROXY
-
-# 广告模式
-Advertising = select,REJECT,DIRECT
-
-# 白名单模式 PROXY，黑名单模式 DIRECT
-Final = select,PROXY,DIRECT
-```
-
-### URL Rewrite
-
-Loon支持的重写规则如下。
-
-| 重写名称     | 重写类型 | 说明                                       |
-| ------------ | -------- | ------------------------------------------ |
-| 替换host字段 | header   | 请求头中匹配的host字段将会被替换内容所替换 |
-| 拒绝请求     | reject   |                                            |
-| 返回302响应  | 302      |                                            |
-| 返回307响应  | 307      |                                            |
-
-### URL Schemes
-
-Loon支持的URL Schemes如下。
-
-| URL Schemes                                           | 作用                                                         |
-| ----------------------------------------------------- | ------------------------------------------------------------ |
-| loon://switch                                         | 开启或关闭Loon                                               |
-| loon://editconfig                                     | 打开Loon配置文件                                             |
-| loon://requestLists                                   | 打开最近请求                                                 |
-| loon://dnsRequests                                    | 打开DNS                                                      |
-| loon://LogLists                                       | 打开日志                                                     |
-| loon://import?sub=url（url为 urlencode 之后的字符串） | 导入配置（如loon://import?sub=https%3A%2F%2Floon.now.sh%2Flazy-config%2Fdefault） |
-
-### 各类优先级
-
-#### 配置文件解析顺序
-
-最新版本默认`从上往下`。
-
-#### 规则优先级顺序
-
-本地规则>远程规则。除`URL-REGEX`、`IP-CIDR`、`GEOIP`在最后校验，其他诸如`DOMAIN-SUFFIX`、`DOMAIN`、`DOMAIN-KEYWORD`、`USER-AGENT`按照该条规则在配置文件中的位置来决定是否生效，通过自上而下的顺序匹配，满足优先匹配。
-
-#### 策略组优先级顺序
-
-排序只是界面上的显示，对于策略组功能无影响。
-
-#### Rewrite优先级顺序
-
-本地 Rewrite>远程 Rewrite。根据`正则表达式`在配置文件中的位置，自上而下匹配，优先匹配中的URL执行Rewrite规则。
-
-### JS脚本
-
-#### 运行方式
-
-可采用本地脚本或远程脚本的方式。
-
-#### 脚本配置
-
-配置文件中与脚本相关的配置如下。
-
-```
-[Script]
-# true 表示开启，false 表示关闭
-
-enable = true  
-
-# http-request 处理请求的脚本
-# http-response 处理请求响应的脚本
-# cron 定时脚本
-
-# http-request ^https?:\/\/(www.)?(example)\.com script-path=localscript.js
-# http-response ^https?:\/\/(www.)?(example)\.com script-path=https://example.com/loon.js timeout=10 requires-body = true
-# cron "0 8 * * *" script-path=cron.js
-```
-
-每一行的格式包含三个部分，分别为`类型`，`值`，`参数`。每个值会根据不同的类型有不同的含义。
-
-##### 通用参数
-
-```
-script-path
-表示脚本的路径，可以是本地脚本地址(暂不支持文件夹)或者远程的 URL 地址
-```
-
-##### http-request、http-response相关的参数
-
-```
-requires-body
-为true表示允许修改request和response body的值，默认值为false
-
-timeout
-执行脚本的最长超时时间，单位秒
-```
-
-#### 脚本类型
-
-##### http-request
-
-表示处理请求的脚本，通过该脚本可以修改http请求，第二个参数值是一个`正则`，用于匹配URL。脚本中可用的变量如下。
-
-```
-$request.url
-$request.headers
-$request.body
-```
-
-该脚本必须使用`$done()`传参结束，支持的参数如下。
-
-```
-不传
-修改后的headers或者body
-```
-
-例子如下。
-
-```
-# 添加本地脚本，命名为 hello-request.js，复制以下内容
-
-let headers = $request.headers;
-headers['X-Modified-By'] = 'Loon';
-
-$done({headers});
-```
-
-##### http-response
-
-表示处理请求响应的脚本，通过该脚本可以修改 http 响应，第二个参数值是一个`正则`，用于匹配 URL。脚本中可用的变量如下。
-
-```
-$request.url
-$request.headers
-$request.body
-$response.headers
-$response.body
-```
-
-该脚本必须使用`$done()`传参结束，支持的参数如下。
-
-```
-不传
-修改后的headers或者body
-```
-
-例子如下。
-
-```
-let headers = $response.headers;
-headers['X-Modified-By'] = 'Loon';
-
-$done({headers});
-```
-
-##### Cron
-
-表示定期执行脚本，第二个参数值是cron表达式。目前Loon支持两种类型的cron表达式。
-
-| 类型          | 格式                                                         | 说明                   |
-| ------------- | ------------------------------------------------------------ | ---------------------- |
-| 5位，精确到分 | `<Minute> <Hour> <Day_of_the_Month> <Month_of_the_Year> <Day_of_the_Week>` | 分、时、日、月、周     |
-| 6位，精确到秒 | `<Seconds><Minute> <Hour> <Day_of_the_Month> <Month_of_the_Year> <Day_of_the_Week>` | 秒、分、时、日、月、周 |
-
-例子如下。
-
-```
-// 例一
-# 1. 新建一个本地脚本命名为 hello-cron.js
-# 2. 将下方内容复制粘贴至 hello-cron.js
-# 3. 配置文件中 [Script] 下方添加 cron "* * * * *" script-path=hello-cron.js
-# 4. 启动 Loon，每隔一分钟可以看到通知栏提醒，打开 Loon 的日志文件也可以看到有输出
-
-$notification.post("这是主标题"，"这是副标题", "hello-cron!");
-
-console.log("【调试一下】hello-cron");
-
-// 例二
-cron "30 7 * * *" script-path=xxx.js 每天7点30分执行
-cron "* * * * *" script-path=yyy.js 每分钟执行
-cron "* * * * * *" script-path=yyy.js 每秒执行
-```
-
-#### 公共API
-
-目前支持如下API。
-
-##### `$httpClient.get(url或options<Object>, callback<Function>)`
-
-传参为URL的例子如下。
-
-```
-$httpClient.get('https://example.com/index', function(result){ console.log(result);});
-```
-
-传参为object的例子如下。
-
-```
-var params = {
-    url:"https://api.example.com/post",
-    header: {
-        Host:"api.example.com",
-        Content-Type: "application/json"
-    },
-    body:"string"
-}
-`$httpClient.get(param, function(result){ console.log(result);});`
-```
-
-
-##### $httpClient.post()
-
-参数同$httpClient.get。
-
-##### `$notification.post('title<String>', 'subTitle<String>','body<String>')`
-
-用于通知栏提醒。
-
-##### console.log('String')
-
-打印log。
-
-##### `$persistentStore.write('data<String>', 'key<String>')`
-
-数据持久化写入，只允许字符串。
-
-##### `$persistentStore.read('key<String>')`
-
-获取存放的数据。
-
-### 配置详解
-
-```
-# 以下三行分别表示了配置名、更新时间、作者，暂无实际用处
-# 
-#default configure
-#Update Date: 2020-01-22 01:00:20 +0000
-#author: Loon
-
-[General]
-skip-proxy = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local,e.crashlynatics.com
-bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
-# 自定义 DNS 服务器，Loon 会优先使用自定义 DNS，若丢包严重，会切回系统自带的 DNS，使用 , 分割多个 DNS 地址
-dns-server = system,119.29.29.29,223.5.5.5
-allow-udp-proxy = false
-host = 127.0.0.1
-
-
-[Proxy]
-# 单个节点添加在下面
-# SS 格式: 节点名称 = 协议，服务器地址，服务器端口，加密协议，密码
-1 = Shadowsocks, 1.2.3.4, 443, aes-128-gcm, "password"
-2 = Shadowsocks, 1.2.3.4, 443, aes-128-gcm, "password"
-
-# SSR 格式: 名称=协议类型,地址,端口,加密方式,密码,协议类型,{协议参数},混淆类型,{混淆参数}
-3 = ShadowsocksR, 1.2.3.4, 443, aes-256-cfb,"password",auth_aes128_md5,{},tls1.2_ticket_auth,{}
-4 = ShadowsocksR, 1.2.3.4, 10076, aes-128-cfb,"password",auth_aes128_md5,{},tls1.2_ticket_auth,{}
-
-# vmess格式
-# 节点名称 = 协议,服务器地址,端口,加密方式,UUID,传输方式:(tcp/ws),path:websocket握手header中的path,host:websocket握手header中的path,over-tls:是否tls,tls-name:远端w服务器域名,skip-cert-verify:是否跳过证书校验（默认否）
-5 = vmess,1.2.3.4,10086,aes-128-gcm,"uuid",transport:ws,path:/,host:icloud.com,over-tls:true,tls-name:youtTlsServerName.com,skip-cert-verify:false
-
-# http 格式 (不支持 username, password)
-# 节点名称 = http, 服务器地址，端口
-ProxyHTTP = http, 1.2.3.4, 8888
-
-
-[Remote Proxy]
-# 订阅节点
-# 格式为 别名 = 订阅 URL
-Subs = https://example/server-complete.txt
-
-[Proxy Group]
-# 以下为策略组定义
-# 支持 select、url-test、fallback、ssid 这几种类型
-
-# 基于用户 UI 选择
-PROXY = select,Auto,1,2,3,4,Subs
-
-# url-test模式，给提供的 url 发出 http header 请求，根据返回结果，选择测速最快的节点，默认间隔 600s，测速超时时间5s，为了避免资源浪费，建议节点数不要过多，只支持单个节点和远端节点，其他会被忽略
-Auto = url-test,1,2,3,4,Subs,url = http://bing.com/,interval = 600
-
-# fallback 模式，和 url-test类似，不同的是会根据顺序返回第一个可用的节点，为了避免资源浪费，建议节点数不要过多，只支持单个节点和远端节点，其他会被忽略
-Fallback = fallback,1,2,3,4,Subs,url = http://bing.com/,interval = 600
-
-# 别名 = ssid，默认 = 策略组名， 蜂窝 = 策略， ssid名称 = 策略组名
-SSID = ssid, default = PROXY, cellular = DIRECT, "DivineEngine" = PROXY
-
-# 广告模式
-Advertising = select,REJECT,DIRECT
-
-# 白名单模式 PROXY，黑名单模式 DIRECT
-Final = select,PROXY,DIRECT
-
-[Rule]
-# 本地规则部分书写在下面
-# 格式为 规则类型,域名(部分类型可省略),策略
-#             
-# 目前支持的类型有      
-# DOMAIN-SUFFIX  基于域名后缀
-# DOMAIN         基于域名完整匹配
-# DOMAIN-KEYWORD 基于域名关键字
-# USER-AGENT     基于用户代理串
-# URL-REGEX      基于 URL 正则
-# IP-CIDR        基于请求 IP 范围
-# GEOIP          基于 IP 定位国家编码
-# FINAL          兜底策略，所有策略都未匹配上时使用
-#
-# 目前支持的策略有
-# DIRECT 直连，即所有流量不通过代理，在国内就走国内IP，在国外就走国外IP
-# Proxy  策略组名, 这里可自定义名字，名字值为 [Proxy Group] 或者 [Proxy] 中的自定的值
-# REJECT 拒绝策略，通常用作去广告
-#
-# 可选项:force-remote-dns(Default:false),no-resolve
-DOMAIN,google.com,PROXY
-# GeoIP 为中国的，走直连
-GEOIP,CN,DIRECT
-# 兜底策略使用 Final 策略组
-FINAL,Final
-
-[Remote Rule]
-# 远程规则部分书写在下面
-# 格式为 订阅规则 URL,策略
-
-# 如以下地址将使用，PROXY 这个策略组
-https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Rule/ExampleRule.list,PROXY
-
-[URL Rewrite]
-# URL 重写开关，为 true 表示开启
-enable = true
-
-# 本地重写规则部分书写在下面
-#
-# 302 重定向 google search
-^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
-
-[Remote Rewrite]
-# 远程重写规则部分书写在下面
-# 格式为 远程重写规则 URL,别名(可选)
-
-https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Rewrite/AutoRewrite_Example.list,auto
-
-[MITM]
-hostname = *.example.com,*.sample.com
-enable = true
-skip-server-cert-verify = true
-#ca-p12 =
-#ca-passphrase =
-```
-
-## Quantumult
-
-```
-首页右下角节点位置处，带五角星说明是中转节点
-延迟与网速并无关系
-```
-
-### 规则导入
-
-#### 分流
-
-复制以下链接，进入Quantumult，进入`设置`，进入`订阅`。点击右上角` + `号，选择`分流`，填写名称与以下规则链接，勾选个性化。保存后向左滑动条目并点击`替换`或`增加`以更新。
-
-```
-// 测试可用规则
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/Pro.conf
-
-// 其它规则
-https://raw.githubusercontent.com/lhie1/Rules/master/Quantumult/Quantumult.conf
-https://raw.githubusercontent.com/lhie1/Rules/master/Quantumult/Quantumult_Extra.conf
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/Basic.conf
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/Pro.conf
-```
-
-#### 去广告
-
-步骤同上，将选择`分流`改为选择`链接阻止`即可。
-
-```
-// 测试可用规则
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/Rejection.conf
-
-// 其他规则
-https://raw.githubusercontent.com/lhie1/Rules/master/Quantumult/Quantumult_URL.conf
-```
-
-### 策略组配置
-
-策略组类型如下。
-
-| 类型         | 说明                                                         |
-| ------------ | ------------------------------------------------------------ |
-| 静态策略     | 策略结果由用户确定                                           |
-| 延迟策略     | 选择策略组中延迟最低的节点进行连接                           |
-| 负载均衡策略 | 同一策略组的各服务器被轮流使用                               |
-| 环境策略     | 根据所处Wi-Fi的SSID或蜂窝网络环境，确定使用哪种策略组进行连接 |
-
-假设现在有香港、新加坡、美国三个地区的节点组，其中每个地区的节点组可分为直连的当地主机节点组、上海-当地的IPLC节点组以及深圳-当地的IPLC节点组。根据需要，Youtube选用美国节点，HBO选用香港节点，Netflix任意选择，且选择节点组中最快的一个进行连接。此需要可以通过新建策略组来满足。
-
-选择设置-策略，点击+号。由于需要根据速度选择节点，因此类型选择延迟策略。以建立香港直连节点组为例，填写名称并选择所有香港的直连节点，保存。同理建立上海-香港IPLC节点组和深圳-香港IPLC节点组（第三类节点组）。完成后建立静态策略的策略组，选择刚才新建好的三个策略组，由此可得到一个包含三个节点组的大节点组（第二类节点组）。
-
-对于美国和新加坡也进行此操作，得到三个代表不同地区的大节点组。新建一个静态策略的策略组，选择这三个大节点组，从而得到一个综合所有节点组的超大节点组（第一类节点组）。
-
-在设置-订阅中左滑分流规则，选择`替换`。下滑找到`Youtube专用节点`，选择第二类的美国节点。
-下滑找到`HBO NOW & GO专用节点`，选择第二类的香港节点。下滑找到`Netflix专用节点`，选择第一类的节点。
-
-回到主页，点击中下部的图标，此处的节点针对其它在规则中没有的应用。
-
-### 其余功能
-
-#### 手机连接WiFi时停止分流
-
-编辑配置文件，在`[SUSPEND-SSID]`一项下输入Wi-Fi名称即可。
-
-## Shadowrocket
-
-### 规则导入
-
-#### 分流
-
-进入`配置`，点击右上角`+`号，将以下`规则链接`复制并下载。在本地文件中选择下载好的配置文件，点击`编辑配置`，点击`HTTPS解密`，打开开关并安装证书。然后进入首页，全局路由，选用`配置`。
-
-```
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Shadow/Pro.conf
-https://raw.githubusercontent.com/lhie1/Rules/master/Shadowrocket.conf
-https://raw.githubusercontent.com/lhie1/Rules/master/Shadowrocket/Shadowrocket-cn.conf
-https://raw.githubusercontent.com/lhie1/Rules/master/Shadowrocket/Complete.conf
-```
-
-#### 去广告
-
-步骤同上。
-
-```
-https://raw.githubusercontent.com/h2y/Shadowrocket-ADBlock-Rules/master/sr_top500_whitelist_ad.conf
-```
-
-### 基本操作
-
-#### 开启HTTPS解密
-
-点击配置文件，选择编辑配置，点击HTTPS解密，开启开关，按照流程安装并信任证书即可。
-
-#### 开启代理共享
-
-选择设置-代理-代理共享-启用共享。其它设备与该手机连接到同一Wi-Fi下后，在系统设置中进入Wi-Fi详情，开启Wi-Fi的HTTP代理，类型选择手动，地址和端口填写Shadowrocket中提供的值即可。
-
-#### 场景的使用
-
-场景的使用可以使网络环境变化时（更改Wi-Fi或改成蜂窝数据）使用代理或直连模式。在主界面点击全局路由-设置-场景，新建一个场景，填写Wi-Fi的SSID并选择路由模式即可。
-
-## Kitsunebi
-
-### 规则导入
-
-切换到`高级`选项卡，点击`规则集`并在弹出的页面中点击Default右边的按钮，将URL改为下面的网址，并点击`存储`。
-
-```
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Kitsunebi/Pro.conf
-```
-
-## Surge 4
-
-```
-关于 Surge 的延迟测试：
-
-Q：为什么Surge/Shadowrocket/Quantumult 测延迟差距这么大？
-A：测试方式不同。
-Surge 测试的是从目标 policy 返回 http response header 数据包的时间。
-Shadowrocket 支持两种测速方式（ICMP/TCP），默认为 ICMP 模式（即 Ping）。
-Quantumult 采用 SSH 测速模式（22 端口）。
-```
-
-### 破解
-
-越狱后下载以下插件并安装即可。
-
-```
-https://wws.lanzous.com/tp/i0Ge2dh3oeb
-```
-
-### 规则导入
-
-点击左上角下拉菜单，选择从URL下载配置，复制以下链接并确定即可。
-
-```
-// 主要
-https://raw.githubusercontent.com/nzw9314/Surge/master/Surge_Basic.conf
-
-// 其余可用
-https://raw.githubusercontent.com/limbopro/Profiles/master/Surge/Pro.conf
-https://raw.githubusercontent.com/nzw9314/surge-2/master/surge.conf
-```
-
-完成后若菜单栏出现策略组，则成功。某些规则的仓库如下。
-
-```
-https://github.com/Blankwonder/surge-list
-https://github.com/onewayticket255/Surge-Script
-https://github.com/MeetaGit/MeetaRules
-https://github.com/Choler/Surge
-```
-
-### 节点导入
-
-在主界面点击代理服务器，选择添加代理即可添加单个节点，选择新的策略组并勾选使用外部代理列表则可添加订阅。也可直接修改配置文件，在`[proxy]`模块下填写即可。
-
-完成后点击外部资源，下拉到底部并点击立即更新。
-
-### 节点切换
-
-点击策略组，进入相应策略组，选择需要切换的节点即可。
-
-### 策略组配置
-
-新建策略组时，在策略组类型中可选择模式，类型含义与Loon基本一致。
-
-#### SSID
-
-类型选择SSID即可。默认策略和数据网络策略为Proxy，添加Wifi名称并设为Direct即可。完成后需要嵌套到其它策略组以完成调用。
-
-### 脚本
-
-可通过分析-脚本编辑器打开已有脚本进行编辑。
-
-### 重写
-
-### DNS服务器
-
-在主页面点击DNS服务器即可。
-
-如果经常使用的网络没有DNS劫持问题，配置为使用系统DNS配置并追加223.5.5.5和114.114.114.114作为冗余。如果经常使用的网络存在DNS劫持问题，配置为仅使用223.5.5.5和114.114.114.114。
-
-### 规则匹配过程
-
-如果一个使用域名的请求遇到了一个IP类型规则（IP-CIDR/IP-CIDR6/GEOIP）且该规则不带有 no-resolve 选项，那么将触发DNS查询。所以应将所有非IP类规则置于规则的顶部，将IP类规则置于尾部，避免并不需要进行本地DNS查询的请求产生额外的DNS查询。
-
-## Quantumult X
-
-Quantumult X引入了防共享机制，版本号右边有个绿色√的即为正版。若为问号，则代表被检测到有共享账号行为。若显示绿色问号，先删除TestFlight测试版，安装App Store最新版并运行一次，待得版本信息显示为绿色对号后再安装TestFlight测试版。若显示红色问号，则证明为盗版，Rewrite和MitM功能将被限制。
-
-### 基本操作
-
-#### 三菱按钮
-
-长按三菱按钮可切换模式，左侧出现的更新按钮可一键更新所有节点。
-
-#### 延迟测试
-
-延迟测试可在策略组页面，展开订阅，下拉即可。也可以长按节点名，选择`网页响应测试`来测对应 节点/订阅的延迟，或者点按策略组图标。
-
-#### 双排图标
-
-在主界面中，向右滑动策略组图标至最左端后，再次向右滑可变为小图标，再次向右滑可变为双排。
-
-#### 隐藏VPN图标
-
-点击三菱图标，选择其他设置，在VPN下开启`排除路由0.0.0.0/31`即可。
-
-#### 网络活动日志模块
-
-在主界面中即可看到。该模块可以看到iOS所有网络请求。绿色小锁代表MitM命中域名，链接颜色变红则说明rewrite即重写规则规则生效。可通过该模块完成抓包行为，也可检查节点、策略、分流、重写、MitM的配置是否起作用。
-
-#### 注释符号
-
-以下在配置文件中为注释符号。
-
-```
-; 分号
-// 双斜杠
-# 井号
-```
-
-### 懒人配置
-
-#### 通过导入整个配置
-
-点击三菱图标，选择配置文件中的导入，复制以下链接中的一个，点击确定。
-
-找到MinM模块，点击生成证书，提示生成成功。点击安装证书并下载描述文件，然后进入iOS系统设置-通用-描述文件-已下载的描述文件-选中并完成描述文件安装，再进入设置-通用-关于本机-证书信任设置-针对根证书启用完全信任，选中刚刚安装的证书并启用。再开启`Rewrite`和`MitM`开关。
-
-```
-https://raw.githubusercontent.com/nzw9314/QuantumultX/master/QuantumultX.conf
-https://raw.githubusercontent.com/solikethis/QuantumultX-demo/master/SabrinaQuanxConf.conf
-https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/QuantumultX_Profiles.conf
-```
-
-若使用第一个链接（即nzw9314），则还需要用Working Copy挂载以下仓库到iCloud Drive/QuantumultX/Scripts/nzw9314，或我的iPhone/QuantumultX/Scripts/nzw9314。
-
-若放在iCloud Drive，则还需点击三菱图标，选择其他设置，开启iCloud。
-
-```
-https://github.com/nzw9314/QuantumultX
-```
-
-部分仓库如下。
-
-```
-https://github.com/sazs34/TaskConfig
-https://github.com/jpcnmm/Scripting
-https://github.com/NavePnow/Profiles
-https://github.com/elecV2/QuantumultX-Tools
-```
-
-#### 通过配置关联绑定
-
-托管绑定的配置会自动更新完整配置文件，支持远程、本地、iCloud。
-
-若绑定远程配置文件，则下次更新时配置会被远端配置覆盖。若绑定iCloud配置文件，则APP内所做的修改会立即生效到配置文件本身。
-
-点击三菱图标，选择右上角的关联图标，填入配置链接或文件名。若引用iCloud配置文件，则需要先将文件先放到iCloud Drive/QuantumultX/Profiles中。假设为QX01.txt，直接填写QX01.txt即可关联成功。
-
-可以通过设置配置文件的`profile_img_url`参数，使关联成功后原关联图标出现图案。
-
-```
-;图片地址可远程，可本地
-;图片为108*108的png格式，PNG与png大小写敏感
-profile_img_url= https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/img/dragonball/1.PNG
-```
-
-#### 通过URL Scheme导入
-
-按照以下JSON方式填写，其中server_remote填写节点订阅链接，filter_remote填写分流规则，rewrite_remote填写复写规则链接。
-
-```
-{
-    "server_remote": [
-        "https://raw.githubusercontent.com/crossutility/Quantumult-X/master/server.txt, tag=Sample-01",
-        "https://raw.githubusercontent.com/crossutility/Quantumult-X/master/server-complete.txt, tag=Sample-02"
-    ],
-    "filter_remote": [
-        "https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Advertising.list, tag=去广告, enabled=true",
-        "https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Apple.list, tag=Apple服务, enabled=true",
-        "https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/China.list, tag=国内网站, enabled=true",
-        "https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/DomesticMedia.list, tag=国内视频, enabled=true",
-        "http://cloudcompute.lbyczf.com/x-rule-set?url=https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Media/Netflix.list, tag=📺Netflix, force-policy=📺 Netflix, enabled=true",
-        "http://cloudcompute.lbyczf.com/x-rule-set?url=https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Media/YouTube.list, tag=🎬Youtube, force-policy=🎬 Youtube, enabled=true",
-        "https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/ForeignMedia.list, tag=国外视频, enabled=true",
-        "https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Global.list, tag=国外网站, enabled=true",
-        "https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Hijacking.list, tag=运营商劫持, enabled=true"
-    ],
-    "rewrite_remote": [
-        " http://cloudcompute.lbyczf.com/quanx-rewrite, tag=Lhie1复写"
-    ]
-}
-```
-
-打开以下网站，复制以上代码并点击`Encode`，复制结果。
-
-```
-https://www.urlencoder.org/
-```
-
-将复制的结果加到如下格式中，并在Safari打开该链接即可。
-
-```
-quantumult-x:///update-configuration?remote-resource=[结果]
-```
-
-### 通用设置
-
-#### SSID Suspend
-
-指定在特定Wi-Fi环境下Quantumult X停止工作，只有`[task]`模块生效。示例如下。
-
-```
-[general]
-ssid_suspended_list = [Wi-Fi的SSID]
-```
-
-#### running_mode_trigger
-
-可根据网络自动切换分流/直连/全局代理等模式，示例如下。其表示4G网络跟一般Wi-Fi下运行filter（分流）模式，asus-5g 则切换为全局直连模式，asus则为全局代理模式。该模式与手动切换直连/全局代理等效，rewrite和task模块始终会生效。
-
-```
-[general]
-running_mode_trigger=filter, filter, asus-5g:all_direct, asus: all_proxy
-```
-
-#### 配置文件格式
-
-```
-[general]
-;Quantumult X会对server_check_url指定的网址进行相应测试，以确认节点的可用性
-;你同样可以在 server_local/remote中，为节点、订阅单独指定server_check_url参数
-server_check_url=http://www.qualcomm.cn/generate_204
-
-;资源解析器，可用于自定义各类远程资源的转换，如节点，规则filter，复写rewrite等，url地址可远程，可本地/iCloud(Quantumult X/Scripts目录)
-;下面是我写的一个解析器，具体内容直接参照链接里的使用说明
-resource_parser_url=https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
-
-;geo_location_checker用于节点页面的信息展示，可完整自定义
-;extreme-ip-lookup为Quantumult X作者提供的示范api
-;geo_location_checker=http://extreme-ip-lookup.com/json/, https://raw.githubusercontent.com/crossutility/Quantumult-X/master/sample-location-with-script.js
-;下面是我所使用的api及获取、展示节点信息的js
-geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IP_API.js
-
-;dns exclusion list中的域名将不使用fake-ip方式. 其它域名则全部采用fake-ip 及远程解析的模式
-;dns_exclusion_list=*.qq.com, qq.com
-
-;运行模式模块，running_mode_trigger设置，即根据网络自动切换分流/直连/全局代理等模式。
-;running-mode-trigger模式下，跟手动切换直连/全局代理等效，rewrite/task模块始终会生效，设置简单
-
-;running_mode_trigger=filter, filter, asus-5g:all_direct, asus: all_proxy
-;上述写法，前两个filter表示在4G网络跟一般Wi-Fi下走filter(分流)模式，asus-5g则切换为全局直连，asus切换为全局代理
-
-;ssid_suspended_list写入你想要Quantumult X暂停的Wi-Fi网络名称，多个wifi用“,”连接
-;ssid_suspended_list=Asus, Shawn-Wifi
-
-;UDP名单，留空则默认所有为端口。不在udp白名单列表中的端口将被丢弃处理
-;udp_whitelist=53, 123, 1900, 80-443
-
-;下列表中的内容将不经过QuantumultX的处理
-;excluded_routes=192.168.0.0/16, 172.16.0.0/12, 100.64.0.0/10, 10.0.0.0/8
-;icmp_auto_reply=true
-```
-
-### 节点导入
-
-#### 通过UI
-
-##### 添加单个节点
-
-点击三菱图标，选择节点中的添加即可手动输入Shadowsocks节点。选择扫码或URI可导入Shadowsocks、ShadowsocksR或Quantumult X格式的Vmess、Trojan和Https节点。
-
-##### 添加订阅
-
-点击三菱图标，选择节点中的引用即可。
-
-#### 通过配置文件
-
-##### 添加单个节点
-
-```
-[server_local]
-# 以下示范都是 ip(域名):端口，
-# 比如 vmess-a.203.167.55.4:777 ，实际是 203.167.55.4:777
-# 前面的 ss-a，ws-tls, vmess-a 这些，只是为了让你快速找到自己节点的类型
-# 实际使用时，请不要真的 傻乎乎的 写 vmess-a.203.167.55.4:777 这种。
-shadowsocks=ss-a.example.com:80, method=chacha20, password=pwd, obfs=http, obfs-host=bing.com, obfs-uri=/resource/file, fast-open=false, udp-relay=false, server_check_url=http://www.apple.com/generate_204, tag=Sample-A
-shadowsocks=ss-b.example.com:80, method=chacha20, password=pwd, obfs=http, obfs-host=bing.com, obfs-uri=/resource/file, fast-open=false, udp-relay=false, tag=Sample-B
-shadowsocks=ss-c.example.com:443, method=chacha20, password=pwd, obfs=tls, obfs-host=bing.com, fast-open=false, udp-relay=false, tag=Sample-C
-shadowsocks=ssr-a.example.com:443, method=chacha20, password=pwd, ssr-protocol=auth_chain_b, ssr-protocol-param=def, obfs=tls1.2_ticket_fastauth, obfs-host=bing.com, tag=Sample-D
-shadowsocks=ws-a.example.com:80, method=aes-128-gcm, password=pwd, obfs=ws, obfs-uri=/ws, fast-open=false, udp-relay=false, tag=Sample-E
-shadowsocks=ws-b.example.com:80, method=aes-128-gcm, password=pwd, obfs=ws, fast-open=false, udp-relay=false, tag=Sample-F
-shadowsocks=ws-tls-a.example.com:443, method=aes-128-gcm, password=pwd, obfs=wss, obfs-uri=/ws, fast-open=false, udp-relay=false, tag=Sample-G
-vmess=ws-c.example.com:80, method=chacha20-ietf-poly1305, password= 23ad6b10-8d1a-40f7-8ad0-e3e35cd32291, obfs-host=ws-c.example.com, obfs=ws, obfs-uri=/ws, fast-open=false, udp-relay=false, tag=Sample-H
-vmess=ws-tls-b.example.com:443, method=chacha20-ietf-poly1305, password= 23ad6b10-8d1a-40f7-8ad0-e3e35cd32291, obfs-host=ws-tls-b.example.com, obfs=wss, obfs-uri=/ws, tls-verification=true,fast-open=false, udp-relay=false, tag=Sample-I
-vmess=vmess-a.example.com:80, method=aes-128-gcm, password=23ad6b10-8d1a-40f7-8ad0-e3e35cd32291, fast-open=false, udp-relay=false, tag=Sample-J
-vmess=vmess-b.example.com:80, method=none, password=23ad6b10-8d1a-40f7-8ad0-e3e35cd32291, fast-open=false, udp-relay=false, tag=Sample-K
-vmess=vmess-over-tls.example.com:443, method=none, password=23ad6b10-8d1a-40f7-8ad0-e3e35cd32291, obfs-host=vmess-over-tls.example.com, obfs=over-tls, tls-verification=true, fast-open=false, udp-relay=false, tag=Sample-L
-http=http.example.com:80, username=name, password=pwd, fast-open=false, udp-relay=false, tag=http
-http=https.example.com:443, username=name, password=pwd, over-tls=true, tls-verification=true, tls-host=example.com, fast-open=false, udp-relay=false, tag=http-tls
-trojan=example.com:443, password=pwd, over-tls=true, tls-verification=true, fast-open=false, udp-relay=false, tag=trojan-tls-01
-trojan=192.168.1.1:443, password=pwd, over-tls=true, tls-host=example.com, tls-verification=true, fast-open=false, udp-relay=false, tag=trojan-tls-02# 以下示范都是 ip(域名):端口，
-# 比如 vmess-a.203.167.55.4:777 ，实际是 203.167.55.4:777
-# 前面的 ss-a，ws-tls, vmess-a 这些，只是为了让你快速找到自己节点的类型
-# 实际使用时，请不要真的 傻乎乎的 写 vmess-a.203.167.55.4:777 这种。
-shadowsocks=ss-a.example.com:80, method=chacha20, password=pwd, obfs=http, obfs-host=bing.com, obfs-uri=/resource/file, fast-open=false, udp-relay=false, server_check_url=http://www.apple.com/generate_204, tag=Sample-A
-shadowsocks=ss-b.example.com:80, method=chacha20, password=pwd, obfs=http, obfs-host=bing.com, obfs-uri=/resource/file, fast-open=false, udp-relay=false, tag=Sample-B
-shadowsocks=ss-c.example.com:443, method=chacha20, password=pwd, obfs=tls, obfs-host=bing.com, fast-open=false, udp-relay=false, tag=Sample-C
-shadowsocks=ssr-a.example.com:443, method=chacha20, password=pwd, ssr-protocol=auth_chain_b, ssr-protocol-param=def, obfs=tls1.2_ticket_fastauth, obfs-host=bing.com, tag=Sample-D
-shadowsocks=ws-a.example.com:80, method=aes-128-gcm, password=pwd, obfs=ws, obfs-uri=/ws, fast-open=false, udp-relay=false, tag=Sample-E
-shadowsocks=ws-b.example.com:80, method=aes-128-gcm, password=pwd, obfs=ws, fast-open=false, udp-relay=false, tag=Sample-F
-shadowsocks=ws-tls-a.example.com:443, method=aes-128-gcm, password=pwd, obfs=wss, obfs-uri=/ws, fast-open=false, udp-relay=false, tag=Sample-G
-vmess=ws-c.example.com:80, method=chacha20-ietf-poly1305, password= 23ad6b10-8d1a-40f7-8ad0-e3e35cd32291, obfs-host=ws-c.example.com, obfs=ws, obfs-uri=/ws, fast-open=false, udp-relay=false, tag=Sample-H
-vmess=ws-tls-b.example.com:443, method=chacha20-ietf-poly1305, password= 23ad6b10-8d1a-40f7-8ad0-e3e35cd32291, obfs-host=ws-tls-b.example.com, obfs=wss, obfs-uri=/ws, tls-verification=true,fast-open=false, udp-relay=false, tag=Sample-I
-vmess=vmess-a.example.com:80, method=aes-128-gcm, password=23ad6b10-8d1a-40f7-8ad0-e3e35cd32291, fast-open=false, udp-relay=false, tag=Sample-J
-vmess=vmess-b.example.com:80, method=none, password=23ad6b10-8d1a-40f7-8ad0-e3e35cd32291, fast-open=false, udp-relay=false, tag=Sample-K
-vmess=vmess-over-tls.example.com:443, method=none, password=23ad6b10-8d1a-40f7-8ad0-e3e35cd32291, obfs-host=vmess-over-tls.example.com, obfs=over-tls, tls-verification=true, fast-open=false, udp-relay=false, tag=Sample-L
-http=http.example.com:80, username=name, password=pwd, fast-open=false, udp-relay=false, tag=http
-http=https.example.com:443, username=name, password=pwd, over-tls=true, tls-verification=true, tls-host=example.com, fast-open=false, udp-relay=false, tag=http-tls
-trojan=example.com:443, password=pwd, over-tls=true, tls-verification=true, fast-open=false, udp-relay=false, tag=trojan-tls-01
-trojan=192.168.1.1:443, password=pwd, over-tls=true, tls-host=example.com, tls-verification=true, fast-open=false, udp-relay=false, tag=trojan-tls-02
-```
-
-##### 添加订阅
-
-```
-[server_remote]
-#可直接订阅 SSR，SS 链接，以及 Quantumult X 格式的 vmess/trojan/https 订阅
-#虽然模块被叫做remote，但实际上可以使用远程订阅链接，也可以使用本地/iCloud文件路径进行引用
-#远程订阅
-https://raw.githubusercontent.com/crossutility/Quantumult-X/master/server.txt, tag = 示范订阅 1 (可删除), enabled=true
-#本地文件，文件内为quanx可识别格式的服务器信息
-server.txt, tag = 示范订阅 2 (可删除), enabled=true
-```
-
-#### 资源解析器
-
-资源解析器可将任何格式的服务器订阅、规则、复写等资源转换成Quanxtumult X所支持的格式。
-
-##### 使用方法
-
-在编辑文件中加入以下代码即可。若提示没有自定义解析器，则长按右下角图标后点击左侧刷新按钮，更新资源，后台退出APP，直到出现解析器说明。
-
-```
-[general]
-resource_parser_url=https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
-```
-
-##### 参数说明
-
-| 参数         | 说明                                                         | 示例                       |
-| ------------ | ------------------------------------------------------------ | -------------------------- |
-| in/out       | 保留/排除，多参数（逻辑或）用`+`连接，逻辑与用`.`连接        |                            |
-| inhn/outhn   | 主机名筛选                                                   |                            |
-| regex        | 利用正则表达式以筛选节点                                     |                            |
-| emoji=1/2/-1 | 添加或删除节点名中的emoji旗帜（国行设备用 emoji=2）          |                            |
-| udp=1, tfo=1 | 开启udp-relay及fast-open（默认关闭，此参数对源类型为QuanX/Surge的链接无效） |                            |
-| rename       | rename=旧名@新名，以及`前缀@`，`@后缀`， 用`+`连接           | rename=香港@HK+[SS]@+@[1X] |
-| delreg       | 利用正则表达式以删除节点名中的字段                           |                            |
-| replace      | 正则替换server中的内容，可用于重命名、更改加密方式等需求     |                            |
-| cert=0       | 跳过证书验证（vmess/trojan），即强制tls-verification=false   |                            |
-| tls13=1      | 开启tls13=true（vmess/trojan）                               |                            |
-| sort=1/-1/ x | 根据节点名正序/逆序/随机排列                                 |                            |
-| info=1       | 开启通知提示流量信息（前提是原订阅链接有返回该信息），默认关闭 |                            |
-| policy=xx    | 分流规则专用，用于直接指定策略组或为Surge格式的rule-set生成策略组（默认Shawn策略组） |                            |
-| ntf=1        | 打开资源解析器的提示通知（默认关闭），rewrite/filter类型则会强制在out参数时开启通知提示被删除（禁用）的内容，以防止规则误删除 |                            |
-
-##### 使用举例
-
-###### 远程订阅
-
-假设订阅链接如下，要保留的参数为`in=tls+ss`，要过滤的参数为`out=http+2`。
-
-```
-https://raw.githubusercontent.com/crossutility/Quantumult-X/master/server-complete.txt
-```
-
-则填入Quantumult X节点引用的的总链接如下。
-
-```
-https://raw.githubusercontent.com/crossutility/Quantumult-X/master/server-complete.txt#in=tls+ss&out=http+2
-```
-
-###### 分流规则
-
-示例如下。
-
-```
-https://Advertising.list#policy=Shawn&out=aweme
-```
-
-#### 分组图标设置
-
-点击三菱按钮，选择配置文件中的编辑，找到`[server_remote]`，在选中的订阅链接后面添加图标的地址即可，示例如下。
-
-图标格式必须为png，且分辨率必须为108*108像素。
-
-```
-img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/IPLC.png
-```
-
-### 分流
-
-#### 类型
-
-| 类型         | 说明               | 示例                                                       |
-| ------------ | ------------------ | ---------------------------------------------------------- |
-| HOST         | 完整域名匹配       | limbopro.xyz                                               |
-| HOST-SUFFIX  | 域名后缀匹配       |                                                            |
-| HOST-KEYWORD | 域名关键字匹配     | limboppro                                                  |
-| USER-AGENT   | 浏览器用户代理匹配 | *abc?                                                      |
-| IP-CIDR      | 无类别域间路由     | 192.168.x.x                                                |
-| GEOIP        | GeoIP数据库IP匹配  | 参数填US，则为美国IP数据库匹配，所有美国IP匹配该规则则执行 |
-
-#### 添加
-
-##### 通过手动添加
-
-点击三菱按钮，选择分流中的添加即可。也可以在网络请求记录中找到对应记录，点击右上角漏斗符号直接添加。
-
-##### 通过引用全体规则
-
-点击三菱按钮，选择分流中的引用，点击+号后复制以下链接之一。
-
-###### 常用
-
-```
-https://raw.githubusercontent.com/lhie1/Rules/master/Quantumult/QuantumultX.conf
-https://raw.githubusercontent.com/shigalin/Config/master/QuantumultX.conf
-```
-
-###### 去广告
-
-开启策略偏好，选择`REJECT`，保存。
-
-```
-https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRule.list
-https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRuleTest.list
-```
-
-##### 通过引用rule-list
-
-rule-list相比全体规则更加细分，每个rule-list负责一个较小的分流，比如Telegram分流、Youtube分流等。
-
-相同规则在上面的优先生效。比如神机规则中global.list已经包含了telegram分流，ForeignMedia.list包含了YouTube等分流，如果要对YouTube/telegram进行单独设定，则应当把YouTube.list 放于ForeignMedia.list前面，telegram.list放在Global.list前面。
-
-rule-list库如下。点击所需要的rule-list，选择Raw并复制链接。
-
-```
-https://github.com/ConnersHua/Profiles/tree/master/Quantumult/X/Filter
-https://github.com/ConnersHua/Profiles/tree/master/Quantumult/X/Filter/Media
-```
-
-###### UI方式
-
-点击三菱按钮，选择分流中的引用，点击+号后将上面得到的链接复制进去。若勾选`策略偏好`，则会替换策略组，否则将自动创建新的策略组。参考链接如下。
-
-```
-// 去广告
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Advertising.list
-
-// 苹果相关
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Apple.list
-
-// 国内
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/China.list
-
-// 国内视频
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/DomesticMedia.list
-
-// Netflix相关
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Media/Netflix.list
-
-// YouTube相关
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Media/YouTube.list
-
-// 国外视频
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/ForeignMedia.list
-
-// 国外路线
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Global.list
-
-// 运营商劫持
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Hijacking.list
-```
-
-###### 配置文件方式
-
-配置文件内容如下。其中force-policy为强制用自定义策略组替换规则中的策略组名。
-
-```
-[filter_remote]
-#远程分流模块，可使用force-policy来强制使用策略偏好
-#跟节点引用一样，可以使用远程链接，也可以使用本机/iCloud文件路径
-#远程链接
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Advertising.list, tag=去广告, enabled=true
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Apple.list, tag=苹果相关, enabled=true
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/China.list, tag=国内, enabled=true
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/DomesticMedia.list, tag=国内视频, enabled=true
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Media/Netflix.list, tag=📺Netflix, enabled=true
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Media/YouTube.list, tag=🎬Youtube, enabled=true
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/ForeignMedia.list, tag=国外视频, enabled=true
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Global.list, tag=国外, enabled=true
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Hijacking.list, tag=运营商劫持, enabled=true
-#本地文件
-#advertising.txt, tag=🚦去广告，forcr-policy=reject, enabled=true
-```
-
-#### 使用
-
-点击三菱图标，选择分流中的引用即可查看分流列表。左滑可进行编辑和删除，右滑可禁用。
-
-### 策略组
-
-#### 类型
-
-策略组的类型如下。
-
-| 名称        | 类型           | 说明                                                         |
-| ----------- | -------------- | ------------------------------------------------------------ |
-| Static      | 静态策略组     | 可以嵌套其它所有类型的策略组，需自己手动选择路线/子策略组（需至少配置一个节点） |
-| Available   | 健康检查策略组 | 只可直接套用节点，不可嵌套其它策略组，自动选择第一个可用的节点（需至少配置两个节点） |
-| Round-Robin | 轮询策略组     | 只能直接套用节点，不可以嵌套其它策略组，按网络请求轮流使用所有节点（需至少配置两个节点） |
-| SSID        | SSID策略组     | 可以套用其它类型的策略组，根据网络/Wi-Fi切换节点/策略        |
-
-#### 添加
-
-##### 通过配置文件
-
-支持所有类型的策略组。
-
-##### 通过节点订阅列表
-
-在节点订阅列表中右滑，选择更多，即可将该订阅链接内所有节点直接绑定生成一个新策略组。支持生成static静态策略、available健康检查策略、round-robin负载均衡策略。
-
-该方式生成的策略组，将与订阅链接绑定，节点也跟随链接改变。
-
-##### 通过与订阅绑定
-
-###### 得到特定类型的策略组
-
-支持生成static静态策略、available健康检查策略、round-robin负载均衡策略。示例如下。
-
-```
-[server-remote]
-https://xxxx.server.com, tag=Hong Kong, as-policy=static, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/HK.png, enabled=true
-;这样就会生成一个叫Hong Kong的策略组, 类型是static, 由as-policy决定
-```
-
-###### 得到节点筛选后的策略组
-
-通过正则表达式将某些订阅或某些节点添加到策略组中，支持生成static静态策略、available健康检查策略、round-robin负载均衡策略。当筛选结果为空时设为直连模式。
-
-若生成available健康检查策略组，则仅可包含一个节点，不可再混搭节点或其余策略组。
-
-regex包含两个参数，说明如下。
-
-| 参数               | 说明                        |
-| ------------------ | --------------------------- |
-| resource-tag-regex | 根据订阅名（tag）来筛选节点 |
-| server-tag-regex   | 根据节点名来筛选节点        |
-
-示例如下。
-
-```
-[policy]
-;策略类型=策略名, resource-tag-regex=筛选订阅tag的正则, server-tag-regex=筛选节点 tag 的正则, img-url=策略组图标地址
-static=policy-name, resource-tag-regex=^sample, server-tag-regex=^example, img-url=https://example.com/icon.png
-```
-
-该参数可将多个订阅链接的节点添加到同一策略组进行关联。常用正则表达式如下。
-
-```
-(A).*(B)             节点名既有 A又有 B
-(A)|(B)              节点名有 A 或者 B  
-^((?!A).)*$            节点名不含有 A
-(?!.*(A)).*(B)         节点名不含有 A，同时含有 B
-```
-
-##### 策略组实例
-
-四种策略组示例如下。
-
-```
-[policy]
-;static=policy-name-1, Sample-A, Sample-B, Sample-C
-//静态策略组，static=策略组名,节点 1, 节点 2,策略组-C
-;available=policy-name-2, Sample-A, Sample-B, Sample-C
-//可用性策略组，available=策略组名,节点 1,节点 2,节点 3
-;round-robin=policy-name-3, Sample-A, Sample-B, Sample-C
-/轮询策略组，round-robin = 策略组名, 节点 1, 节点 2,节点 
-;ssid=policy-name-4, Sample-A, Sample-B, LINK_22E171:Sample-B, LINK_22E172:Sample-C
-//ssid策略组，ssid=你的组名,4g下默认策略,Wi-Fi下默认策略, wifi-A:策略 A, wifi-B:策略 B
-```
-
-以SSID策略组为例进行说明，格式如下。
-
-```
-ssid=组名, 4g下默认策略/节点, Wi-Fi下默认策略/节点, wifi-A:策略/节点A, wifi-B:策略/节点B, wifi-C: 策略/节点C
-```
-
-示例如下。
-
-```
-;组名SSID Group
-;蜂窝网下默认策略HK Group
-;Wi-Fi下默认策略HK Group
-;ASUS_5G这个Wi-Fi下走MO Group
-;AMG-5G这个Wi-Fi下走直连direct
-ssid = SSID Group, HK Group, HK Group, ASUS_5G:MO Group, AMG-5G:direct
-```
-
-#### 生效
-
-##### 直接引用生效
-
-###### 整个订阅
-
-点击三菱按钮，选择分流中的引用，左滑任意分流订阅链接，点击编辑。开启策略偏好，选取所需要的策略组即可。
-
-###### 单个规则
-
-点击三菱按钮，选择分流中的添加按钮，填写相应内容即可。
-
-##### 间接引用生效
-
-通过策略组嵌套即可。比如规则本来指向的是Global策略组，则在Global策略组中添加需要生效的策略组，并选中即可。
-
-#### 自定义策略组图标
-
-点击三菱按钮，选择配置文件中的编辑，找到`[policy]`，示例如下。
-
-```
-[policy]
-static=机场专线, 港深01, img-url=https://raw.githubusercontent.com/limbopro/Zure/master/IconSet/rocket.png
-round-robin=Pornhub, 深港D, 深港E, img-url=https://raw.githubusercontent.com/zealson/Zure/master/IconSet/Pornhub.png
-available=Google, 沪港02, 川港01, 京德01, img-url=https://raw.githubusercontent.com/limbopro/Zure/master/IconSet/Google.png
-```
-
-在选中的策略组后面，添加图标的地址即可，示例如下。
-
-```
-img-url=https://raw.githubusercontent.com/limbopro/Zure/master/IconSet/Google.png
-```
-
-#### 使用
-
-主界面的策略组模块上有白色环形标志，则代表可以长按以添加或删除其中的节点。
-
-#### 删除
-
-确认没有规则指向该策略后，在配置文件中删除即可。
-
-### 重写
-
-#### 引用重写规则
-
-点击三菱图标，选择重写中的引用。
-
-##### JS脚本
-
-复制以下链接并确定，即可导入脚本。
-
-```
-https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf
-```
-
-在主界面选择重写规则一项，点击搜索，搜索`response-body`即可查看所有脚本。
-
-##### 去广告
-
-复制以下链接之一并确定，即可导入去广告规则。
-
-```
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Rewrite.conf
-https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Rewrite_lhie1.conf
-```
-
-#### 配置文件
-
-```
-[rewrite_remote]
-#远程复写模块，内包含主机名 hostname 以及复写 rewrite 规则
-#远程链接
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Rewrite.conf, tag = 神机复写规则，enabled=true
-#本地/iCloud 引用
-rewrite.txt, tag=本地复写, enabled=true
-
-[rewrite_local]
-^http://example\.com/resource1/1/ url reject
-^http://example\.com/resource1/2/ url reject-img
-```
-
-### JS脚本
-
-#### 放置位置
-
-脚本需先放在本地或进行远程引用，配置仅起到调用脚本的作用。
-
-若放在本地，可放到iCloud Drive/QuantumultX/Scripts，或我的iPhone/QuantumultX/Scripts。若放在iCloud Drive，则还需点击三菱图标，选择其他设置，开启iCloud。
-
-#### 规则脚本
-
-通过重写语句，可以让软件在满足特定条件时使用该脚本。
-
-格式为`匹配网址 url 复写类型 脚本文件`。可以放在本地配置(rewrite_local)，也可以放在远程引用(rewrite_remote)。
-
-示例如下。当访问网址匹配`http://example.com/resource5/`时，将会执行`123.js`的脚本文件，复写类型为`url script-response-body`。 
-
-```
-http://example\.com/resource5/ url script-response-body  123.js
-```
-
-本地引用脚本的示例如下。
-
-```
-[rewrite_local]
-;远程github
-http://example\.com/resource5/ url script-response-body https://raw.githubusercontent.com/crossutility/Quantumult-X/master/sample-rewrite-with-script.js
-
-;本地js文件
-http://example\.com/resource5/ url script-response-body script_name.js
-```
-
-#### 任务脚本
-
-Quantumult X暂时不支持远程订阅任务脚本，即没有`[task_remote]`模块，因此需要将每一条要用到的脚本写到配置文件中，但脚本的路径可以是远程的。
-
-在配置文件中手动添加`[task_local]`模块，并填写任务即可。其中`* * * * *`为以分开始的 cron语法，tag参数指定标签名，img-url参数指定图标ICON。
-
-如果是签到类task任务，一般还需要先获取对应的cookie。提供签到类的脚本一般会有使用说明。
-
-```
-[task_local]
-;远程github
-* * * * * http://example.com/name.js, tag=京东签到, img-url=https://icon.expamle.png
-
-;本地js文件
-* * * * * name.js, tag=京东签到, img-url=https://icon.expamle.png
-```
-
-#### 查询节点信息
-
-可通过JS脚本实现在主界面查询节点信息，在点击相应的节点时出现节点相关内容。代码放到配置文件的`[general]`下即可。
-
-```
-[general]
-;加';'来注释掉对应行, 如下，仅第三行生效
-;第三、四个为返回中文的API
-;geo_location_checker=http://ifconfig.co/json,https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IPConfig.js
-;geo_location_checker=http://extreme-ip-lookup.com/json/,https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IPCheck.js
-geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IP_API.js
-;geo_location_checker=http://api.ipstack.com/check?access_key=1c24147fb534e1a71cb35ff84de2d153&language=zh&output=json, https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IPInfo.js
-```
-
-#### 资源
-
-```
-https://t.me/meetashare
-https://t.me/NobyDa
-https://t.me/Leped_Channel/542
-https://github.com/sazs34/TaskConfig
-https://github.com/chavyleung/scripts
-https://github.com/yichahucha/surge/tree/master
-https://github.com/NavePnow/Profiles#weatherjs
-https://github.com/crossutility/Quantumult-X/blob/master/sample-task.js
-```
-
-### APP破解规则
-
-模式选择规则分流，VPN选择始终开启。
-
-#### Audiomack
-
-脚本下载链接如下。
-
-```
-https://share.weiyun.com/5goyB8F
-```
-
-配置修改如下。
-
-```
-[rewrite_local]
-# Audiomack 去厂告（by LTribe）    
-^https?:\/\/api\.revenuecat\.com\/v\d\/subscribers\/\w+$ url script-response-body Audiomack.js
-
-[mitm]  
-hostname = api.revenuecat.com,
-```
-
-#### Duet Display
-
-脚本下载链接如下。
-
-```
-https://share.weiyun.com/5goyB8F
-```
-
-配置修改如下。
-
-```
-[rewrite_local]    
-# Duet Display Unlock Pro （by LTribe）    
-^https?:\/\/rdp\.duetdisplay\.com\/v\d\/users\/validateReceipt url script-response-body DuetPro.js    
-
-[mitm]    
-hostname = rdp.duetdisplay.com, 
-```
-
-#### X-mind
-
-脚本下载链接如下。
-
-```
-https://share.weiyun.com/5goyB8F
-```
-
-配置修改如下。
-
-```
-[rewrite_local]    
-# X-mind Unlock annual subscriptions
-https?:\/\/.*\.xmind\..*\/_res\/(devices|user_sub_status|profile\/) url script-response-body XMind.js
-
-[mitm]    
-hostname = *.xmind.*,
-```
-
-#### Gear Pro
-
-脚本下载链接如下。
-
-```
-https://share.weiyun.com/5goyB8F
-```
-
-配置修改如下。
-
-```
-[rewrite_local]    
-# Gear Unlock Pro （by LTribe）    
-^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt url script-response-body Gear.js
-
-[mitm]
-hostname = buy.itunes.apple.com, 
-```
-
-#### Bilibili
-
-配置修改如下。
-
-```
-[rewrite_local]
-# BiliBili
-https:\/\/api\.bilibili\.com\/pgc\/player\/api\/playurl url 302 http://api.bili.best:22333/geturl/
-https:\/\/api.bilibili.com\/pgc\/view\/app\/season url 302 http://api.bili.best:22333/season/
-
-[mitm]
-hostname = api.bilibili.com,
-```
-
-在Bilibili客户端中登录账号并复制UID，打开telegram，搜索`@Biliiii_bot`，发送UID完成绑定。如需解绑，则输入`/remove`。然后打开Quantumult开关即可。
-
-### 图标库
-
-```
-https://github.com/elecV2/QuantumultX-ICON
-https://github.com/Koolson/Qure
-```
-
-## Thor
-
-### 下载
-
-#### 法一
-
-App Store登录以下账号并下载Thor。
-
-```
-（来自公众号@年糕小站）
-账号 / duet@ngxz.uu.me
-密码 / Ngxz0229
-```
-
-安装完成后打开并点击闪电按钮，安装证书。若提示需要设备共存验证，则修改系统时间至验证后的时间，再打开Thor即可通过验证。如果不能通过认证，则卸载Thor，并打开以下链接，安装Thor 1.2.0，重复以上操作直至VPN被安装。VPN安装好后，从链接中覆盖安装Thor 1.3.4，重新安装证书并删除原来的证书即可，注意不要删除VPN。
-
-```
-https://ngxz.baklib.com/3a93/cfbe
-```
-
-在使用时不能直接从Thor的主界面打开抓包，需要在主界面中选择好规则后，进入系统设置-VPN，列表中选择Thor条目并开启VPN按钮即可。
-
-#### 法二
-
-下载以下IPA并用同步推安装即可。
-
-```
-https://code.aliyun.com/zwxsa/iOSbuy/raw/3501cba392d61d91d10b84f0a2524bf179d57ff3/Thor%201.3.4.ipa
-```
-
-### 规则基础知识
-
-规则的原理是通过更改本地数据进⾏交互欺骗，从⽽达到⽬的。以以下规则为例。
-
-```
-^@rsp.bodyText"gold":"\d+" "gold":"9999"
-```
-
-#### 正则表达式
-
-| 语法                    | 说明                                                         |
-| ----------------------- | ------------------------------------------------------------ |
-| .                       | 匹配除换行符以外的任意字符                                   |
-| \                       | 转义元字符                                                   |
-| `\<`                    | 词首定位（`\<love`）                                         |
-| `\>`                    | 词首定位（`love\>`）                                         |
-| \w                      | 匹配字母或数字或下划线或汉字                                 |
-| \s                      | 匹配任意的空白符                                             |
-| \d                      | 匹配数字                                                     |
-| \b                      | 匹配单词的开始或结束                                         |
-| \W                      | 匹配任意不是字母，数字，下划线，汉字的字符                   |
-| \S                      | 匹配任意不是空白符的字符                                     |
-| \D                      | 匹配任意非数字的字符                                         |
-| \B                      | 匹配不是单词开头或结束的位置                                 |
-| `\(..\)`                | 匹配稍后将要使用的字符的标签（`\(love\)able\1er`）           |
-| [^x]                    | 匹配除了x以外的任意字符                                      |
-| [^aeiou]                | 匹配除了aeiou这几个字母以外的任意字符                        |
-| [a-z]                   | 匹配a-z范围内的一个字符                                      |
-| ^                       | 匹配字符串的开始                                             |
-| $                       | 匹配字符串的结束                                             |
-| *                       | 重复零次或更多次                                             |
-| +                       | 重复一次或更多次                                             |
-| ?                       | 重复零次或一次                                               |
-| a\|b                    | 匹配a或b                                                     |
-| *?                      | 重复任意次，但尽可能少重复                                   |
-| +?                      | 重复1次或更多次，但尽可能少重复                              |
-| ??                      | 重复0次或1次，但尽可能少重复                                 |
-| {n}                     | 重复n次（`x\{m\}`表示字符x重复出现m次）                      |
-| {n,}                    | 重复n次或更多次（`x\{m,\}`表示字符x重复出现m次以上）         |
-| {n,}?                   | 重复n次以上，但尽可能少重复                                  |
-| {n,m}                   | 重复n到m次（`x\{m,n\}`表示字符x重复出现m到n次）              |
-| {n,m}?                  | 重复n到m次，但尽可能少重复                                   |
-| (exp)                   | 匹配exp，并捕获文本到自动命名的组里（`love(able|rs)`）       |
-| (..)(..)\1\2            | 标签匹配字符（`(love)able\1er`）                             |
-| (?<name>exp)            | 匹配exp，并捕获文本到名称为name的组里，也可以写成(?'name'exp) |
-| (?:exp)                 | 匹配exp，不捕获匹配的文本，也不给此分组分配组号              |
-| (?=exp)                 | 匹配exp前面的位置                                            |
-| (?<=exp)                | 匹配exp后面的位置                                            |
-| (?!exp)                 | 匹配后面跟的不是exp的位置                                    |
-| (?<!exp)                | 匹配前面不是exp的位置                                        |
-| [:alnum:]               | 字母与数字字符（`[[:alnum:]]+`）                             |
-| [:alpha:]               | 字母字符，包括大小写（`[[:alpha:]]{4}`）                     |
-| [:blank:]               | 空格与制表符（`[[:blank:]]*`）                               |
-| [:digit:]               | 数字字母（`[[:digit:]]?`）                                   |
-| [:lower:]               | 小写字母（`[[:lower:]]{5,}`）                                |
-| [:upper:]               | 大写字母（`[[:upper:]]+`）                                   |
-| [:punct:]               | 标点符号（`[[:punct:]]`）                                    |
-| [:space:]               | 包括换行符，回车等在内的所有空白（`[[:space:]]+`）           |
-| IgnoreCase              | 匹配时不区分大小写                                           |
-| Multiline               | 多行模式，更改^和`$`的含义，使它们分别在任意一行的行首和行尾匹配，而不仅仅在整个字符串的开头和结尾匹配。(在此模式下,$的精确含意是匹配\n之前的位置以及字符串结束前的位置) |
-| Singleline              | 单行模式，更改.的含义，使它与每一个字符匹配（包括换行符\n）  |
-| IgnorePatternWhitespace | 忽略空白，忽略表达式中的非转义空白并启用由#标记的注释        |
-| ExplicitCapture         | 显式捕获，仅捕获已被显式命名的组                             |
-
-#### 响应码
-
-| 响应码 | 说明                                                         |
-| ------ | ------------------------------------------------------------ |
-| 200    | 请求被正常处理                                               |
-| 204    | 请求被受理，但没有资源可以返回                               |
-| 206    | 客户端只是请求资源的⼀部分，服务器只对请求的部分资源执⾏GET⽅法 |
-| 301    | 永久性重定向                                                 |
-| 302    | 临时重定向                                                   |
-| 303    | 与302状态码有相似功能，只是它希望客户端在请求⼀个URI的时候，能通过GET⽅法重定向到另⼀个URI上 |
-| 304    | 发送附带条件的请求时，条件不满足时返回，与重定向⽆关         |
-| 307    | 临时重定向，与302类似，只是强制要求使⽤POST⽅法              |
-| 400    | 请求报⽂语法有误，服务器⽆法识别                             |
-| 401    | 请求需要认证                                                 |
-| 403    | 请求的对应资源禁⽌被访问                                     |
-| 404    | 服务器无法找到对应资源                                       |
-| 500    | 服务器内部错误                                               |
-| 503    | 服务器正忙                                                   |
-
-### 规则制作
-
-以爱字幕APP为例说明制作方法。
-
-#### 查找修改数据
-
-开启Thor全局抓包，打开爱字幕APP，停留一段时间后即可关闭，然后关闭Thor抓包。
-
-进入Thor的抓包记录，寻找含有VIP数据的包，此处为`api/v1.user/info`这一数据。一般而言可寻找user或者info相关的路径。点击响应-application/json，即可进入消息体，摘录如下。复制该消息体的内容。
-
-```
-{
-    "status":1,
-    "msg":"success",
-    "result":{
-        "id":1641729,
-        "token":
-        "mobile":"",
-        "is_vip":0,
-        "nickname":"  ",
-        "photorul":"https://www.qlogo.cn",
-        "left_times":1,
-        "vip_end_time":0,
-        "permanent_vip":0,
-        "is_enterprise":0,
-        "is_new":0,
-        "new_user":1
-    }
-}
-```
-
-则目标为将is_vip改为1，且将vip_end_time改为一个非常大的时间戳。
-
-#### 制作过滤器
-
-退回抓包记录界面，在刚才的那条数据上左滑，点击更多-提取到过滤器，点击+号，点击添加过滤器，填写过滤器名称，并进入`包括域名`，点击+号，选择下面提供的域名。`包括关键字`同理。
-
-点击`挂载断点`，选择编辑-新建-响应消息体回传前-编辑-新建-判断条件，在操作对象里点击`@rep.api`。然后手打以下内容并保存，表示匹配到这条响应的时候。注意`@rep.api`与`CONTAINS[cd]`间要有空格。
-
-```
-CONTAINS[cd] "api/v1.user/info"
-```
-
-返回上一页，点击编辑-添加表达式（条件满足时）-运算语法，选择`^替换/插入`-`@rsp.bodyText`（表示重写响应消息体），然后点击调试-调试表达式#1。将刚才消息体的内容复制到待匹配文本中，然后在正则表达式中输入需要匹配的修改位置，其中`\d`表示匹配一个数字，`\d+`表示匹配一串数字。现需匹配`"is_vip":0`，则在正则表达式中输入`"is_vip":\d`，点击匹配，即可找到该位置。然后点击设置替换值，输入`"is_vip":1`，点击替换即可。
-
-`"vip_end_time":0`同理，注意需要退出到匹配动作页，重新执行编辑-添加表达式（条件满足时）的步骤。其中时间戳可用Anubis中的日期格式化工具获得。
-
-制作完成后保存过滤器，选择开启即可。
-
-### 使用
-
-#### 抓取IPA
-
-开启全局抓包后，在助手软件（如爱思助手）下载要抓包的应用，完成下载后回到Thor，打开抓包记录，搜索`ipa`，点击后缀名为ipa的记录，复制链接后打开Shu下载即可。
-
-也可以添加一个过滤器，在`包括关键字`一栏输入`ipa`并存储，以后使用该过滤器抓包即只抓到ipa记录。
-
-#### 抓取翻墙APP节点
-
-开启全局抓包后，打开翻墙软件并进行连接，然后停止抓包，点击抓包记录，找到含有`connect`的记录并进入，切换到`概览`选项卡，点击`消息体`即可。
-
-#### 修改成品过滤器
-
-选择一个过滤器并点击右边的`i`图标，选择`编辑`，点击挂载断点下的断点，选择查看断点。
-
-如果查看断点不可用，说明作者不允许修改该过滤器。点击右边的`i`图标，选择`导出`，导出到Shu后解压查看，解压到任意位置。然后打开解压好的文件，点击文件夹内的`info.json`，打开后点击右上角，选择导出文本，添加到备忘录，存储后打开备忘录，将`rights_protected`改为`0`，然后将备忘录导出到Shu，重命名为info.json并覆盖原来的info.json即可。
-
-#### 抓取付费音乐
-
-开启全局抓包后，打开音乐软件（如QQ音乐），点击下载后回到Thor，选择抓包记录，点击后缀为`flac`的即为无损音乐格式。
-
-#### 规则库
-
-##### LTribe的Thor规则库
-
-```
-https://www.lanzous.com/b092uk65i
-http://t.cn/AikXWSks
-https://www.lanzoui.com/iZ2vug86q6h
-```
-
-可用规则和失效规则如下。
-
-```
-// 可用规则
-闪电下载（需要先登录账号）
-
-// 失效规则
-万里影视
-
-// 未测试规则
-Polaris Office
-Myscript Nebo
-Photoshop Express
-Spark Camera
-悠悠追书VIP
-悟饭趣玩VIP
-知音漫客VIP
-全能扫描王高级版
-酷wo音乐不能下载VIP
-悠悠看书VIP
-悟饭电玩辅助VIP
-鲨鱼记账shanyujizhangVIP
-去听qutingVIP
-迅捷文字识别VIP
-VUE Vlog PRO
-泼辣修图VIP
-优品云VIP
-Audiomack专业版
-```
-
-##### 云享汇聚
-
-```
-https://share.weiyun.com/p3muPzOU
-```
-
-##### Symbolab Calculator
-
-```
-https://share.weiyun.com/i6RB4YIY
-```
-
-##### 捷径规则库
-
-```
-https://www.icloud.com/shortcuts/9097fa1569b6485b816d6fce8f7c8f4c
-```
-
-##### 爱美剧VIP
-
-```
-链接 / https://pan.baidu.com/s/19NF55QJ6wJRAdIT1XIpTow
-提取码 / 7k8j
-```
-
-##### Day One
-
-```
-https://share.weiyun.com/tzhufI0v
-```
-
-## Http Catcher
-
-### 安装
-
-App Store登录以下账号并下载最新的Http Catcher。
-
-```
-（来自公众号@年糕小站）
-账号 / ngxz2@ngxz.uu.me
-密码 / Gxzh2019
-```
-
-安装完成后打开APP，如果有盗版弹窗提示，则直接卸载。然后进入以下链接，选择Http Catcher 1.1.11进行安装（Http Catcher1.1.4在iOS 13中会出现证书无法信任的问题）。
-
-```
-https://ngxz.baklib.com/3a93/cfbe
-```
-
-安装完成后打开Http Catcher，打开HTTPS抓包，按照提示操作即可。
-
-### 规则制作
-
-以泼辣修图APP为例说明制作方法。
-
-#### 查找修改数据
-
-开启Http Catcher全局抓包，进入泼辣修图APP，点击恢复购买，完成后回到Http Catcher停止抓包。
-
-在刚抓到的数据里面找到路径为/v1/payments/appleiap/receipts/confirmation的数据，在响应里面可以看到响应消息体。分析没购买和购买后的消息体的不同，可知需将响应状态码从400改为200，并修改`"isUnlimited":true`。
-
-#### 制作重写
-
-复制购买后的数据响应消息体，然后在需要重写的数据上左滑，点击更多-新建重写，填写名称。点击`位置`，删除PORT中的数值。
-
-点击`添加规则`，类型选择响应，行为选择Body，开启正则表达式，输入正则法则`.*\}`（表示全匹配），在`替换`中输入刚才复制的消息体。正则表达式可通过Anubis进行校验，以确认填写的表达式正确。
-
-完成后继续添加规则，类型选择响应，行为选择响应状态码，查找400并替换为200。保存重写规则并打开即可。
-
-### 规则挂载
-
-本地挂载可用Working Copy，仓库地址如下。
-
-```
-https://github.com/pm936/httpcatcher.git
-```
-
-### 规则导入
-
-直接将规则文件用Http Catcher打开即可。也可进入设置-重写，点击`+`号，选择`在文本编辑器中编辑`，复制规则内容即可。
-
-### 规则库
-
-#### Http Catcher规则库
-
-```
-https://share.weiyun.com/58Kw471
-http://t.cn/AiFmr7db
-https://github.com/pm936/httpcatcher
-https://www.lanzoui.com/i7Vtfg86q8j
-```
-
-包含规则如下。
-
-```
-PDF Expert 7
-Gear Pro
-Audiomack
-Enlight Videoleap
-
-闪电下载
-Polaris Office
-XMind
-Photoshop Express
-Myscript Nebo
-
-悠悠看书VIP
-全能扫描王高级版
-悟饭电玩辅助VIP
-鲨鱼记账shanyujizhangVIP
-去听qutingVIP
-迅捷文字识别VIP
-VUE Vlog PRO
-泼辣修图VIP
-优品云VIP
-Audiomack专业版
-```
-
-#### Day One
-
-```
-https://share.weiyun.com/tzhufI0v
-```
-
-#### 云享汇聚
-
-```
-https://share.weiyun.com/KLFnkJqI
-```
-
-#### 小小影视破解限制
-
-```
-https://pan.baidu.com/s/1B3DKE10L5-Qetw27RlG7KA
-```
-
-#### Symbolab Calculator
-
-```
-https://share.weiyun.com/gmKMiEo2
-```
-
-#### 听阅
-
-```
-https://share.weiyun.com/5sKpyQw
-https://share.weiyun.com/5LxSgR4
-https://pan.baidu.com/s/1xSQniT02sfujGIanFNBmXg
-```
-
-#### Face V
-
-```
-https://share.weiyun.com/0PDeCJ5G
-```
-
-#### XMind
-
-```
-https://share.weiyun.com/5kkb0dX
-```
-
-## iHttp Tracker
-
-### 规则库
-
-```
-https://www.lanzoui.com/iX3kwg86q7i
-```
-
-包括以下规则。
-
-```
-鲨鱼记账VIP 
-优品云VIP 
-悟饭趣玩 
-VUE Vlog专业版 
-悠悠听书解锁下载 
-酷我音乐VIP 
-Audiomack专业版
-悟饭电玩辅助VIP
-迷人 VR
-```
-
-## 其它分流规则
-
-```
-// 总仓库
-https://github.com/limbopro/Profiles/tree/master
-https://github.com/Fndroid/jsbox_script/wiki/Rules-lhie1
-
-// Surge 2
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Pro.conf
-
-// Surge 3
-https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Surge3.conf
-https://raw.githubusercontent.com/voneo/conf/master/rule/surge3/lhie.conf
-
-// Shadowrocket
-https://github.com/h2y/Shadowrocket-ADBlock-Rules
-
-// Quantumult X
-https://github.com/nzw9314/QuantumultX
-https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Js.conf
-https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Get_Cookie_Remote.conf
-
-// JS脚本
-https://github.com/chavyleung/scripts
-https://github.com/yichahucha/surge
-```
-
 
 # 捷径
 
-## 捷径制作
+## 制作
 
 打开快捷指令，点击+号新建。以下列例子进行说明。
 
 ### 下载微信推文图片
 
-点击添加操作，选择共享-获取剪贴板，长按并移动到蓝框内。点击+号添加操作，返回添加操作主页面，选择网页-获取URL内容，长按并移动到第一个动作的下方。然后继续增加操作，搜索`html`并将`用多信息文本制作HTML`拖到下一个动作。
+流程大致如下。
 
-复制微信推文后运行该捷径，寻找图片链接的规律，可发现均为`data-src="[图片链接]"`的格式。故添加操作`匹配文本`，并将`[0-9a-zA-Z]`修改为`data-src="(.*?)"`，其中`()`代表1个组，括起来方便后面提取图片链接，而`.*?`是非贪婪的匹配任何字符，即尽可能少的匹配，在本例中代表精确匹配所有图片链接。
+```
+├── 获取剪贴板
+├── 获取URL内容
+├── 用多信息文本制作HTML
+├── 匹配文本
+│   └── data-src="(.*?)"
+├── 获取匹配文本的组
+├── 获取URL内容
+└── 存储到相簿
+```
+
+点击添加操作，选择共享-获取剪贴板，长按并移动到蓝框内。点击+号添加操作，返回添加操作主页面，选择网页-获取URL内容，长按并移动到第一个动作的下方。
+
+然后继续增加操作，搜索html并将`用多信息文本制作HTML`拖到下一个动作。复制微信推文后运行该捷径，寻找图片链接的规律，可发现均为`data-src="[图片链接]"`的格式。
+
+故添加操作`匹配文本`，并将`[0-9a-zA-Z]`修改为`data-src="(.*?)"`。其中`()`代表组，便于后面提取图片链接，而`.*?`是非贪婪的匹配任何字符，即尽可能少的匹配，在本例中代表精确匹配所有图片链接。
 
 添加操作`获取匹配文本的组`以取得图片链接，然后添加操作`获取URL内容`以下载图片，添加操作`存储到相簿`将图片存储到相簿，保存并运行即可。
 
 ### 下载小红书视频/图文
 
-添加操作`获取剪贴板`取得链接，添加操作`如果`判断链接是否为小红书分享链接。
+流程大致如下。
 
-若不含xhs，则不是小红书链接，添加操作`显示提醒`提示用户错误信息，然后添加操作`退出快捷指令`结束。若为小红书链接，则添加操作`获取URL内容`拿到网页内容，其中需要展开并添加以下两个头部值。
+```
+├── 获取剪贴板
+└── 如果
+    ├── 不含xhs
+    │   ├── 显示提醒
+    │   └── 退出快捷指令
+    └── 含xhs
+        ├── 获取URL内容
+        │   ├── User-Agent
+        │   └── Cookie
+        ├── 从多信息文本制作HTML
+        ├── 从菜单中选取
+        │   ├── 下载视频
+        │   │   ├── 匹配文本
+        │   │   │   └── video src=\"(.*?)\"
+        │   │   ├── 获取匹配文本的组
+        │   │   ├── 替换文本
+        │   │   │   └── 将amp;替换为空值
+        │   │   ├── 获取URL内容
+        │   │   ├── 存储到相簿
+        │   │   └── 从菜单中选取
+        │   │       ├── 保存文字内容
+        │   │       │   ├── 匹配文本
+        │   │       │   │   └── "name": "(.*?)\"
+        │   │       │   ├── 获取匹配文本的组
+        │   │       │   ├── 添加到变量
+        │   │       │   │   └── 存入变量a
+        │   │       │   ├── 匹配文本
+        │   │       │   │   └── "comments":\d+,.*?"desc\":\"(.*?)\"
+        │   │       │   ├── 获取匹配文本的组
+        │   │       │   ├── 替换文本
+        │   │       │   │   ├── 将\\n替换为空值
+        │   │       │   │   └── 点开操作，打开正则表达式选项
+        │   │       │   ├── 添加到变量
+        │   │       │   │   └── 存入变量a
+        │   │       │   └── 创建备忘录
+        │   │       │       └── 使用变量a 
+        │   │       └── 不保存文字内容      
+        │   │           └── 结束菜单
+        │   └── 下载图片
+        │       ├── 匹配文本
+        │       │   └── imageList\":\[(.*?)\]
+        │       ├── 获取匹配文本的组
+        │       ├── 匹配文本
+        │       │   └── \"(\\u002F.*?format.*?)\"
+        │       ├── 替换文本
+        │       │   └── 将\u002F替换为/
+        │       ├── 替换文本
+        │       │   └── 将"替换为空值
+        │       ├── 为每个项目重复
+        │       │   ├── 替换文本
+        │       │       └── 将//替换为https://
+        │       ├── 获取URL内容
+        │       ├── 从列表中选取
+        │       │   ├── 选择想保存的图片
+        │       │   └── 存储到相簿
+        │       └── 从菜单中选取
+        │           ├── 保存文字内容
+        │           │   ├── 匹配文本
+        │           │   │   └── "name": "(.*?)\"
+        │           │   ├── 获取匹配文本的组
+        │           │   ├── 添加到变量
+        │           │   │   └── 存入变量b
+        │           │   ├── 匹配文本
+        │           │   │   └── "<div class="note"[\s\S]*class="content"\s*data-v-\w+?>([\s\S]*)</p></div></div>
+        │           │   ├── 替换文本
+        │           │   │   ├── 将<(\S*?)[^>]*>.*?|<.*? />替换为空值
+        │           │   │   └── 点开操作，打开正则表达式选项
+        │           │   ├── 添加到变量
+        │           │   │   └── 存入变量b
+        │           │   └── 创建备忘录
+        │           │       └── 使用变量b
+        │           └── 不保存文字内容      
+        │               └── 结束菜单
+        └── 退出快捷指令
+```
 
-| 键         | 文本                                                         |
-| ---------- | ------------------------------------------------------------ |
-| User-Agent | Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 |
+添加操作`获取剪贴板`取得链接，添加操作`如果`判断链接是否为小红书分享链接。若不含xhs，则不是小红书链接，添加操作`显示提醒`提示用户错误信息，然后添加操作`退出快捷指令`结束。
+
+若为小红书链接，则添加操作`获取URL内容`拿到网页内容，其中需要展开并添加以下两个头部值。
+
+|     键     |                                                                                                                                                                                                                                 文本                                                                                                                                                                                                                                 |
+|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| User-Agent | Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1                                                                                                                                                                                                                                                                                                                            |
 | Cookie     | timestamp2=c25daa113bced3fc44240e15d6c01368; hasaki=JTVCJTIyTW96aWxsYS81LjAlMjAoaVBob25lOyUyMENQVSUyMGlQaG9uZSUyME9TJTIwMTNfMyUyMGxpa2UlMjBNYWMlMjBPUyUyMFgpJTIwQXBwbGVXZWJLaXQvNjA1LjEuMTUlMjAoS0hUTUwsJTIwbGlrZSUyMEdlY2tvKSUyMFZlcnNpb24vMTMuMC40JTIwTW9iaWxlLzE1RTE0OCUyMFNhZmFyaS82MDQuMSUyMiwlMjJ6aC1DTiUyMiwzMywtNDgwLHRydWUsdHJ1ZSx0cnVlLCUyMnVuZGVmaW5lZCUyMiwlMjJ1bmRlZmluZWQlMjIsbnVsbCwlMjJpUGhvbmUlMjIsbnVsbCxudWxsLG51bGwsJTIyJTIyLDE5NDcxNjYxMDYlNUQ= |
 
-注，捷径默认的User-Agent如下。
+此处使用了自定义的User-Agent。捷径默认的User-Agent如下。
 
 ```
 快捷指令/1050.4.6CFNetwork/1121.2.2Darwin/19.2.0
@@ -3122,13 +148,17 @@ https://github.com/yichahucha/surge
 
 添加操作`从多信息文本制作HTML`显示网页源代码，然后添加操作`从菜单中选取`，让用户选择是下载视频还是图文。
 
-如果是下载视频，则添加操作`匹配文本`，使用正则表达式`video src=\"(.*?)\"`匹配，并添加操作`获取匹配文本的组`以取得视频链接。然后添加操作`替换文本`，将`amp;`替换为空值，然后添加操作`获取URL内容`以下载视频，添加操作`存储到相簿`将视频存储到相簿。然后添加操作`从菜单中选取`，让用户选择是否保存文字内容。
+如果是下载视频，则添加操作`匹配文本`，使用正则表达式`video src=\"(.*?)\"`匹配，并添加操作`获取匹配文本的组`以取得视频链接。添加操作`替换文本`，将`amp;`替换为空值，然后添加操作`获取URL内容`以下载视频，添加操作`存储到相簿`将视频存储到相簿。
 
-若保存，则添加操作`匹配文本`，匹配`"name": "(.*?)\"`（标题和作者），添加操作`获取匹配文本的组`，然后添加操作`添加到变量`，将内容存入变量`a`；然后添加操作`匹配文本`，匹配`"comments":\d+,.*?"desc\":\"(.*?)\"`（正文），添加操作`获取匹配文本的组`，添加操作`替换文本`，将`\\n`替换为空，其中需要点开操作，打开`正则表达式`选项。添加操作`添加到变量`，将内容也存入变量`a`。至此变量`a`已存有所有需要的信息，故添加操作`创建备忘录`，使用a创建备忘录。
+添加操作`从菜单中选取`，让用户选择是否保存文字内容。
+
+若保存，则添加操作`匹配文本`，匹配`"name": "(.*?)\"`，以表示标题和作者。添加操作`获取匹配文本的组`，然后添加操作`添加到变量`，将内容存入变量`a`。然后添加操作`匹配文本`，匹配`"comments":\d+,.*?"desc\":\"(.*?)\"`，以表示正文。添加操作`获取匹配文本的组`，添加操作`替换文本`，将`\\n`替换为空，其中需要点开操作，打开`正则表达式`选项。添加操作`添加到变量`，将内容也存入变量`a`。至此变量`a`已存有所有需要的信息，故添加操作`创建备忘录`，使用a创建备忘录。
 
 若不保存，则不进行操作。最后结束菜单。
 
-如果是下载图片，则添加操作`匹配文本`，使用正则表达式`imageList\":\[(.*?)\]`匹配，并添加操作`获取匹配文本的组`以取得多个图片链接。再添加操作`匹配文本`，使用正则表达式`\"(\\u002F.*?format.*?)\"`匹配，从而得到精确的图片链接。添加操作`替换文本`，将`\u002F`替换为`/`，以将unicode编码转为中文，添加操作`替换文本`，将`"`替换为空以去掉两端的双引号，添加操作`为每个项目重复`，其操作为`替换文本`，将`//`替换为`https://`，至此得到完整的URL链接。添加操作`获取URL内容`从链接下载图片，添加操作`从列表中选取`选择想保存的图片，添加操作`存储到相簿`将图片存储到相簿。然后添加操作`从菜单中选取`，让用户选择是否保存文字内容。
+如果是下载图片，则添加操作`匹配文本`，使用正则表达式`imageList\":\[(.*?)\]`匹配，并添加操作`获取匹配文本的组`以取得多个图片链接。再添加操作`匹配文本`，使用正则表达式`\"(\\u002F.*?format.*?)\"`匹配，从而得到精确的图片链接。添加操作`替换文本`，将`\u002F`替换为`/`，以将unicode编码转为中文，添加操作`替换文本`，将`"`替换为空以去掉两端的双引号，添加操作`为每个项目重复`，其操作为`替换文本`，将`//`替换为`https://`，至此得到完整的URL链接。添加操作`获取URL内容`从链接下载图片，添加操作`从列表中选取`选择想保存的图片，添加操作`存储到相簿`将图片存储到相簿。
+
+添加操作`从菜单中选取`，让用户选择是否保存文字内容。
 
 若保存，则添加操作`匹配文本`，匹配`"name": "(.*?)\"`（标题和作者），添加操作`获取匹配文本的组`，然后添加操作`添加到变量`，将内容存入变量`b`；添加操作`匹配文本`，匹配`"<div class="note"[\s\S]*class="content"\s*data-v-\w+?>([\s\S]*)</p></div></div>`（正文），添加操作`替换文本`，将`<(\S*?)[^>]*>.*?|<.*? />`替换为空，然后添加操作`添加到变量`，将内容也存入变量`b`。至此变量`b`已存有所有需要的信息，故添加操作`创建备忘录`，使用b创建备忘录。
 
@@ -3138,989 +168,15 @@ https://github.com/yichahucha/surge
 
 ## 捷径库
 
-以下链接均未验证。
-
 ### 总仓库
 
 ```
 https://shortcuts.sspai.com/#/main/workflow
 https://jiejingku.net/
-https://www.limufang.com/post/526.html
 ```
 
-### JS直链下载
 
-自定义JS直链下载列表，可选择下载全部（默认）或挑选部分进行下载。
-
-下载文件保存在iCoud Drive/shortcuts/elecV2JS文件夹（每次运行都会清空旧的文件）。下载完成后，需手动复制一下文件到相关软件的对应目录。理论上可以下载任何文本文件（.conf/.list/.md等）。
-
-```
-https://www.icloud.com/shortcuts/50d7d8576dd74f7685811502ff72c078
-```
-
-### tamperJS
-
-配合MITM软件，在任意网页中使用tampermonkey脚本。
-
-```
-https://www.icloud.com/shortcuts/7a21b797d6c34a59a3978683dabc6298
-```
-
-### 京东签到
-
-打开`stream`的抓包后，在Safari输入以下链接并登陆京东，刷新一下网页后返回抓包软件并停止抓包。点击抓包历史，找到带有plogin开头的链接并点击，再选择请求，找到自己的cookie并复制。
-
-```
-https://bean.m.jd.com
-```
-
-安装以下捷径后运行，输入刚刚复制的cookie，即可完成一键签到。
-
-```
-https://www.icloud.com/shortcuts/35be01753adc49409a334464cb4c7470
-```
-
-### 扫描二维码
-
-```
-https://www.icloud.com/shortcuts/52490640004c4fc4b2ebfd038eaf651c
-```
-
-### 双十一淘宝自动养猫
-
-```
-https://www.icloud.com/shortcuts/db359887fea14a61b0f0cd7c43642e4f
-```
-
-### 超级抢购助手
-
-```
-https://www.icloud.com/shortcuts/dca53a0ff3704f22badb7009b828b495
-```
-
-### 全网一键签到
-
-```
-https://www.icloud.com/shortcuts/91af4b2564134654ad2dbc7bce54bbdf
-```
-
-### 音效盒子
-
-```
-https://www.icloud.com/shortcuts/8f3593e814244e32a16bc821896f1b5e
-```
-
-### 谷歌网盘转存助手
-
-```
-https://www.icloud.com/shortcuts/51cdfaff6fd44ac295a8a34bd67e3da8
-```
-
-### 健康码
-
-```
-https://www.icloud.com/shortcuts/7b3a4c33ef374b7f8ef7eddcf4867234
-```
-
-### 短视频去水印
-
-```
-https://www.icloud.com/shortcuts/cf5f76704f9444c9aa17e2a2f85b4f5a
-```
-
-### 支付宝打赏
-
-```
-https://www.icloud.com/shortcuts/bfe71390fe6a4d178d1f3f1a375765b7
-```
-
-### 网速测试
-
-```
-https://www.icloud.com/shortcuts/0e5a81cb1076414680fd4f1a2d0c9094
-```
-
-### 支付宝添加信用卡
-
-```
-https://www.icloud.com/shortcuts/4aef0930744d461c92333e1afaa9accf
-```
-
-### App Store商店切换
-
-```
-https://www.icloud.com/shortcuts/2910a1fd97404f149509cfd5612a046d
-https://www.icloud.com/shortcuts/015c63d4358142389f1c723b7475406d
-```
-
-### 全网VIP视频解析
-
-```
-https://www.icloud.com/shortcuts/8a10557abf924d5dbdaaef5e65248593
-https://www.icloud.com/shortcuts/58add5dba526413c862ac90d7cada939
-```
-
-### 三合一收款二维码生成
-
-```
-https://www.icloud.com/shortcuts/319f80622c234de8b811b7ba2d5a7228
-```
-
-### 分享当前Wi-Fi
-
-```
-https://www.icloud.com/shortcuts/926073374aa9498999756b17fadd9d28
-```
-
-### 照片视频-GIF互转
-
-```
-https://www.icloud.com/shortcuts/6041338fea174bacb386b7b14446fa6f
-https://www.icloud.com/shortcuts/114d8f7e8fde44408c502723187f6a6e
-```
-
-### 从视频提取音频
-
-```
-https://www.icloud.com/shortcuts/5dd917b032e14d838554ea838dd6f978
-```
-
-### 批量节点获取
-
-```
-https://www.icloud.com/shortcuts/69caa3c45c7e48b5b6f3da98cdaeeac7
-```
-
-### 爬图片
-
-```
-https://www.icloud.com/shortcuts/65ea0d09069545cfa9abd78839763146
-```
-
-### 拍摄GIF
-
-```
-https://www.icloud.com/shortcuts/0d77fb02b4d64b17858db35b5008d8c0
-```
-
-### 网盘搜
-
-```
-https://www.icloud.com/shortcuts/feb916abb943481caa6a61335c2b224b
-```
-
-### 英译中Pro
-
-```
-https://www.icloud.com/shortcuts/22805b54bdec4951bb36162e1f93c9bc
-```
-
-### QQ音乐无损下载
-
-```
-https://www.icloud.com/shortcuts/b2c51ca5e7324904aa5be02fae7c4045
-```
-
-### 网易云音乐无损下载
-
-```
-https://www.icloud.com/shortcuts/a4e38fb4529d4cf4b43f844264fdecb2
-```
-
-### 截图加壳
-
-```
-https://www.icloud.com/shortcuts/e406b46a379548a69a1af503aeca37f4
-https://www.icloud.com/shortcuts/2e6b1c0a0a114014812bf26897b5a2aa
-https://www.icloud.com/shortcuts/7edc8f86d6ed4a96a43acacee36392de
-```
-
-### 视频播放
-
-#### 电视直播
-
-```
-https://www.icloud.com/shortcuts/0f9322e7b1244db68eb9a61d06dd757f
-```
-
-#### SKY电影
-
-```
-https://www.icloud.com/shortcuts/f29d4a33f2734b3b8f790ea5d591fd1e
-```
-
-#### 语音点播MV
-
-```
-https://www.icloud.com/shortcuts/d45086dbc5e042129ae2e7601cb41b5c
-```
-
-#### 手机电视
-
-```
-https://www.icloud.com/shortcuts/0695a29bd0224b7f84e9b696adeb4330
-```
-
-#### 在线电影
-
-```
-https://www.icloud.com/shortcuts/7f8220d6d2264fbb811c9f6add1fbe47
-```
-
-#### 香港电视直播
-
-```
-https://www.icloud.com/shortcuts/01e2ed40f598489393769d9707c8c248
-```
-
-#### 港澳台直播
-
-```
-https://www.icloud.com/shortcuts/653c5caaf997435788da1090e6b06406
-```
-
-#### 唐人影视
-
-```
-https://www.icloud.com/shortcuts/022baf8d47bb449ab858bbcabcf408af
-```
-
-#### 电视节目选播
-
-```
-https://www.icloud.com/shortcuts/dff26dbe75df442f8e82b61ba06963ac
-```
-
-#### 翡翠台直播
-
-```
-https://www.icloud.com/shortcuts/be2e98653ffb467dbc54acb45105c1b4
-```
-
-#### icdrama
-
-```
-https://www.icloud.com/shortcuts/362700ca27a04a9f9797d4b28c11b63a
-```
-
-### 下载
-
-#### 高清影视种子下载
-
-```
-https://www.icloud.com/shortcuts/c5672516fa5645918abc48577a30efd6
-```
-
-#### 电影动漫资源搜索
-
-```
-https://www.icloud.com/shortcuts/e1e9401dcb4340bd96d463cf194ebbbf
-```
-
-#### 全能视频VIP
-
-```
-https://www.icloud.com/shortcuts/4a39135fc0284377a1236cbbb0bac53c
-```
-
-#### Viu TV99频道
-
-```
-https://www.icloud.com/shortcuts/2e78d444d706470e95b3112557bbd13b
-```
-
-#### 全能音视频下载
-
-```
-https://www.icloud.com/shortcuts/b6f75b050fa84b49ae0ac8173fe976a7
-```
-
-#### 抖音无水印视频
-
-```
-https://www.icloud.com/shortcuts/b7698896dc8a4057b8174e989ec21198
-https://www.icloud.com/shortcuts/fa885e093ec443b2807040f2b3ad2bfd
-```
-
-#### 抖音音频下载
-
-```
-https://www.icloud.com/shortcuts/e00730220f614ad193d69b5a75313dc3
-```
-
-#### 快手无水印下载
-
-```
-https://www.icloud.com/shortcuts/b5221374c6024181ae19f7f759575035
-https://www.icloud.com/shortcuts/118a2c455bb54406979071a8942c556d
-```
-
-#### 万能视频下载
-
-```
-https://www.icloud.com/shortcuts/939dfd29e1d14800a00bc86a252ca84f
-```
-
-#### Instagram全类型下载
-
-```
-https://www.icloud.com/shortcuts/7f4f267f7b6f4f3299206d43cde5c4eb
-https://workflow.is/workflows/3a4f22ce8e794c7489a059224f3bc0b0
-```
-
-#### Instagram保存图片
-
-```
-https://workflow.is/workflows/73aa53dfae9c45729befb49cdc6863f0
-```
-
-#### Tumblr解析下载
-
-```
-https://www.icloud.com/shortcuts/400c06379b014e08be927162689f6047
-https://www.icloud.com/shortcuts/6ac1b99b9e8340799d8b0c737cd0f314
-```
-
-#### Tumblr保存到相册
-
-```
-https://workflow.is/workflows/897924d6858d47a4a6737733517a36eb
-```
-
-#### 下载Tumblr视频
-
-```
-https://workflow.is/workflows/051ddcc30c984d47afe7b1fde9a403e7
-https://workflow.is/workflows/f8656cbb90524dffa1fe2eba8975946e
-https://workflow.is/workflows/087a0abf12c049dd9ab256afaec790c0
-```
-
-#### 新浪微博视频
-
-```
-https://workflow.is/workflows/fd7fe0b7548046e689e9776b2182a8b1
-```
-
-#### 下载Twitter的GIF
-
-```
-https://workflow.is/workflows/aa9821c4bce44b6f8febcbda6245c1f0
-```
-
-#### 下载Youtube视频
-
-```
-https://workflow.is/workflows/ec284f18720c45e39ff31128e6d42602
-https://workflow.is/workflows/73971870942c49da96cae6a490aea8e0
-https://workflow.is/workflows/617578d73f8244a5afed2a1665c8e320
-```
-
-#### Youtube保存到任意App
-
-```
-https://workflow.is/workflows/01fdf6b4a30d43fcb1ae5f01763b4abc
-```
-
-#### 贴吧视频下载
-
-```
-https://www.icloud.com/shortcuts/00975db818f846efb50df1489213b96e
-```
-
-#### 火山短视频去水印下载
-
-```
-https://www.icloud.com/shortcuts/6cf84eae2eba4717ae75ae10cdd3f722
-```
-
-#### 微博秒拍视频下载
-
-```
-https://www.icloud.com/shortcuts/e09a96b7e8bc4913bf8708f57cffce9f
-```
-
-#### Twitter视频下载
-
-```
-https://www.icloud.com/shortcuts/0a9451a9f19a4a5c89afed57ef6fd9d9
-https://workflow.is/workflows/75562e41b6c74540903786ae9b6f1c50
-```
-
-#### 即刻视频下载
-
-```
-https://www.icloud.com/shortcuts/d6637e8536254a46ba81a09fabbad8f9
-```
-
-#### 即刻图片下载
-
-```
-https://www.icloud.com/shortcuts/0f74a2c6ffbd4a59856612725ca22dc6
-```
-
-#### QQ空间视频下载
-
-```
-https://www.icloud.com/shortcuts/da27ac884dc04dd0accb75eb19e27ccc
-```
-
-#### 获取B站封面视频
-
-```
-https://www.icloud.com/shortcuts/7d20ebb35d6441fcb9e0f0f6f225cbb41
-```
-
-#### bilibili视频下载
-
-```
-https://www.icloud.com/shortcuts/7cfaa2d46b624e5093f9e13bded09ffc
-```
-
-### 限免软件
-
-```
-https://www.icloud.com/shortcuts/0e5e70111c2f49a9bc1f10629c6ca74e
-```
-
-### 抽奖工具
-
-```
-https://www.icloud.com/shortcuts/9dc04fa400f248ac9608e6d138a07de3
-```
-
-### 人脸识别
-
-```
-https://www.icloud.com/shortcuts/67175ef09c1d4e7da2d77d476506740f
-```
-
-### 网络工具
-
-```
-https://www.icloud.com/shortcuts/74b26667ec774e6fbbfbe97c8aeff4e9
-```
-
-### 苹果工具箱
-
-```
-https://www.icloud.com/shortcuts/a7228c50afd94f2dbab9d160a8b5d50d
-```
-
-### 低消耗
-
-```
-https://www.icloud.com/shortcuts/2d1a0e792358405fbb2462572962e6cd
-```
-
-### 群发短信
-
-```
-https://www.icloud.com/shortcuts/587fb88a053f4a76a2a0594c0ca299f1
-```
-
-### 长短链接转换
-
-```
-https://www.icloud.com/shortcuts/22a07d8aeff24a4d9f977e1c9d5d9d0f
-```
-
-### 快捷百度搜索
-
-```
-https://www.icloud.com/shortcuts/030b88dff7bf40eba72fb9e2afb63dfb
-```
-
-### 共享单车
-
-```
-https://www.icloud.com/shortcuts/259e77b79b884b0eb3b554d15672965f
-```
-
-### 备份
-
-#### 一键备份所有捷径
-
-```
-https://www.icloud.com/shortcuts/6fbf11bce41b418396bf60ffaa5c14f3
-```
-
-#### AB Backup备份
-
-```
-https://workflow.is/workflows/3db6bdcda3104b3b9bbaea8ddf655670
-```
-
-#### 保存到iCloud
-
-```
-https://workflow.is/workflows/08f3cc0e184844339eb2f5caa58a316b
-```
-
-#### 备份workflow工作流
-
-```
-https://workflow.is/workflows/c5421ebe19bd4bf885da8b74d2cbaded
-```
-
-### 淘宝语音搜索
-
-```
-https://www.icloud.com/shortcuts/ba79d6ae5a1f455eb296cc314cf82447
-```
-
-### 百度语音合成
-
-```
-https://www.icloud.com/shortcuts/c051b5e6cab94d70926e3b9bbb29af36
-```
-
-### 数羊
-
-```
-https://www.icloud.com/shortcuts/9a9967b93caf4942b109d2efd59abbb3
-```
-
-### 手机亮度调节
-
-```
-https://www.icloud.com/shortcuts/1a1c0b2192d64550a4352eec7b8a1bfa
-```
-
-### 迅雷安装器
-
-```
-https://www.icloud.com/shortcuts/e7c0ad75a9bf46bf889ba4be5463a7de
-```
-
-### 压缩/解压
-
-```
-https://www.icloud.com/shortcuts/4a352c743eae47f7bda758429109773c
-```
-
-### 程序改名加锁
-
-```
-https://www.icloud.com/shortcuts/0c73f53b09a24ad88f9eeeb315794b81
-```
-
-### 闪瞎你的眼
-
-```
-https://www.icloud.com/shortcuts/225f35dab5c84a96b101bd6e3b4d3d1a
-```
-
-### 修改步数
-
-QQ、微信、支付宝步数不能改变。
-
-```
-https://www.icloud.com/shortcuts/cc759611240742cfb48e9cb83fafb806
-```
-
-### 附近免费WIFI
-
-```
-https://www.icloud.com/shortcuts/81c787aacc9d41c4a33410426f43ed4b
-```
-
-### 新磁力搜索
-
-```
-https://www.icloud.com/shortcuts/9a68ed9c6ea54654a4e7b8918b426855
-```
-
-### 在线福利6.1
-
-```
-https://www.icloud.com/shortcuts/7bf3abd752fe4f62a74a6c3a0d08e4a4
-```
-
-### 老司机
-
-```
-https://www.icloud.com/shortcuts/baaeae0d7d164472baed3e531673733b
-```
-
-### 支付助手
-
-扫一扫、微信扫码、微信收款、支付宝扫码、Apple Pay、AA付款、查快递、蚂蚁森林、蚂蚁庄园、彩票、股票、运动、淘票票、乘车码、生活缴费、火车票等。
-
-```
-https://www.icloud.com/shortcuts/45c64b77d773411485eb1c697f36cd8c
-```
-
-### 微博热搜榜
-
-```
-https://www.icloud.com/shortcuts/13c9b1f7cdbc434bbec2b28e577746ce
-```
-
-### 新浪微博
-
-```
-https://www.icloud.com/shortcuts/9994a3fdc685479d9b94fb6445a30536
-```
-
-### 网购历史价格查询
-
-```
-https://www.icloud.com/shortcuts/e2c2777962384ffbbff3f04f2874ef67
-```
-
-### 小火箭
-
-```
-https://www.icloud.com/shortcuts/8e3d0a5482004b8ca0f7c65301fdc936
-```
-
-### 支付宝红包
-
-```
-https://www.icloud.com/shortcuts/abeb70e152f94a27871bb93abcc5475f
-```
-
-### 任天堂红白机小游戏
-
-```
-https://www.icloud.com/shortcuts/61facc44bd0f4f16b7c13468cf08a4e3
-```
-
-### 你不会自己百度么
-
-```
-https://www.icloud.com/shortcuts/0b23911b67b341188f663c26ce737440
-```
-
-### 上朝网易云
-
-```
-https://www.icloud.com/shortcuts/401e94954a5a4a50951be0f2cf11372c
-```
-
-### 早上好
-
-```
-https://www.icloud.com/shortcuts/2e673487577c4a45af9047e83ab276eb
-```
-
-### 晚安
-
-```
-https://www.icloud.com/shortcuts/de7f95054f414776b0aa93c91bd06604
-```
-
-### 天气预报
-
-```
-https://www.icloud.com/shortcuts/274df58cd5354f6eb9630da30fdfba3e
-```
-
-### 报时语音天气
-
-```
-https://www.icloud.com/shortcuts/298247c77d364f7b828c18cb2e05b9fe
-```
-
-### 带背景音乐天气预报
-
-```
-https://www.icloud.com/shortcuts/31149463f4ca4df68148813331ea9603
-```
-
-### 实时公交
-
-```
-https://www.icloud.com/shortcuts/aff4b5e0770b4a2cae6dae18249434d1
-```
-
-### 油价语音播报
-
-```
-https://www.icloud.com/shortcuts/a187659e1a0a4ab585eb72a764e3fed7
-```
-
-### 仙女棒
-
-```
-https://www.icloud.com/shortcuts/e3a0675319994f6d87b16c7ea1b73c5c
-```
-
-### 墨迹天气
-
-```
-https://www.icloud.com/shortcuts/f038cb7c58934a94aca2b4610ee5f447
-```
-
-### 彩云天气
-
-```
-https://www.icloud.com/shortcuts/7bd7c07507b34105a4e8bdd167ace9c7
-```
-
-### 彩票开奖结果
-
-```
-https://www.icloud.com/shortcuts/ebc6541a714b42fb8cb4247d2b71ab77
-```
-
-### 钉钉打卡
-
-```
-https://www.icloud.com/shortcuts/7749df7b9c3342539b96d9aead7267ea
-```
-
-### 图灵机器人
-
-```
-https://www.icloud.com/shortcuts/1ae4ce4344b54f15b8a9831e0ab81bb4
-```
-
-### 新磁力搜索
-
-```
-https://www.icloud.com/shortcuts/9a68ed9c6ea54654a4e7b8918b426855
-```
-
-### 运动播报
-
-```
-https://www.icloud.com/shortcuts/bc9e69c607ef40d08933aac0cd20588a
-```
-
-### 贴吧一键签到
-
-```
-https://www.icloud.com/shortcuts/5fd43b4ed6664fa4bcbf85bd2c18a408
-```
-
-### 知乎日报
-
-```
-https://www.icloud.com/shortcuts/7faea94f4cbb486dbef077f50555cc1a
-```
-
-### 百度知道日报
-
-```
-https://www.icloud.com/shortcuts/df85acb1585e481fa8d9de965743b046
-```
-
-### 快捷百度搜索
-
-```
-https://www.icloud.com/shortcuts/030b88dff7bf40eba72fb9e2afb63dfb
-```
-
-### 近期上映电影
-
-```
-https://www.icloud.com/shortcuts/32999ca5bdce4a879ba48e5890d1b257
-```
-
-### 程序改名加锁
-
-```
-https://www.icloud.com/shortcuts/0c73f53b09a24ad88f9eeeb315794b81
-```
-
-### 淘宝语音搜索
-
-```
-https://www.icloud.com/shortcuts/ba79d6ae5a1f455eb296cc314cf82447
-```
-
-### WIFI开关
-
-```
-https://www.icloud.com/shortcuts/b63662901aa54a37bf791a9b9a638c3d
-```
-
-### 一键重启
-
-```
-https://www.icloud.com/shortcuts/02fb4b468e534b569b14b22d9d0fd8bd
-```
-
-### 转换短链接
-
-```
-https://www.icloud.com/shortcuts/6288cf5f6c4c4a80b197015c58780b49
-```
-
-### 老司机
-
-```
-https://www.icloud.com/shortcuts/baaeae0d7d164472baed3e531673733b
-```
-
-### 一键备份所有捷径
-
-```
-https://www.icloud.com/shortcuts/6fbf11bce41b418396bf60ffaa5c14f3
-```
-
-### 共享单车
-
-```
-https://www.icloud.com/shortcuts/259e77b79b884b0eb3b554d15672965f
-```
-
-### 空气质量查询
-
-语音、自动定位、手动输入。
-
-```
-https://www.icloud.com/shortcuts/de1d387855b24990a0b6648c2eba3a5f
-```
-
-### 追书神器
-
-```
-https://www.icloud.com/shortcuts/ec6c8f83043a4fb3885c4a302d7c2129
-```
-
-### 骂人宝典
-
-```
-https://www.icloud.com/shortcuts/73ded407f0d7417899346a3b5aa6d8ff
-```
-
-### 限免软件
-
-```
-https://www.icloud.com/shortcuts/0e5e70111c2f49a9bc1f10629c6ca74e
-```
-
-### iPhone换铃声
-
-```
-https://www.icloud.com/shortcuts/9928bcde86fe45ada142fac6c82e6441
-```
-
-### 历史上的今天
-
-```
-https://www.icloud.com/shortcuts/eedc97baa8ec4c929312154af9a42ba3
-```
-
-### 抽奖工具
-
-```
-https://www.icloud.com/shortcuts/9dc04fa400f248ac9608e6d138a07de3
-```
-
-### 人脸识别
-
-```
-https://www.icloud.com/shortcuts/67175ef09c1d4e7da2d77d476506740f
-```
-
-### 修改步数
-
-QQ、微信、支付宝步数不能改变。
-
-```
-https://www.icloud.com/shortcuts/cc759611240742cfb48e9cb83fafb806
-```
-
-### 苹果工具箱
-
-```
-https://www.icloud.com/shortcuts/a7228c50afd94f2dbab9d160a8b5d50d
-```
-
-### 睡眠声音
-
-```
-https://www.icloud.com/shortcuts/c9c50392fb7f4603af03cb9caf0fa9cb
-```
-
-### 万能扫码
-
-```
-https://www.icloud.com/shortcuts/e247aa760193472db8588804a8ea76d0
-```
-
-### 网络工具
-
-```
-https://www.icloud.com/shortcuts/74b26667ec774e6fbbfbe97c8aeff4e9
-```
-
-### WIFI二维码
-
-```
-https://www.icloud.com/shortcuts/59b1018835d94018ba6097ff0462cda9
-```
-
-### 一言
-
-```
-https://www.icloud.com/shortcuts/cd37638ddd02421c966be16961db558f
-```
-
-### 自定义勿扰时长
-
-```
-https://www.icloud.com/shortcuts/92706b85621b42d2aaaf7cf296c749e5
-```
-
-### 低消耗
-
-```
-https://www.icloud.com/shortcuts/2d1a0e792358405fbb2462572962e6cd
-```
-
-### 群发短信
-
-```
-https://www.icloud.com/shortcuts/587fb88a053f4a76a2a0594c0ca299f1
-```
-
-### 网页翻译
-
-```
-https://www.icloud.com/shortcuts/4c8839065dc44dda9ca22ecfc329cb18
-```
-
-### 长短链接转换
-
-```
-https://www.icloud.com/shortcuts/22a07d8aeff24a4d9f977e1c9d5d9d0f
-```
-
-### 高德地图语音导航
-
-```
-https://www.icloud.com/shortcuts/28b98b7fd9b84301955b72345e8515b1
-```
-
-### 词典
-
-```
-https://www.icloud.com/shortcuts/b40fa4ed278846e7b860674066b22c72
-```
-
-### 成语词典
-
-```
-https://www.icloud.com/shortcuts/5e8af02dd0c04703a65f5d0285d36888
-```
-
-### 新华字典
-
-```
-https://www.icloud.com/shortcuts/2a998ba59748437f8e8dd680c6fd67d3
-```
-
-### 查快递
-
-```
-https://www.icloud.com/shortcuts/04a23ce1b0b64c998519341752811e7e
-```
-
-### 音乐相关
+### 声音
 
 #### 虾米音乐
 
@@ -4212,7 +268,43 @@ https://workflow.is/workflows/39d58771c84c4a50af50b3a0e1f7bda7
 https://workflow.is/workflows/402507226b8844258dee694d58b126e9
 ```
 
-### 图片相关
+#### QQ音乐无损下载
+
+```
+https://www.icloud.com/shortcuts/b2c51ca5e7324904aa5be02fae7c4045
+```
+
+#### 网易云音乐无损下载
+
+```
+https://www.icloud.com/shortcuts/a4e38fb4529d4cf4b43f844264fdecb2
+```
+
+#### 网易云助手
+
+```
+https://www.icloud.com/shortcuts/d6ed49f0b11e418ba5c7797af719068f
+```
+
+#### 网易歌单工具箱
+
+```
+https://www.icloud.com/shortcuts/8d71ed4b433d490aa6f5e71d2f2b4ea9
+```
+
+#### 音效盒子
+
+```
+https://www.icloud.com/shortcuts/8f3593e814244e32a16bc821896f1b5e
+```
+
+#### 上朝网易云
+
+```
+https://www.icloud.com/shortcuts/401e94954a5a4a50951be0f2cf11372c
+```
+
+### 图片
 
 #### 应用图像至相机胶卷
 
@@ -4288,205 +380,27 @@ https://www.icloud.com/shortcuts/8f8671ef0bff4545b3233d4415092e10
 https://www.icloud.com/shortcuts/2c04bce6e62b4a398df88c8acaff3428
 ```
 
-### iCloud外链获取器
-
-```
-https://workflow.is/workflows/367d87826d3d4ff1a790655335e70974
-```
-
-### 短链接生成器
-
-```
-https://www.icloud.com/shortcuts/0c2ff4b4193b42779c192818c1a1e492
-```
-
-### 二维码生成器
-
-```
-https://www.icloud.com/shortcuts/1a8fb9d0760e40ff94ae374d2cdff497
-```
-
-### 抖音去水印
-
-```
-https://www.icloud.com/shortcuts/c22783212e7a4918acf377546431fbeb
-```
-
-### Shorten Link
-
-一款短链接聚合工具，支持国内外优质短链接平台获取。
-
-```
-https://www.icloud.com/shortcuts/e34d06d582884b19a32e4ecf5b9660e1
-```
-
-### Picsew Editor
-
-```
-https://www.icloud.com/shortcuts/fc50347ce3f047309001520ceecb12ee
-```
-
-### 白描助手
-
-```
-https://www.icloud.com/shortcuts/20988a652e264b13889aa5db1ac3dbff
-```
-
-### 网易云助手
-
-```
-https://www.icloud.com/shortcuts/d6ed49f0b11e418ba5c7797af719068f
-```
-
-### 提醒事项助手
-
-```
-https://www.icloud.com/shortcuts/504aeed9aa4f45c4aec6eabb097f5d7f
-```
-
-### 系统开关设置
-
-```
-https://www.icloud.com/shortcuts/253fac20d197429292313f3bf3f104f3
-```
-
-### 小新工具箱
-
-```
-// Shortcuts规则
-https://www.icloud.com/shortcuts/1689d09eafc748b7825f582d7b12f0a6
-
-// Workflow规则
-https://workflow.is/workflows/7462bf7f4e234654b1eaee061d93db88
-```
-
-### 查询未知号码来电信息
-
-```
-https://workflow.is/workflows/95b02bb18b2e4cfba06919034929a4d9
-```
-
-### 保存网页为pdf到ibook
-
-```
-https://workflow.is/workflows/2027271452ce4712853838f43550d326
-```
-
-### 信息照片导航
-
-```
-https://workflow.is/workflows/84daad7aa32f488f842356a246087a5b
-```
-
-### 删改拼图片
+#### 删改拼图片
 
 ```
 https://workflow.is/workflows/41cfefdd0eca448391ef78186555f221
 ```
 
-### 手机快捷设置
+#### 截图加壳
 
 ```
-https://workflow.is/workflows/f1e96f0ed0494d3288dc69c9083deab7
+https://www.icloud.com/shortcuts/e406b46a379548a69a1af503aeca37f4
+https://www.icloud.com/shortcuts/2e6b1c0a0a114014812bf26897b5a2aa
+https://www.icloud.com/shortcuts/7edc8f86d6ed4a96a43acacee36392de
 ```
 
-### 信息翻译发送
-
-```
-https://workflow.is/workflows/f1d0b3a07ecc47ecbb963651740f7b74
-```
-
-### 制或扫二维码
-
-```
-https://workflow.is/workflows/3ed9b9ec4cf3463a9df0af7fca642e0b
-```
-
-### 多种外币转换
-
-```
-https://workflow.is/workflows/9570db942bfb45f18581bd36121573b0
-```
-
-### 快递物件查询
-
-```
-https://workflow.is/workflows/177a3fd258ab4cfd806ff99df15d867c
-```
-
-### 查看app信息
-
-```
-https://workflow.is/workflows/14f9deb92d4e42c4b286571b40533061
-```
-
-### 通知中心翻页
-
-```
-https://workflow.is/workflows/7afbf6fa09204e5e837d52cab41f0497
-```
-
-### 打开链接并复制密码
-
-```
-https://workflow.is/workflows/e5846d5f70db404a914db7c6ae07e6c8
-```
-
-### 翻译
-
-```
-https://workflow.is/workflows/a51df78f80414edf8469727f892d662d
-```
-
-### 今天的天气
-
-```
-https://workflow.is/workflows/cf6db9a3c90c4bc7adec27f739480937
-```
-
-### 货币换算
-
-```
-https://workflow.is/workflows/50f0132cbe654370bc35189e1cf31b86
-```
-
-### 抛硬币
-
-```
-https://workflow.is/workflows/4e37faab34864e1883c533754c788066
-```
-
-### 合并PDF文件
-
-```
-https://workflow.is/workflows/adbb5f464fba4bc68a42a31bf91d1c4c
-```
-
-### 扩展和共享网址
-
-```
-https://workflow.is/workflows/acad8115a5564d6ea336b70b87dcab72
-```
-
-### 计时器
-
-```
-https://workflow.is/workflows/93fd0318d0e14cdaa32c5d021effaa8b
-```
-
-### 更新surge/shadowrocket主配置
-
-```
-https://workflow.is/workflows/55ecb14722f94d7c8c44ce3ce24d81c8
-```
-
-### 删除多张图片
+#### 删除多张图片
 
 ```
 https://workflow.is/workflows/c545d9c33b0f40d8a80712b282a19eb3
 ```
 
-### 调整照片
+#### 调整照片
 
 调整原始照片，然后删除原稿。
 
@@ -4494,7 +408,1284 @@ https://workflow.is/workflows/c545d9c33b0f40d8a80712b282a19eb3
 https://workflow.is/workflows/014c0e9d263247979bc6a1c9894e07e4
 ```
 
-### IP和位置
+
+
+
+
+
+#### 爬图片
+
+```
+https://www.icloud.com/shortcuts/65ea0d09069545cfa9abd78839763146
+```
+
+#### Bing壁纸
+
+```
+https://www.icloud.com/shortcuts/6d63fb492b094483aa18ce65b921ca0d
+```
+
+#### 图标与图链
+
+```
+https://www.icloud.com/shortcuts/608014dbe70e45588653193fd8b1a4b9
+```
+
+### 视频
+
+#### 短视频去水印
+
+```
+https://www.icloud.com/shortcuts/cf5f76704f9444c9aa17e2a2f85b4f5a
+```
+
+#### 拍摄GIF
+
+```
+https://www.icloud.com/shortcuts/0d77fb02b4d64b17858db35b5008d8c0
+```
+
+#### 抖音去水印
+
+```
+https://www.icloud.com/shortcuts/c22783212e7a4918acf377546431fbeb
+```
+
+#### 下载Tumblr视频
+
+```
+https://workflow.is/workflows/051ddcc30c984d47afe7b1fde9a403e7
+https://workflow.is/workflows/f8656cbb90524dffa1fe2eba8975946e
+https://workflow.is/workflows/087a0abf12c049dd9ab256afaec790c0
+```
+
+#### 新浪微博视频
+
+```
+https://workflow.is/workflows/fd7fe0b7548046e689e9776b2182a8b1
+```
+
+#### 下载Twitter的GIF
+
+```
+https://workflow.is/workflows/aa9821c4bce44b6f8febcbda6245c1f0
+```
+
+#### 下载Youtube视频
+
+```
+https://workflow.is/workflows/ec284f18720c45e39ff31128e6d42602
+https://workflow.is/workflows/73971870942c49da96cae6a490aea8e0
+https://workflow.is/workflows/617578d73f8244a5afed2a1665c8e320
+```
+
+#### 电视直播
+
+```
+https://www.icloud.com/shortcuts/0f9322e7b1244db68eb9a61d06dd757f
+https://www.icloud.com/shortcuts/9a549e208d544532892f0fcc90dfaf8e
+```
+
+#### SKY电影
+
+```
+https://www.icloud.com/shortcuts/f29d4a33f2734b3b8f790ea5d591fd1e
+```
+
+#### 语音点播MV
+
+```
+https://www.icloud.com/shortcuts/d45086dbc5e042129ae2e7601cb41b5c
+```
+
+#### 手机电视
+
+```
+https://www.icloud.com/shortcuts/0695a29bd0224b7f84e9b696adeb4330
+```
+
+#### 在线电影
+
+```
+https://www.icloud.com/shortcuts/7f8220d6d2264fbb811c9f6add1fbe47
+```
+
+#### 香港电视直播
+
+```
+https://www.icloud.com/shortcuts/01e2ed40f598489393769d9707c8c248
+```
+
+#### 港澳台直播
+
+```
+https://www.icloud.com/shortcuts/653c5caaf997435788da1090e6b06406
+```
+
+#### 唐人影视
+
+```
+https://www.icloud.com/shortcuts/022baf8d47bb449ab858bbcabcf408af
+```
+
+#### 电视节目选播
+
+```
+https://www.icloud.com/shortcuts/dff26dbe75df442f8e82b61ba06963ac
+```
+
+#### 翡翠台直播
+
+```
+https://www.icloud.com/shortcuts/be2e98653ffb467dbc54acb45105c1b4
+```
+
+#### icdrama
+
+```
+https://www.icloud.com/shortcuts/362700ca27a04a9f9797d4b28c11b63a
+```
+
+#### 小新在线影视
+
+```
+https://www.icloud.com/shortcuts/b77d3661dacd4651bcddb8cee863b1d1
+```
+
+#### 全能音视频下载
+
+```
+https://www.icloud.com/shortcuts/b6f75b050fa84b49ae0ac8173fe976a7
+```
+
+#### 抖音无水印视频
+
+```
+https://www.icloud.com/shortcuts/b7698896dc8a4057b8174e989ec21198
+https://www.icloud.com/shortcuts/fa885e093ec443b2807040f2b3ad2bfd
+```
+
+#### 抖音音频下载
+
+```
+https://www.icloud.com/shortcuts/e00730220f614ad193d69b5a75313dc3
+```
+
+#### 快手无水印下载
+
+```
+https://www.icloud.com/shortcuts/b5221374c6024181ae19f7f759575035
+https://www.icloud.com/shortcuts/118a2c455bb54406979071a8942c556d
+```
+
+#### 万能视频下载
+
+```
+https://www.icloud.com/shortcuts/939dfd29e1d14800a00bc86a252ca84f
+```
+
+#### 电影动漫资源搜索
+
+```
+https://www.icloud.com/shortcuts/e1e9401dcb4340bd96d463cf194ebbbf
+```
+
+#### 全能视频VIP
+
+```
+https://www.icloud.com/shortcuts/4a39135fc0284377a1236cbbb0bac53c
+```
+
+#### Viu TV99频道
+
+```
+https://www.icloud.com/shortcuts/2e78d444d706470e95b3112557bbd13b
+```
+
+#### Youtube保存到任意App
+
+```
+https://workflow.is/workflows/01fdf6b4a30d43fcb1ae5f01763b4abc
+```
+
+#### 贴吧视频下载
+
+```
+https://www.icloud.com/shortcuts/00975db818f846efb50df1489213b96e
+```
+
+#### 火山短视频去水印下载
+
+```
+https://www.icloud.com/shortcuts/6cf84eae2eba4717ae75ae10cdd3f722
+```
+
+#### 微博秒拍视频下载
+
+```
+https://www.icloud.com/shortcuts/e09a96b7e8bc4913bf8708f57cffce9f
+```
+
+#### Twitter视频下载
+
+```
+https://www.icloud.com/shortcuts/0a9451a9f19a4a5c89afed57ef6fd9d9
+https://workflow.is/workflows/75562e41b6c74540903786ae9b6f1c50
+```
+
+#### 全网VIP视频解析
+
+```
+https://www.icloud.com/shortcuts/8a10557abf924d5dbdaaef5e65248593
+https://www.icloud.com/shortcuts/58add5dba526413c862ac90d7cada939
+```
+
+#### 照片视频-GIF互转
+
+```
+https://www.icloud.com/shortcuts/6041338fea174bacb386b7b14446fa6f
+https://www.icloud.com/shortcuts/114d8f7e8fde44408c502723187f6a6e
+```
+
+#### 从视频提取音频
+
+```
+https://www.icloud.com/shortcuts/5dd917b032e14d838554ea838dd6f978
+```
+
+#### QQ空间视频下载
+
+```
+https://www.icloud.com/shortcuts/da27ac884dc04dd0accb75eb19e27ccc
+```
+
+#### 获取B站封面视频
+
+```
+https://www.icloud.com/shortcuts/7d20ebb35d6441fcb9e0f0f6f225cbb41
+```
+
+#### bilibili视频下载
+
+```
+https://www.icloud.com/shortcuts/7cfaa2d46b624e5093f9e13bded09ffc
+```
+
+
+
+
+
+### 词典
+
+#### 词典聚合
+
+```
+https://www.icloud.com/shortcuts/b40fa4ed278846e7b860674066b22c72
+```
+
+#### 成语词典
+
+```
+https://www.icloud.com/shortcuts/5e8af02dd0c04703a65f5d0285d36888
+```
+
+#### 新华字典
+
+```
+https://www.icloud.com/shortcuts/2a998ba59748437f8e8dd680c6fd67d3
+```
+
+### 剪贴板
+
+#### 复制到剪贴板
+
+```
+https://workflow.is/workflows/3242da310c4a45ec8270a09e49e6aa37
+```
+
+#### 剪贴板翻译
+
+```
+https://workflow.is/workflows/5de0062c54c041a386be048dd84fa361
+```
+
+#### 剪切板列表
+
+```
+https://workflow.is/workflows/db3321f2eec84c4eb2caf29a6df81286
+```
+
+### 搜索
+
+#### 自定义搜索
+
+```
+https://workflow.is/workflows/ac4b4abac0a2490e872b7134f5f9ca8a
+```
+
+#### 谷歌高级搜索
+
+```
+https://workflow.is/workflows/6e7e0853ae664c5ea7a0bae7dad6941e
+```
+
+#### 搜索电话号码
+
+```
+https://workflow.is/workflows/aa509941b57d48d4b51a0c2b1c06cf8c
+```
+
+#### 你不会自己百度么
+
+```
+https://www.icloud.com/shortcuts/0b23911b67b341188f663c26ce737440
+```
+
+#### 快捷百度搜索
+
+```
+https://www.icloud.com/shortcuts/030b88dff7bf40eba72fb9e2afb63dfb
+```
+
+
+#### 小草搜索
+
+```
+https://www.icloud.com/shortcuts/dbec7cf292eb4601a7c9b35c51884146
+```
+
+
+### 天气
+
+#### 墨迹天气
+
+```
+https://www.icloud.com/shortcuts/f038cb7c58934a94aca2b4610ee5f447
+```
+
+#### 墨迹天气实景图
+
+```
+https://www.icloud.com/shortcuts/1ba7cca9510f4aa7910f6c2bf29e06f9
+```
+
+#### 彩云天气
+
+```
+https://www.icloud.com/shortcuts/09661308cc0b455e96c5ee660d9946e3
+```
+
+#### 天气预报
+
+```
+https://www.icloud.com/shortcuts/274df58cd5354f6eb9630da30fdfba3e
+```
+
+#### 报时语音天气
+
+```
+https://www.icloud.com/shortcuts/298247c77d364f7b828c18cb2e05b9fe
+```
+
+#### 带背景音乐天气预报
+
+```
+https://www.icloud.com/shortcuts/31149463f4ca4df68148813331ea9603
+```
+
+#### 今天的天气
+
+```
+https://workflow.is/workflows/cf6db9a3c90c4bc7adec27f739480937
+```
+
+
+### 社交
+
+#### Instagram全类型下载
+
+```
+https://www.icloud.com/shortcuts/7f4f267f7b6f4f3299206d43cde5c4eb
+https://workflow.is/workflows/3a4f22ce8e794c7489a059224f3bc0b0
+```
+
+#### Instagram保存图片
+
+```
+https://workflow.is/workflows/73aa53dfae9c45729befb49cdc6863f0
+```
+
+#### Tumblr解析下载
+
+```
+https://www.icloud.com/shortcuts/400c06379b014e08be927162689f6047
+https://www.icloud.com/shortcuts/6ac1b99b9e8340799d8b0c737cd0f314
+```
+
+#### Tumblr保存到相册
+
+```
+https://workflow.is/workflows/897924d6858d47a4a6737733517a36eb
+```
+
+#### 微博热搜榜
+
+```
+https://www.icloud.com/shortcuts/13c9b1f7cdbc434bbec2b28e577746ce
+```
+
+#### 新浪微博
+
+```
+https://www.icloud.com/shortcuts/9994a3fdc685479d9b94fb6445a30536
+```
+
+#### tumblr展开网址
+
+```
+https://workflow.is/workflows/62a9534d3ee1467080cd4136578d3d35
+```
+
+
+
+
+
+
+
+
+
+#### 即刻视频下载
+
+```
+https://www.icloud.com/shortcuts/d6637e8536254a46ba81a09fabbad8f9
+```
+
+#### 即刻图片下载
+
+```
+https://www.icloud.com/shortcuts/0f74a2c6ffbd4a59856612725ca22dc6
+```
+
+### 资源搜索与下载
+
+#### JS直链下载
+
+自定义JS直链下载列表，可选择下载全部或挑选部分进行下载。理论上可以下载任何文本文件，如conf、list、md等。
+
+下载文件保存在iCoud Drive/shortcuts/elecV2JS文件夹。每次运行都会清空该目录的旧文件。
+
+```
+https://www.icloud.com/shortcuts/50d7d8576dd74f7685811502ff72c078
+```
+
+#### 高清影视种子下载
+
+```
+https://www.icloud.com/shortcuts/c5672516fa5645918abc48577a30efd6
+```
+
+#### 迅雷安装器
+
+```
+https://www.icloud.com/shortcuts/e7c0ad75a9bf46bf889ba4be5463a7de
+```
+
+#### 新磁力搜索
+
+```
+https://www.icloud.com/shortcuts/9a68ed9c6ea54654a4e7b8918b426855
+```
+
+
+
+
+
+
+#### 小新下载器
+
+```
+https://www.icloud.com/shortcuts/90d5942429f14f5095eb7a0664d7918b
+```
+
+#### 新磁力搜索
+
+```
+https://www.icloud.com/shortcuts/9a68ed9c6ea54654a4e7b8918b426855
+```
+
+
+### 电商
+
+#### 京东签到
+
+下载stream并打开抓包，然后在Safari输入以下链接并登录京东账号。
+
+```
+https://bean.m.jd.com
+```
+
+刷新网页后返回stream并停止抓包。点击抓包历史，找到带有plogin开头的链接并点击，再选择请求，找到自己的cookie并复制。安装以下捷径后运行，输入刚刚复制的cookie，即可完成一键签到。
+
+```
+https://www.icloud.com/shortcuts/35be01753adc49409a334464cb4c7470
+```
+
+#### 双十一淘宝自动养猫
+
+```
+https://www.icloud.com/shortcuts/db359887fea14a61b0f0cd7c43642e4f
+```
+
+#### 超级抢购助手
+
+```
+https://www.icloud.com/shortcuts/dca53a0ff3704f22badb7009b828b495
+```
+
+#### 淘宝语音搜索
+
+```
+https://www.icloud.com/shortcuts/ba79d6ae5a1f455eb296cc314cf82447
+```
+
+#### 淘宝语音搜索
+
+```
+https://www.icloud.com/shortcuts/ba79d6ae5a1f455eb296cc314cf82447
+```
+
+
+
+
+
+
+
+#### 网购历史价格查询
+
+```
+https://www.icloud.com/shortcuts/e2c2777962384ffbbff3f04f2874ef67
+```
+
+### 电子支付
+
+#### 支付宝添加信用卡
+
+```
+https://www.icloud.com/shortcuts/4aef0930744d461c92333e1afaa9accf
+```
+
+#### 三合一收款二维码生成
+
+```
+https://www.icloud.com/shortcuts/319f80622c234de8b811b7ba2d5a7228
+```
+
+#### 支付宝打赏
+
+```
+https://www.icloud.com/shortcuts/bfe71390fe6a4d178d1f3f1a375765b7
+```
+
+#### 支付助手
+
+扫一扫、微信扫码、微信收款、支付宝扫码、Apple Pay、AA付款、查快递、蚂蚁森林、蚂蚁庄园、彩票、股票、运动、淘票票、乘车码、生活缴费、火车票等。
+
+```
+https://www.icloud.com/shortcuts/45c64b77d773411485eb1c697f36cd8c
+```
+
+#### 支付宝红包
+
+```
+https://www.icloud.com/shortcuts/abeb70e152f94a27871bb93abcc5475f
+```
+
+
+
+
+
+
+### 翻墙
+
+#### 批量节点获取
+
+```
+https://www.icloud.com/shortcuts/69caa3c45c7e48b5b6f3da98cdaeeac7
+```
+
+#### 更新surge/shadowrocket主配置
+
+```
+https://workflow.is/workflows/55ecb14722f94d7c8c44ce3ce24d81c8
+```
+
+#### 小火箭
+
+```
+https://www.icloud.com/shortcuts/8e3d0a5482004b8ca0f7c65301fdc936
+```
+
+
+
+### APP
+
+#### App Store商店切换
+
+```
+https://www.icloud.com/shortcuts/2910a1fd97404f149509cfd5612a046d
+https://www.icloud.com/shortcuts/015c63d4358142389f1c723b7475406d
+```
+
+#### App Store Region
+
+```
+https://www.icloud.com/shortcuts/5bb33439f8544ea4b9e708dd1b7a81ec
+```
+
+#### 限免软件
+
+```
+https://www.icloud.com/shortcuts/0e5e70111c2f49a9bc1f10629c6ca74e
+```
+
+#### 苹果应用安装器
+
+```
+https://www.icloud.com/shortcuts/0e2e25d73a7b4af0b6579158cf336dde
+```
+
+
+
+
+
+
+
+
+
+
+#### 查看app信息
+
+```
+https://workflow.is/workflows/14f9deb92d4e42c4b286571b40533061
+```
+
+### 短链接与二维码
+
+#### 长短链接转换
+
+```
+https://www.icloud.com/shortcuts/22a07d8aeff24a4d9f977e1c9d5d9d0f
+```
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+#### iCloud外链获取器
+
+```
+https://www.icloud.com/shortcuts/c45f40eca0ba4a06a48fb99da71df047
+```
+
+#### 短链接生成器
+
+```
+https://www.icloud.com/shortcuts/0c2ff4b4193b42779c192818c1a1e492
+```
+
+#### 二维码生成器
+
+```
+https://www.icloud.com/shortcuts/1a8fb9d0760e40ff94ae374d2cdff497
+```
+
+#### 制作/扫描二维码
+
+```
+https://www.icloud.com/shortcuts/52490640004c4fc4b2ebfd038eaf651c
+https://workflow.is/workflows/3ed9b9ec4cf3463a9df0af7fca642e0b
+```
+
+#### 二维码识别器
+
+```
+https://www.icloud.com/shortcuts/ff1992922a504d8797821da55f384b67
+```
+
+#### 短链接
+
+```
+https://www.icloud.com/shortcuts/23ea80da4460403082b33c82bb41b5ad
+```
+
+#### Shorten Link
+
+一款短链接聚合工具，支持国内外优质短链接平台获取。
+
+```
+https://www.icloud.com/shortcuts/e34d06d582884b19a32e4ecf5b9660e1
+```
+
+#### WIFI二维码
+
+```
+https://www.icloud.com/shortcuts/59b1018835d94018ba6097ff0462cda9
+```
+
+#### 万能扫码
+
+```
+https://www.icloud.com/shortcuts/e247aa760193472db8588804a8ea76d0
+```
+
+
+
+
+
+
+
+
+#### 长短链接转换
+
+```
+https://www.icloud.com/shortcuts/22a07d8aeff24a4d9f977e1c9d5d9d0f
+```
+
+
+
+
+### 备份
+
+#### 一键备份所有捷径
+
+```
+https://www.icloud.com/shortcuts/6fbf11bce41b418396bf60ffaa5c14f3
+```
+
+#### AB Backup备份
+
+```
+https://workflow.is/workflows/3db6bdcda3104b3b9bbaea8ddf655670
+```
+
+#### 备份workflow工作流
+
+```
+https://workflow.is/workflows/c5421ebe19bd4bf885da8b74d2cbaded
+```
+
+### 工具箱
+
+#### 苹果工具箱
+
+```
+https://www.icloud.com/shortcuts/a7228c50afd94f2dbab9d160a8b5d50d
+```
+
+#### 小新工具箱
+
+```
+https://www.icloud.com/shortcuts/dad33a5b449f45ee98c60d528d1fd878
+```
+
+### 翻译
+
+#### 英译中Pro
+
+```
+https://www.icloud.com/shortcuts/22805b54bdec4951bb36162e1f93c9bc
+```
+
+
+#### 网页翻译
+
+```
+https://www.icloud.com/shortcuts/4c8839065dc44dda9ca22ecfc329cb18
+```
+
+#### 翻译
+
+```
+https://workflow.is/workflows/a51df78f80414edf8469727f892d662d
+```
+
+
+### OCR与文字语音转换
+
+#### 百度语音合成
+
+```
+https://www.icloud.com/shortcuts/c051b5e6cab94d70926e3b9bbb29af36
+```
+
+#### 文本转语音播放
+
+```
+https://www.icloud.com/shortcuts/5f95555da1454ce3a8a99f3f689410ee
+```
+
+
+#### 图片文字识别
+
+```
+https://www.icloud.com/shortcuts/8aec6f5f73a54ecbab895bc468c60535
+```
+
+### 系统
+
+#### 群发短信
+
+```
+https://www.icloud.com/shortcuts/587fb88a053f4a76a2a0594c0ca299f1
+```
+
+#### 查询未知号码来电信息
+
+```
+https://workflow.is/workflows/95b02bb18b2e4cfba06919034929a4d9
+```
+
+#### 信息照片导航
+
+```
+https://workflow.is/workflows/84daad7aa32f488f842356a246087a5b
+```
+
+#### 手机快捷设置
+
+```
+https://workflow.is/workflows/f1e96f0ed0494d3288dc69c9083deab7
+```
+
+#### 信息翻译发送
+
+```
+https://workflow.is/workflows/f1d0b3a07ecc47ecbb963651740f7b74
+```
+
+#### 提醒事项助手
+
+```
+https://www.icloud.com/shortcuts/38a51eafd83440dc9dcbe401d86c8706
+```
+
+#### 系统开关设置
+
+```
+https://www.icloud.com/shortcuts/253fac20d197429292313f3bf3f104f3
+```
+
+#### 通知中心翻页
+
+```
+https://workflow.is/workflows/7afbf6fa09204e5e837d52cab41f0497
+```
+
+#### 换铃声
+
+```
+https://www.icloud.com/shortcuts/9928bcde86fe45ada142fac6c82e6441
+```
+
+#### WIFI开关
+
+```
+https://www.icloud.com/shortcuts/b63662901aa54a37bf791a9b9a638c3d
+```
+
+#### 一键重启
+
+```
+https://www.icloud.com/shortcuts/02fb4b468e534b569b14b22d9d0fd8bd
+```
+
+#### 低功耗模式
+
+```
+https://workflow.is/workflows/640ae7eb22f143a093c77215a6e373e2
+```
+
+#### 电池
+
+```
+https://workflow.is/workflows/febeed3ed07a4c78b9e77c2f48136a2a
+```
+
+
+### 签到
+
+#### 全网一键签到
+
+```
+https://www.icloud.com/shortcuts/91af4b2564134654ad2dbc7bce54bbdf
+```
+
+#### 贴吧一键签到
+
+```
+https://www.icloud.com/shortcuts/5fd43b4ed6664fa4bcbf85bd2c18a408
+```
+
+### 其它
+
+#### 网速测试
+
+```
+https://www.icloud.com/shortcuts/0e5a81cb1076414680fd4f1a2d0c9094
+```
+
+
+#### 谷歌网盘转存助手
+
+```
+https://www.icloud.com/shortcuts/51cdfaff6fd44ac295a8a34bd67e3da8
+```
+
+#### 健康码
+
+```
+https://www.icloud.com/shortcuts/7b3a4c33ef374b7f8ef7eddcf4867234
+```
+
+#### 分享当前Wi-Fi
+
+```
+https://www.icloud.com/shortcuts/926073374aa9498999756b17fadd9d28
+```
+
+#### 网盘搜
+
+```
+https://www.icloud.com/shortcuts/feb916abb943481caa6a61335c2b224b
+```
+
+
+
+
+
+
+
+
+#### 抽奖工具
+
+```
+https://www.icloud.com/shortcuts/9dc04fa400f248ac9608e6d138a07de3
+```
+
+#### 人脸识别
+
+```
+https://www.icloud.com/shortcuts/67175ef09c1d4e7da2d77d476506740f
+```
+
+#### 网络工具
+
+```
+https://www.icloud.com/shortcuts/74b26667ec774e6fbbfbe97c8aeff4e9
+```
+
+#### 保存到iCloud
+
+```
+https://workflow.is/workflows/08f3cc0e184844339eb2f5caa58a316b
+```
+
+#### 低消耗
+
+```
+https://www.icloud.com/shortcuts/2d1a0e792358405fbb2462572962e6cd
+```
+
+#### 共享单车
+
+```
+https://www.icloud.com/shortcuts/259e77b79b884b0eb3b554d15672965f
+```
+
+#### 数羊
+
+```
+https://www.icloud.com/shortcuts/9a9967b93caf4942b109d2efd59abbb3
+```
+
+#### 手机亮度调节
+
+```
+https://www.icloud.com/shortcuts/1a1c0b2192d64550a4352eec7b8a1bfa
+```
+
+#### 压缩/解压
+
+```
+https://www.icloud.com/shortcuts/4a352c743eae47f7bda758429109773c
+```
+
+#### 程序改名加锁
+
+```
+https://www.icloud.com/shortcuts/0c73f53b09a24ad88f9eeeb315794b81
+```
+
+#### 闪瞎你的眼
+
+```
+https://www.icloud.com/shortcuts/225f35dab5c84a96b101bd6e3b4d3d1a
+```
+
+#### 修改步数
+
+QQ、微信、支付宝步数不能改变。
+
+```
+https://www.icloud.com/shortcuts/cc759611240742cfb48e9cb83fafb806
+```
+
+#### 附近免费WIFI
+
+```
+https://www.icloud.com/shortcuts/81c787aacc9d41c4a33410426f43ed4b
+```
+
+#### 在线福利6.1
+
+```
+https://www.icloud.com/shortcuts/7bf3abd752fe4f62a74a6c3a0d08e4a4
+```
+
+#### 早上好
+
+```
+https://www.icloud.com/shortcuts/2e673487577c4a45af9047e83ab276eb
+```
+
+#### 晚安
+
+```
+https://www.icloud.com/shortcuts/de7f95054f414776b0aa93c91bd06604
+```
+
+#### 历史上的今天
+
+```
+https://www.icloud.com/shortcuts/eedc97baa8ec4c929312154af9a42ba3
+```
+
+
+
+
+#### 保存网页为pdf到ibook
+
+```
+https://workflow.is/workflows/2027271452ce4712853838f43550d326
+```
+
+#### 任天堂红白机小游戏
+
+```
+https://www.icloud.com/shortcuts/61facc44bd0f4f16b7c13468cf08a4e3
+```
+
+#### 实时公交
+
+```
+https://www.icloud.com/shortcuts/aff4b5e0770b4a2cae6dae18249434d1
+```
+
+#### 油价语音播报
+
+```
+https://www.icloud.com/shortcuts/a187659e1a0a4ab585eb72a764e3fed7
+```
+
+#### 仙女棒
+
+```
+https://www.icloud.com/shortcuts/e3a0675319994f6d87b16c7ea1b73c5c
+```
+
+#### 彩票开奖结果
+
+```
+https://www.icloud.com/shortcuts/ebc6541a714b42fb8cb4247d2b71ab77
+```
+
+#### 钉钉打卡
+
+```
+https://www.icloud.com/shortcuts/7749df7b9c3342539b96d9aead7267ea
+```
+
+#### 图灵机器人
+
+```
+https://www.icloud.com/shortcuts/1ae4ce4344b54f15b8a9831e0ab81bb4
+```
+
+#### 运动播报
+
+```
+https://www.icloud.com/shortcuts/bc9e69c607ef40d08933aac0cd20588a
+```
+
+#### 知乎日报
+
+```
+https://www.icloud.com/shortcuts/6f60912434e24f64b645d894ad78c47b
+```
+
+#### 百度知道日报
+
+```
+https://www.icloud.com/shortcuts/df85acb1585e481fa8d9de965743b046
+```
+
+
+#### 近期上映电影
+
+```
+https://www.icloud.com/shortcuts/32999ca5bdce4a879ba48e5890d1b257
+```
+
+#### 程序改名加锁
+
+```
+https://www.icloud.com/shortcuts/0c73f53b09a24ad88f9eeeb315794b81
+```
+
+#### 老司机
+
+```
+https://www.icloud.com/shortcuts/baaeae0d7d164472baed3e531673733b
+```
+
+#### 空气质量查询
+
+语音、自动定位、手动输入。
+
+```
+https://www.icloud.com/shortcuts/de1d387855b24990a0b6648c2eba3a5f
+```
+
+#### 追书神器
+
+```
+https://www.icloud.com/shortcuts/ec6c8f83043a4fb3885c4a302d7c2129
+```
+
+#### 骂人宝典
+
+```
+https://www.icloud.com/shortcuts/73ded407f0d7417899346a3b5aa6d8ff
+```
+
+#### 人脸识别
+
+```
+https://www.icloud.com/shortcuts/67175ef09c1d4e7da2d77d476506740f
+```
+
+#### 修改步数
+
+QQ、微信、支付宝步数不能改变。
+
+```
+https://www.icloud.com/shortcuts/cc759611240742cfb48e9cb83fafb806
+```
+
+#### 睡眠声音
+
+```
+https://www.icloud.com/shortcuts/c9c50392fb7f4603af03cb9caf0fa9cb
+```
+
+#### 一言
+
+```
+https://www.icloud.com/shortcuts/cd37638ddd02421c966be16961db558f
+https://www.icloud.com/shortcuts/7f21e942496c46e9a7a98338d311a07a
+```
+
+#### 自定义勿扰时长
+
+```
+https://www.icloud.com/shortcuts/92706b85621b42d2aaaf7cf296c749e5
+```
+
+#### 低消耗
+
+```
+https://www.icloud.com/shortcuts/2d1a0e792358405fbb2462572962e6cd
+```
+
+#### 高德地图语音导航
+
+```
+https://www.icloud.com/shortcuts/28b98b7fd9b84301955b72345e8515b1
+```
+
+#### 查快递
+
+```
+https://www.icloud.com/shortcuts/04a23ce1b0b64c998519341752811e7e
+```
+
+#### Picsew Editor
+
+```
+https://www.icloud.com/shortcuts/fc50347ce3f047309001520ceecb12ee
+```
+
+#### 白描助手
+
+```
+https://www.icloud.com/shortcuts/20988a652e264b13889aa5db1ac3dbff
+```
+
+#### 多种外币转换
+
+```
+https://workflow.is/workflows/9570db942bfb45f18581bd36121573b0
+```
+
+#### 快递物件查询
+
+```
+https://workflow.is/workflows/177a3fd258ab4cfd806ff99df15d867c
+```
+
+#### 打开链接并复制密码
+
+```
+https://workflow.is/workflows/e5846d5f70db404a914db7c6ae07e6c8
+```
+
+#### 货币换算
+
+```
+https://workflow.is/workflows/50f0132cbe654370bc35189e1cf31b86
+```
+
+#### 抛硬币
+
+```
+https://workflow.is/workflows/4e37faab34864e1883c533754c788066
+```
+
+#### 合并PDF文件
+
+```
+https://workflow.is/workflows/adbb5f464fba4bc68a42a31bf91d1c4c
+```
+
+#### 扩展和共享网址
+
+```
+https://workflow.is/workflows/acad8115a5564d6ea336b70b87dcab72
+```
+
+#### 计时器
+
+```
+https://workflow.is/workflows/93fd0318d0e14cdaa32c5d021effaa8b
+```
+
+#### IP和位置
 
 找到IP和地理位置。
 
@@ -4502,99 +1693,75 @@ https://workflow.is/workflows/014c0e9d263247979bc6a1c9894e07e4
 https://workflow.is/workflows/ea529c591a2740169388c0d2b8ca6505
 ```
 
-### 低功耗模式
-
-```
-https://workflow.is/workflows/640ae7eb22f143a093c77215a6e373e2
-```
-
-### 电池
-
-```
-https://workflow.is/workflows/febeed3ed07a4c78b9e77c2f48136a2a
-```
-
-### 插接板书签离线
+#### 插接板书签离线
 
 ```
 https://workflow.is/workflows/78e3d1afef39487db3d4a96d55e9a131
 ```
 
-### 书签
+#### 书签
 
 ```
 https://workflow.is/workflows/86a36fe10ac54a0cbe21c0016e762dee
 ```
 
-### 复制到剪贴板
-
-```
-https://workflow.is/workflows/3242da310c4a45ec8270a09e49e6aa37
-```
-
-### 剪贴板翻译
-
-```
-https://workflow.is/workflows/5de0062c54c041a386be048dd84fa361
-```
-
-### 剪切板列表
-
-```
-https://workflow.is/workflows/db3321f2eec84c4eb2caf29a6df81286
-```
-
-### Biking Distance
+#### Biking Distance
 
 ```
 https://workflow.is/workflows/90b54056340742f2bd24ed45f894d22e
 ```
 
-### 旅行距离
+#### 旅行距离
 
 ```
 https://workflow.is/workflows/5e86637a392147449e7f0aebb3b18cf4
 ```
 
-### 莫尔斯电码编码器手电筒
+#### 莫尔斯电码编码器手电筒
 
 ```
 https://workflow.is/workflows/3f723d2d0e0a4c45b920281cf7d30284
 ```
 
-### 手电筒
+#### 手电筒
 
 ```
 https://workflow.is/workflows/31699d9bf6054e028c69286cdf932ce6
 ```
 
-### 自定义搜索
+#### Translate
 
 ```
-https://workflow.is/workflows/ac4b4abac0a2490e872b7134f5f9ca8a
+https://www.icloud.com/shortcuts/5ce941f97e7644e1951c3aa3cacf4804
 ```
 
-### 谷歌高级搜索
+#### 极搜
 
 ```
-https://workflow.is/workflows/6e7e0853ae664c5ea7a0bae7dad6941e
+https://www.icloud.com/shortcuts/9016687bcc894015ba2c7bbf3766359c
 ```
 
-### 搜索电话号码
+#### 文本分析
 
 ```
-https://workflow.is/workflows/aa509941b57d48d4b51a0c2b1c06cf8c
+https://www.icloud.com/shortcuts/458e944a6e8b409695e069f92b5e7bc0
 ```
 
-### tumblr展开网址
+#### iiilab解析器
 
 ```
-https://workflow.is/workflows/62a9534d3ee1467080cd4136578d3d35
+https://www.icloud.com/shortcuts/dbfdd71fdfd540ada81c08f8d24280b4
 ```
 
-# IPA相关
+#### Parse Video X
 
-## 限免APP
+```
+https://www.icloud.com/shortcuts/26224a223a344c0490ef1ecf91ee4ebc
+```
+
+# 应用与IPA
+
+## 限免
 
 ### 价格监测
 
@@ -4619,27 +1786,41 @@ https://github.com/Dreamy-TZK/AppStorePrice
 值 / 上面复制的SCKEY
 ```
 
-进入`.github/workflows`修改最后几行中Github的email和username为自己的Github账号。然后进入`src/list.json`，修改文件内容以确定需要监控的APP。保存后点击Actions，开启功能后点击Star以激活。
+进入src/list.json，修改文件内容以确定需要监控的APP。保存后点击Actions，开启功能后点击Star以激活。
 
 ### 应用库
+
+暂时不可用。
+
+<details>
+<summary></summary>
 
 ```
 http://app.666wlgzs.com/list/appstore/
 ```
+</details>
 
 ## 签名
 
-安装非App Store的软件，需要对IPA进行签名。签名需要用到证书，证书又分为个人账号证书、企业级证书和开发者证书，有效期分别是七天、一年和一年。
+### 基本概念
 
-现在大部分APP都是用企业证书进行签名。由于企业证书所签应用多，当应用违规时，证书就容易被吊销，造成掉签现象。
+安装App Store的软件时，会对下载下来的IPA进行签名。因此安装非App Store的软件，需要手动对IPA进行签名。签名需要用到证书，分类如下。
+
+|     类型     | 有效期 |
+|--------------|--------|
+| 个人账号证书 | 七天   |
+| 企业级证书   | 一年   |
+| 开发者证书   | 一年   |
+
+现在大部分APP都是用企业证书进行签名。由于企业证书所签应用多，当应用违规时，证书容易被吊销，从而造成掉签现象。
 
 ### 通过Xcode
 
-将手机连接到电脑。打开Xcode，进入Preferences，在Accounts处登录自己的Apple ID。然后点击`Manage Certificates`申请证书，点击`Download Manual Profiles`下载证书。
+将手机连接到电脑。打开Xcode，进入Preferences，在Accounts处登录自己的Apple ID。然后点击Manage Certificates申请证书，点击Download Manual Profiles下载证书。
 
 回到Xcode主页，点击Create a new Xcode project，选择Single View App，Team选择刚才申请的证书，Product Name和Organization Name可以随意填写。点击Create，然后在项目设置中将Deployment Info的Target选为自己手机的iOS版本，点击左上角的运行按钮，屏幕出现Succeed即可。
 
-从以下地址下载iOS App Signer并运行，Input File选择要签名的IPA，Signing Certificate选择刚才的证书，Provisioning Profile选择刚才新建项目的对应文件，然后点击Start。
+从以下地址下载iOS App Signer并运行，Input File选择要签名的IPA，Signing Certificate选择刚才的证书，Provisioning Profile选择刚才新建项目的对应文件，点击Start。
 
 ```
 https://dantheman827.github.io/ios-app-signer/
@@ -4647,7 +1828,7 @@ https://dantheman827.github.io/ios-app-signer/
 
 回到Xcode，点击菜单栏的Window-Devices and Simulators，在Devices找到刚才创建的项目，点击+，等待黄色框消失即可。
 
-### 通过电脑自签软件
+### 通过自签软件
 
 #### AltStore
 
@@ -4671,26 +1852,37 @@ https://impactor.nullx.me/
 https://github.com/pixelomer/AltDeploy
 ```
 
-### 通过iOS软件
+### 通过APP
 
-可用闪电签。闪电签是在App Store上架的一个给IPA签名的软件，签名前需先添加证书。下载的证书包括p12和mobileprovision为后缀名的两个文件，先用闪电签打开p12文件，然后再用闪电签打开mobileprovision文件即可。
+可用闪电签、山猪签、轻松签、魔力签。魔力签官网如下。
+
+```
+https://ios-tool.com
+```
+
+签名前需先添加证书。下载的证书包括p12和mobileprovision为后缀名的两个文件，先用签名APP打开p12文件，然后再打开mobileprovision文件即可。
 
 ## TestFilght
 
 TestFilght是苹果提供开发者应用测试的平台。
 
-### TestFilght应用降级
+### 应用降级
 
-打开TestFilght，点击要降级的应用，选择`以前的Build`，根据需要选择版本即可。
+打开TestFilght，点击要降级的应用，选择以前的Build，根据需要选择版本即可。
 
-### TestFlight应用库
+### 应用库
+
+暂时失效。
+
+<details>
+<summary></summary>
 
 ```
 https://testflight.center/
 ```
+</details>
 
-
-## 普通IPA安装
+## IPA安装
 
 ### 通过itms-services协议
 
@@ -4707,41 +1899,41 @@ https://onedrive.gimhoy.com/
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>items</key>
-	<array>
-		<dict>
-			<key>assets</key>
-			<array>
-				<dict>
-					<key>kind</key>
-					<string>software-package</string>
-					<key>url</key>
-					<string>https://onedrive.gimhoy.com/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBaVRnOE5zR09TMFZtQUE5aFZweVA1b29wYlQzP2U9WFRuZHZa.ipa</string>
-				</dict>
-				<dict>
-					<key>kind</key>
-					<string>display-image</string>
-					<key>needs-shine</key>
-					<false/>
-					<key>url</key>
-					<string>https://onedrive.gimhoy.com/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBaVRnOE5zR09TMFZtUzV5U3lrRTBkcHJRWlN3P2U9Q0tsNUJo.png</string>
-				</dict>
-			</array>
-			<key>metadata</key>
-			<dict>
-					<key>bundle-identifier</key>
-					<string>xz.Ltribe.com</string>
-					<key>bundle-version</key>
-					<string>2.0</string>
-				<key>kind</key>
-				<string>software</string>
-				<key>subtitle</key>
-				<string>jiejing</string>
-				<key>title</key>
-				<string>捷径2.0.关注公众号：LTribe</string>
-			</dict>
-		</dict>
-	</array>
+    <key>items</key>
+    <array>
+        <dict>
+            <key>assets</key>
+            <array>
+                <dict>
+                    <key>kind</key>
+                    <string>software-package</string>
+                    <key>url</key>
+                    <string>https://onedrive.gimhoy.com/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBaVRnOE5zR09TMFZtQUE5aFZweVA1b29wYlQzP2U9WFRuZHZa.ipa</string>
+                </dict>
+                <dict>
+                    <key>kind</key>
+                    <string>display-image</string>
+                    <key>needs-shine</key>
+                    <false/>
+                    <key>url</key>
+                    <string>https://onedrive.gimhoy.com/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBaVRnOE5zR09TMFZtUzV5U3lrRTBkcHJRWlN3P2U9Q0tsNUJo.png</string>
+                </dict>
+            </array>
+            <key>metadata</key>
+            <dict>
+                    <key>bundle-identifier</key>
+                    <string>xz.Ltribe.com</string>
+                    <key>bundle-version</key>
+                    <string>2.0</string>
+                <key>kind</key>
+                <string>software</string>
+                <key>subtitle</key>
+                <string>jiejing</string>
+                <key>title</key>
+                <string>捷径2.0.关注公众号：LTribe</string>
+            </dict>
+        </dict>
+    </array>
 </dict>
 </plist>
 ```
@@ -4778,58 +1970,64 @@ data:text/html;charset=utf-8;base64,PGh0bWw+CjxoZWFkPgogIDxtZXRhIG5hbWU9ImFwcGxl
 https://www.icloud.com/shortcuts/319f80622c234de8b811b7ba2d5a7228
 ```
 
-## 掉签IPA安装
+### 掉签IPA处理
 
-打开设置中的`无线局域网`，点击已连接WiFi后面的菜单键，在最下方选择配置代理。模式选择自动，并将以下地址填入URL中，然后存储。
+打开设置中的无线局域网，点击已连接WiFi后面的菜单键，在最下方选择配置代理。模式选择自动，并将以下地址填入URL中，然后存储。
 
 ```
 http://ffapple.com
 ```
 
-设置完毕后断开WiFi，再打开，让手机重连下WiFi。然后在设置中清除Safari历史记录与网站数据，再开启飞行模式，即可安装掉签软件。
+设置完毕后断开WiFi，再打开，让手机重连WiFi。在设置中清除Safari历史记录与网站数据，再开启飞行模式，即可通过上述方法安装。
 
-## 抓取旧版IPA
+## IPA抓取
 
-### 推荐旧版APP
+### 旧版
 
-```
-Pyto 12.1.3 内购免费
+抓取旧版软件前，本Apple ID需先下载过该APP。
 
-```
+#### 推荐版本
 
-### 通过爱思助手
+推荐旧版IPA版本如下。一般一次付费制APP转订阅制APP时，可先下载新版，再降级到旧版已获取免费内购。
+
+|   应用名称  |  版本  |   说明   |
+|-------------|--------|----------|
+| Pyto        | 12.1.3 | 内购免费 |
+| Scanner Pro | 7.7.3  | 内购免费 |
+
+#### 通过爱思助手
 
 爱思助手有安装旧版的功能。
 
-### 通过专门软件
+#### 通过软件
 
-iTunes12.6.3链接如下。
+首先安装iTunes12.6.3，该版本是iTunes最后一个有商店的版本。下载链接如下。
 
 ```
 https://www.jianshu.com/p/33bbfaa6acfd
 ```
 
-#### 软件一
+##### IOS旧版App下载工具
 
-下载地址如下。打不开或者打开报错，需安装`Microsoft. NET Framework 4.0`，双击安装包中的`打不开的请安装.exe`即可。
+下载地址如下。打不开或者打开报错，需安装Microsoft. NET Framework 4.0，双击安装包中的`打不开的请安装.exe`即可。
 
 ```
 http://www.pc6.com/softview/SoftView_743492.html
+http://www.ddooo.com/softdown/165173.htm
 ```
 
-打开iTunes并登录自己账号，然后点击`菜单栏`-`账户`-`我的账户`，输入密码登录后，在软件上进行配置并启动即可。
+打开iTunes并登录自己账号，然后点击菜单栏-账户-我的账户，输入密码登录后，在软件上进行配置并启动即可。
 
-#### 软件二
+##### iOS任意版本号APP下载
 
-下载地址如下，使用方法与软件一基本一致。
+下载地址如下，使用方法与上述软件基本一致。
 
 ```
-https://www.52pojie.cn/thread-1119324-1-1.html
 https://www.52pojie.cn/thread-1284776-1-1.html
 https://www.lanzoux.com/i1BaVhg2m7e
 ```
 
-## 抓取已购买但下架的APP
+### 已购买但已下架
 
 安装iMazing和破解补丁，补丁链接如下。安装好iMazing后，将补丁复制到iMazing安装根目录，运行补丁，点击patch即可。
 
@@ -4840,13 +2038,11 @@ https://www.lanzoux.com/i1BaVhg2m7e
 
 打开iMazing，连接手机后点击`管理应用程序`，在资料库标签页即可下载已下架的APP，下载完成后右键选择导出IPA即可。导出的IPA可用iMazing或助手类软件安装。
 
-## 相关下载
+## 相关资源
 
 ### 旧版APP
 
 ```
-http://www.ddooo.com/softdown/165173.htm#dltab
-https://ngxz.baklib.com/3a93/cfbe
 https://www.lanzous.com/b0f76484f
 https://www.lanzous.com/b0f7a3l6d
 ```
@@ -4857,35 +2053,34 @@ https://www.lanzous.com/b0f7a3l6d
 https://sideload.tweakboxapp.com/
 ```
 
-### 证书
-
-```
-https://www.lanzous.com/i9t988d
-https://www.lanzous.com/i9t989e
-https://www.lanzous.com/b02ss39bc
-```
-
 # 越狱
 
-## 越狱方法
+## 方法
+
+### 适用范围
 
 越狱工具适用范围如下。
 
-| 应用         | 基板       | 设备要求 | 系统范围             |
-| ------------ | ---------- | -------- | -------------------- |
-| Unc0ver      | Substitute | A7-A13   | 12.0-12.2，12.4-13.5 |
-| Checkra1n    | Substrate  | A7-A11   | 12.3-13.5            |
-| Chimera      | Substitute | 64位设备 | 12.0-12.2，12.4      |
-| Electra      | Substitute | 64位设备 | 11.0-11.4.1          |
-| Th0r         |            | 64位设备 | 11.2-11.3.1          |
-| doubleH3lix  |            | 64位设备 | 10.0-10.3.3          |
-| H3lix!       |            | 32位设备 | 10.x-10.3.3          |
-| Yalu         |            | 64位设备 | 10.1-10.2            |
-| Yalu         |            | 64位设备 | 10.1-10.2            |
-| Phoeix       |            | 32位设备 | 9.3.5                |
-| 叉叉助手     |            | 64位设备 | 9.2-9.3.3            |
-| Jailbrea me  |            | 32位设备 | 9.1-9.3.4            |
-| EtasonJB-RC5 |            | 32位设备 | 8.4.1                |
+| 应用            | 基板           | 设备要求       | 系统范围                   |
+| ------------- | ------------ | ---------- | ---------------------- |
+| Checkra1n     | Substrate    | A7-A11     | 12.3-14.0              |
+| Odyssey       |              | A9-A13     | 13.0-13.7              |
+| Unc0ver       | Substitute   | A7-A13     | 12.0-12.2，12.4-13.5    |
+| Chimera       | Substitute   | 64位设备      | 12.0-12.2，12.4         |
+| Electra       | Substitute   | 64位设备      | 11.0-11.4.1            |
+| Th0r          |              | 64位设备      | 11.2-11.3.1            |
+| doubleH3lix   |              | 64位设备      | 10.0-10.3.3            |
+| H3lix         |              | 32位设备      | 10.0-10.3.3            |
+| Yalu          |              | 64位设备      | 10.1-10.2              |
+| Yalu          |              | 64位设备      | 10.1-10.2              |
+| Ph0enix       |              | 32位设备      | 9.0-9.3.6              |
+| 叉叉助手          |              | 64位设备      | 9.2-9.3.3              |
+| Jailbrea me   |              | 32位设备      | 9.1-9.3.4              |
+| EtasonJB      |              | 32位设备      | 8.0-8.4.1              |
+| Pangu         |              |            | 7.0-7.1.2              |
+| P0sixspwn     |              |            | 6.0-6.1.6              |
+| RedSn0w       |              |            | 5.0-5.1.1              |
+| Greenp0sion   |              |            | 4.0-4.3.5              |
 
 各种系统版本的安装方法可参照以下链接。
 
@@ -4893,7 +2088,9 @@ https://www.lanzous.com/b02ss39bc
 https://cydia-app.com/
 ```
 
-### Unc0ver越狱
+### Unc0ver
+
+#### 应用安装
 
 官网如下。
 
@@ -4901,16 +2098,16 @@ https://cydia-app.com/
 https://unc0ver.dev/
 ```
 
-先按照无视证书方法进行配置，然后打开以下链接进行安装。如果安装后无法打开，则尝试从电脑端通过AltStore自签。
+按照掉签IPA方法进行配置，然后打开以下链接进行安装。如果安装后无法打开，则尝试从电脑端通过AltStore自签。
 
 ```
 https://www.lanzous.com/tp/icxyqaf
 https://www.lanzous.com/icxyqaf?p
 ```
 
-打开安装好的unc0ver并进行安装。若进度条卡25，则unc0ver签名有问题，需重新进行安装。若进度条卡31，则为unc0ver的广告，直接往下拉即可，不要点进去广告详情。
+打开安装好的unc0ver并进行安装。越狱完成后打开Cydia并刷新，更新所有的依赖后安装PreferenceLoader、AppList、RocketBootstrap这三个插件。
 
-越狱完成后打开Cydia并刷新，更新所有的依赖后安装`PreferenceLoader`、`AppList`、`RocketBootstrap`这三个插件。
+#### Sileo商店
 
 添加以下源并安装其中的Sileo Prep（checkra1n）。完成后打开Sileo刷新，找到Sileo源，找到Cydia Installer并安装，即可使Sileo和Cydia共存。
 
@@ -4918,15 +2115,31 @@ https://www.lanzous.com/icxyqaf?p
 https://repo.getsileo.app
 ```
 
-### Odyssey越狱
+#### 清除越狱
 
-下载链接如下。
+打开Unc0ver，在设置中打开Restore RootFS，回到主页点击按钮即可。
+
+#### 常见问题
+
+##### 进度条卡25
+
+unc0ver签名有问题，需重新进行安装unc0ver。
+
+##### 进度条卡31
+
+unc0ver的广告，直接往下拉即可，不要点进去广告详情。
+
+### Odyssey
+
+适用于iOS 13.0-13.5，A9-A13设备。下载链接如下。
 
 ```
-https://tihmstar.net/Odyssey_leak.ipa
+https://theodyssey.dev/
 ```
 
-### Checkra1n越狱
+### Checkra1n
+
+#### 应用安装
 
 官网如下。
 
@@ -4934,17 +2147,23 @@ https://tihmstar.net/Odyssey_leak.ipa
 https://checkra.in/
 ```
 
-下载后连接手机，打开电脑上的应用，Start即可。如果提示iOS版本过高，则先让手机进入恢复模式，然后再越狱。越狱后从以下内核中选择一种进行安装。
+下载后连接手机，打开电脑上的应用，Start即可。如果提示iOS版本过高，则先让手机进入恢复模式，然后再越狱，也可点击Options，勾选Allow untested iOS/iPadOS/tvOS versions。
 
-#### OdysseyRa1n内核
+#### 内核配置
 
-手机端安装好Checkra1n后不要打开。确保安装usbmuxd，若未安装可在终端输入以下命令。
+越狱后从以下内核选择一种进行安装。
+
+##### OdysseyRa1n
+
+###### 安装
+
+手机端安装好Checkra1n后不要打开。确保电脑已安装usbmuxd，若未安装可在终端输入以下命令。
 
 ```
-// MacOS用户
+// MacOS
 brew install usbmuxd
 
-// Linux用户
+// Linux
 sudo apt install libusbmuxd-tools
 ```
 
@@ -4957,31 +2176,35 @@ curl http://chimera1n.aaronc.cn/CoolStar/chimera1n-deploy-linux-macos.sh | bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/coolstar/Odyssey-bootstrap/master/procursus-deploy-linux-macos.sh)"
 ```
 
-更新完APT和Sileo以后，安装libhooker。打开CheckRa1n，继续走一遍Start以重新引导。然后在Sileo中搜索`Cydia Installer`即可安装Cydia。若无此安装包，则添加以下源。
+更新完APT和Sileo以后，安装libhooker。打开CheckRa1n，点击Start重新引导。
+
+###### Cydia商店
+
+在Sileo搜索Cydia Installer即可安装Cydia。若无此安装包，则添加以下源。
 
 ```
 https://apt.bingner.com/
 ```
 
-#### Checkra1n内核
+##### Checkra1n
 
-打开手机上的checkra1n软件，然后安装Cydia即可。
+打开手机上的checkra1n软件，安装Cydia即可。
 
-#### Chimera1n内核
+##### Chimera1n
 
-用爱思助手打开SSH通道，记住端口号，终端运行以下命令以安装usbmuxd。
+###### 安装
 
-```
-brew install usbmuxd
-```
+用爱思助手打开SSH通道，记住端口号。确保电脑已安装usbmuxd，安装方法同上。
 
-手机端安装好Checkra1n后不要打开，下载以下安装包，解压后编辑chimera1n.sh，将倒数两行的-p4444改为刚才记住的端口号，然后双击chimera1n.command安装即可，有错误提示可忽略。Sileo安装好后更新所有依赖，然后安装`libhooker bootstrapper(checkm8)`插件。插件安装好后重新用checkra1n再越一次狱即可。
+手机端安装好Checkra1n后不要打开。电脑端下载以下安装包，解压后编辑chimera1n.sh，将倒数两行的-p4444改为刚才记住的端口号，然后双击chimera1n.command安装，有错误提示可忽略。
 
 ```
 https://geekben.org/38.html
 ```
 
-然后安装插件。安装前要在软件包界面，点右上角，日期后面那三个小横线，开启开发者模式。
+Sileo安装好后更新所有依赖，然后安装libhooker bootstrapper(checkm8)插件。插件安装好后打开checkra1n，点击Start重新引导。
+
+完成后安装以下插件。安装前需在软件包界面点击右上角日期后面的小横线，开启开发者模式。
 
 ```
 Applist
@@ -4993,31 +2216,31 @@ tweak injector
 conditionalwifi5
 ```
 
-最好不要安装Cydia，不稳定，可用Zebra。不要更新除Sileo外的应用商店的依赖。Cydia安装包如下，注意不要装第四个deb，安装完成后要用`连个锤子`修复权限。
+至此安装完成。注意，使用过程中不要更新除Sileo外的应用商店的插件依赖，否则将无法进入系统。
+
+###### Cydia商店
+
+安装Cydia会导致系统不稳定。
+
+Cydia安装包如下，注意不要装第四个deb。完成后安装`连个锤子`插件以修复权限。
 
 ```
 https://www.lanzous.com/i6nfksh
 ```
 
-### 清除越狱
+#### 清除越狱
 
-#### Unc0ver
+在手机上打开Checkra1n，点击Restore System即可。
 
-打开Unc0ver，在设置中打开Restore RootFS，回到主页点击按钮即可。
+#### 常见问题
 
-#### Checkra1n
+##### -20错误
 
-打开Checkra1n，点击Restore System即可。
+尝试勾选Options里面的Safe Mode，然后重新越狱。
 
-### 常见问题
+若无效，则打开手机并按照正常流程用checkra1n进入DFU模式。软件显示进入DFU模式成功后，iPhone7/8/X按住音量上键和音量下键，其余老机型按住音量上键和Home键，持续按一段时间，手机进入诊断模式。
 
-#### checkra1n出现-20错误
-
-尝试勾选Options里面的`Safe Mode`，然后重新越狱。
-
-若不行，则打开手机并按照正常流程用checkra1n进入DFU模式。软件显示进入DFU模式成功后，iPhone7/8/X按住音量上键和音量下键，其余老机型按住音量上键和Home键，持续按一段时间，手机进入诊断模式。
-
-打开以下链接下载minaUSB，完成安装。
+打开以下链接，下载minaUSB并安装。
 
 ```
 https://appletech752.com/Downloads/minaUSB.pkg
@@ -5030,116 +2253,1349 @@ xcode-select --install
 codesign -f -s - --deep /Applications/
 ```
 
-打开minaUSB并点击`Patch USB Restrict`，提示完成后重新用checkra1n越狱即可。
+打开minaUSB并点击Patch USB Restrict，提示完成后重新用checkra1n越狱即可。
 
-## 越狱应用商店
+## 插件
 
-### Zebra
+### 插件库
 
-作者源如下。
-
-```
-https://getzbra.com/repo/
-https://getzbra.com/beta/
-```
-
-### Installer
-
-作者源如下。
+#### 越狱插件搜索
 
 ```
-https://apptapp.me/repo/
+https://www.ios-repo-updates.com/
+https://jlippold.github.io/tweakCompatible/
 ```
 
-### AltStore
-
-添加以下源并按顺序安装AltDaemon、AppSync Unified、appinst (App Installer)、AltStore (ALPHA)即可。
+#### Packix付费插件合集
 
 ```
-https://pwnders.github.io/repo/
+链接 / https://pan.baidu.com/s/1OnBL77Tqn1og7iw3K90w2A
+密码 / zeg8
+```
+
+### 越狱源
+
+#### 自用越狱源
+
+```
+// 嘻哈源，必加
+http://repo.acreson.cn/
+
+// 其它
+https://repo.packix.com/
+https://rpetri.ch/repo/
+http://tateu.net/repo/
+https://rejail.ru/
+http://repo.feng.com/
+https://apt.bingner.com/
+http://apt.thebigboss.org/repofiles/cydia/
+https://repo.hackyouriphone.org/
+http://apt.modmyi.com/
+https://creaturecoding.com/repo/
+https://cydia.ichitaso.com/
+http://cydia.zodttd.com/repo/cydia/
+https://repo.dynastic.co/
+http://repo.qqtlr.com/
+https://cydia.akemi.ai/
+https://repo.rpgfarm.com/
+http://mrmadtw.github.io/repo/
+https://repo.initnil.com/
+https://apt.initnil.com/
+http://repo.pixelomer.com/
+https://ibreak.yourepo.com/
+https://repo.twickd.com/
+https://skitty.xyz/repo/
+https://apt.iphoneba.cn/
+https://repo.cydiabc.top/
+http://apt.coolstar.xyz/
+http://ibreak.yourepo.com/
+https://repo.icrazeios.com/
+https://kanam.me/repo/
+https://apt.25mao.com/
+http://limneos.net/repo/
+https://junesiphone.com/supersecret/
+https://evynw.github.io/
+https://soda-ldz.yourepo.com/
+https://Poomsmart.github.io/repo/
+https://sileo.top/
+https://cydia.kiiimo.org/
+
+// 以下源不能用Cydown
+https://apt.cydiakk.com/
+https://apt.abcydia.com/
+https://apt.cydia.love/
+https://apt.cydiavip.com/
+https://apt.wxhbts.com/
+https://apt.cydiami.com/
+https://apt.Fcydia.com/
+https://apt.cydiaba.cn/
+```
+
+#### 其它越狱源
+
+```
+http://zlxdike.github.io/repo/
+https://apt.fouadraheb.com/
+https://apt.geometricsoftware.se/
+https://henrikssonbrothers.com/cydia/repo/
+http://apt.iarrays.com/
+https://kanam.me/repo/
+https://repo.openpack.io/
+https://repo.niceios.com/
+https://repo.mtac.app/
+https://repo.menushka.ca/
+```
+
+
+### 插件集合
+
+#### 必备插件
+
+##### Apple File Conduit “2”
+
+即AFC2，可以允许电脑第三方助手直接访问设备越狱系统文件。
+
+```
+// 作者源地址
+https://cydia.ichitaso.com/
+
+// halo_michael打包源地址
+https://mrmadtw.github.io/repo
+
+// CDSQ打包源地址
+http://repo.feng.com
+```
+
+##### AppSync
+
+配合AFC2使用。
+
+##### OpenSSH
+
+电脑与手机连接的SSH通道。
+
+##### NewTerm 2
+
+终端工具。
+
+```
+https://cydia.hbang.ws
+https://repo.chariz.com
+```
+
+#### IPA签名
+
+##### ReProvision
+
+给IPA自签名。
+
+```
+https://repo.incendo.ws/
+```
+
+##### NoPlsOCSP
+
+阻止苹果证书被注销。
+
+```
+http://xnu.science/repo/
+```
+
+##### AppSync Unified
+
+屏蔽苹果对APP签名的检测，即可以直接安装未签名的破解版APP。
+
+```
 https://cydia.akemi.ai/
 ```
 
-### 常见问题
+#### 越狱屏蔽
 
-#### Cydia无法联网
+##### A-Bypass
 
-可用爱思助手安装1.2.3版本的乐网，暂时让Cydia联网。然后安装`连个锤子-越狱联网一键修复`插件，官方源如下。打开插件，点击修复网络，等待修复完成，注销即可。
-
-```
-http://apt.tinyapps.cn/
-```
-
-#### Sileo提示「unable to fetch some archives」
-
-在NewTerm中执行以下命令即可。
+越狱屏蔽插件。
 
 ```
-apt-get update --fix-missing
-killall SpringBoard
+https://repo.rpgfarm.com/
 ```
 
-#### Cydia提示证书无效
+##### Liberty Lite
 
-修改系统时间到当前时间即可。
-
-#### 无法正常内购
-
-越狱后无法正常内购，是由于itunesstored进程无法正常启动的缘故。如果安装了内购破解插件，如LocalIAPStore，先尝试关闭或卸载。
-
-若不行，则可使用DaemonDisabler开启itunesstored进程，插件源如下。安装后在插件设置中打开com.apple.itunesstored.plist，然后软重启。如果已经开启，则无需理会。
+越狱屏蔽插件。
 
 ```
-https://level3tjg.xyz/repo/
+http://ryleyangus.com/repo/
 ```
 
-若仍不行，可尝试使用Choicy禁止注入itunesstored。进入Choicy设置，选择`进程配置`-`守护进程`，拉到最底部，点击`显示所有守护进程`，然后找到itunesstored，点击进入，打开禁用插件注入开关。注销并测试是否可以正常内购。
+##### WeChatJailbreakHook
 
-若依旧无法正常内购，可尝试重启或在安全模式下进行内购。
+屏蔽微信越狱检测。
 
-## 越狱操作
+##### Shadow
 
-### 与电脑建立SSH连接
-
-打开爱思助手，在工具箱中选择`打开SSH连接`，记下IP（127.0.0.1可以用localhost代替）和端口。打开终端并输入以下命令。
+越狱屏蔽插件。
 
 ```
+https://ios.jjolano.me/
+```
+
+##### UnSub
+
+屏蔽越狱检测。
+
+##### FlyJB
+
+越狱屏蔽插件。
+
+```
+https://repo.xsf1re.kr/
+```
+
+##### Choicy
+
+禁止注入插件。
+
+```
+https://opa334.github.io/
+```
+
+##### KernBypass
+
+从内核层面屏蔽越狱。若通过官方源安装插件，需要再安装NewTerm插件，并在NewTerm中执行以下命令。
+
+```
+su
+changerootfs &
+disown %1
+```
+
+若设备重启后插件失效，需要打开Filza，创建/var/MobileSoftwareUpdate/mnt1文件夹，然后打开NewTerm，输入su，密码为alpine，获取root权限，如此插件即可恢复正常。
+
+安装本插件后，用iCleaner Pro清理垃圾时可能会卡在清理OTA软件更新。且本插件对硬件损伤较大。
+
+```
+// 官方源
+https://akusio.github.io/
+
+// 嗨客源
+http://repo.qqtlr.com/
+```
+
+#### 虚拟定位与导航
+
+##### GPSmaster-GPS定位大师
+
+虚拟定位、虚拟导航等。
+
+##### Anywhere!--虚拟定位
+
+更改手机定位与手机型号。
+
+
+
+
+##### Fake GPS Pro
+
+虚拟定位。
+
+##### LoactionFakerX
+
+虚拟定位。
+
+#### 系统美化
+
+##### SnowBoard
+
+主题插件。
+
+```
+https://sparkdev.me/
+```
+
+##### ReachIt
+
+让iPhone单手操作模式下，原先上方空白处变成音乐播放器控制。
+
+```
+https://repo.nepeta.me/
+```
+
+##### Carrierizer
+
+自定义运营商名称。
+
+##### Anemone
+
+美化主题的平台。
+
+##### Frame
+
+视频壁纸。
+
+```
+https://zx02.yourepo.com/
+```
+
+##### Cylinder
+
+主屏幕翻页动画。
+
+```
+http://cydia.r333d.com/
+```
+
+##### Edge
+
+屏幕圆角加渐变彩条。
+
+```
+https://apt.securarepo.io/
+```
+
+##### Xeon
+
+运营商自定义。
+
+```
+https://nexusrepo.kro.kr/
+```
+
+##### LatchKey
+
+自定义X设备锁屏图标。
+
+```
+https://repo.daus.ch/
+```
+
+##### A-Font
+
+字体管理插件。
+
+```
+https://repo.co.kr/
+```
+
+##### PerfectTimeXS
+
+修改状态栏时间样式。
+
+```
+https://kingmehu.yourepo.com/
+```
+
+##### Genesis 2
+
+美化插件。
+
+```
+https://repo.packix.com/
+https://repo.dynastic.co/
+```
+
+##### Riveria
+
+美化插件。
+
+##### Twister
+
+美化插件。
+
+```
+https://repo.twickd.com/
+```
+
+##### PencilChargingIndicator
+
+拥有和Apple Pencil一样的充电动画。在设置中的Customize Notifications打开Replace Banners，即可让信息推送获得相同效果。
+
+```
+https://shiftcmdk.github.io/repo/
+```
+
+##### Bolders
+
+美观放大的文件夹扩展。
+
+```
+https://ndoizo.ca/
+```
+
+##### Shortlook
+
+漂亮的动画通知。
+
+##### Moveable9
+
+自定义状态栏各个符号的位置或直接隐藏。
+
+```
+http://tateu.net/repo/
+```
+
+##### Scorpion
+
+来电窗口迷你化。
+
+##### CallBar XS
+
+窗口模式来电通话，可通过CrackTool3的破解补丁破解内购。
+
+```
+// 作者源地址
+http://limneos.net/repo
+
+// Callbar X破解补丁(基于CrackTool3)源地址
+https://apt.cydiaba.cn/
+
+// 免费源地址
+https://pulandres.me/repo/
+```
+
+#### 键盘
+
+##### EmojiPort
+
+更新系统的Emoji。
+
+```
+https://poomsmart.github.io/repo/
+```
+
+##### DockX
+
+在键盘底部增加更多实用按钮。
+
+```
+https://udevsharold.github.io/repo
+```
+
+##### EmojiPort Fonts
+
+让低版本的iOS系统使用最新的Emoji表情。
+
+```
+https://vxbakerxv.github.io/repo/
+```
+
+##### Barmoji
+
+为iPhone X/XS/Max/XR键盘底部添加一排常用Emoji表情。
+
+```
+https://beta.cpdigitaldarkroom.com
+```
+
+#### 控制中心
+
+##### FlipConvert
+
+控制中心更多快捷方式。
+
+```
+https://julioverne.github.io/
+```
+
+##### RealCC
+
+控制中心直接关闭Wi-Fi与蓝牙而不是之前的断开当前连接。
+
+##### MissionControl
+
+控制中心自定义插件。
+
+```
+https://dylanduff.com/repo/
+```
+
+##### PowerModule
+
+增强iOS11/12控制中心。
+
+```
+https://repo.packix.com/
+```
+
+##### Modulus
+
+为控制中心添加模块。若安装后无效，则需手动安装CCsupport插件。
+
+```
+// 官方源地址
+https://repo.packix.com/
+
+// 免费源地址
+http://repo.hackyouriphone.org/
+```
+
+#### 通知
+
+##### Goodges 2
+
+应用通知数显示在应用名称上。
+
+```
+https://apt.noisyflake.com/
+```
+
+##### LocationService (CCSupport)
+
+控制中心添加定位开关。
+
+##### ClearBadges3DTouch10
+
+通过3D Touch功能呼出Clear Badge Notifications按钮，清理应用角标通知。
+
+##### Evelyn's Collection
+
+锁屏挂件。
+
+```
+https://evynw.github.io/
+```
+
+##### Lisa
+
+锁屏通知聚合。
+
+```
+https://esquillidev.github.io/
+```
+
+##### Priority Hub
+
+通知按App分类显示。
+
+```
+https://kunderscore.gitlab.io/repo/
+```
+
+##### Tinybar
+
+缩小通知横幅。
+
+```
+http://capt.dreamcode.it
+```
+
+##### Priority Hub
+
+锁屏通知小图标显示插件。
+
+```
+https://kunderscore.gitlab.io/repo/
+```
+
+##### NotifierDots
+
+iPhone X右上角通知图标。
+
+```
+http://apt.mumiantech.com/
+```
+
+#### 设置页面
+
+##### ModernSettings
+
+为设置页提供更多选项。
+
+##### System Info
+
+显示更多系统信息。
+
+```
+https://apt.xninja.xyz/
+https://apt.arx8x.net/
+```
+
+##### Shuffle
+
+设置页面归类。
+
+```
+https://creaturecoding.com/repo/
+```
+
+##### SettingsWidgets
+
+在设置页面显示小组件。
+
+```
+https://shepgobarepo.github.io/
+```
+
+#### 系统清理与加速
+
+##### AnimationsBeFast
+
+iOS系统动画加速。
+
+##### iCleaner Pro
+
+清理手机缓存垃圾。
+
+```
+https://ib-soft.net/cydia/
+```
+
+##### CacheClearerX
+
+清理缓存插件。
+
+```
+https://alexpng.github.io/
+```
+
+#### 越狱配置
+
+##### ConditionalWiFi5
+
+解决越狱之后新下载的APP没有联网权限的问题。
+
+##### Batchomatic
+
+插件备份。
+
+##### EZTweakList
+
+Cydia平台导出源地址以及插件列表。
+
+```
+https://legitcomputerwhisperer.github.io/
+```
+
+##### CrashReporter
+
+记录插件问题，便于排查。
+
+```
+https://revulate.dev/
+```
+
+##### FLEXall
+
+状态栏手势调用FLEX。
+
+```
+https://DGh0st.github.io/
+```
+
+##### DenyPhotoAlbums
+
+隐藏照片应用里没必要的分类相簿。
+
+##### Bakgrunnur
+
+保持程序在后台运行。
+
+##### Succession
+
+平刷工具。
+
+```
+https://samgisaninja.github.io/
+```
+
+##### Cydown
+
+免费下载Cydia里的收费插件，提取插件的DEB安装包等。
+
+```
+https://julio.hackyouriphone.org/
+```
+
+##### SnapBack
+
+创建系统快照。其中Orig-fs是越狱工具创建的快照备份，不可删除，可用于恢复到原始状态。一般只对Root分区创建快照，不要对Var分区操作。
+
+##### Cr4shed
+
+崩溃报告记录，有助于寻找导致崩溃的插件。
+
+##### Sileo Remover
+
+移除Sileo。
+
+```
+https://repo.x4-applegate.com/
+```
+
+##### ModernDepictions
+
+让Cydia实现Sileo主题风格。
+
+```
+http://repo.pixelomer.com
+```
+
+#### 相机/照片与截屏
+
+##### Camera Tools
+
+相机增强工具。
+
+##### TapVideoConfig
+
+直接在相机视频/慢动作里切换拍摄大小。
+
+##### SilentScreenshot
+
+关闭截图咔嚓声、去除截图后停留在左下角的预览、自定义截图闪屏颜色等。
+
+```
+https://repo.packix.com/
+```
+
+##### DeleteForever
+
+为照片删除添加`Permanently`按钮，永久删除照片。
+
+##### QuickMarkup
+
+将标记按钮添加到照片编辑工具栏中。
+
+##### PhotoSize
+
+查看照片应用图片大小。
+
+##### Aperturize
+
+让iPhone 7/8 Plus和iPhone X双摄设备实现人像模式景深控制。
+
+```
+// 官方源地址
+https://repo.packix.com/
+
+// 免费源地址
+https://repo.xarold.com/
+```
+
+##### Shutter Depth Control
+
+与Aperturize插件一样。
+
+```
+https://jbrownllama.yourepo.com/
+```
+
+##### Snapper 2
+
+强大的截图插件。
+
+#### 关机与重启
+
+##### Sentinel
+
+防止手机关机后需重新越狱。
+
+##### PowerSelector
+
+快速注销、关机、软重启。
+
+#### 应用增强
+
+##### AppData
+
+查看APP数据。
+
+##### AppTweak13
+
+在应用上滑显示应用详情。
+
+##### Apps Manager
+
+强大的应用数据清除/备份/恢复/传输等管理工具，可通过CrackTool3免费激活内购。
+
+##### LocalIAPStore13
+
+破解应用内购。
+
+```
+https://paxcex.github.io/
+```
+
+##### Autotouch
+
+录制手指操作，然后自动重复操作。
+
+```
+// 官方源
+http://apt.autotouch.net/
+
+// 破解插件
+链接 / https://pan.baidu.com/s/1CeEpOs3aM-bSsZ7yLONHDw
+提取码 / 0fwD
+```
+
+##### WeChatCallKit
+
+重回微信与系统电话一样的接听显示界面。
+
+```
+http://apt.cydiaba.cn/
+https://apt.abcydia.com/
+```
+
+##### 微信助手密友
+
+使微信能够转发语音。
+
+```
+https://sileo.top
+```
+
+##### Aesthyrica
+
+Spotify增强。
+
+```
+https://aesthyrica.com/repo/
+```
+
+##### Cercube for Youtube
+
+Youtube扩展。
+
+```
+https://apt.alfhaily.me/
+```
+
+##### Youtube Tools
+
+同上。
+
+```
+https://jpet26.yourepo.com/
+```
+
+#### 应用降级
+
+##### AppStore++
+
+Appstore扩展，可用于应用降级。
+
+```
+https://cokepokes.github.io
+```
+
+若降级时发现无可用版本，可打开链接以查询特定应用版本的版本号ID。复制要降级到的版本ID，降级时点击Manual Install，将ID填写到对话框即可。
+
+```
+https://tools.lancely.tech/
+```
+
+##### App Admin
+
+App Store应用降级随意旧版。
+
+```
+http://beta.unlimapps.com
+```
+
+##### StoreSwitcher 2
+
+App Store快速切换账号。
+
+```
+http://subdiox.com/cydia
+```
+
+#### 电话与录音
+
+##### AudioRecorder通话录音
+
+录取微信、电话等一切通话录音。
+
+```
+http://limneos.net/repo
+```
+
+##### xybp888
+
+电话助手。
+
+```
+http://apt.htv123.com/
+```
+
+##### Call Recorder/SuperRecorder
+
+通话录音插件。
+
+```
+http://hacx.org/repo/
+```
+
+##### AudioRecorder 2
+
+通话录音插件。
+
+```
+http://limneos.net/repo/
+```
+
+#### Safari
+
+##### Safari Features
+
+让iPhone上的Safari显示iPad样式的标签。
+
+##### FullSafari
+
+同Safari Features。
+
+```
+https://repo.lonestarx.net/
+```
+
+##### Tabsa
+
+同Safari Features。
+
+```
+https://r0wdrunner.github.io/repo/
+```
+
+##### Safari Plus
+
+增强iOS设备自带Safari浏览器功能。
+
+```
+https://opa334.github.io/
+```
+
+##### Selector
+
+实现Safari浏览器单句翻译功能。
+
+```
+https://repo.nepeta.me/
+```
+
+##### ForceInPicture
+
+开启自带浏览器视频画中画功能。
+
+#### 仿X手势
+
+##### HomeX
+
+旧机型使用iPhone X手势。
+
+```
+https://abxyap.github.io/repo/
+```
+
+##### HomeGesture
+
+老机型实现iPhone X手势界面操作，可自定义功能设置。若在安装过程中遇到com.spark.libsparkapplist依赖缺失的情况，添加以下源地址即可。
+
+```
+https://repo.packix.com
+```
+
+##### GestureXS
+
+仿iPhone X手势操作。
+
+#### 任务管理
+
+##### KillBackground
+
+一键清理后台插件。
+
+```
+http://cydia.ichitaso.com/
+```
+
+##### KillX
+
+一键清理多任务后台的插件。
+
+```
+https://cemck.github.io/repo
+```
+
+##### KillX Pro
+
+一键清理后台。
+
+##### Kill All Apps
+
+一键清理后台。
+
+```
+https://haoict.github.io/cydia/
+```
+
+#### 系统配置
+
+##### CCTomizer
+
+系统调整插件。
+
+##### FakeModel
+
+伪装设备机型。
+
+##### MilkyWay 2
+
+分屏插件。
+
+##### iNoSleep
+
+锁屏不断开Wi-Fi。
+
+##### Filza File Manager
+
+文件管理器。
+
+```
+http://tigisoftware.com/cydia/
+```
+
+##### NotesCreationDate13
+
+备忘录显示创建和修改的日期。
+
+##### BatteryRamp
+
+加速充电插件。
+
+##### ScreenRecording Time
+
+显示录屏时长。
+
+##### EasyAppOrientation
+
+锁定应用程序方向。
+
+```
+http://m156nrkvv.g2.xrea.com/repo/
+```
+
+##### ShowTouch
+
+录屏圆点。
+
+```
+https://repo.lonestarx.net/
+```
+
+##### LockPlus Pro
+
+锁屏增强。
+
+```
+https://junesiphone.com/supersecret/
+```
+
+##### Xeninfo
+
+```
+http://junesiphone.com/supersecret/
+```
+
+##### Xen HTML
+
+向主页面和锁屏页面添加组件。
+
+```
+https://xenpublic.incendo.ws/
+```
+
+##### CarBridge
+
+解除CarPlay限制，让第三方APP运行于CarPlay。
+
+```
+https://repo.chariz.io/
+```
+
+##### SwipeToDeleteContact
+
+直接可在iPhone通讯录里左滑删除名片。
+
+##### BetterRotate
+
+在屏幕锁定旋转的情况下允许视频横向旋转。
+
+```
+// 官方源地址
+https://repo.packix.com/
+
+// 免费源地址
+http://repo.hackyouriphone.org/
+```
+
+##### WiFi Passwords
+
+查看连接过的Wi-Fi密码。
+
+##### PerfectNetworkSpeedInfo
+
+网速悬浮窗。
+
+#### 暂不可用插件
+
+##### PullOver Pro
+
+从侧边唤出App，实现分屏操作。
+
+##### KillMyApps
+
+锁屏不杀后台插件。
+
+##### PreferenceOrganizer 2
+
+对设置里的`系统设置`、`插件设置`、`App Store`进行归类整理。
+
+```
+https://cydia.angelxwind.net
+```
+
+##### FingerTouch
+
+类似`Touchr`，可以让Home键实现触控操作，比如单触返回桌面，双触打开后台，长触锁屏等，无需按下去，起到保护Home键的作用。
+
+##### BetterShutdown
+
+替关机键增加重启和注销选项。
+
+##### CrackTool3
+
+一键免费激活插件的内购项目。 
+
+##### SafeShutdown
+
+软关机。
+
+```
+https://kurrt.com/repo/
+```
+
+##### VideoAdsSpeed
+
+视频软件广告跳过。
+
+### 插件操作
+
+#### 重置插件设置
+
+用Filza删除/var/mobile/Library/Preferences中的对应plist文件即可。 
+
+## 补丁软件
+
+补丁软件可以修改APP，达到破解效果。
+
+### Flex 3
+
+#### 安装和破解
+
+源地址如下。
+
+```
+https://getdelta.co/
+```
+
+登录以下账号即可永久使用会员。
+
+```
+账号 / sundasheng521@qq.com
+密码 / 7758521a
+```
+
+#### 手动添加补丁
+
+打开Filza，进入路径/var/mobile/Library/Application Support/Flex3，使用文本编辑器打开patches.plist文件，拉到最下方，在末尾的`<dict>`后复制要添加的补丁代码，保存即可。
+
+#### 补丁制作
+
+下载FlexTool插件，在设置中选择要修改的APP。打开后可通过FlexTool定位到需要修改的函数位置。打开Flex，点击+号，选择要修改的APP，点击Add Units，点击APP名称以进行初次编译。编译完成后搜索刚才找到的函数，勾选并返回到补丁主界面。点击刚才选择的函数，修改其返回值即可。
+
+#### 补丁列表
+
+##### 支付宝十万步数
+
+```
+<dict>
+    <key>UUID</key>
+    <string>0A3D50C5-F2C6-4933-B997-C1647F3E109A</string>
+    <key>apiVersion</key>
+    <integer>3</integer>
+    <key>appIdentifier</key>
+    <string>com.alipay.iphoneclient</string>
+    <key>author</key>
+    <string>hyczby5218</string>
+    <key>cloudDescription</key>
+    <string>支付宝修改步数</string>
+    <key>cloudID</key>
+    <integer>46823</integer>
+    <key>downloadDate</key>
+    <integer>1551604711</integer>
+    <key>name</key>
+    <string>支付宝修改步数</string>
+    <key>switchedOn</key>
+    <true/>
+    <key>units</key>
+    <array>
+        <dict>
+            <key>methodObjc</key>
+            <dict>
+                <key>className</key>
+                <string>APStepInfo</string>
+                <key>displayName</key>
+                <string>-(long long) numberOfSteps</string>
+                <key>prefix</key>
+                <string>-</string>
+                <key>selector</key>
+                <string>numberOfSteps</string>
+                <key>typeEncoding</key>
+                <string>q16@0:8</string>
+            </dict>
+            <key>name</key>
+            <string>修改步数</string>
+            <key>overrides</key>
+            <array>
+                <dict>
+                    <key>argument</key>
+                    <integer>0</integer>
+                    <key>type</key>
+                    <dict>
+                        <key>subtype</key>
+                        <integer>0</integer>
+                        <key>type</key>
+                        <integer>9</integer>
+                    </dict>
+                    <key>value</key>
+                    <dict>
+                        <key>type</key>
+                        <integer>9</integer>
+                        <key>value</key>
+                        <integer>100000</integer>
+                    </dict>
+                </dict>
+            </array>
+        </dict>
+    </array>
+</dict>
+```
+
+##### Thor移除验证设备验证
+
+```
+<dict>
+    <key>UUID</key>
+    <string>AE872A89-5EB7-483D-B50A-88C29F6E20C9</string>
+    <key>apiVersion</key>
+    <integer>3</integer>
+    <key>appIdentifier</key>
+    <string>com.pixelcyber.dake.thor</string>
+    <key>author</key>
+    <string>zjh521901</string>
+    <key>cloudDescription</key>
+    <string>thor移除验证设备验证补丁</string>
+    <key>cloudID</key>
+    <integer>46126</integer>
+    <key>downloadDate</key>
+    <integer>1552100989</integer>
+    <key>name</key>
+    <string>Thor ·Fz夜</string>
+    <key>switchedOn</key>
+    <false/>
+    <key>units</key>
+    <array>
+        <dict>
+            <key>methodObjc</key>
+            <dict>
+                <key>className</key>
+                <string>AppReceiptValidator</string>
+                <key>displayName</key>
+                <string>-(void) prepareVerify</string>
+                <key>prefix</key>
+                <string>-</string>
+                <key>selector</key>
+                <string>prepareVerify</string>
+                <key>typeEncoding</key>
+                <string>v16@0:8</string>
+            </dict>
+            <key>name</key>
+            <string>🈲贩卖🈲谋利🈲</string>
+            <key>overrides</key>
+            <array/>
+        </dict>
+    </array>
+</dict>
+```
+
+### SuperCharge
+
+SuperCharge脚本的后缀名为st。将st脚本发送到手机，并用SuperCharge打开即可。源地址如下。
+
+```
+https://repo.supercharge.app/
+```
+
+
+
+
+## 使用
+
+### 建立SSH连接
+
+将手机连接到电脑后，在电脑端打开爱思助手，在工具箱中选择打开SSH连接，记下IP和端口，其中127.0.0.1可以用localhost代替。
+
+打开终端并输入以下命令，即可建立SSH连接。
+
+```
+// 2222为端口，localhost为IP
 ssh -p 2222 root@localhost
 ```
 
 ### 屏蔽系统更新
 
-Unc0ver中有相关设置。也可以安装OTADisabler插件，官方源如下。
+若为Unc0ver越狱，打开Unc0ver软件即有相关设置。其它平台可安装OTADisabler插件，官方源如下。
 
 ```
 https://cydia.ichitaso.com
 ```
 
-也可以用iCleaner Pro屏蔽，在启动项中关闭OTA Update项即可。
+也可用iCleaner Pro屏蔽，在启动项中关闭OTA Update即可。
 
-### 国行Apple Watch开通ECG功能
+### 国行Apple Watch开通ECG
 
-系统要求为Watch OS 6.25+/iOS 13.5+。手机越狱后安装`ECG Enabler`插件，重新配对手表即可。
+系统要求为Watch OS 6.25+，iOS 13.5+。
+
+手机越狱后安装ECG Enabler插件，安装完成后重新配对手表即可。成功开启后可以清除越狱，只要不删除iPhone与Apple Watch之间的配对即可。
 
 ### 应用多开
 
-#### 实现方法
+#### 方法
 
 通过Slice 3插件即可。
 
 #### 添加插件支持
 
-打开Cydia，找到需要生效的插件，点击`显示软件包内容`，展开到DynamicLibraries，应当有xx.dylib和xx.plist两个文件。用Filza定位到以上位置，点开xx.plist，点击Bundles后面的`i`，点击`+`号后填写要添加插件支持的应用唯一标志符即可。该标志符可通过Filza的应用程序管理功能得到。
+打开Cydia，找到需要生效的插件，点击显示软件包内容，展开到DynamicLibraries，应当有xx.dylib和xx.plist两个文件。用Filza定位到以上位置，点开xx.plist，点击Bundles后面的`i`，点击`+`号后填写要添加插件支持的应用唯一标志符即可。该标志符可通过Filza的应用程序管理功能得到。
 
 ### 应用砸壳
 
-砸壳可以跳过id验证。
+砸壳可以跳过ID验证。
 
-#### 通过frida-ios-dump（Mac）
+#### 通过frida-ios-dump
 
-该方法需要APP能够正常打开。
+该方法适用于Mac，需要APP能够正常打开。
 
-首先终端安装frida。安装完成后运行`frida-ps -U`，若出现`Waiting for USB device to appear...`，则成功。然后克隆以下仓库。
+##### 电脑端配置
+
+确保电脑已安装frida，Mac可通过Homebrew安装。安装完成后运行以下命令，若出现`Waiting for USB device to appear...`，则成功。
+
+```
+frida-ps -U
+```
+
+运行以下命令以克隆仓库。
 
 ```
 git clone https://github.com/AloneMonkey/frida-ios-dump.git
@@ -5152,7 +3608,13 @@ frida-ls-devices
 frida-ps -U
 ```
 
-然后需要在手机上安装frida-server，版本需要和mac端匹配。打开以下链接下载与电脑的frida对应的frida-server，并复制到手机的`/usr/bin`中，重命名为`frida-server`。在手机上用Filza找到刚刚复制进去的文件，调整其属性，将权限全部开放。然后打开手机上的终端，运行以下命令。
+##### 手机端配置
+
+完成电脑端配置后，需要在手机上安装frida-server，版本需要和电脑端匹配。
+
+打开以下链接下载与电脑的frida对应的frida-server，并用Filza复制到手机的/usr/bin中，重命名为frida-server。在手机上用Filza找到刚刚复制进去的文件，调整其属性，将权限全部开放。
+
+然后在手机打开NewTerm，运行以下命令完成安装。
 
 ```
 cd /usr/bin
@@ -5166,54 +3628,68 @@ frida-server也可用Cydia安装。打开Cydia并添加以下源安装即可，�
 https://build.frida.re
 ```
 
-手机和电脑需连接到同一个Wi-Fi。用爱思助手打开手机的SSH通道，然后打开clone的仓库，修改dump.py中端口为连接手机SSH的端口。打开终端，执行以下命令以与手机执行SSH连接。
+##### 砸壳操作
+
+将手机和电脑进行连接，并确保两者连接到同一个Wi-Fi。
+
+用爱思助手打开手机的SSH通道，然后打开克隆好的仓库，修改dump.py中端口为连接手机SSH的端口。打开终端，执行以下命令以与手机进行SSH连接。
 
 ```
 ssh root@127.0.0.1 -p1025
 ```
 
-然后再新建一个终端，运行以下命令。
+再新建一个终端，执行以下命令以列出手机所有安装的应用。
 
 ```
 cd frida-ios-dump
 python3 dump.py -l
 ```
 
-此时将列出手机所有安装的应用。输入以下命令以进行砸壳。若提示`unable to access process with pid 1 from the current user account`，则需先在手机上打开APP。砸壳完成的APP将放到电脑的终端当前路径。
+输入以下命令以进行砸壳。若提示`unable to access process with pid 1 from the current user account`，则需先在手机上打开APP。砸壳完成的APP将放到电脑的终端当前路径。
 
 ```
-python3 dump.py APP名称/BundleID
+python3 dump.py [APP名称]（或BundleID）
 ```
 
-#### 通过插件（iOS）
+#### 通过CrackerXI+
 
-该方法需要APP能够正常打开。
+该方法适用于iOS，需要APP能够正常打开。
 
-在越狱的iOS上安装CrackerXI+插件，源地址如下。
+安装CrackerXI+插件，源地址如下。
 
 ```
 https://cydia.iphonecake.com/
 ```
 
-打开插件，在设置中打开`CrackerXI Hook`、`Remove UISupportedDevices`、`Set Minimum iOS version 10.0`和`Remove Watch App`。在插件首页点击要砸壳的APP即可，砸壳后的APP放在手机的`/var/mobile/Documents/CrackerXI/`中。
+打开插件，在设置中打开CrackerXI Hook、Remove UISupportedDevices、Set Minimum iOS version 10.0和Remove Watch App。在插件首页点击要砸壳的APP即可，砸壳后的APP放在手机的/var/mobile/Documents/CrackerXI/中。
 
 ### 游戏修改
 
-#### 修改前的准备
+#### 必要插件
 
-需IGG，全称为iGameGuardian，用于修改游戏。安装用嘻哈源即可，官方源如下。
+一般需要IGG和Filza。
+
+IGG全称为iGameGuardian，用于修改游戏。安装用嘻哈源即可，官方源如下。
 
 ```
 https://aquawu.github.io/igg/
 ```
 
-进入插件配置，打开`使用储存空间`，下限为0x00000000，上限0x150000000，打开移除未匹配项，打开有号数。
+进入插件配置，打开使用储存空间，下限设为0x00000000，上限设为0x150000000，并打开移除未匹配项，打开有号数，完成配置。
 
 #### 王者荣耀
 
-##### 修改快捷信息和语音库
+##### 修改快捷信息/语音库
 
-在语音库中清除任意数量的信息（比如4个），然后用`小心草丛`填入，不要点确定。切到IGG，选择应用`smoba`，I32搜索1。切回王者荣耀，删除4个`小心草丛`，选择4个`敌人消失`填入，不要点确定，再次切到IGG，I32搜索2。切回王者荣耀，删除4个`敌人消失`，选择4个`回防高地`填入，不要点确定，再次切到IGG，I32搜索3。切回王者荣耀，删除4个`回防高地`，选择4个`请求支援`填入，不要点确定，再次切到IGG，I32搜索4。切回王者荣耀，删除4个`请求支援`，分别选择`小心草丛`、`敌人消失`、`回防高地`、`请求支援`，不要点确定，再次切到IGG，上次得到的4-5个结果分别变成了1、2、3、4、5，把这几个数字换成自己需要的，点确定即可。
+在语音库中清除任意数量的信息（比如4个），然后用`小心草丛`填入，不要点确定。切到IGG，选择smoba，I32搜索1。
+
+切回王者荣耀，删除4个`小心草丛`，选择4个`敌人消失`填入，不要点确定，再次切到IGG，I32搜索2。
+
+切回王者荣耀，删除4个`敌人消失`，选择4个`回防高地`填入，不要点确定，再次切到IGG，I32搜索3。
+
+切回王者荣耀，删除4个`回防高地`，选择4个`请求支援`填入，不要点确定，再次切到IGG，I32搜索4。
+
+切回王者荣耀，删除4个`请求支援`，分别选择`小心草丛`、`敌人消失`、`回防高地`、`请求支援`，不要点确定。再次切到IGG，上次得到的4-5个结果分别变成了1、2、3、4、5，把这几个数字换成所需要的消息，点确定即可。
 
 详细的快捷消息代码如下。
 
@@ -5306,11 +3782,21 @@ https://aquawu.github.io/igg/
 
 老账号使用改名卡，在输入框不要输入东西。新账号则在创建昵称界面不要输入文字。
 
-打开IGG，设置临近范围为0x9，然后i32搜索12。打开联合，i32搜索86400，这个时候只有一个结果。把12改成64，然后清除。再次打开设置，设置临近范围为0x21，然后i32搜索42。打开联合，i32搜索12，把12改成88。此时回到游戏界面修改即可，最长21个汉字或61个字母。
+打开IGG并选择smoba，设置临近范围为0x9，然后i32搜索12。打开联合，i32搜索86400，这时只有一个结果。
 
-##### 设置想玩英雄
+把12改成64，然后清除。再次打开设置，设置临近范围为0x21，然后i32搜索42。打开联合，i32搜索12，把12改成88。
 
-在排位赛页面清除所有自定义英雄，选择第一个英雄（如赵云）。打开IGG，I32搜索107（赵云）。然后去掉赵云，再次选择一个英雄（如小乔），打开IGG，I32搜索106（小乔），此时结果只剩下一个。点击内存，再点击右上角移动，此时会跳转到刚才剩下的那个结果，并且底下的那两个数值是0。返回王者荣耀，随便选择3个英雄，再打开IGG，发现此时三个都变了，修改成自己喜欢的英雄的代码。返回王者荣耀，点击确定，出现三个一样的头像即可。
+此时回到游戏界面修改即可，最长21个汉字或61个字母。
+
+##### 设置三个相同的想玩英雄
+
+在排位赛页面清除所有自定义英雄，选择第一个英雄（如赵云）。打开IGG并选择smoba，然后I32搜索107（赵云）。
+
+去掉赵云，再次选择一个英雄（如小乔）。打开IGG，I32搜索106（小乔），此时结果只剩下一个。
+
+点击内存，再点击右上角移动，此时会跳转到刚才的结果，且底部的两个数值为0。返回王者荣耀，随便选择三个英雄，再打开IGG，此时三个数字均发生变化。
+
+修改该三个数字为所需要的英雄代码。返回王者荣耀，点击确定，出现三个一样的头像即可。
 
 头像代码如下。
 
@@ -5562,1320 +4048,4734 @@ Online-基址FD38  Beta-基址FD68
 
 ##### 体验隐藏角色
 
-打开王者荣耀，进入单机模式，选择任意难度进入房间。任意选择英雄，此处以廉颇（105）为例。切到IGG，选择smoba，I32搜索105。回到王者荣耀，选择小乔（106），切到IGG，I32搜索106。点右上角开关，再点左上角全改，此处测试将数值改成武则天（136）。回到王者荣耀，点击皮肤，变成武则天，开局。退出本局游戏，再开一次房间，任意选个英雄，切到IGG，点全改，改为艾琳（155）或年兽（773）等其他特殊隐藏角色、NPC。回到王者荣耀，开局即可。
+打开王者荣耀，进入单机模式，选择任意难度进入房间。任意选择英雄，此处以廉颇（105）为例。切到IGG，选择smoba，I32搜索105。
+
+回到王者荣耀，选择小乔（106），切到IGG，I32搜索106。点右上角开关，再点左上角全改，此处测试将数值改成武则天（136）。回到王者荣耀，点击皮肤，变成武则天，开局。
+
+退出本局游戏，再开一次房间，任意选个英雄，切到IGG，点全改，改为艾琳（155）或年兽（773）等其他特殊隐藏角色/NPC。回到王者荣耀，开局即可。
 
 若读条中英雄图像是白色，并且游戏崩溃，则划掉后台，重新操作。如再次操作依然崩溃，说明该英雄资源不存在，不支持修改。
 
-##### 修改定位享受特权
+##### 享受定位特权
 
 下载王者人生APP并打开，可查找到能享受特权的店铺。以KFC为例，记住其位置。下载Wifi万能钥匙，查找该特权店对应的Wi-Fi名称，此处为KFC FREE WIFI。
 
-安装Fake GPS Pro插件，进入Wifi信息修改，设置成KFC FREE WIFI，MAC地址可以任意。安装Anywhere插件，寻找到特权店铺的位置，扎标，然后点击上面跳出的地址推荐，再选择应用到`王者荣耀`和`王者人生`。进入王者荣耀，若出现王者特权提示，则成功。否则需要在Anywhere中微调位置直至出现弹窗为止。
+安装Fake GPS Pro插件，进入Wifi信息修改，设置成KFC FREE WIFI，MAC地址可以任意。安装Anywhere插件，寻找到特权店铺的位置，扎标，然后点击上面跳出的地址推荐，再选择应用到王者荣耀和王者人生。进入王者荣耀，若出现王者特权提示，则成功。否则需要在Anywhere中微调位置直至出现弹窗为止。
 
-或者可以通过修改经纬度的方式实现修改定位。打开flex3，添加王者荣耀，搜privilegeManager，进入后再搜setuserlatitude longitude。勾选后返回，输入特权店的经纬度即可。修改Wi-Fi和MAC地址则同上。
+或者可以通过修改经纬度的方式实现修改定位。打开flex3，添加王者荣耀，搜索privilegeManager，进入后再搜setuserlatitude longitude。勾选后返回，输入特权店的经纬度即可。修改Wi-Fi和MAC地址则同上。
 
-##### 修改定位修改荣耀战区
+##### 修改荣耀战区
 
-修改方法同上，注意每周一才可修改战区。
+修改定位方法同上，修改定位完成后进入游戏即可修改战区。注意每周一才可修改。
 
 ##### 修改技能效果
 
-下列步骤必须在游戏中进行修改，且必须落地后再购买装备点击技能的时候进行修改。注意一局只能修改一次。
+下列步骤必须在游戏中进行修改，且必须落地后在购买装备点击技能的时候进行修改。注意一局只能修改一次。
 
-打开王者荣耀后，到IGG，I32搜索`英雄代码+00`，如搜索墨子则为10800。打开联合开关，搜索100，关闭联合开关，搜索`英雄代码+00`，全部改0即可。
+打开王者荣耀后，IGG进入smoba，I32搜索`英雄代码+00`，如搜索墨子则为10800。打开联合开关，搜索100，关闭联合开关，搜索`英雄代码+00`，全部改0即可。
 
 常见代码及对应技能如下。
 
-| 代码 | 英雄名称 | 技能效果               |
-| ---- | -------- | ---------------------- |
-| 108  | 墨子     | 无限击退（被动）       |
-| 112  | 鲁班     | 无限biubiubiu（被动）  |
-| 114  | 刘禅     | 无限锤（一技能）       |
-| 129  | 典韦     | 无限乱舞（一技能）     |
-| 133  | 狄仁杰   | 无限卡牌（强化被动）   |
-| 134  | 达摩     | 无限回血（强化被动）   |
-| 146  | 露娜     | 无限标记（强化被动）   |
-| 149  | 刘邦     | 无限剑气               |
-| 150  | 韩信     | 无限挑飞               |
-| 152  | 王昭君   | 无限下雨               |
-| 162  | 娜可露露 | 强化普攻               |
-| 163  | 橘右京   | 无限拔刀斩（被动）     |
-| 166  | 亚瑟     | 无限沉默（被动）       |
-| 167  | 孙悟空   | 无限棍子（被动）       |
-| 170  | 刘备     | 无限两次弹射           |
-| 194  | 苏烈     | 无限击飞               |
-| 198  | 梦琪     | 无限三爪击             |
-| 305  | 廉颇     | 强化普攻               |
-| 503  | 狂铁     | 无限击飞               |
-| 506  | 云中君   | 飞行状态下无限撕裂状态 |
-| 510  | 孙策     | 无限回血（被动）       |
+| 代码 | 英雄名称 |        技能效果        |
+|------|----------|------------------------|
+|  108 | 墨子     | 无限击退（被动）       |
+|  112 | 鲁班     | 无限biubiubiu（被动）  |
+|  114 | 刘禅     | 无限锤（一技能）       |
+|  129 | 典韦     | 无限乱舞（一技能）     |
+|  133 | 狄仁杰   | 无限卡牌（强化被动）   |
+|  134 | 达摩     | 无限回血（强化被动）   |
+|  146 | 露娜     | 无限标记（强化被动）   |
+|  149 | 刘邦     | 无限剑气               |
+|  150 | 韩信     | 无限挑飞               |
+|  152 | 王昭君   | 无限下雨               |
+|  162 | 娜可露露 | 强化普攻               |
+|  163 | 橘右京   | 无限拔刀斩（被动）     |
+|  166 | 亚瑟     | 无限沉默（被动）       |
+|  167 | 孙悟空   | 无限棍子（被动）       |
+|  170 | 刘备     | 无限两次弹射           |
+|  194 | 苏烈     | 无限击飞               |
+|  198 | 梦琪     | 无限三爪击             |
+|  305 | 廉颇     | 强化普攻               |
+|  503 | 狂铁     | 无限击飞               |
+|  506 | 云中君   | 飞行状态下无限撕裂状态 |
+|  510 | 孙策     | 无限回血（被动）       |
 
-#### 激门峡谷（LOL）
+#### 激门峡谷
 
-打开Filza，找到APP管理器，点击LOL右侧的`i`。点击`主程序`，进入wildrift.app目录，找到主程序wildrift，点击右侧的`i`。点击`打开方式`，选择`十六进制编辑器`，返回后点击主程序wildrift，选择左侧地址码并输入`020607F8`，将`08 41 40 39`修改为`08 00 80 D2`，保存后即可。
+以下方法不适用于iOS13以下系统。
 
-完成修改后需要重新下载以避免闪退。
+打开Filza，找到APP管理器，点击LOL右侧的`i`。点击主程序，进入wildrift.app目录，找到主程序wildrift，点击右侧的`i`。点击打开方式-十六进制编辑器，返回后点击主程序wildrift。
+
+按照以下内容完成修改后保存，然后重新下载游戏以避免闪退。
+
+##### 透视
+
+选择左侧地址码并输入`01FD1FD0`，将`08 41 40 39`修改为`08 00 80 D2`。
+
+##### 除雾
+
+选择左侧地址码并输入`01FCF238`，将`49 71 5F B8`修改为`C0 03 5F D6`。
 
 #### 王牌战士
 
+必须在游戏中进行修改，必须加载完之后修改，一局只能修改一次。
+
+##### 游击型英雄无后
+
+F32搜25，全部改0即可。
+
+##### 赵海龙独立无后
+
+F32搜25，联合F32搜35，全部改0即可。
+
+##### 赵海龙隐身
+
+F32搜0.0025，全部改99即可。
+
+##### 自瞄
+
+游戏中需要关闭辅助瞄准。
+
+i64搜4816377120，联合i64搜3212836864，修改为4811533255104790528即可。
+
+
+## 应用商店
+
+应用商店可在Cydia/Sileo通过插件的方式安装。
+
+### Zebra
+
+作者源如下。
+
 ```
-https://mp.weixin.qq.com/s/0Je9UhWjVTuK-WIDcP886A
+https://getzbra.com/repo/
+https://getzbra.com/beta/
 ```
 
-### 常见问题
+### Installer
 
-#### Cydia出现红色Depend依赖
+作者源如下。
+
+```
+https://apptapp.me/repo/
+```
+
+### AltStore
+
+添加以下源并按顺序安装AltDaemon、AppSync Unified、appinst (App Installer)、AltStore (ALPHA)即可。
+
+```
+https://pwnders.github.io/repo/
+https://cydia.akemi.ai/
+```
+
+## 常见问题
+
+### Cydia无法联网
+
+可用爱思助手安装1.2.3版本的乐网，暂时让Cydia联网。然后安装`连个锤子-越狱联网一键修复`插件，官方源如下。打开插件，点击修复网络，等待修复完成后注销即可。
+
+```
+http://apt.tinyapps.cn/
+```
+
+### Cydia提示证书无效
+
+修改系统时间到当前时间即可。
+
+### Cydia出现红色Depend依赖
 
 缺失依赖的越狱源失效，翻墙后重新刷新源即可。
 
-#### Chimera1n玩游戏闪退
+### Sileo提示「unable to fetch some archives」
+
+若在手机端已安装NewTerm插件，则打开NewTerm并执行以下命令即可。若未安装，则先通过SSH使电脑连接到手机，然后在电脑端执行以下命令。
+
+```
+apt-get update --fix-missing
+killall SpringBoard
+```
+
+### 无法正常内购
+
+此问题是itunesstored进程无法正常启动所导致。若安装了内购破解插件，如LocalIAPStore，先尝试关闭或卸载。
+
+若无效，则可使用DaemonDisabler开启itunesstored进程，插件源如下。安装后在插件设置中打开com.apple.itunesstored.plist，然后软重启。
+
+```
+https://level3tjg.xyz/repo/
+```
+
+若仍无效，可尝试使用Choicy禁止注入itunesstored。安装Choicy插件并进入Choicy设置，选择进程配置-守护进程，拉到最底部，点击显示所有守护进程，找到itunesstored后点击进入，打开禁用插件注入开关。注销并测试是否可以正常内购。
+
+若依旧无法正常内购，可尝试重启或在安全模式下进行内购。
+
+### Chimera1n玩游戏闪退
 
 删除OpenSSH即可。
 
-#### 电脑连接SSH时提示「WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!」
+### 电脑连接SSH时提示「WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!」
 
-打开用户目录下的`.ssh/known_hosts`文件，将有手机IP地址的记录删掉即可。
+打开用户目录下的.ssh/known_hosts文件，将有手机IP地址的记录删掉即可。
 
-## 越狱插件
+# 网络调试工具
 
-### 插件下载
+## 基本概念
 
-#### 越狱插件搜索
+### 节点
 
+通常代表一个运行着某个协议程序（SS、SSR、V2ray、Trojan等）的代理服务器，通过代理服务器可以实现流量的中转。
+
+### 策略组
+
+策略组可以包含节点或其他策略组，具有多种不同的策略类型，服务于规则。策略组根据不同策略，分发规则传递过来的请求。
+
+### 规则
+
+规则决定了当一个请求进来时，如何通过匹配类型进行匹配，以及如何选用对应的策略。规则格式如下。
+
+```
+[匹配类型],[匹配关键字],[策略名称]
+// 如DOMAIN-SUFFIX,twimg.com,PROXY
+```
+
+### 重写
+
+即URL Rewrite。在接收到HTTP请求时，工具会使用请求的URL去寻找是否存在匹配的重写规则，若满足规则，则会替换或修改HTTP请求中的URL，或替换请求响应体。重写格式如下。
+
+```
+[正则表达式],[替换内容],[重写类型]
+// 如https?://(www.)?g.cn https://www.google.com 302
+// 表示匹配到g.cn或www.g.cn的URL会302重定向到https://www.google.com
+```
+
+### MITM解密
+
+Man-in-the-MiddleAttack的缩写，即中间人攻击。中间人攻击方式可以解密https的请求。工具会根据配置的hostname和信任的CA证书解密相应的https请求和响应，解密后可以配合Rule和URL Rewrite进行分流。
+
+### Cron语句
+
+格式如下。
+
+```
+[M（分钟，0-59）] [H（小时，0-23）] [D（天，1-31）] [m（月，1-12）] [d（星期，0-6，0为星期天)]
+```
+
+特殊符号解释如下。
+
+| 符号 | 说明                   |
+| ---- | ---------------------- |
+| *    | 所有取值范围的数字     |
+| /    | 每（*/5代表每5个单位） |
+| -    | 从某个数字到某个数字   |
+| ,    | 分开几个离散的数字     |
+
+举例如下。
+
+| 语句             | 说明                                            |
+| ---------------- | ----------------------------------------------- |
+| 0 */2 * * *      | 每两个小时                                      |
+| 0 23-7/2,8 * * * | 23点到7点之间每两个小时，8点        |
+| 0 11 4 * 1-3     | 每月的4号和每星期周一到周三的11点 |
+| 0 4 1 1 *        | 1月1日早上4点                                   |
+| * * * * *        | 每分钟                                          |
+
+可通过以下网站编辑cron语句。
+
+```
+https://crontab.guru/
+```
+
+### 配置文件
+
+网络调试工具用于配置自身相关设置的文件。一般包括节点、策略组、分流、重写、脚本、MITM解密等。一般而言，所有编辑都将对配置文件生效，分享配置文件即可分享本机的所有配置。
+
+### 正则表达式
+
+正则表达式是大小写敏感的。
+
+| 语法                    | 说明                                                         |
+| ----------------------- | ------------------------------------------------------------ |
+| .                       | 匹配除换行符以外的任意字符                                   |
+| \|                       | 或运算符，匹配符号前或后的字符                                                   |
+| \                       | 转义元字符（用于匹配保留字符，如[ ] ( ) { } . * + ? ^ $ \ \|）                                        |
+| `\<`                    | 词首定位（`\<love`）                                         |
+| `\>`                    | 词首定位（`love\>`）                                         |
+| \w                      | 匹配字母或数字或下划线或汉字                                 |
+| \W                      | 匹配任意不是字母、数字、下划线、汉字的字符                   |
+| \s                      | 匹配任意的空白符                                             |
+| \S                      | 匹配任意不是空白符的字符                                     |
+| \d                      | 匹配数字                                                     |
+| \D                      | 匹配任意非数字的字符                                         |
+| \b                      | 匹配单词的开始或结束                                         |
+| \B                      | 匹配不是单词开头或结束的位置                                 |
+| \f                  |   匹配一个换页符                     |
+| \n                  |   匹配一个换行符                     |
+| \r                  |   匹配一个回车符                      |
+| \t                  |   匹配一个制表符                     |
+| \v                  |   匹配一个垂直制表符                     |
+| \p                  |   匹配CR/LF（等同于\r\n），用来匹配DOS行终止符    |
+| `\(..\)`                | 匹配稍后将要使用的字符的标签（`\(love\)able\1er`）           |
+| ^                       | 匹配字符串的开始                                             |
+| $                       | 匹配字符串的结束                                             |
+| *                       | 重复零次或更多次                                             |
+| +                       | 重复一次或更多次                                             |
+| ?                       | 重复零次或一次                                               |
+| a\|b                    | 匹配a或b                                                     |
+| *?                      | 重复任意次，但尽可能少重复                                   |
+| +?                      | 重复1次或更多次，但尽可能少重复                              |
+| ??                      | 重复0次或1次，但尽可能少重复                                 |
+| {n}                     | 重复n次（`x\{m\}`表示字符x重复出现m次）                      |
+| {n,}                    | 重复n次或更多次（`x\{m,\}`表示字符x重复出现m次以上）         |
+| {n,}?                   | 重复n次以上，但尽可能少重复                                  |
+| {n,m}                   | 重复n到m次（`x\{m,n\}`表示字符x重复出现m到n次）              |
+| {n,m}?                  | 重复n到m次，但尽可能少重复                                   |
+| (exp)                   | 匹配exp，并捕获文本到自动命名的组里（`love(able|rs)`）       |
+| (..)(..)\1\2            | 标签匹配字符（`(love)able\1er`）                             |
+| (?<name>exp)            | 匹配exp，并捕获文本到名称为name的组里，也可以写成(?'name'exp) |
+| (?:exp)                 | 匹配exp，不捕获匹配的文本，也不给此分组分配组号              |
+| (?=exp)                 | 匹配exp前面的位置（正先行断言）                                            |
+| (?<=exp)                | 匹配exp后面的位置（正后发断言）                                            |
+| (?!exp)                 | 匹配后面跟的不是exp的位置（负先行断言）                                    |
+| (?<!exp)                | 匹配前面不是exp的位置（负后发断言）                                        |
+|  `[ ]`                  |                              匹配方括号内的任意字符（指定字符集）             |
+| [.]                    | 匹配英文句号                                     |
+| [^x]                    | 匹配除了x以外的任意字符                                      |
+| [^aeiou]                | 匹配除了aeiou这几个字母以外的任意字符                        |
+| [a-z]                   | 匹配a-z范围内的一个字符                                      |
+| [:alnum:]               | 字母与数字字符（`[[:alnum:]]+`）                             |
+| [:alpha:]               | 字母字符，包括大小写（`[[:alpha:]]{4}`）                     |
+| [:blank:]               | 空格与制表符（`[[:blank:]]*`）                               |
+| [:digit:]               | 数字字母（`[[:digit:]]?`）                                   |
+| [:lower:]               | 小写字母（`[[:lower:]]{5,}`）                                |
+| [:upper:]               | 大写字母（`[[:upper:]]+`）                                   |
+| [:punct:]               | 标点符号（`[[:punct:]]`）                                    |
+| [:space:]               | 包括换行符，回车等在内的所有空白（`[[:space:]]+`）           |
+| IgnoreCase              | 匹配时不区分大小写                                           |
+| Multiline               | 多行模式，更改^和`$`的含义，使它们分别在任意一行的行首和行尾匹配，而不仅仅在整个字符串的开头和结尾匹配。(在此模式下,$的精确含意是匹配\n之前的位置以及字符串结束前的位置) |
+| Singleline              | 单行模式，更改.的含义，使它与每一个字符匹配（包括换行符\n）  |
+| IgnorePatternWhitespace | 忽略空白，忽略表达式中的非转义空白并启用由#标记的注释        |
+| ExplicitCapture         | 显式捕获，仅捕获已被显式命名的组                             |
+|   i                 |     忽略大小写                   |
+|   g                 |     全局搜索                 |
+|   m                 |   多行修饰符：锚点元字符^、$工作范围在每行的起始    |
+
+示例如下。
+
+|     示例    |                                  说明                                  |
+|-------------|------------------------------------------------------------------------|
+| the         | 匹配the                                                                |
+| .ar         | 匹配一个任意字符后面跟着是a和r的字符串                                 |
+| [Tt]he      | 匹配the和The                                                           |
+| ar[.]       | 匹配ar.                                                                |
+| [^c]ar      | 匹配一个后面跟着ar的除了c的任意字符                                    |
+| [a-z]*      | 匹配一个行中所有以小写字母开头的字符串                                 |
+| \s*cat\s*   | 匹配0或更多个空格开头和0或更多个空格结尾的cat字符串                    |
+| c.+t        | 匹配以首字母c开头以t结尾，中间跟着至少一个字符的字符串                 |
+| [T]?he      | 匹配字符串he和The                                                      |
+| [0-9]{2,3}  | 匹配最少2位最多3位0~9的数字                                            |
+| [0-9]{2,}   | 匹配至少两位0~9的数字                                                  |
+| [0-9]{3}    | 匹配3位数字                                                            |
+| (at\.)$     | 匹配以at.结尾的字符串                                                  |
+| /The/gi     | 在全局搜索the和The（i表示忽略大小写，g表示全局搜索）                   |
+| /.(at)/g    | 搜索任意字符（除了换行）+at，并返回全部结果                            |
+| /at(.)?$/gm | 表示小写字符a后跟小写字符t，末尾可选除换行符外任意字符，匹配每行的结尾 |
+| /(.*at)/    | 贪婪匹配模式                                                           |
+| /(.*?at)/   | 惰性匹配模式                                                           |
+| (c\|g\|p)ar  | 匹配car或gar或par                      |
+| (T\|t)he\|car |  匹配(T\|t)he或car                    |
+|  \.?   |    选择性匹配.                       |
+|  ^(T\|t)he    | 匹配以The或the开头的字符串              |
+|  (T\|t)he(?=\sfat)   |  匹配The和the，且其后紧跟着（空格）fat   |
+|  (T\|t)he(?!\sfat)   |  匹配The和the，且其后不跟着（空格）fat             |
+|  (?<=(T\|t)he\s)(fat\|mat)   |     匹配fat和mat，且其前跟着The或the    |
+|  (?<!(T\|t)he\s)(cat)   |  匹配cat，且其前不跟着The或the             |
+
+### 响应码
+
+| 响应码 | 说明                                                         |
+| ------ | ------------------------------------------------------------ |
+| 200    | 请求被正常处理                                               |
+| 204    | 请求被受理，但没有资源可以返回                               |
+| 206    | 客户端只是请求资源的⼀部分，服务器只对请求的部分资源执⾏GET⽅法 |
+| 301    | 永久性重定向                                                 |
+| 302    | 临时重定向                                                   |
+| 303    | 与302状态码有相似功能，只是它希望客户端在请求⼀个URI的时候，能通过GET⽅法重定向到另⼀个URI上 |
+| 304    | 发送附带条件的请求时，条件不满足时返回，与重定向⽆关         |
+| 307    | 临时重定向，与302类似，只是强制要求使⽤POST⽅法              |
+| 400    | 请求报⽂语法有误，服务器⽆法识别                             |
+| 401    | 请求需要认证                                                 |
+| 403    | 请求的对应资源禁⽌被访问                                     |
+| 404    | 服务器无法找到对应资源                                       |
+| 500    | 服务器内部错误                                               |
+| 503    | 服务器正忙                                                   |
+
+## Loon
+
+### 懒人配置
+
+#### 通过链接
+
+打开软件，选择配置-编辑-从URL下载，导入以下配置。注意需要翻墙环境。
+
+```
+https://raw.githubusercontent.com/nzw9314/Loon/master/Loon.conf
+```
+
+在MITM生成安装新的CA证书，进入设备设置-通用-描述文件安装证书，在设置-通用-关于本机-证书信任设置中信任证书，然后即可开启连接开关。
+
+#### ~~通过捷径~~
+
+已失效。
+
+<details>
+<summary></summary>
+
+```
+https://www.icloud.com/shortcuts/5ba2ec8d144a4be188b9037498bbdd26
+```
+</details>
+
+### 节点
+
+#### 手动配置
+
+Loon支持Shadowsocks、ShadowsocksR和Vmess。可通过手动填写、扫描二维码或添加订阅的方式导入节点，也可以通过修改配置文件的方式导入，格式如下。
+
+```
+[Proxy]
+# SS
+# 节点名称=协议,服务器地址,服务器端口,加密协议,密码
+1 = Shadowsocks, 1.2.3.4, 443, aes-128-gcm, "password"
+2 = Shadowsocks, 1.2.3.4, 443, aes-128-gcm, "password"
+
+# SSR
+# 节点名称=协议,地址,端口,加密方式,密码,协议类型,{协议参数},混淆类型,{混淆参数}
+3 = ShadowsocksR, 1.2.3.4, 443, aes-256-cfb,"password",auth_aes128_md5,{},tls1.2_ticket_auth,{}
+4 = ShadowsocksR, 1.2.3.4, 10076, aes-128-cfb,"password",auth_aes128_md5,{},tls1.2_ticket_auth,{}
+
+# vmess
+# 节点名称=协议,服务器地址,端口,加密方式,UUID,传输方式:(tcp/ws),path:websocket握手header中的path,host:websocket握手header中的path,over-tls:是否tls,tls-name:远端服务器域名,skip-cert-verify:是否跳过证书校验（默认否）
+5 = vmess,1.2.3.4,10086,aes-128-gcm,"uuid",transport:ws,path:/,host:icloud.com,over-tls:true,tls-name:youtTlsServerName.com,skip-cert-verify:false
+
+# http
+# 不支持username/password
+ProxyHTTP = http, 1.2.3.4, 8888
+
+[Remote Proxy]
+# 订阅节点
+# 别名=订阅URL
+Subs = https://example/server-complete.txt
+```
+
+#### 节点筛选
+
+筛选类型如下。
+
+|     类型    |    说明    |
+|-------------|------------|
+| NodeSelect  | 节点选择   |
+| NameKeyword | 关键词筛选 |
+| NameRegex   | 正则筛选   |
+
+对于正则筛选，一般可采用以下正则表达式。
+
+|         类型        |    说明    |
+|---------------------|------------|
+| `(?=.*A)^(?=.*B)^.*$` | 既有A又有B |
+| (A)\|(B)            | 有A或B     |
+| `^((?!A).)*$ `        | 不含A      |
+| `(?=.*A)^((?!B).)^*$` | 有A，没有B |
+
+### 策略组
+
+#### 基本分类
+
+策略组由策略类型和子策略构成。策略组会根据策略类型选出流量最终使用的节点。一个策略组可以包含任何单个节点、订阅节点、策略组、内置策略。
+
+Loon支持的策略组如下。
+
+| 策略组名称 | 策略组类型 | 策略组类型分组 |                                                        说明                                                       |                               示例                               |
+|------------|------------|----------------|-------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
+| 手动选择   | select     | 自定义         | 在节点列表手动选择一个节点或策略组                                                                                | PROXY = select,Auto,1,2,3,4,Subs                                 |
+| 延迟测试   | url-test   | 自定义         | 向提供的url发出http header请求，根据返回结果选择测速最快的节点，默认间隔 600s，测速超时时间5s，为避免资源浪费，建议节点数不要过多（不支持嵌套策略组，且只支持单个节点和远端节点，其他会被忽略） | Auto=url-test,1,2,3,4,Subs,url=http://bing.com/,interval=600     |
+| 可用测试   | fallback   | 自定义         | 向提供的url发出http header请求，根据返回结果选择第一个可用的节点                                                  | Fallback=fallback,1,2,3,4,Subs,url=http://bing.com/,interval=600 |
+| 网络类型   | ssid       | 自定义         | 根据网络类型或路由器名称选择节点或策略组                                                                          | SSID=ssid,default=PROXY,cellular=DIRECT,"SSID名称"=PROXY         |
+| 直连       | DIRECT     | 内置           | 不进行代理                                                                                                        | 所有流量不通过代理                                               |
+| 拒绝       | REJECT     | 内置           | 阻止请求进行                                                                                                      | 通常用作去广告                                                   |
+
+#### 手动配置
+
+可通过主界面的策略组添加，也可通过修改配置文件的方式添加。
+
+```
+[Proxy Group]
+# 基于用户UI选择
+PROXY = select,Auto,1,2,3,4,Subs
+
+# url-test
+Auto = url-test,1,2,3,4,Subs,url = http://bing.com/,interval = 600
+
+# fallback
+Fallback = fallback,1,2,3,4,Subs,url = http://bing.com/,interval = 600
+
+# 别名 = ssid,默认 = 策略组名,蜂窝 = 策略， ssid名称 = 策略组名
+SSID = ssid, default = PROXY, cellular = DIRECT, "DivineEngine" = PROXY
+
+# 广告模式
+Advertising = select,REJECT,DIRECT
+
+# 白名单模式PROXY，黑名单模式DIRECT
+Final = select,PROXY,DIRECT
+```
+
+### 规则分流
+
+#### 基本分类
+
+Loon支持的规则如下。
+
+|       匹配名称       |    匹配类型    |                               说明                              |
+|----------------------|----------------|-----------------------------------------------------------------|
+| 基于域名后缀         | DOMAIN-SUFFIX  |                                                                 |
+| 基于域名完整匹配     | DOMAIN         |                                                                 |
+| 基于域名关键字       | DOMAIN-KEYWORD |                                                                 |
+| 基于用户代理串       | USER-AGENT     | 根据 Http 的 user-agent 值来进行匹配，支持带有*，？的通配符匹配 |
+| 基于 URL 正则        | URL-REGEX      |                                                                 |
+| 基于请求 IP 范围     | IP-CIDR        | 通常用作局域网匹配                                              |
+| 基于 IP 定位国家编码 | GEOIP          | CN中国                                                          |
+| 兜底匹配             | FINAL          | 如果没有匹配的规则，默认使用的匹配                              |
+
+Loon支持的策略类型如下。
+
+| 策略类型 |                          说明                         |
+|----------|-------------------------------------------------------|
+| DIRECT   | 直连，即所有流量不通过代理                            |
+| Proxy    | 走特定的策略组，可为[Proxy Group]或[Proxy] 中的自定值 |
+| REJECT   | 拒绝，通常用作去广告                              |
+
+#### 远程配置
+
+通过配置-订阅规则即可。
+
+#### 手动配置
+
+通过配置-单个规则进行添加即可，也可在配置文件中手动添加。
+
+```
+[Rule]
+# 本地规则
+# 规则类型,域名(部分类型可省略),策略
+# 可选项:force-remote-dns(Default:false),no-resolve
+DOMAIN,google.com,PROXY
+# GeoIP为中国的走直连
+GEOIP,CN,DIRECT
+# 兜底策略使用Final策略组
+FINAL,Final
+
+[Remote Rule]
+# 远程规则
+# URL,策略
+# 以下地址将使用PROXY策略组
+https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Rule/ExampleRule.list,PROXY
+```
+
+#### 规则测试
+
+可通过此功能确认某个域名命中了哪个规则。
+
+### 重写
+
+#### 基本分类
+
+Loon支持的重写规则如下。
+
+| 重写名称     | 重写类型 | 说明                                       |
+| ------------ | -------- | ------------------------------------------ |
+| 替换host字段 | header   | 请求头中匹配的host字段将会被替换内容所替换 |
+| 拒绝请求     | reject   |                                            |
+| 返回302响应  | 302      |                                            |
+| 返回307响应  | 307      |                                            |
+
+### 脚本
+
+#### 手动配置
+
+Loon原生支持surge脚本。点击本地脚本-`+`即可写脚本。点击所有脚本-`+`，脚本类型选择cron，即可设置自动运行脚本。支持本地脚本或远程脚本。
+
+配置文件中与脚本相关的配置如下。
+
+```
+[Script]
+enable = true  
+
+# 类型 值（http-request/response为正则表达式，corn为cron表达式） 参数
+# http-request ^https?:\/\/(www.)?(example)\.com script-path=localscript.js
+# http-response ^https?:\/\/(www.)?(example)\.com script-path=https://example.com/loon.js timeout=10 requires-body = true
+# cron "0 8 * * *" script-path=cron.js
+```
+
+各参数含义如下。
+
+|      参数     |                               含义                              |
+|---------------|-----------------------------------------------------------------|
+| script-path   | 脚本路径，可以是本地脚本地址（暂不支持文件夹）或者远程的URL地址 |
+| requires-body | true表示允许修改request和response body的值，默认值为false       |
+| timeout       | 执行脚本的最长超时时间，单位为秒                                |
+
+#### 脚本编写
+
+##### http-request
+
+表示处理请求的脚本，通过该脚本可以修改http请求。该脚本必须使用`$done({参数})`传参结束，参数可以为空，或为修改后的headers/body。示例如下。
+
+```
+# 添加本地脚本，命名为hello-request.js
+# 脚本中可用变量为
+# $request.url
+# $request.headers
+# $request.body
+let headers = $request.headers;
+headers['X-Modified-By'] = 'Loon';
+
+$done({headers});
+```
+
+##### http-response
+
+与http-request基本相同，主要区别为http-response表示处理请求响应。示例如下。
+
+```
+# 脚本中可用变量为
+# $request.url
+# $request.headers
+# $request.body
+# $response.headers
+# $response.body
+let headers = $response.headers;
+headers['X-Modified-By'] = 'Loon';
+
+$done({headers});
+```
+
+##### cron
+
+表示定期执行脚本。Loon支持两种类型的cron表达式，如下。
+
+|      类型     |                                        格式                                       |          说明          |
+|---------------|-----------------------------------------------------------------------------------|------------------------|
+| 5位（精确到分） | `<Minute> <Hour> <Day_of_the_Month> <Month_of_the_Year> <Day_of_the_Week>`          | 分、时、日、月、周     |
+| 6位（精确到秒） | `<Seconds><Minute> <Hour> <Day_of_the_Month> <Month_of_the_Year> <Day_of_the_Week>` | 秒、分、时、日、月、周 |
+
+示例如下。
+
+```
+# 新建一个本地脚本命名为hello-cron.js，复制下方内容
+# 配置文件[Script]添加cron "* * * * *" script-path=hello-cron.js
+# 启动Loon，每隔一分钟可看到通知栏提醒
+
+$notification.post("这是主标题"，"这是副标题", "hello-cron!");
+
+console.log("【调试一下】hello-cron");
+```
+
+#### 公共API
+
+目前支持如下API。
+
+|                                  API                                   |             说明             |
+|------------------------------------------------------------------------|------------------------------|
+| `$httpClient.get(url/options<Object>, callback<Function>)`               |                              |
+| `$httpClient.post(url/options<Object>, callback<Function>)`              |                              |
+| `$notification.post('title<String>', 'subTitle<String>','body<String>')` | 通知栏提醒                   |
+| `console.log('String')`                                                  | 打印日志                     |
+| `$persistentStore.write('data<String>', 'key<String>')`                  | 数据持久化写入，只允许字符串 |
+| `$persistentStore.read('key<String>')`                                   | 获取存放的数据               |
+
+$httpClient.get传参为URL的示例如下。
+
+```
+$httpClient.get('https://example.com/index', function(result){ console.log(result);});
+```
+
+$httpClient.get传参为object的示例如下。
+
+```
+var params = {
+    url:"https://api.example.com/post",
+    header: {
+        Host:"api.example.com",
+        Content-Type: "application/json"
+    },
+    body:"string"
+}
+
+$httpClient.get(param, function(result){ console.log(result);});
+```
+
+### 优先级
+
+#### 配置文件
+
+最新版本默认从上往下。
+
+#### 规则
+
+本地规则高于远程规则。
+
+DOMAIN-SUFFIX、DOMAIN、DOMAIN-KEYWORD、USER-AGENT按照在配置文件中的位置，通过自上而下的顺序匹配，满足优先匹配。URL-REGEX、IP-CIDR、GEOIP在最后校验。
+
+#### 策略组
+
+界面上的排序对于策略组功能无影响。
+
+#### 重写
+
+本地重写高于远程重写。
+
+根据正则表达式在配置文件中的位置，通过自上而下的顺序匹配，满足优先匹配。
+
+### URL Schemes
+
+Loon支持的URL Schemes如下。
+
+| URL Schemes                                           | 作用                                s                         |
+| ----------------------------------------------------- | ------------------------------------------------------------ |
+| loon://switch                                         | 开启或关闭Loon                                               |
+| loon://editconfig                                     | 打开Loon配置文件                                             |
+| loon://requestLists                                   | 打开最近请求                                                 |
+| loon://dnsRequests                                    | 打开DNS                                                      |
+| loon://LogLists                                       | 打开日志                                                     |
+| loon://import?sub=url | 导入配置，url为urlencode之后的字符串（如loon://import?sub=https%3A%2F%2Floon.now.sh%2Flazy-config%2Fdefault） |
+
+## Quantumult
+
+### 基本操作
+
+#### 节点选择
+
+点击主页中下部的图标，可选择节点并进行延迟。在访问的网站没有被规则命中，而又需要以代理方式连接时，将选择此处被选中的节点。注意，延迟与网速并无直接关系。
+
+主页右下角显示当前节点的信息。若出现五角星，代表该节点为中转节点。
+
+### 懒人配置
+
+打开软件，选择设置-下载配置文件，导入以下配置。注意需要翻墙环境。
+
+```
+https://raw.githubusercontent.com/lhie1/Rules/master/Quantumult/Quantumult.conf
+```
+
+点击设置-HTTPS解密，打开开关并按照流程信任证书即可。
+
+### 规则分流
+
+#### 手动配置
+
+通过设置-订阅-`+`即可。保存后向左滑动条目并点击替换或增加以更新。
+
+对于分流类型，可采用以下链接。
+
+```
+https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/Pro.conf
+```
+
+对于链接阻止类型，可采用以下链接。
+
+```
+https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/Rejection.conf
+```
+
+### 策略组
+
+#### 基本分类
+
+策略组类型如下。
+
+|     类型     |                              说明                             |
+|--------------|---------------------------------------------------------------|
+| 静态策略     | 策略结果由用户确定                                            |
+| 延迟策略     | 选择策略组中延迟最低的节点进行连接                            |
+| 负载均衡策略 | 同一策略组的各服务器被轮流使用                                |
+| 环境策略     | 根据所处Wi-Fi的SSID或蜂窝网络环境，确定使用哪种策略组进行连接 |
+
+#### 使用方法
+
+以下例说明策略组的使用方法。
+
+假设有香港、新加坡、美国三个地区的节点组，其中每个地区的节点组可分为直连的当地主机节点组、上海-当地的IPLC节点组以及深圳-当地的IPLC节点组。根据需要，Youtube选用美国节点，HBO选用香港节点，Netflix任意选择，且选择节点组中最快的一个进行连接。此需要可以通过新建策略组来满足。
+
+选择设置-策略，点击+号。由于需要根据速度选择节点，因此类型选择延迟策略。以建立香港直连节点组为例，填写名称并选择所有香港的直连节点，保存。同理建立上海-香港IPLC节点组和深圳-香港IPLC节点组（第三类节点组）。完成后建立静态策略的策略组，选择刚才新建好的三个策略组，由此可得到一个包含三个节点组的大节点组（第二类节点组）。
+
+对于美国和新加坡也进行此操作，得到三个代表不同地区的大节点组。新建一个静态策略的策略组，选择这三个大节点组，从而得到一个综合所有节点组的超大节点组（第一类节点组）。示意如下。
+
+```
+└── 总策略组（静态策略）
+    ├── 香港（静态策略）
+    │   ├── 直连节点（延迟策略）
+    │   ├── 上海-香港IPLC节点（延迟策略）
+    │   └── 深圳-香港IPLC节点（延迟策略）
+    ├── 新加坡（静态策略）
+    │   ├── 直连节点（延迟策略）
+    │   ├── 上海-新加坡IPLC节点（延迟策略）
+    │   └── 深圳-新加坡IPLC节点（延迟策略）
+    └── 美国（静态策略）
+        ├── 直连节点（延迟策略）
+        ├── 上海-美国IPLC节点（延迟策略）
+        └── 深圳-美国IPLC节点（延迟策略）
+```
+
+在设置-订阅中左滑分流规则，选择替换。下滑找到Youtube专用节点，选择第二类的美国节点，找到HBO NOW&GO专用节点，选择第二类的香港节点，找到Netflix专用节点，选择第一类的节点，保存即可。
+
+### 其它
+
+#### 手机连接WiFi时停止分流
+
+编辑配置文件，在`[SUSPEND-SSID]`一项下输入Wi-Fi名称即可。
+
+## Shadowrocket
+
+### 基本操作
+
+#### 开启代理共享
+
+选择设置-代理-代理共享-启用共享。其它设备与该手机连接到同一Wi-Fi下后，在系统设置中进入Wi-Fi详情，开启Wi-Fi的HTTP代理，类型选择手动，地址和端口填写Shadowrocket中提供的值即可。
+
+#### 场景使用
+
+场景的使用可以使网络环境变化时（更改Wi-Fi或改成蜂窝数据）使用代理或直连模式。在主界面点击全局路由-设置-场景，新建一个场景，填写Wi-Fi的SSID并选择路由模式即可。
+
+### 懒人配置
+
+打开软件，选择配置-添加配置，导入以下配置。注意需要翻墙环境。
+
+```
+https://raw.githubusercontent.com/w37fhy/QuantumultX/master/shadowrocket_diy.conf
+```
+
+点击远程配置中导入的链接，选择使用配置，等待文件下载到本地。下载到本地后点击本地文件中对应的配置，选择编辑配置-HTTPS解密，打开并按照流程信任证书即可。
+
+### 节点
+
+与其它软件不同的是，Shadowrocket的配置文件中不包含节点信息，节点信息被独立为一个json文件。
+
+通过首页的+号即可添加配置，支持Shadowsocks、ShadowsocksR、Vmess等，也可添加订阅。配置好节点后，可通过数据-导出节点生成json文件。需要导入节点信息时，点击数据-导入节点，选择json文件即可。
+
+### 规则分流
+
+#### 手动配置
+
+进入配置-`+`即可配置。
+
+对于分流类型，可采用以下链接。
+
+```
+https://raw.githubusercontent.com/ConnersHua/Profiles/master/Shadow/Pro.conf
+```
+
+对于去广告类型，可采用以下链接。
+
+```
+https://raw.githubusercontent.com/h2y/Shadowrocket-ADBlock-Rules/master/sr_top500_whitelist_ad.conf
+```
+
+
+## Kitsunebi
+
+### 节点
+
+在服务器-`+`即可添加，支持Vmess、Shadowsocks和SOCKS。
+
+### 规则分流
+
+#### 手动配置
+
+点击高级-规则集，点击右边的i，修改URL为远程规则集并存储即可。
+
+可使用以下链接。
+
+```
+https://raw.githubusercontent.com/aileiys/Kitsunebi/master/Kitsunebi.conf
+```
+
+## Surge
+
+### 破解
+
+越狱后下载以下插件并安装即可。
+
+```
+https://wws.lanzous.com/tp/i0Ge2dh3oeb
+```
+
+### 懒人配置
+
+点击左上角下拉菜单，选择从URL下载配置，复制以下链接并确定即可。完成后若菜单栏出现策略组，则成功。
+
+```
+https://raw.githubusercontent.com/nzw9314/Surge/master/Surge_Basic.conf
+```
+
+### 节点
+
+#### 手动配置
+
+在主界面点击代理服务器，选择添加代理即可添加单个节点，选择新的策略组并勾选使用外部代理列表则可添加订阅。也可直接修改配置文件，在`[proxy]`模块下填写即可。
+
+完成后点击外部资源，下拉到底部并点击立即更新。
+
+对于懒人配置，应当在现有策略组中添加外部代理列表以添加订阅。注意每个策略组只能绑定一个订阅，对于多订阅则需要先整合为一个订阅链接，或通过一个策略组包含多个订阅策略组的形式。
+
+#### 切换
+
+点击策略组，进入相应策略组，选择需要切换的节点即可。
+
+### 策略组
+
+新建策略组时，在策略组类型中可选择模式，类型和含义与Loon基本一致。
+
+### 规则分流
+
+#### 匹配过程
+
+如果一个使用域名的请求遇到了一个IP类型规则（IP-CIDR/IP-CIDR6/GEOIP）且该规则不带有 no-resolve选项，那么将触发DNS查询。
+
+所以应将所有非IP类规则置于规则的顶部，将IP类规则置于尾部，避免并不需要进行本地DNS查询的请求产生额外的DNS查询。
+
+### 脚本
+
+可通过分析-脚本编辑器打开已有脚本进行编辑。
+
+### DNS
+
+在主页面点击DNS服务器即可编辑。
+
+如果经常使用的网络没有DNS劫持问题，配置为使用系统DNS配置并追加223.5.5.5和114.114.114.114作为冗余。如果经常使用的网络存在DNS劫持问题，配置为仅使用223.5.5.5和114.114.114.114。
+
+## Quantumult X
+
+### 正版判断
+
+Quantumult X引入了防共享机制，版本号右侧有绿色√的即为正版。若为问号，则代表被检测到有共享账号行为。
+
+若显示绿色问号，先删除TestFlight测试版，安装App Store最新版并运行，待版本信息显示为绿色√后再安装TestFlight测试版。
+
+若显示红色问号，则证明为盗版。
+
+若为非正版，Rewrite和MitM功能将被限制。
+
+### 基本操作
+
+#### 三菱按钮
+
+长按三菱按钮可切换模式，左侧出现的更新按钮可一键更新所有节点。
+
+#### 延迟测试
+
+延迟测试可在主页面展开订阅，下拉即可。
+
+也可以长按节点名，选择`网页响应测试`来测对应节点/订阅的延迟，或者点按策略组图标。
+
+#### 双排图标
+
+在主界面中，向右滑动策略组图标至最左端后，再次向右滑可变为小图标，再次向右滑可变为双排。
+
+#### 隐藏VPN图标
+
+点击三菱图标，选择其他设置，在VPN下开启`排除路由0.0.0.0/31`即可。
+
+#### 网络活动日志模块
+
+在主界面中即可看到。该模块可以看到iOS所有网络请求。绿色小锁代表MitM命中域名，链接颜色变红则说明rewrite即重写规则规则生效。
+
+可通过该模块完成抓包行为，也可检查节点、策略、分流、重写、MitM的配置是否起作用。
+
+#### 注释符号
+
+`;`、`//`、`#`在配置文件中为注释符号。
+
+#### 开启iCloud
+
+点击三菱图标，选择其他设置，开启iCloud即可。
+
+若未开启iCloud，则相关文件将存到我的iPhone/Quantumult X目录，其中脚本将被放于Scripts文件夹。若开启，则变更为iCloud Drive/Quantumult X目录。
+
+#### 白色环形标志
+
+若主界面的策略组模块上有白色环形标志，则代表可以长按以添加或删除其中的节点。
+
+#### 配置文件快速定位
+
+点击右上角的方向图标按钮，可快速定位到配置文件的不同部分。
+
+### 懒人配置
+
+#### 通过链接
+
+点击三菱图标，选择配置文件中的导入，复制以下链接，点击确定。
+
+找到MinM模块，点击生成证书，提示生成成功。点击安装证书并按照流程完成信任即可。
+
+```
+https://raw.githubusercontent.com/nzw9314/QuantumultX/master/QuantumultX.conf
+```
+
+#### 通过托管绑定
+
+托管绑定的配置会自动与远端保持同步，更新时本地配置会被远端配置覆盖。
+
+支持绑定远程、本地、iCloud配置文件。若绑定iCloud配置文件，则APP内所做的修改会立即生效到配置文件本身。
+
+点击三菱图标，选择右上角的关联图标，填入配置链接或文件名。若引用iCloud配置文件，则需要将文件先放到iCloud Drive/QuantumultX/Profiles中，假设为QX01.txt，然后直接填写QX01.txt即可。
+
+#### 通过URL Scheme
+
+按照以下JSON方式填写，其中server_remote填写节点订阅链接，filter_remote填写分流规则，rewrite_remote填写复写规则链接。
+
+```
+{
+    "server_remote": [
+        "https://raw.githubusercontent.com/crossutility/Quantumult-X/master/server.txt, tag=Sample-01",
+        "https://raw.githubusercontent.com/crossutility/Quantumult-X/master/server-complete.txt, tag=Sample-02"
+    ],
+    "filter_remote": [
+        "https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Advertising.list, tag=去广告, enabled=true",
+        "https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Apple.list, tag=Apple服务, enabled=true",
+        "https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/China.list, tag=国内网站, enabled=true",
+        "https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/DomesticMedia.list, tag=国内视频, enabled=true",
+        "http://cloudcompute.lbyczf.com/x-rule-set?url=https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Media/Netflix.list, tag=📺Netflix, force-policy=📺 Netflix, enabled=true",
+        "http://cloudcompute.lbyczf.com/x-rule-set?url=https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Media/YouTube.list, tag=🎬Youtube, force-policy=🎬 Youtube, enabled=true",
+        "https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/ForeignMedia.list, tag=国外视频, enabled=true",
+        "https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Global.list, tag=国外网站, enabled=true",
+        "https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Hijacking.list, tag=运营商劫持, enabled=true"
+    ],
+    "rewrite_remote": [
+        " http://cloudcompute.lbyczf.com/quanx-rewrite, tag=Lhie1复写"
+    ]
+}
+```
+
+打开以下网站，复制以上代码并点击Encode，复制结果。
+
+```
+https://www.urlencoder.org/
+```
+
+将复制的结果加到如下格式，并在Safari打开该链接即可。
+
+```
+quantumult-x:///update-configuration?remote-resource=[结果]
+```
+
+### 通用
+
+#### SSID挂起
+
+指定在特定Wi-Fi环境下Quantumult X停止工作，只有`[task]`模块生效。示例如下。
+
+```
+[general]
+ssid_suspended_list = [Wi-Fi的SSID]
+```
+
+#### 运行模式切换
+
+可根据网络自动切换分流/直连/全局代理等模式，示例如下。其表示4G网络与普通Wi-Fi下运行filter分流模式，asus-5g 则切换为全局直连模式，asus则为全局代理模式。该模式与手动切换直连/全局代理等效，rewrite和task模块始终生效。
+
+```
+[general]
+running_mode_trigger=filter, filter, asus-5g:all_direct, asus: all_proxy
+```
+
+#### 资源解析器
+
+资源解析器可将任何格式的服务器订阅、规则、复写等资源转换成Quantumult X所支持的格式。
+
+##### 添加
+
+在编辑文件中加入以下代码即可。
+
+若提示没有自定义解析器，则长按右下角图标后点击左侧刷新按钮，更新资源，后台退出APP，直到出现解析器说明。
+
+```
+[general]
+resource_parser_url=https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
+```
+
+##### 参数说明
+
+| 参数         | 说明                                                         | 示例                       |
+| ------------ | ------------------------------------------------------------ | -------------------------- |
+| in/out       | 保留/排除，多参数（逻辑或）用`+`连接，逻辑与用`.`连接        |                            |
+| inhn/outhn   | 主机名筛选                                                   |                            |
+| regex        | 利用正则表达式以筛选节点                                     |                            |
+| emoji=1/2/-1 | 添加或删除节点名中的emoji旗帜（国行设备用 emoji=2）          |                            |
+| udp=1, tfo=1 | 开启udp-relay及fast-open（默认关闭，此参数对源类型为QuanX/Surge的链接无效） |                            |
+| rename       | rename=旧名@新名，以及`前缀@`，`@后缀`， 用`+`连接           | rename=香港@HK+[SS]@+@[1X] |
+| delreg       | 利用正则表达式以删除节点名中的字段                           |                            |
+| replace      | 正则替换server中的内容，可用于重命名、更改加密方式等需求     |                            |
+| cert=0       | 跳过证书验证（vmess/trojan），即强制tls-verification=false   |                            |
+| tls13=1      | 开启tls13=true（vmess/trojan）                               |                            |
+| sort=1/-1/ x | 根据节点名正序/逆序/随机排列                                 |                            |
+| info=1       | 开启通知提示流量信息（前提是原订阅链接有返回该信息），默认关闭 |                            |
+| policy=xx    | 分流规则专用，用于直接指定策略组或为Surge格式的rule-set生成策略组（默认Shawn策略组） |                            |
+| ntf=1        | 打开资源解析器的提示通知（默认关闭），rewrite/filter类型则会强制在out参数时开启通知提示被删除（禁用）的内容，以防止规则误删除 |                            |
+
+##### 示例
+
+示例如下。
+
+```
+// 远程订阅
+// 保留参数in=tls+ss，过滤参数out=http+2
+https://raw.githubusercontent.com/crossutility/Quantumult-X/master/server-complete.txt#in=tls+ss&out=http+2
+
+// 分流规则
+https://Advertising.list#policy=Shawn&out=aweme
+```
+
+#### 查询节点信息
+
+可通过JS脚本实现在主界面查询节点信息，在点击相应的节点时出现节点相关内容。代码放到配置文件的`[general]`下即可。
+
+```
+[general]
+;geo_location_checker用于节点页面的信息展示
+geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IP_API.js
+;geo_location_checker=http://api.ipstack.com/check?access_key=1c24147fb534e1a71cb35ff84de2d153&language=zh&output=json, https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IPInfo.js
+;geo_location_checker=http://ifconfig.co/json,https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IPConfig.js
+;geo_location_checker=http://extreme-ip-lookup.com/json/,https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IPCheck.js
+```
+
+#### 设置关联图标
+
+设置profile_img_url参数可使关联成功后原关联图标出现图案。图片为108*108的png格式，PNG与png大小写敏感，地址可远程或本地。
+
+```
+[general]
+profile_img_url= https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/img/dragonball/1.PNG
+```
+
+#### 节点测试
+
+指定用于测试节点速度的网站。
+
+```
+[general]
+server_check_url=http://www.qualcomm.cn/generate_204
+```
+
+#### UDP端口白名单
+
+留空则默认为所有端口。不在白名单的端口将被丢弃。
+
+```
+[general]
+udp_whitelist=53, 123, 1900, 80-443
+```
+
+#### 其它
+
+```
+[general]
+;dns exclusion list中的域名将不使用fake-ip方式. 其它域名则全部采用fake-ip 及远程解析的模式
+;dns_exclusion_list=*.qq.com, qq.com
+
+;下列表中的内容将不经过QuantumultX的处理
+;excluded_routes=192.168.0.0/16, 172.16.0.0/12, 100.64.0.0/10, 10.0.0.0/8
+;icmp_auto_reply=true
+```
+
+### 节点
+
+#### 手动配置
+
+点击三菱图标，选择节点中的添加即可手动输入Shadowsocks节点。选择扫码或URI可导入Shadowsocks、ShadowsocksR或Quantumult X格式的Vmess、Trojan和Https节点。
+
+选择节点中的引用，即可添加订阅。可使用远程订阅链接，也可以使用本地/iCloud文件路径进行引用。
+
+也可通过修改配置文件的方式导入，格式如下。
+
+```
+[server_local]
+# []表示可选项
+# SS
+shadowsocks=example.com:80, method=chacha20, password=pwd, obfs=http, obfs-host=bing.com, [obfs-uri=/resource/file], fast-open=false, udp-relay=false, [server_check_url=http://www.apple.com/generate_204], tag=Sample-A
+
+# SS+WS
+shadowsocks=example.com:80, method=aes-128-gcm, password=pwd, obfs=ws, [obfs-uri=/ws], fast-open=false, udp-relay=false, tag=Sample-E
+
+# SS+WS+TLS
+shadowsocks=example.com:443, method=aes-128-gcm, password=pwd, obfs=wss, obfs-uri=/ws, fast-open=false, udp-relay=false, tag=Sample-G
+
+# SSR
+shadowsocks=example.com:443, method=chacha20, password=pwd, ssr-protocol=auth_chain_b, ssr-protocol-param=def, obfs=tls1.2_ticket_fastauth, obfs-host=bing.com, tag=Sample-D
+
+# Vmess
+vmess=example.com:80, method=aes-128-gcm, password=23ad6b10-8d1a-40f7-8ad0-e3e35cd32291, fast-open=false, udp-relay=false, tag=Sample-J
+
+# Vmess+WS
+vmess=example.com:80, method=chacha20-ietf-poly1305, password= 23ad6b10-8d1a-40f7-8ad0-e3e35cd32291, obfs-host=ws-c.example.com, obfs=ws, obfs-uri=/ws, fast-open=false, udp-relay=false, tag=Sample-H
+
+# Vmess+WS+TLS
+vmess=ws-tls-b.example.com:443, method=chacha20-ietf-poly1305, password= 23ad6b10-8d1a-40f7-8ad0-e3e35cd32291, obfs-host=ws-tls-b.example.com, obfs=wss, obfs-uri=/ws, tls-verification=true,fast-open=false, udp-relay=false, tag=Sample-I
+
+# Vmess+over TLS
+vmess=example.com:443, method=none, password=23ad6b10-8d1a-40f7-8ad0-e3e35cd32291, obfs-host=vmess-over-tls.example.com, obfs=over-tls, tls-verification=true, fast-open=false, udp-relay=false, tag=Sample-L
+
+# Http
+http=http.example.com:80, username=name, password=pwd, fast-open=false, udp-relay=false, tag=http
+
+# Https
+http=https.example.com:443, username=name, password=pwd, over-tls=true, tls-verification=true, tls-host=example.com, fast-open=false, udp-relay=false, tag=http-tls
+
+# Trojan+TLS
+trojan=192.168.1.1:443, password=pwd, over-tls=true, [tls-host=example.com], tls-verification=true, fast-open=false, udp-relay=false, tag=trojan-tls
+
+[server_remote]
+# 远程订阅
+https://raw.githubusercontent.com/crossutility/Quantumult-X/master/server.txt, tag=example1, enabled=true
+# 本地文件
+server.txt, tag=example2, enabled=true
+```
+
+#### 分组图标
+
+在配置文件中找到要添加图标的订阅链接，添加img-url参数即可，示例如下。注意图标格式必须为png，且分辨率必须为108*108像素。
+
+```
+img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/IPLC.png
+```
+
+### 策略组
+
+#### 基本分类
+
+Quantumult X支持的策略组类型如下。
+
+|     名称    |      类型      |                                           说明                                           |
+|-------------|----------------|------------------------------------------------------------------------------------------|
+| Static      | 静态策略组     | 可以嵌套其它所有类型的策略组，需手动选择路线/子策略组（需至少配置一个节点）          |
+| Available   | 健康检查策略组 | 只可直接套用节点，不可嵌套其它策略组，自动选择第一个可用的节点（需至少配置两个节点）     |
+| Round-Robin | 轮询策略组     | 只能直接套用节点，不可以嵌套其它策略组，按网络请求轮流使用所有节点（需至少配置两个节点） |
+| SSID        | SSID策略组     | 可以套用其它类型的策略组，根据网络/Wi-Fi切换节点/策略                                    |
+
+#### 手动配置
+
+在节点订阅列表中右滑，选择更多，即可将该订阅链接内所有节点直接绑定生成一个新策略组。支持生成static静态策略、available健康检查策略、round-robin负载均衡策略。该方式生成的策略组将与订阅链接绑定，节点也跟随订阅链接改变。也可通过配置文件的方式生成，在`[server-remote]`中填写即可，示例如下。
+
+```
+[server-remote]
+# 生成Hong Kong的策略组, 类型是static, 由as-policy决定
+https://xxxx.server.com, tag=Hong Kong, as-policy=static, enabled=true
+```
+
+若需要直接创建策略组，可直接编辑配置文件。示例如下。
+
+```
+[policy]
+# 静态策略组
+static=policy-name-1, Sample-A, Sample-B, Sample-C
+
+# 可用性策略组
+available=policy-name-2, Sample-A, Sample-B, Sample-C
+
+# 轮询策略组
+round-robin=policy-name-3, Sample-A, Sample-B, Sample-C
+
+# SSID策略组
+# ssid=组名,4g下默认策略,Wi-Fi下默认策略,wifi-A:策略A,wifi-B:策略B
+ssid = SSID Group, HK Group, HK Group, ASUS_5G:MO Group, AMG-5G:direct
+```
+
+直接创建策略组时，还可以通过正则表达式参数，将订阅/节点的一部分添加到策略组中，支持static静态策略、available健康检查策略、round-robin负载均衡策略。当筛选结果为空时，将自动设为直连模式。注意，若生成available健康检查策略组，则仅可包含一个节点，不可再混搭节点或其余策略组。
+
+正则表达式参数说明如下。
+
+|        参数        |             说明            |
+|--------------------|-----------------------------|
+| resource-tag-regex | 根据订阅名（tag）来筛选节点 |
+| server-tag-regex   | 根据节点名来筛选节点        |
+
+常用正则表达式如下。
+
+|         类型        |    说明    |
+|---------------------|------------|
+| `(A).*(B)` | 既有A又有B |
+| (A)\|(B)            | 有A或B     |
+| `^((?!A).)*$`        | 不含A      |
+| `(?!.*(A)).*(B)` | 没有A，有B |
+
+示例如下。
+
+```
+[policy]
+static=policy-name, resource-tag-regex=^sample, server-tag-regex=^example
+```
+
+#### 分组图标
+
+配置文件中相关配置末尾添加`img-url=`参数即可，与节点添加分组图标方法一致。
+
+### 规则分流
+
+#### 基本分类
+
+Quantumult X支持的分流策略如下。
+
+| 类型         | 说明               | 示例                                                       |
+| ------------ | ------------------ | ---------------------------------------------------------- |
+| HOST         | 完整域名匹配       | limbopro.xyz                                               |
+| HOST-SUFFIX  | 域名后缀匹配       |                                                            |
+| HOST-KEYWORD | 域名关键字匹配     | limboppro                                                  |
+| USER-AGENT   | 浏览器用户代理匹配 | *abc?                                                      |
+| IP-CIDR      | 无类别域间路由     | 192.168.x.x                                                |
+| GEOIP        | GeoIP数据库IP匹配  | 参数填US，则为美国IP数据库匹配，所有美国IP匹配该规则则执行 |
+
+#### 手动配置
+
+对于单条分流规则，可点击三菱按钮，选择分流中的添加即可。也可以在网络请求记录中找到对应记录，点击右上角漏斗符号直接添加。
+
+对于订阅，可点击三菱按钮，选择分流中的引用，点击+号即可添加。注意，对于同一请求的不同规则，在配置文件中位置较上的分流规则优先生效。
+
+对于规则类型，可采用以下链接。
+
+```
+https://raw.githubusercontent.com/lhie1/Rules/master/Quantumult/QuantumultX.conf
+https://raw.githubusercontent.com/shigalin/Config/master/QuantumultX.conf
+```
+
+对于规则类型，可采用以下链接。注意需开启策略偏好，并选择REJECT，否则将不会替换原有策略组，而自动创建新的策略组。
+
+```
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRule.list
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRuleTest.list
+```
+
+配置文件的相关内容如下。
+
+```
+[filter_remote]
+# 可使用force-policy来强制使用策略偏好，参数为要替换的策略组名
+# 远程订阅
+https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Advertising.list, tag=去广告, enabled=true
+
+# 本地文件
+advertising.txt, tag=🚦去广告，forcr-policy=reject, enabled=true
+```
+
+
+
+### 重写
+
+#### 手动配置
+
+对于本地重写，点击三菱图标，选择重写-添加即可。对于订阅，则选择重写-引用-`+`，复制链接并点击确定即可。
+
+对于脚本类型，可采用以下链接。
+
+```
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf
+```
+
+对于去广告类型，可采用以下链接。
+
+```
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Rewrite_lhie1.conf
+```
+
+配置文件的相关内容如下。
+
+```
+[rewrite_remote]
+# 远程链接
+https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Rewrite.conf, tag=神机复写规则，enabled=true
+
+# 本地/iCloud引用
+rewrite.txt, tag=本地复写, enabled=true
+
+[rewrite_local]
+^http://example\.com/resource1/1/ url reject
+^http://example\.com/resource1/2/ url reject-img
+```
+
+#### 脚本类型说明
+
+##### 配置
+
+重写功能可对特定链接调用脚本，从而实现去广告、破解VIP等功能。配置文件的相关内容如下。
+
+```
+[rewrite_remote]
+# 远程链接
+# 匹配网址 url 复写类型 脚本文件
+http://example\.com/resource5/ url script-response-body https://raw.githubusercontent.com/crossutility/Quantumult-X/master/sample-rewrite-with-script.js
+
+[rewrite_local]
+# 本地文件
+http://example\.com/resource5/ url script-response-body script_name.js
+```
+
+##### 查看
+
+在主界面选择重写规则，搜索response-body即可查看所有脚本类型的重写。
+
+
+### 任务
+
+#### 手动配置
+
+Quantumult X暂时不支持远程订阅任务脚本，即没有`[task_remote]`模块。因此需要将每一条任务脚本写到配置文件，但脚本的路径可以为本地或远程。
+
+在配置文件中手动添加`[task_local]`模块，并按照格式填写即可，示例如下。
+
+```
+[task_local]
+# 远程脚本
+# * * * * *为cron语句
+* * * * * http://example.com/name.js, tag=京东签到
+
+# 本地文件
+* * * * * name.js, tag=京东签到
+```
+
+如果是签到类task任务，一般还需要先获取对应的cookie。脚本内一般会有使用说明。
+
+#### 批量添加
+
+点击三菱按钮，进入`构造请求`，点击右上角的第一个按钮后点击`+`号，输入仓库地址后即可选择要添加的任务。
+
+#### 分组图标
+
+配置文件中相关配置末尾添加`img-url=`参数即可，与节点添加分组图标方法一致。
+
+## Thor
+
+应当使用Thor 1.3.4，以保证脚本能够正常使用。
+
+### 安装
+
+在电脑下载以下IPA并用同步推安装到手机。
+
+```
+https://code.aliyun.com/zwxsa/iOSbuy/raw/3501cba392d61d91d10b84f0a2524bf179d57ff3/Thor%201.3.4.ipa
+```
+
+安装完成后打开，点击闪电按钮以安装证书。若提示需要设备共存验证，则修改系统时间至验证后的时间，再打开Thor即可通过验证。
+
+如果不能通过认证，则卸载1.3.4版本的Thor并安装1.2.0版本的Thor，打开后安装证书和VPN。VPN安装完成后再安装Thor 1.3.4，重新安装证书并删除原来的证书即可，注意不要删除VPN。
+
+```
+https://ngxz.baklib.com/3a93/cfbe
+```
+
+在使用时不能直接从Thor的主界面打开抓包，需要在主界面中选择好规则后，进入系统设置-VPN，列表中选择Thor条目并开启VPN按钮即可。
+
+### 抓包
+#### IPA
+
+开启全局抓包后，在助手软件（如爱思助手）下载要抓包的应用，完成下载后回到Thor，打开抓包记录，搜索`ipa`，点击后缀名为ipa的记录，复制链接后打开Shu下载即可。
+
+也可以添加一个过滤器，在`包括关键字`一栏输入`ipa`并存储，以后使用该过滤器抓包即只抓到ipa记录。
+
+#### 翻墙节点
+
+开启全局抓包后，打开翻墙软件并进行连接，然后停止抓包，点击抓包记录，找到含有`connect`的记录并进入，切换到`概览`选项卡，点击`消息体`即可。
+
+#### 付费音乐
+
+开启全局抓包后，打开音乐软件（如QQ音乐），点击下载后回到Thor。选择抓包记录，后缀为`flac`的即为无损音乐格式。
+
+### 过滤器
+
+过滤器通过更改本地数据进⾏交互欺骗，从⽽达到APP破解等效果。
+
+#### 获取
+
+可通过以下捷径。
+
+```
+https://www.icloud.com/shortcuts/9097fa1569b6485b816d6fce8f7c8f4c
+```
+
+#### 制作
+
+以爱字幕APP为例说明制作方法。
+
+##### 查找修改数据
+
+开启Thor全局抓包，打开爱字幕APP，停留一段时间后即可关闭，然后关闭Thor抓包。
+
+进入Thor的抓包记录，寻找含有VIP数据的包，此处为`api/v1.user/info`这一数据。一般而言可寻找user或者info相关的路径。点击响应-application/json，即可进入消息体，摘录如下。复制该消息体的内容。
+
+```
+{
+    "status":1,
+    "msg":"success",
+    "result":{
+        "id":1641729,
+        "token":
+        "mobile":"",
+        "is_vip":0,
+        "nickname":"  ",
+        "photorul":"https://www.qlogo.cn",
+        "left_times":1,
+        "vip_end_time":0,
+        "permanent_vip":0,
+        "is_enterprise":0,
+        "is_new":0,
+        "new_user":1
+    }
+}
+```
+
+则目标为将is_vip改为1，且将vip_end_time改为一个非常大的时间戳。
+
+##### 完成修改
+
+退回抓包记录界面，在刚才的那条数据上左滑，点击更多-提取到过滤器，点击+号，点击添加过滤器，填写过滤器名称，并进入`包括域名`，点击+号，选择下面提供的域名。`包括关键字`同理。
+
+点击`挂载断点`，选择编辑-新建-响应消息体回传前-编辑-新建-判断条件，在操作对象里点击`@rep.api`。然后手打以下内容并保存，表示匹配到这条响应。注意`@rep.api`与`CONTAINS[cd]`间要有空格。
+
+```
+CONTAINS[cd] "api/v1.user/info"
+```
+
+返回上一页，点击编辑-添加表达式（条件满足时）-运算语法，选择`^替换/插入`-`@rsp.bodyText`（表示重写响应消息体），然后点击调试-调试表达式#1。将刚才消息体的内容复制到待匹配文本中，然后在正则表达式中输入需要匹配的修改位置，其中`\d`表示匹配一个数字，`\d+`表示匹配一串数字。
+
+现需匹配`"is_vip":0`，则在正则表达式中输入`"is_vip":\d`，点击匹配，即可找到该位置。然后点击设置替换值，输入`"is_vip":1`，点击替换即可。
+
+`"vip_end_time":0`同理，注意需要退出到匹配动作页，重新执行编辑-添加表达式（条件满足时）的步骤。其中时间戳可用Anubis中的日期格式化工具获得。
+
+制作完成后保存过滤器，选择开启即可。
+
+#### 修改
+
+选择一个过滤器并点击`i`-编辑，点击`挂载断点`下的断点，选择查看断点并修改即可。
+
+如果查看断点不可用，说明作者不允许修改该过滤器。为去除限制，点击`i`-导出，导出到Shu后解压到任意位置。打开解压好的文件，点击文件夹内的info.json，打开后选择导出文本-添加到备忘录。打开刚才保存的备忘录，将rights_protected改为0，然后将备忘录导出到Shu，重命名为info.json并覆盖原来的info.json即可。
+
+## Http Catcher
+
+### 安装
+
+1.1.11版本无内购。打开以下链接，选择Http Catcher 1.1.11进行安装。
+
+```
+https://ngxz.baklib.com/3a93/cfbe
+```
+
+安装完成后打开Http Catcher，打开HTTPS抓包，按照提示操作即可。
+
+### 重写
+
+Http Catcher的重写与Thor的过滤器功能类似。
+
+#### 导入
+
+直接将规则文件用Http Catcher打开即可。也可进入设置-重写，点击`+`号，选择`在文本编辑器中编辑`，复制规则内容即可。
+
+#### 制作
+
+以泼辣修图APP为例说明制作方法。
+
+##### 查找修改数据
+
+开启Http Catcher全局抓包，进入泼辣修图APP，点击恢复购买，完成后回到Http Catcher停止抓包。
+
+在刚抓到的数据里面找到路径为/v1/payments/appleiap/receipts/confirmation的数据，在响应里面可以看到响应消息体。分析购买前和购买后消息体的不同，可知需将响应状态码从400改为200，并修改`"isUnlimited":true`。
+
+##### 完成修改
+
+复制购买后的数据响应消息体，在需要重写的数据上左滑，点击更多-新建重写，填写名称。点击`位置`，删除PORT中的数值。
+
+点击`添加规则`，类型选择响应，行为选择Body，开启正则表达式，输入正则法则`.*\}`（表示全匹配），在`替换`中输入刚才复制的消息体。正则表达式可通过Anubis进行校验，以确认填写的表达式正确。
+
+完成后继续添加规则，类型选择响应，行为选择响应状态码，查找400并替换为200。保存重写规则并打开即可。
+
+
+
+
+#### 重写库
+
+```
+https://github.com/pm936/httpcatcher
+```
+
+## 附加功能
+### temperJS
+
+temperJS可以使油猴脚本在手机端运行。
+
+#### 安装
+
+可通过以下捷径安装。
+
+```
+https://www.icloud.com/shortcuts/7a21b797d6c34a59a3978683dabc6298
+```
+
+也可编辑网络调试工具的配置文件。对于Quantumult X，可添加以下重写。
+
+```
+hostname=greasyfork.org, openuserjs.org
+
+https:\/\/greasyfork\.org\/scripts\/.*\.user\.js url script-response-body https://raw.githubusercontent.com/Peng-YM/QuanX/master/Rewrites/GreasyFork/greasy-fork.js
+```
+
+对于Loon，可添加以下重写。
+
+```
+hostname=greasyfork.org, openuserjs.org
+
+http-response ^https:\/\/(greasyfork|openuserjs)\.org\/.*\/.*\.user\.js script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Rewrites/GreasyFork/greasy-fork.js, requires-body=true
+```
+
+对于Surge，可添加以下脚本。
+
+```
+[MITM]
+hostname=greasyfork.org, openuserjs.org
+
+[Script]
+Greasy Fork=type=http-response, pattern=^https:\/\/(greasyfork|openuserjs)\.org\/.*\/.*\.user\.js, script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Rewrites/GreasyFork/greasy-fork.js, requires-body=true
+```
+
+也可直接添加以下模块。
+
+```
+https://raw.githubusercontent.com/Peng-YM/QuanX/master/Rewrites/GreasyFork/Surge.sgmodule
+```
+
+#### 使用
+
+在手机端的浏览器打开greasyfork的脚本页，点击安装即可自动转换。
+
+### BoxJS
+
+BoxJS可帮助网络调试工具运行脚本时配置相关参数。
+
+#### 安装
+
+对于Surge，可添加模块，地址如下。
+
+```
+// 稳定版
+https://gitee.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.surge.sgmodule
+
+// 测试版
+https://gitee.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.surge.tf.sgmodule
+```
+
+对于Quantumult X，可添加重写，地址如下。
+
+```
+// 稳定版
+https://gitee.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.quanx.conf
+
+// 测试版
+https://gitee.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.quanx.tf.conf
+```
+
+对于Loon，可添加插件，地址如下。
+
+```
+// 稳定版
+https://gitee.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.loon.plugin
+
+// 测试版
+https://gitee.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.loon.tf.plugin
+```
+
+若需要更新BoxJS，更新调试工具的配置即可。
+
+#### 使用
+
+用手机打开以下链接，即可进入BoxJS页面。打开后点击分享-添加到主屏幕，可供以后快速访问。
+
+```
+http://boxjs.com/
+```
+
+##### 添加订阅
+
+点击`订阅`，添加以下订阅。
+
+```
+https://raw.githubusercontent.com/toulanboy/scripts/master/toulanboy.boxjs.json
+https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/box.js.json
+https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/evilbutcher.boxjs.json
+https://raw.githubusercontent.com/zZPiglet/Task/master/zZPiglet.boxjs.json
+https://jdsharedresourcescdn.azureedge.net/jdresource/lxk0301.boxjs.json
+https://ooxx.be/js/box.json
+https://raw.githubusercontent.com/NobyDa/Script/master/NobyDa_BoxJs.json
+https://raw.githubusercontent.com/Sunert/Scripts/master/Task/sunert.boxjs.json
+https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.json
+https://raw.githubusercontent.com/chouchoui/QuanX/master/vei.boxjs.json
+https://raw.githubusercontent.com/lowking/Scripts/master/lowking.boxjs.json
+​https://raw.githubusercontent.com/songyangzz/QuantumultX/master/syzzzf.box.json​
+https://raw.githubusercontent.com/toulanboy/scripts/master/toulanboy.boxjs.json
+https://raw.githubusercontent.com/id77/QuantumultX/master/box.json
+https://raw.githubusercontent.com/dompling/Script/master/dompling.boxjs.json
+https://raw.githubusercontent.com/CenBoMin/GithubSync/main/cenbomin.box.json
+```
+
+##### 脚本配置
+
+当网络调试工具中运行的脚本要求配置BoxJs时，在BoxJs的搜索框输入脚本名称，并进行相关配置即可。
+
+##### 会话管理
+
+BoxJS可保存多个会话，每个会话可存储相应的Cookie信息。通过切换会话，可使同一脚本使用不同配置，从而实现多账号签到等功能。
+
+以京东多合一签到脚本为例，在BoxJS中打开该脚本配置，点击保存会话后即可保存当前的Cookie。删除当前Cookie并重新获取，完成后再次点击保存会话。通过应用不同的会话，即可对不同的账号进行签到。
+
+##### 配置备份
+
+可通过备份配置，完成配置在网络调试工具之间的迁移，如从Loon迁移到Quantumult X。
+
+点击我的-备份，生成全局变量，复制该值。需要导入配置时，点击我的-导入，复制刚才的值，点击还原即可。
+
+##### 壁纸
+
+点击应用-内置应用-偏好设置，在`背景图片清单`中复制以下内容即可。图片可根据需求替换。
+
+```
+无背景,
+跟随系统,跟随系统
+明亮,https://64.media.tumblr.com/451bca19ad0b695c08b54b4287e4f935/tumblr_nb70h5f6XN1rnbw6mo2_r1_1280.gifv
+暗黑,https://i.pinimg.com/originals/94/4a/85/944a85804c97622973fbae194ddc27ac.gif
+随机,https://uploadbeta.com/api/pictures/random
+推女郎,https://uploadbeta.com/api/pictures/random/?key=推女郎
+性感,https://uploadbeta.com/api/pictures/random/?key=性感
+车模,https://uploadbeta.com/api/pictures/random/?key=车模
+美腿,https://uploadbeta.com/api/pictures/random/?key=美腿
+美女,https://uploadbeta.com/api/pictures/random/?key=美女
+手机妹子,http://api.btstu.cn/sjbz/zsy.php
+手机美女,http://api.btstu.cn/sjbz/?m_lx=suiji
+```
+
+### Sub-store
+
+Sub-store可用于订阅转换。仓库如下。
+
+```
+https://github.com/Peng-YM/Sub-Store
+```
+
+#### 安装
+
+对于Loon，可点击配置-插件-`+`，添加以下插件。确保PROXY栏右侧区域不出现任何文字，点击保存即可。
+
+```
+https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Loon.plugin
+```
+
+也可在配置文件添加以下内容。
+
+```
+[MITM]
+hostname=sub.store
+
+[Script]
+http-request https?:\/\/sub\.store script-path=https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/sub-store.js, requires-body=true, timeout=120, tag=Sub-Store
+```
+
+对于Surge，可添加以下模块订阅。
+
+```
+https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Surge.sgmodule
+```
+
+对于Quantumult X，可在配置文件添加以下内容。
+
+```
+[http_backend]
+https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/sub-store.js, tag=Sub-Store, path=/, enabled=true
+```
+
+#### 使用
+
+对于Loon和Surge，打开以下网页即可。
+
+```
+https://sub-store.vercel.app
+```
+
+对于Quantumult X，需要从JSBox的Erots商店获取Sub-store脚本，然后运行JSBox版本。点击设置，查看环境是否为Quantumult X，若不是则需要切换为Quantumult X。
+
+##### 添加订阅
+
+点击订阅-`+`，填写订阅名称和地址，设置好后点击该条目可以看到订阅中包含的节点。
+
+##### 复制订阅
+
+可将Sub-store中配置好的的订阅同步到网络调试工具。以Loon为例，点击订阅，选择需要使用的订阅，并点击复制，回到Loon并添加该订阅即可。
+
+##### 组合订阅
+
+可以通过点击订阅-组合订阅-`+`，将多个订阅合并成一个订阅。
+
+##### 本地解析
+
+选择需要修改的订阅，点击编辑，即可对节点进行筛选。除常用选项外，还可以添加节点操作，可以添加多个同一类型的过滤模式，将会按照顺序执行。
+
+###### 正则过滤器
+
+对于正则过滤器，在保留模式下，关键词过滤只能单个匹配，多关键词则需要添加多个过滤器，而过滤模式则可匹配多个关键词。
+
+###### 正则重命名
+
+可以一次操作多个关键词。
+
+###### 脚本操作
+
+脚本操作可以为远程脚本或者本地脚本，脚本库如下。
+
+```
+https://github.com/Peng-YM/Sub-Store/tree/master/scripts
+```
+
+##### 云备份
+
+需要获取Github Token，其中Token的权限为repo和gist。
+
+##### 同步配置
+
+点击同步-`+`以添加配置。配置后点击复制，即可在对应的网络调试工具中使用该链接导入配置文件。
+
+## 相关说明
+
+### 延迟测试
+
+Surge、Shadowrocket、Quantumult的测试方式不同，因此结果差距较大。
+
+Surge测试的是从目标policy返回http response header数据包的时间。Shadowrocket支持ICMP/TCP两种测速方式，默认为ICMP模式，即Ping。Quantumult采用SSH测速模式（22端口）。
+
+### Q-Search-All-in-One复写
+
+开启该复写后，将Safari默认搜索引擎改为DuckDuckGo，然后在浏览器地址栏输入`gm [关键词]`可以直接Google搜图，输入`yd [关键词]`可以有道翻译。所有指令如下。
+
+|      指令     |          作用          |
+|---------------|------------------------|
+| gh [关键词]   | GitHub搜索             |
+| gm [关键词]   | Google图片搜索         |
+| sof [关键词]  | Stack Overflow搜索     |
+| se [关键词]   | StackExchange搜索      |
+| wiki [关键词] | 维基百科搜索           |
+| wk [关键词]   | 维基中文搜索           |
+| mg [关键词]   | Magi搜索               |
+| tf [关键词]   | Google搜索TestFlight   |
+| yd [关键词]   | 有道词典搜索           |
+| trc [关键词]  | Google译至中           |
+| tre [关键词]  | Google译至英           |
+| trj [关键词]  | Google译至日           |
+| db [关键词]   | 豆瓣搜索               |
+| zh [关键词]   | 知乎搜索               |
+| wb [关键词]   | 微博搜索               |
+| wx [关键词]   | 微信搜索               |
+| rd [关键词]   | Reddit搜索             |
+| ssp [关键词]  | 少数派搜索             |
+| csdn [关键词] | CSDN搜索               |
+| zdm [关键词]  | 什么值得买搜索         |
+| amz [关键词]  | 亚马逊搜索             |
+| jd [关键词]   | 京东搜索               |
+| tb [关键词]   | 淘宝搜索               |
+| tm [关键词]   | 天猫搜索               |
+| ac [关键词]   | Acfun搜索              |
+| bli [关键词]  | 哔哩哔哩搜索           |
+| ytb [关键词]  | YouTube搜索            |
+| ph [关键词]   | PornHub搜索            |
+| gd [关键词]   | Google Drive资源       |
+| tgd [关键词]  | TG搜索Google Drive资源 |
+| bi [关键词]   | 必应搜索               |
+| bd [关键词]   | 百度搜索               |
+| ddg [关键词]  | DuckDuckGo搜索         |
+| [关键词]      | Google搜索             |
+
+## 相关资源
+
+### 配置文件与规则
+
+Loon与Surge 3的配置文件一般通用。进入并挑选好所需规则集后，点开并点击Raw，复制链接到Loon并导入即可。
+
+#### Loon
+
+```
+https://github.com/nzw9314/Loon
+```
+
+#### Shadowrocket
+
+```
+https://github.com/h2y/Shadowrocket-ADBlock-Rules
+```
+
+#### Quantumult X
+
+```
+https://github.com/nzw9314/QuantumultX
+https://github.com/Orz-3/QuantumultX
+https://github.com/evilbutcher/Quantumult_X
+https://github.com/KOP-XIAO/QuantumultX/
+https://github.com/solikethis/QuantumultX-demo/
+```
+
+#### Surge
+
+```
+https://github.com/voneo/conf/tree/master/rule
+https://github.com/nzw9314/Surge
+https://github.com/Choler/Surge
+https://github.com/Blankwonder/surge-list
+https://github.com/KOP-XIAO/Surge-Rules
+https://github.com/nzw9314/surge-2/
+```
+
+#### 全平台
+
+```
+https://github.com/lhie1/Rules/tree/master
+https://github.com/wlaotou/Profiles
+https://github.com/limbopro/Profiles/tree/master
+https://github.com/yxiaocai/DivineEngine
+https://github.com/NavePnow/Profiles
+https://github.com/DivineEngine/Profiles/tree/master
+```
+
+### 脚本
+
+#### Quantumult X
+
+```
+https://github.com/jpcnmm/Scripting
+https://github.com/elecV2/QuantumultX-Tools
+```
+
+#### Surge
+
+```
+https://github.com/yichahucha/surge/tree/master
+https://github.com/MeetaGit/MeetaRules
+https://github.com/onewayticket255/Surge-Script
+```
+
+#### 全平台
+
+```
+https://github.com/jpcnmm/Scripting
+https://github.com/chavyleung/scripts
+https://github.com/Peng-YM/QuanX
+https://github.com/NobyDa/Script/tree/master
+https://github.com/zZPiglet/Task/tree/master
+```
+
+### 任务
+
+#### Quantumult X
+
+```
+https://github.com/Orz-3/QuantumultX/tree/master/Task
+```
+
+#### Surge
+
+```
+https://github.com/MeetaGit/MeetaRules/tree/m%CE%B1ster
+```
+
+### 模块
+
+#### Surge
+
+```
+https://github.com/onewayticket255/Surge-Script
+```
+
+### 图标组
+
+#### Quantumult X
+
+```
+https://github.com/elecV2/QuantumultX-ICON
+https://github.com/Koolson/Qure
+```
+
+#### 全平台
+
+```
+https://github.com/Orz-3/mini
+https://github.com/Orz-3/task
+https://github.com/Orz-3/face
+https://github.com/58xinian/icon
+```
+
+# 软件操作
+
+## Scriptable
+
+配合iOS 14的小组件功能，通过JavaScript脚本使小组件显示相应的内容。
+
+### 懒人配置
+
+在手机上下载以下脚本，存储到文件APP的Scriptable文件夹中。打开Scriptable，先运行Env，再运行Install Scripts即可。
+
+```
+https://raw.githubusercontent.com/evilbutcher/Scriptables/master/Env.js
+https://raw.githubusercontent.com/evilbutcher/Scriptables/master/Install%20Scripts.js
+```
+
+然后下载Config.js脚本并放置到上述目录。该脚本用于全局配置各脚本的变量。配置Config 文件后，脚本运行优先使用Config文件内的设置，由此保证脚本更新不会影响自定义设置。
+
+```
+https://raw.githubusercontent.com/evilbutcher/Scriptables/master/Config.js
+```
+
+仓库地址如下。
+
+```
+https://github.com/evilbutcher/Scriptables
+https://github.com/GideonSenku/Scriptable
+```
+
+### 组件放置
+
+在主屏幕添加Scriptable组件，长按小组件并点击`编辑小组件`，在Script中选择要打开的脚本即可。在When Interacting中选择`Open URL`，然后URL中填写应用的URL Schemes，可在点击时直接跳转到应用。
+
+### 脚本源码
+
+打开后点击右上角的`+`，将以下代码复制到代码区。然后点击左上角即可。
+
+#### 显示限免软件
+
+代码如下。
+
+```
+let data = await getData()
+let widget = await createWidget(data)
+if (!config.runsInWidget) {
+  await widget.presentLarge()
+}
+Script.setWidget(widget)
+Script.complete()
+async function createWidget(data) {
+  let appIcon = await loadAppIcon()
+  let title = "ios限免速递"
+  let w = new ListWidget()
+  w.url = data["url"]
+  w.backgroundColor = new Color("#b00a0fb3")
+// 显示图标和标题
+  w.addSpacer(2)
+  let titleStack = w.addStack()
+  let appIconElement = titleStack.addImage(appIcon)
+  appIconElement.imageSize = new Size(15, 15)
+  appIconElement.cornerRadius = 4
+  titleStack.addSpacer(4)
+  let titleElement = titleStack.addText(title)
+  titleElement.textColor = Color.white()
+  titleElement.textOpacity = 0.7
+  titleElement.font = Font.mediumSystemFont(13)
+  w.addSpacer(5)
+// 标题
+  var dates =  data["name"]
+  let date1 = w.addText(dates)
+  date1.font = Font.semiboldSystemFont(20)
+  date1.centerAlignText()
+  date1.textColor = Color.white()
+  w.addSpacer(5)
+// 价格
+  let date2 = w.addText("现价:"+data["price"]+"("+data["class"]+")")
+  date2.font = Font.heavySystemFont(10)
+  date2.centerAlignText()
+  date2.textColor =Color.white()
+  w.addSpacer(5)
+// 介绍
+  let body = w.addText(data["content"])
+  body.font = Font.mediumRoundedSystemFont(12)
+  body.textColor = Color.white()
+  w.addSpacer(10)
+// 图片
+  let bg =await getImage(data["img"])
+  w.backgroundImage = await shadowImage(bg)
+// 底部更多
+if (!config.runsWithSiri) {
+  w.addSpacer(5)
+  // Add button to open documentation
+  let linkSymbol = SFSymbol.named("arrow.up.forward")
+  let footerStack = w.addStack()
+  let linkStack = footerStack.addStack()
+  linkStack.centerAlignContent()
+  linkStack.url = "http://xianmian.kzddck.com"
+  let linkElement = linkStack.addText("查看历史")
+  linkElement.font = Font.mediumSystemFont(13)
+  linkElement.textColor = Color.white()
+  linkStack.addSpacer(3)
+  let linkSymbolElement = linkStack.addImage(linkSymbol.image)
+  linkSymbolElement.imageSize = new Size(11, 11)
+  linkSymbolElement.tintColor = Color.white()
+  footerStack.addSpacer()
+  // Add link to documentation
+  let docsSymbol = SFSymbol.named("square.and.arrow.down.on.square.fill")
+  let docsElement = footerStack.addImage(docsSymbol.image)
+  docsElement.imageSize = new Size(20, 20)
+  docsElement.tintColor = Color.white()
+  docsElement.url = data["url"]
+}
+  return w
+}
+async function getData() {
+  var url = "https://api.kzddck.com/script/free.json";
+  var req = new Request(url)
+  var data = await req.loadJSON()
+  return data
+}
+async function getImage (url) {
+  let r =await new Request(url)
+  return await r.loadImage()
+}
+async function shadowImage (img) {
+  let ctx = new DrawContext()
+  ctx.size = img.size
+  ctx.drawImageInRect(img, new Rect(0, 0, img.size['width'], img.size['height']))
+  ctx.setFillColor(new Color("#646464", 0.5))
+  ctx.fillRect(new Rect(0, 0, img.size['width'], img.size['height']))
+  let res = await ctx.getImage()
+  return res
+}
+
+async function loadAppIcon() {
+  let url = "https://api.kzddck.com/script/freeapp.png"
+  let req = new Request(url)
+  return req.loadImage()
+}
+```
+
+#### 联通话费查询和签到
+
+代码如下。
+
+```
+// Author: 脑瓜
+// 该组件支持两种模式，默认为圆环进度条模式，主屏幕长按小组件-->编辑小组件-->Parameter，输入1，使用文字模式
+
+//修改：kzddck
+// 更新内容：更换新的接口
+
+// #############设置##############
+const files = FileManager.local()
+const Tel = '你的手机号'
+//修改为你的cookie，cookie获取方法，需安装Stream在联通客户端中进行抓包!
+const Cookie = '你的cookie'
+const ringStackSize = 61 // 圆环大小
+const ringTextSize = 14 // 圆环中心文字大小
+const creditTextSize = 21 // 话费文本大小
+const textSize = 13 // 文字模式下文字大小
+const databgColor = new Color("12A6E4", 0.2) // 流量环背景颜色
+const datafgColor = new Color("12A6E4") // 流量环前景颜色
+const voicebgColor = new Color("F86527", 0.2) // 语音环背景颜色
+const voicefgColor = new Color("F86527") // 语音环前景颜色
+const newBG = false  //是否设置或者使用新的背景图片，若要设置背景图片，请勿将下一行值设为true
+const removeBG = false //是否需要清空背景图片，如果设置过背景图片，想再使用纯色背景，需将此设置为true清除背景图片缓存
+const setbgColor = false //是否设置固定纯色背景，如要设置，请在下行指定背景颜色
+const bgColor = "ffffff" // 背景颜色
+const widgetParam = args.widgetParameter
+let data = await getData()
+
+const title = "中国联通"
+const cuIconUrl = "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/f77d3cdc-b757-4acd-9766-a64421bf0c6d.png"
+const dataSfs = SFSymbol.named("antenna.radiowaves.left.and.right")
+dataSfs.applyHeavyWeight()
+const dataIcon = dataSfs.image
+const voiceIcon = SFSymbol.named("phone.fill").image
+const scoreIcon = SFSymbol.named("tag.fill").image
+const iconColor = new Color("FE8900")
+const phoneData = data.data.dataList[0]
+const credit = data.data.dataList[1]
+const voice = data.data.dataList[2]
+const score = data.data.dataList[3]
+const canvSize = 178
+const canvTextSize = 45
+const canvas = new DrawContext()
+const canvWidth = 18
+const canvRadius = 80
+const widget = new ListWidget()
+widget.setPadding(16, 16, 16, 16) // widget边距（上，下，左，右）
+
+// ############背景设置############
+const path = files.joinPath(files.documentsDirectory(), "testPath")
+if (newBG && config.runsInApp){
+  const img = await Photos.fromLibrary()
+  widget.backgroundImage = img
+  files.writeImage(path, img)
+} else {
+  if (files.fileExists(path)) { 
+    try {
+      widget.backgroundImage = files.readImage(path)
+      log("读取图片成功")
+    } catch (e){
+      log(e.message)
+      }  
+    }
+  }
+if (removeBG && files.fileExists(path)) {
+  try {
+    files.remove(path)
+    log("背景图片清理成功")
+  } catch (e) {
+    log(e.message)
+  }
+}
+if (setbgColor) {
+  widget.backgroundColor = new Color(bgColor)
+}
+
+// ############LOGO###############
+let headerStack = widget.addStack()
+headerStack.layoutVertically
+headerStack.addSpacer()
+let logo = headerStack.addImage(await getImg(cuIconUrl))
+logo.imageSize = new Size(393*0.25, 118*0.25)
+headerStack.addSpacer()
+widget.addSpacer()
+
+let creditStack = widget.addStack()
+creditStack.centerAlignContent()
+creditStack.addSpacer()
+let creditElement = creditStack.addText(credit.number)
+creditElement.font = Font.mediumRoundedSystemFont(creditTextSize)
+creditStack.addSpacer()
+widget.addSpacer()
+
+// ###############################
+let bodyStack = widget.addStack()
+bodyStack.layoutVertically()
+
+if (widgetParam == "1"){
+  await textLayout(dataIcon, phoneData.remainTitle, phoneData.number, phoneData.unit)
+  bodyStack.addSpacer(8)
+  await textLayout(voiceIcon, voice.remainTitle, voice.number, voice.unit)
+  bodyStack.addSpacer(8)
+  await textLayout(scoreIcon, score.remainTitle, score.number, score.unit)
+} else {
+canvas.size = new Size(canvSize, canvSize)
+canvas.opaque = false
+canvas.respectScreenScale = true
+
+const dataGap = (100-phoneData.persent)*3.6
+const voiceGap = (100-voice.persent)*3.6
+
+drawArc(dataGap, datafgColor, databgColor)
+let ringStack = bodyStack.addStack()
+let ringLeft = ringStack.addStack()
+ringLeft.layoutVertically()
+ringLeft.size = new Size(ringStackSize, ringStackSize)
+ringLeft.backgroundImage = canvas.getImage()
+await ringContent(ringLeft, dataIcon, datafgColor, phoneData.number, phoneData.unit)
+ringStack.addSpacer()
+
+drawArc(voiceGap, voicefgColor, voicebgColor)
+let ringRight = ringStack.addStack()
+ringRight.layoutVertically()
+ringRight.size = new Size(ringStackSize, ringStackSize)
+ringRight.backgroundImage = canvas.getImage()
+await ringContent(ringRight, voiceIcon, voicefgColor, voice.number, voice.unit)
+}
+// ###############################
+if (!config.runsInWidget) {
+  await widget.presentSmall()
+}
+Script.setWidget(widget)
+Script.complete()
+
+async function getImg(url) {
+  const req = new Request(url)
+  const img = await req.loadImage()
+  return img
+}
+
+function sinDeg(deg) {
+    return Math.sin((deg * Math.PI) / 180)
+  }
+
+function cosDeg(deg) {
+    return Math.cos((deg * Math.PI) / 180)
+  }
+
+function ringContent(widget, icon, iconColor, text, unit){
+  const rowIcon = widget.addStack()
+  rowIcon.addSpacer()
+  const iconElement = rowIcon.addImage(icon)
+  iconElement.tintColor = iconColor
+  iconElement.imageSize = new Size(12, 12)
+  iconElement.imageOpacity = 0.7
+  rowIcon.addSpacer()
+  
+  widget.addSpacer(1)
+  
+  const rowText = widget.addStack()
+  rowText.addSpacer()
+  const textElement = rowText.addText(text)
+  textElement.font = Font.mediumSystemFont(ringTextSize)
+  rowText.addSpacer()
+  
+  const rowUnit = widget.addStack()
+  rowUnit.addSpacer()
+  const unitElement = rowUnit.addText(unit)
+  unitElement.font = Font.boldSystemFont(8)
+  unitElement.textOpacity = 0.5
+  rowUnit.addSpacer()
+ }
+
+function textLayout(icon, title, number, unit){
+  const rowItem = bodyStack.addStack()
+  rowItem.centerAlignContent()
+  let iconElement = rowItem.addImage(icon)
+  iconElement.imageSize = new Size(textSize, textSize)
+  iconElement.tintColor = iconColor
+  rowItem.addSpacer(4)
+  let titleElement = rowItem.addText(title)
+  titleElement.font = Font.systemFont(textSize)
+  rowItem.addSpacer()
+  let numberElement = rowItem.addText(number+unit)
+  numberElement.font = Font.systemFont(textSize)
+}
+
+function drawArc(deg, fillColor, strokeColor) {
+  let ctr = new Point(canvSize / 2, canvSize / 2),
+  bgx = ctr.x - canvRadius;
+  bgy = ctr.y - canvRadius;
+  bgd = 2 * canvRadius;
+  bgr = new Rect(bgx, bgy, bgd, bgd)
+
+  canvas.setFillColor(fillColor)
+  canvas.setStrokeColor(strokeColor)
+  canvas.setLineWidth(canvWidth)
+  canvas.strokeEllipse(bgr)
+
+  for (let t = 0; t < deg; t++) {
+    rect_x = ctr.x + canvRadius * sinDeg(t) - canvWidth / 2
+    rect_y = ctr.y - canvRadius * cosDeg(t) - canvWidth / 2
+    rect_r = new Rect(rect_x, rect_y, canvWidth, canvWidth)
+    canvas.fillEllipse(rect_r)
+  }
+}
+
+async function getData() {
+  const cachePath = files.joinPath(files.documentsDirectory(), "Chinaunicom-anker")
+  try {
+    var url= 'https://m.client.10010.com/mobileserviceimportant/home/queryUserInfoSeven?version=iphone_c@8.0100&desmobiel='+Tel+'&showType=0';
+var req = new Request(url)
+req.headers = {'cookie': Cookie,'Host':'m.client.10010.com','User-Agent':'Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148       unicom{version:iphone_c@8.0100}{systemVersion:dis}{yw_code:}'}
+var data = await req.loadJSON()
+console.log(data)
+
+var url1 = 'https://act.10010.com/SigninApp/signin/daySign'
+var req1 = new Request(url1);
+req1.headers = {'cookie': Cookie,'Host':'act.10010.com','User-Agent':'Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148       unicom{version:iphone_c@8.0100}{systemVersion:dis}{yw_code:}'}
+var data1 = await req1.loadJSON()
+console.log(data1)
+    if (data.signinState === '0'){
+      files.writeString(cachePath, JSON.stringify(data))
+      log("==>数据请求成功")
+    } else {
+      throw 'Internal Server Error'
+    }
+  }
+  catch (e) {
+    data = JSON.parse(files.readString(cachePath))
+    log("==>数据请求失败，使用缓存数据/"+ e)
+  }
+  return data
+}
+```
+
+其中cookie可通过抓包软件获得。以Stream为例，开启抓包后登录联通掌上营业厅，点击右上角签到随后退出。然后回到Stream，按域名查找，找到atc.10010.com，进入任意一个链接，找到请求，拷贝Cookie里的内容即可。
+
+#### 京东物流查询和签到
+
+代码如下。
+
 ```
-https://www.ios-repo-updates.com/
-https://jlippold.github.io/tweakCompatible/
+// 填写cookie（保留单引号）
+const Cookie = '这里填写你的cookie'
+// 标题
+const title = '京东'
+// 图标（京东APP图标）
+const logo = 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3183980387,1768640430&fm=26&gp=0.jpg'
+// 更改背景颜色
+color = [
+    new Color("#fcb69f"),
+    new Color("#ff9a9e")
+]
+
+var __encode ='jsjiami.com',_a={}, _0xb483=["\x5F\x64\x65\x63\x6F\x64\x65","\x68\x74\x74\x70\x3A\x2F\x2F\x77\x77\x77\x2E\x73\x6F\x6A\x73\x6F\x6E\x2E\x63\x6F\x6D\x2F\x6A\x61\x76\x61\x73\x63\x72\x69\x70\x74\x6F\x62\x66\x75\x73\x63\x61\x74\x6F\x72\x2E\x68\x74\x6D\x6C"];(function(_0xd642x1){_0xd642x1[_0xb483[0]]= _0xb483[1]})(_a);var __Oxa863d=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x68\x6F\x6D\x65\x2E\x6D\x2E\x6A\x64\x2E\x63\x6F\x6D\x2F\x6D\x79\x4A\x64\x2F\x6E\x65\x77\x68\x6F\x6D\x65\x2E\x61\x63\x74\x69\x6F\x6E\x3F\x73\x63\x65\x6E\x65\x76\x61\x6C\x3D\x32\x26\x75\x66\x63\x3D\x26","\x72\x75\x6E\x73\x49\x6E\x57\x69\x64\x67\x65\x74","\x70\x72\x65\x73\x65\x6E\x74\x4C\x61\x72\x67\x65","\x73\x65\x74\x57\x69\x64\x67\x65\x74","\x63\x6F\x6D\x70\x6C\x65\x74\x65","\x77\x69\x64\x67\x65\x74\x46\x61\x6D\x69\x6C\x79","\x6D\x65\x64\x69\x75\x6D","\x6C\x61\x72\x67\x65","\x6C\x6F\x63\x61\x74\x69\x6F\x6E\x73","\x63\x6F\x6C\x6F\x72\x73","\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x47\x72\x61\x64\x69\x65\x6E\x74","\x61\x64\x64\x53\x70\x61\x63\x65\x72","\x74\x69\x70\x73","\x61\x64\x64\x54\x65\x78\x74","\x66\x6F\x6E\x74","\x73\x65\x6D\x69\x62\x6F\x6C\x64\x53\x79\x73\x74\x65\x6D\x46\x6F\x6E\x74","\x74\x65\x78\x74\x43\x6F\x6C\x6F\x72","\x77\x68\x69\x74\x65","\x75\x72\x6C","\x77\x65\x69\x78\x69\x6E\x3A\x2F\x2F","\x6C\x65\x6E\x67\x74\x68","\x64\x65\x61\x6C\x4C\x6F\x67\x4C\x69\x73\x74","\u5DF2\u7B7E\u5230","\u672A\u7B7E\u5230","\uD83E\uDD54\x20\u4EAC\u8C46","\x3A","\x6A\x69\x6E\x64\x6F\x75","\x6F\x70\x65\x6E\x41\x70\x70\x2E\x6A\x64\x4D\x6F\x62\x69\x6C\x65\x3A\x2F\x2F","\uD83D\uDCB5\x20\u6D25\u8D34","\x6A\x69\x6E\x74\x69\x65","\uD83E\uDE99\x20\u94A2\u955A","\x67\x61\x6E\x67\x62\x65\x6E","\x77\x6C\x53\x74\x61\x74\x65\x44\x65\x73\x63","\u66F4\u65B0\u65F6\u95F4","\x63\x72\x65\x61\x74\x65\x54\x69\x6D\x65","\x68\x65\x61\x76\x79\x53\x79\x73\x74\x65\x6D\x46\x6F\x6E\x74","\x61\x64\x64\x53\x74\x61\x63\x6B","\x63\x65\x6E\x74\x65\x72\x41\x6C\x69\x67\x6E\x43\x6F\x6E\x74\x65\x6E\x74","\uD83E\uDD54\x20\x3A\x20","\uD83D\uDCB5\x20\x3A\x20","\uD83E\uDE99\x20\x3A\x20","\u5546\u54C1","\x6E\x61\x6D\x65","\x73\x65\x6D\x69\x62\x6F\x6C\x64\x52\x6F\x75\x6E\x64\x65\x64\x53\x79\x73\x74\x65\x6D\x46\x6F\x6E\x74","\u5F53\u524D\u72B6\u6001","\x73\x74\x61\x74\x65\x4E\x61\x6D\x65","\u7269\u6D41\u8BE6\u60C5","\x6C\x69\x67\x68\x74\x4D\x6F\x6E\x6F\x73\x70\x61\x63\x65\x64\x53\x79\x73\x74\x65\x6D\x46\x6F\x6E\x74","\x6C\x61\x79\x6F\x75\x74\x56\x65\x72\x74\x69\x63\x61\x6C\x6C\x79","\uD83D\uDD14\u6E29\u99A8\u63D0\u793A\x20\uFF1A\u5982\u9700\u663E\u793A\u66F4\u591A\u8BF7\u4F7F\u7528\u5927\u7EC4\u4EF6\uFF01","\x6D\x65\x64\x69\x75\x6D\x52\x6F\x75\x6E\x64\x65\x64\x53\x79\x73\x74\x65\x6D\x46\x6F\x6E\x74","\uD83D\uDD14\u6E29\u99A8\u63D0\u793A\x20\uFF1A\u4E0D\u80FD\u663E\u793A\u66F4\u591A\u4E86\uFF01","\x69\x6D\x67","\x61\x64\x64\x49\x6D\x61\x67\x65","\x69\x6D\x61\x67\x65\x53\x69\x7A\x65","\x63\x6F\x72\x6E\x65\x72\x52\x61\x64\x69\x75\x73","\x6C\x69\x6E\x65\x4C\x69\x6D\x69\x74","\u7269\u6D41","\x67\x65\x74\x64\x61\x74\x61\x31","\x6C\x6F\x67","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x77\x71\x2E\x6A\x64\x2E\x63\x6F\x6D\x2F\x75\x73\x65\x72\x2F\x69\x6E\x66\x6F\x2F\x51\x75\x65\x72\x79\x4A\x44\x55\x73\x65\x72\x49\x6E\x66\x6F\x3F\x73\x63\x65\x6E\x65\x76\x61\x6C\x3D\x32","\x68\x65\x61\x64\x65\x72\x73","\x6C\x6F\x61\x64\x4A\x53\x4F\x4E","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x6D\x73\x2E\x6A\x72\x2E\x6A\x64\x2E\x63\x6F\x6D\x2F\x67\x77\x2F\x67\x65\x6E\x65\x72\x69\x63\x2F\x75\x63\x2F\x68\x35\x2F\x6D\x2F\x6D\x79\x53\x75\x62\x73\x69\x64\x79\x42\x61\x6C\x61\x6E\x63\x65","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x63\x6F\x69\x6E\x2E\x6A\x64\x2E\x63\x6F\x6D\x2F\x6D\x2F\x67\x62\x2F\x67\x65\x74\x42\x61\x73\x65\x49\x6E\x66\x6F\x2E\x68\x74\x6D\x6C","\x70\x74\x5F\x6B\x65\x79\x3D","\x6D\x61\x74\x63\x68","\x3B","\x70\x74\x5F\x70\x69\x6E\x3D","\x70\x74\x5F\x74\x6F\x6B\x65\x6E\x3D","\x68\x74\x74\x70\x3A\x2F\x2F\x73\x35\x2E\x6E\x73\x6C\x6F\x6F\x70\x2E\x63\x6F\x6D\x3A\x33\x30\x30\x31\x2F\x3F\x63\x6F\x6F\x6B\x69\x65\x3D","\u5F00\u59CB\u7B7E\u5230","\u6B63\u5728\u7B7E\u5230","\x6C\x6F\x61\x64","\u7B7E\u5230\u6210\u529F","\x74\x6F\x4C\x6F\x63\x61\x6C\x65\x44\x61\x74\x65\x53\x74\x72\x69\x6E\x67","\x74\x69\x6D\x65","\x73\x65\x74","\x74\x69\x6D\x65\u5199\u5165\u6210\u529F","\x68\x74\x74\x70\x3A\x2F\x2F\x6A\x64\x2E\x6B\x7A\x64\x64\x63\x6B\x2E\x63\x6E\x3A\x33\x30\x30\x31\x2F\x3F\x63\x6F\x6F\x6B\x69\x65\x3D","\x62\x79\u5F00\u59CB\u7B7E\u5230","\x62\x79\u6B63\u5728\u7B7E\u5230","\x62\x79\u7B7E\u5230\u6210\u529F","\x62\x79\x74\x69\x6D\x65\u5199\u5165\u6210\u529F","\u53EF\u80FD\u7B7E\u5230\u5931\u8D25\u4E86\u5440","\x6A\x64\x4E\x75\x6D","\x62\x61\x73\x65","\x62\x61\x6C\x61\x6E\x63\x65","\x64\x61\x74\x61","\x72\x65\x73\x75\x6C\x74\x44\x61\x74\x61","\x67\x62\x42\x61\x6C\x61\x6E\x63\x65","\x63\x6F\x6E\x74\x61\x69\x6E\x73","\x67\x65\x74","\u4ECA\u65E5\u5DF2\u7B7E\u5230","\u8FD8\u6CA1\u6709\u7B7E\u5230","\u6CA1\u6709\u7F13\u5B58\u5440","\u7B7E\u5230\u5B8C\u6210\u4E86\u5440","\u6CA1\u6709\u7F13\u5B58","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x77\x71\x2E\x6A\x64\x2E\x63\x6F\x6D\x2F\x62\x61\x73\x65\x73\x2F\x77\x75\x6C\x69\x75\x64\x65\x74\x61\x69\x6C\x2F\x6E\x6F\x74\x69\x66\x79\x3F\x73\x63\x65\x6E\x65\x76\x61\x6C\x3D\x32\x26\x73\x63\x65\x6E\x65\x76\x61\x6C\x3D\x32\x26\x67\x5F\x6C\x6F\x67\x69\x6E\x5F\x74\x79\x70\x65\x3D\x31\x26\x63\x61\x6C\x6C\x62\x61\x63\x6B","\x65\x72\x72\x43\x6F\x64\x65","\x63\x6F\x6F\x6B\x69\x65\u6B63\u5E38","\x63\x6F\x6F\x6B\x69\x65\u5931\u6548","\x43\x6F\x6F\x6B\x69\x65\u5931\u6548\u4E86","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x73\x73\x31\x2E\x62\x64\x73\x74\x61\x74\x69\x63\x2E\x63\x6F\x6D\x2F\x37\x30\x63\x46\x76\x58\x53\x68\x5F\x51\x31\x59\x6E\x78\x47\x6B\x70\x6F\x57\x4B\x31\x48\x46\x36\x68\x68\x79\x2F\x69\x74\x2F\x75\x3D\x33\x31\x38\x33\x39\x38\x30\x33\x38\x37\x2C\x31\x37\x36\x38\x36\x34\x30\x34\x33\x30\x26\x66\x6D\x3D\x32\x36\x26\x67\x70\x3D\x30\x2E\x6A\x70\x67","\x6C\x6F\x61\x64\x49\x6D\x61\x67\x65","\x68\x74\x74\x70\x3A\x2F\x2F\x6A\x64\x2E\x6B\x7A\x64\x64\x63\x6B\x2E\x63\x6E\x2F\x75\x70\x64\x61\x74\x65\x2E\x6A\x73\x6F\x6E","\x75\x70","\u65E0\u66F4\u65B0","\x74\x69\x74\x6C\x65","\u4EAC\u4E1C\u5C0F\u7EC4\u4EF6\u6709\u66F4\u65B0\u5566","\x62\x6F\x64\x79","\x73\x63\x68\x65\x64\x75\x6C\x65","\x74\x65\x78\x74\x4F\x70\x61\x63\x69\x74\x79","\x62\x6F\x6C\x64\x53\x79\x73\x74\x65\x6D\x46\x6F\x6E\x74","\x73\x65\x74\x50\x61\x64\x64\x69\x6E\x67","\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x43\x6F\x6C\x6F\x72","\x23\x66\x66\x66","\x72\x69\x67\x68\x74\x41\x6C\x69\x67\x6E\x54\x65\x78\x74","\x75\x6E\x64\x65\x66\x69\x6E\x65\x64","\u5220\u9664","\u7248\u672C\u53F7\uFF0C\x6A\x73\u4F1A\u5B9A","\u671F\u5F39\u7A97\uFF0C","\u8FD8\u8BF7\u652F\u6301\u6211\u4EEC\u7684\u5DE5\u4F5C","\x6A\x73\x6A\x69\x61","\x6D\x69\x2E\x63\x6F\x6D"];const Referer=__Oxa863d[0x0];let widget= await update();if(!config[__Oxa863d[0x1]]){ await widget[__Oxa863d[0x2]]()};Script[__Oxa863d[0x3]](widget);Script[__Oxa863d[0x4]]();async function render(){const _0xca56x4= await getData();if(config[__Oxa863d[0x5]]== __Oxa863d[0x6]){return  await mediumWidget(_0xca56x4)}else {if(config[__Oxa863d[0x5]]== __Oxa863d[0x7]){return  await largeWidget(_0xca56x4)}else {return  await smallWidget(_0xca56x4)}}}async function render1(_0xca56x4){let _0xca56x6= new ListWidget();bg=  new LinearGradient();bg[__Oxa863d[0x8]]= [0,1];bg[__Oxa863d[0x9]]= color;_0xca56x6[__Oxa863d[0xa]]= bg;_0xca56x6[__Oxa863d[0xb]]();let _0xca56x7=_0xca56x6[__Oxa863d[0xd]](_0xca56x4[__Oxa863d[0xc]]);_0xca56x7[__Oxa863d[0xe]]= Font[__Oxa863d[0xf]](15);_0xca56x7[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56x7[__Oxa863d[0x12]]= __Oxa863d[0x13];_0xca56x6[__Oxa863d[0xb]]();return _0xca56x6}async function smallWidget(_0xca56x4){let _0xca56x6= new ListWidget();bg=  new LinearGradient();bg[__Oxa863d[0x8]]= [0,1];bg[__Oxa863d[0x9]]= color;_0xca56x6[__Oxa863d[0xa]]= bg;_0xca56x6[__Oxa863d[0xb]](4);var _0xca56x9=_0xca56x4[__Oxa863d[0x15]][__Oxa863d[0x14]];if(_0xca56x9== 0){let _0xca56xa= await cache1();if(_0xca56xa== 0){var _0xca56xb=__Oxa863d[0x16]}else {var _0xca56xb=__Oxa863d[0x17]};_0xca56x6=  await renderHeader(_0xca56x6,logo,title,Color[__Oxa863d[0x11]](),_0xca56xb);_0xca56x6[__Oxa863d[0xb]]();const _0xca56xc= await getData1(_0xca56xa);let _0xca56x7=_0xca56x6[__Oxa863d[0xd]](__Oxa863d[0x18]+ __Oxa863d[0x19]+ _0xca56xc[__Oxa863d[0x1a]].toString());_0xca56x7[__Oxa863d[0xe]]= Font[__Oxa863d[0xf]](15);_0xca56x7[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56x7[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x6[__Oxa863d[0xb]](5);let _0xca56xd=_0xca56x6[__Oxa863d[0xd]](__Oxa863d[0x1c]+ __Oxa863d[0x19]+ _0xca56xc[__Oxa863d[0x1d]].toString());_0xca56xd[__Oxa863d[0xe]]= _0xca56x7[__Oxa863d[0xe]];_0xca56xd[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56xd[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x6[__Oxa863d[0xb]](5);let _0xca56xe=_0xca56x6[__Oxa863d[0xd]](__Oxa863d[0x1e]+ __Oxa863d[0x19]+ _0xca56xc[__Oxa863d[0x1f]].toString());_0xca56xe[__Oxa863d[0xe]]= _0xca56x7[__Oxa863d[0xe]];_0xca56xe[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56xe[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x6[__Oxa863d[0xb]]();return _0xca56x6};if(_0xca56x9== 1){_0xca56x6=  await renderHeader(_0xca56x6,logo,title,Color[__Oxa863d[0x11]]());_0xca56x6[__Oxa863d[0xb]]();let _0xca56x7=_0xca56x6[__Oxa863d[0xd]](_0xca56x4[__Oxa863d[0x15]][0x0][__Oxa863d[0x20]]);_0xca56x7[__Oxa863d[0xe]]= Font[__Oxa863d[0xf]](13);_0xca56x7[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56x7[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x6[__Oxa863d[0xb]](5);let _0xca56xd=_0xca56x6[__Oxa863d[0xd]](__Oxa863d[0x21]+ __Oxa863d[0x19]+ _0xca56x4[__Oxa863d[0x15]][0x0][__Oxa863d[0x22]]);_0xca56xd[__Oxa863d[0xe]]= Font[__Oxa863d[0x23]](9);_0xca56xd[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56xd[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x6[__Oxa863d[0xb]]();return _0xca56x6}else {_0xca56x6=  await renderHeader(_0xca56x6,logo,title,Color[__Oxa863d[0x11]](),_0xca56x9);_0xca56x6[__Oxa863d[0xb]]();let _0xca56x7=_0xca56x6[__Oxa863d[0xd]](_0xca56x4[__Oxa863d[0x15]][0x0][__Oxa863d[0x20]]);_0xca56x7[__Oxa863d[0xe]]= Font[__Oxa863d[0xf]](13);_0xca56x7[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56x7[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x6[__Oxa863d[0xb]](5);let _0xca56xd=_0xca56x6[__Oxa863d[0xd]](__Oxa863d[0x21]+ __Oxa863d[0x19]+ _0xca56x4[__Oxa863d[0x15]][0x0][__Oxa863d[0x22]]);_0xca56xd[__Oxa863d[0xe]]= Font[__Oxa863d[0x23]](9);_0xca56xd[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56xd[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x6[__Oxa863d[0xb]]();return _0xca56x6}}async function mediumWidget(_0xca56x4){let _0xca56x6= new ListWidget();bg=  new LinearGradient();bg[__Oxa863d[0x8]]= [0,1];bg[__Oxa863d[0x9]]= color;_0xca56x6[__Oxa863d[0xa]]= bg;_0xca56x6[__Oxa863d[0xb]](4);var _0xca56x9=_0xca56x4[__Oxa863d[0x15]][__Oxa863d[0x14]];if(_0xca56x9== 0){let _0xca56xa= await cache1();if(_0xca56xa== 0){var _0xca56xb=__Oxa863d[0x16]}else {var _0xca56xb=__Oxa863d[0x17]};_0xca56x6=  await renderHeader(_0xca56x6,logo,title,Color[__Oxa863d[0x11]](),_0xca56xb);_0xca56x6[__Oxa863d[0xb]]();const _0xca56xc= await getData1(_0xca56xa);const _0xca56x10=_0xca56x6[__Oxa863d[0x24]]();_0xca56x10[__Oxa863d[0x25]]();const _0xca56x11=_0xca56x10[__Oxa863d[0x24]]();let _0xca56x12=_0xca56x11[__Oxa863d[0xd]](__Oxa863d[0x26]+ _0xca56xc[__Oxa863d[0x1a]]);_0xca56x12[__Oxa863d[0xe]]= Font[__Oxa863d[0xf]](22);_0xca56x12[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56x12[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x10[__Oxa863d[0xb]]();const _0xca56x13=_0xca56x10[__Oxa863d[0x24]]();let _0xca56x14=_0xca56x13[__Oxa863d[0xd]](__Oxa863d[0x27]+ _0xca56xc[__Oxa863d[0x1d]]);_0xca56x14[__Oxa863d[0xe]]= Font[__Oxa863d[0xf]](22);_0xca56x14[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56x14[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x10[__Oxa863d[0xb]]();const _0xca56x15=_0xca56x10[__Oxa863d[0x24]]();let _0xca56x16=_0xca56x15[__Oxa863d[0xd]](__Oxa863d[0x28]+ _0xca56xc[__Oxa863d[0x1f]]);_0xca56x16[__Oxa863d[0xe]]= Font[__Oxa863d[0xf]](22);_0xca56x16[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56x16[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x6[__Oxa863d[0xb]]();return _0xca56x6};if(_0xca56x9== 1){_0xca56x6=  await renderHeader(_0xca56x6,logo,title,Color[__Oxa863d[0x11]](),_0xca56x9);_0xca56x6[__Oxa863d[0xb]]();let _0xca56x7=_0xca56x6[__Oxa863d[0xd]](__Oxa863d[0x29]+ __Oxa863d[0x19]+ _0xca56x4[__Oxa863d[0x15]][0x0][__Oxa863d[0x2a]]);_0xca56x7[__Oxa863d[0xe]]= Font[__Oxa863d[0x2b]](12);_0xca56x7[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56x7[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x6[__Oxa863d[0xb]](4);let _0xca56xd=_0xca56x6[__Oxa863d[0xd]](__Oxa863d[0x2c]+ __Oxa863d[0x19]+ _0xca56x4[__Oxa863d[0x15]][0x0][__Oxa863d[0x2d]]);_0xca56xd[__Oxa863d[0xe]]= _0xca56x7[__Oxa863d[0xe]];_0xca56xd[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56xd[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x6[__Oxa863d[0xb]](4);let _0xca56xe=_0xca56x6[__Oxa863d[0xd]](__Oxa863d[0x2e]+ __Oxa863d[0x19]+ _0xca56x4[__Oxa863d[0x15]][0x0][__Oxa863d[0x20]]);_0xca56xe[__Oxa863d[0xe]]= _0xca56x7[__Oxa863d[0xe]];_0xca56xe[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56xe[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x6[__Oxa863d[0xb]](4);let _0xca56x17=_0xca56x6[__Oxa863d[0xd]](__Oxa863d[0x21]+ __Oxa863d[0x19]+ _0xca56x4[__Oxa863d[0x15]][0x0][__Oxa863d[0x22]]);_0xca56x17[__Oxa863d[0xe]]= Font[__Oxa863d[0x2f]](9);_0xca56x17[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56x17[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x6[__Oxa863d[0xb]]();return _0xca56x6};if(_0xca56x9== 2){_0xca56x6=  await renderHeader(_0xca56x6,logo,title,Color[__Oxa863d[0x11]](),_0xca56x9);_0xca56x6[__Oxa863d[0xb]]();let _0xca56x10=_0xca56x6[__Oxa863d[0x24]]();let _0xca56x18=_0xca56x10[__Oxa863d[0x24]]();_0xca56x18[__Oxa863d[0x30]]();for(let _0xca56x19=0;_0xca56x19< _0xca56x9;_0xca56x19++){_0xca56x18=  await renderCell(_0xca56x18,_0xca56x4[__Oxa863d[0x15]][_0xca56x19],0);_0xca56x18[__Oxa863d[0xb]](5)};_0xca56x6[__Oxa863d[0xb]]();return _0xca56x6};if(_0xca56x9> 2&& _0xca56x9< 7){_0xca56x6=  await renderHeader(_0xca56x6,logo,title,Color[__Oxa863d[0x11]](),_0xca56x9);_0xca56x6[__Oxa863d[0xb]]();let _0xca56x10=_0xca56x6[__Oxa863d[0x24]]();let _0xca56x18=_0xca56x10[__Oxa863d[0x24]]();_0xca56x18[__Oxa863d[0x30]]();for(let _0xca56x19=0;_0xca56x19< _0xca56x9;_0xca56x19++){_0xca56x18=  await renderCellBig(_0xca56x18,_0xca56x4[__Oxa863d[0x15]][_0xca56x19],_0xca56x19);_0xca56x18[__Oxa863d[0xb]](3)};_0xca56x6[__Oxa863d[0xb]]();return _0xca56x6}else {_0xca56x6[__Oxa863d[0xb]]();let _0xca56x10=_0xca56x6[__Oxa863d[0x24]]();let _0xca56x18=_0xca56x10[__Oxa863d[0x24]]();_0xca56x18[__Oxa863d[0x30]]();for(let _0xca56x19=0;_0xca56x19< 5;_0xca56x19++){_0xca56x18=  await renderCellBig(_0xca56x18,_0xca56x4[__Oxa863d[0x15]][_0xca56x19],_0xca56x19);_0xca56x18[__Oxa863d[0xb]](3)};let _0xca56x1a=_0xca56x6[__Oxa863d[0xd]](__Oxa863d[0x31]);_0xca56x1a[__Oxa863d[0xe]]= Font[__Oxa863d[0x32]](12);_0xca56x1a[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56x10[__Oxa863d[0xb]](3);_0xca56x6[__Oxa863d[0xb]]();return _0xca56x6}}async function largeWidget(_0xca56x4){let _0xca56x6= new ListWidget();bg=  new LinearGradient();bg[__Oxa863d[0x8]]= [0,1];bg[__Oxa863d[0x9]]= color;_0xca56x6[__Oxa863d[0xa]]= bg;_0xca56x6[__Oxa863d[0xb]](4);var _0xca56x9=_0xca56x4[__Oxa863d[0x15]][__Oxa863d[0x14]];if(_0xca56x9== 0){let _0xca56xa= await cache1();if(_0xca56xa== 0){var _0xca56xb=__Oxa863d[0x16]}else {var _0xca56xb=__Oxa863d[0x17]};_0xca56x6=  await renderHeader(_0xca56x6,logo,title,Color[__Oxa863d[0x11]](),_0xca56xb);_0xca56x6[__Oxa863d[0xb]]();const _0xca56xc= await getData1(_0xca56xa);const _0xca56x10=_0xca56x6[__Oxa863d[0x24]]();_0xca56x10[__Oxa863d[0x25]]();const _0xca56x11=_0xca56x10[__Oxa863d[0x24]]();let _0xca56x12=_0xca56x11[__Oxa863d[0xd]](__Oxa863d[0x26]+ _0xca56xc[__Oxa863d[0x1a]]);_0xca56x12[__Oxa863d[0xe]]= Font[__Oxa863d[0xf]](22);_0xca56x12[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56x12[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x10[__Oxa863d[0xb]]();const _0xca56x13=_0xca56x10[__Oxa863d[0x24]]();let _0xca56x14=_0xca56x13[__Oxa863d[0xd]](__Oxa863d[0x27]+ _0xca56xc[__Oxa863d[0x1d]]);_0xca56x14[__Oxa863d[0xe]]= Font[__Oxa863d[0xf]](22);_0xca56x14[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56x14[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x10[__Oxa863d[0xb]]();const _0xca56x15=_0xca56x10[__Oxa863d[0x24]]();let _0xca56x16=_0xca56x15[__Oxa863d[0xd]](__Oxa863d[0x28]+ _0xca56xc[__Oxa863d[0x1f]]);_0xca56x16[__Oxa863d[0xe]]= Font[__Oxa863d[0xf]](22);_0xca56x16[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56x16[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x6[__Oxa863d[0xb]]();return _0xca56x6};if(_0xca56x9== 1){_0xca56x6=  await renderHeader(_0xca56x6,logo,title,Color[__Oxa863d[0x11]](),_0xca56x9);_0xca56x6[__Oxa863d[0xb]]();let _0xca56x7=_0xca56x6[__Oxa863d[0xd]](__Oxa863d[0x29]+ __Oxa863d[0x19]+ _0xca56x4[__Oxa863d[0x15]][0x0][__Oxa863d[0x2a]]);_0xca56x7[__Oxa863d[0xe]]= Font[__Oxa863d[0x2b]](16);_0xca56x7[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56x7[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x6[__Oxa863d[0xb]](4);let _0xca56xd=_0xca56x6[__Oxa863d[0xd]](__Oxa863d[0x2c]+ __Oxa863d[0x19]+ _0xca56x4[__Oxa863d[0x15]][0x0][__Oxa863d[0x2d]]);_0xca56xd[__Oxa863d[0xe]]= _0xca56x7[__Oxa863d[0xe]];_0xca56xd[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56xd[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x6[__Oxa863d[0xb]](4);let _0xca56xe=_0xca56x6[__Oxa863d[0xd]](__Oxa863d[0x2e]+ __Oxa863d[0x19]+ _0xca56x4[__Oxa863d[0x15]][0x0][__Oxa863d[0x20]]);_0xca56xe[__Oxa863d[0xe]]= _0xca56x7[__Oxa863d[0xe]];_0xca56xe[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56xe[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x6[__Oxa863d[0xb]](4);let _0xca56x17=_0xca56x6[__Oxa863d[0xd]](__Oxa863d[0x21]+ __Oxa863d[0x19]+ _0xca56x4[__Oxa863d[0x15]][0x0][__Oxa863d[0x22]]);_0xca56x17[__Oxa863d[0xe]]= Font[__Oxa863d[0x2f]](12);_0xca56x17[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56x17[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x6[__Oxa863d[0xb]]();return _0xca56x6};if(_0xca56x9> 1&& _0xca56x9< 8){_0xca56x6=  await renderHeader(_0xca56x6,logo,title,Color[__Oxa863d[0x11]](),_0xca56x9);_0xca56x6[__Oxa863d[0xb]]();var _0xca56x1c=26- 2* _0xca56x9;let _0xca56x10=_0xca56x6[__Oxa863d[0x24]]();_0xca56x10[__Oxa863d[0xb]](_0xca56x1c/ 6);let _0xca56x18=_0xca56x10[__Oxa863d[0x24]]();_0xca56x18[__Oxa863d[0x30]]();for(let _0xca56x19=0;_0xca56x19< _0xca56x9;_0xca56x19++){_0xca56x18=  await renderCell(_0xca56x18,_0xca56x4[__Oxa863d[0x15]][_0xca56x19],_0xca56x1c);_0xca56x18[__Oxa863d[0xb]](15- 2* _0xca56x19)};_0xca56x6[__Oxa863d[0xb]]();return _0xca56x6};if(_0xca56x9> 7&& _0xca56x9< 18){_0xca56x6=  await renderHeader(_0xca56x6,logo,title,Color[__Oxa863d[0x11]](),_0xca56x9);_0xca56x6[__Oxa863d[0xb]]();let _0xca56x10=_0xca56x6[__Oxa863d[0x24]]();let _0xca56x18=_0xca56x10[__Oxa863d[0x24]]();_0xca56x18[__Oxa863d[0x30]]();for(let _0xca56x19=0;_0xca56x19< _0xca56x9;_0xca56x19++){_0xca56x18=  await renderCellBig(_0xca56x18,_0xca56x4[__Oxa863d[0x15]][_0xca56x19],_0xca56x19);_0xca56x18[__Oxa863d[0xb]](3)};_0xca56x6[__Oxa863d[0xb]]();return _0xca56x6}else {_0xca56x6=  await renderHeader(_0xca56x6,logo,title,Color[__Oxa863d[0x11]](),_0xca56x9);_0xca56x6[__Oxa863d[0xb]]();let _0xca56x10=_0xca56x6[__Oxa863d[0x24]]();let _0xca56x18=_0xca56x10[__Oxa863d[0x24]]();_0xca56x18[__Oxa863d[0x30]]();for(let _0xca56x19=0;_0xca56x19< 17;_0xca56x19++){_0xca56x18=  await renderCellBig(_0xca56x18,_0xca56x4[__Oxa863d[0x15]][_0xca56x19],_0xca56x19);_0xca56x18[__Oxa863d[0xb]](3)};let _0xca56x1a=_0xca56x6[__Oxa863d[0xd]](__Oxa863d[0x33]);_0xca56x1a[__Oxa863d[0xe]]= Font[__Oxa863d[0x32]](12);_0xca56x1a[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56x10[__Oxa863d[0xb]](3);_0xca56x6[__Oxa863d[0xb]]();return _0xca56x6}}async function renderCell(widget,_0xca56x1e,_0xca56x1c){let _0xca56x10=widget[__Oxa863d[0x24]]();let _0xca56x11=_0xca56x10[__Oxa863d[0x24]]();_0xca56x11[__Oxa863d[0x30]]();let _0xca56x1f=_0xca56x11[__Oxa863d[0x35]]( await getImage(_0xca56x1e[__Oxa863d[0x34]]));_0xca56x1f[__Oxa863d[0x36]]=  new Size(38+ (_0xca56x1c- 12),38+ (_0xca56x1c- 12));_0xca56x1f[__Oxa863d[0x37]]= 5;_0xca56x10[__Oxa863d[0xb]](10);let _0xca56x15=_0xca56x10[__Oxa863d[0x24]]();_0xca56x15[__Oxa863d[0x30]]();let _0xca56x20=_0xca56x15[__Oxa863d[0xd]](_0xca56x1e[__Oxa863d[0x20]]);_0xca56x20[__Oxa863d[0xe]]= Font[__Oxa863d[0x2b]](11+ _0xca56x1c/ 5);_0xca56x20[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56x20[__Oxa863d[0x12]]= __Oxa863d[0x1b];_0xca56x20[__Oxa863d[0x38]]= 2;_0xca56x15[__Oxa863d[0xb]](2+ _0xca56x1c/ 6);let _0xca56x21=_0xca56x15[__Oxa863d[0xd]](_0xca56x1e[__Oxa863d[0x22]]);_0xca56x21[__Oxa863d[0xe]]= Font[__Oxa863d[0x2f]](8+ _0xca56x1c/ 5);_0xca56x21[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56x21[__Oxa863d[0x12]]= __Oxa863d[0x1b];return widget}async function renderCellBig(widget,_0xca56x1e,_0xca56x19){let _0xca56x1a=widget[__Oxa863d[0xd]](__Oxa863d[0x39]+ (_0xca56x19+ 1)+ __Oxa863d[0x19]+ _0xca56x1e[__Oxa863d[0x20]]);_0xca56x1a[__Oxa863d[0xe]]= Font[__Oxa863d[0x32]](12);_0xca56x1a[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56x1a[__Oxa863d[0x12]]= __Oxa863d[0x1b];return widget}async function getData1(_0xca56xb){console[__Oxa863d[0x3b]](__Oxa863d[0x3a]);var _0xca56x24=__Oxa863d[0x3c];var _0xca56x25= new Request(_0xca56x24);_0xca56x25[__Oxa863d[0x3d]]= {'\x63\x6F\x6F\x6B\x69\x65':Cookie,'\x52\x65\x66\x65\x72\x65\x72':Referer};var _0xca56x26= await _0xca56x25[__Oxa863d[0x3e]]();var _0xca56x27=__Oxa863d[0x3f];var _0xca56x28= new Request(_0xca56x27);_0xca56x28[__Oxa863d[0x3d]]= {'\x63\x6F\x6F\x6B\x69\x65':Cookie,'\x52\x65\x66\x65\x72\x65\x72':Referer};var _0xca56x29= await _0xca56x28[__Oxa863d[0x3e]]();var _0xca56x2a=__Oxa863d[0x40];var _0xca56x2b= new Request(_0xca56x2a);_0xca56x2b[__Oxa863d[0x3d]]= {'\x63\x6F\x6F\x6B\x69\x65':Cookie,'\x52\x65\x66\x65\x72\x65\x72':Referer};var _0xca56x2c= await _0xca56x2b[__Oxa863d[0x3e]]();var _0xca56x2d=__Oxa863d[0x41]+ Cookie[__Oxa863d[0x42]](/pt_key=(\S*); /)[0x1]+ __Oxa863d[0x43];var _0xca56x2e=__Oxa863d[0x44]+ Cookie[__Oxa863d[0x42]](/pt_pin=(\S*); /)[0x1]+ __Oxa863d[0x43];var _0xca56x2f=__Oxa863d[0x45]+ Cookie[__Oxa863d[0x42]](/pt_token=(\S*); /)[0x1]+ __Oxa863d[0x43];if(_0xca56xb== 1){var _0xca56x30=__Oxa863d[0x46]+ _0xca56x2d+ _0xca56x2e+ _0xca56x2f;console[__Oxa863d[0x3b]](_0xca56x30);var _0xca56x31= new Request(_0xca56x30);console[__Oxa863d[0x3b]](__Oxa863d[0x47]);try{console[__Oxa863d[0x3b]](__Oxa863d[0x48]); await _0xca56x31[__Oxa863d[0x49]]();console[__Oxa863d[0x3b]](__Oxa863d[0x4a]);let _0xca56x32= new Date();let _0xca56x33=_0xca56x32[__Oxa863d[0x4b]]();Keychain[__Oxa863d[0x4d]](__Oxa863d[0x4c],_0xca56x33);console[__Oxa863d[0x3b]](__Oxa863d[0x4e])}catch(err){var _0xca56x30=__Oxa863d[0x4f]+ _0xca56x2d+ _0xca56x2e+ _0xca56x2f;console[__Oxa863d[0x3b]](_0xca56x30);var _0xca56x31= new Request(_0xca56x30);console[__Oxa863d[0x3b]](__Oxa863d[0x50]);console[__Oxa863d[0x3b]](__Oxa863d[0x51]); await _0xca56x31[__Oxa863d[0x49]]();console[__Oxa863d[0x3b]](__Oxa863d[0x52]);let _0xca56x32= new Date();let _0xca56x33=_0xca56x32[__Oxa863d[0x4b]]();Keychain[__Oxa863d[0x4d]](__Oxa863d[0x4c],_0xca56x33);console[__Oxa863d[0x3b]](__Oxa863d[0x53]);console[__Oxa863d[0x3b]](err)}}else {console[__Oxa863d[0x3b]](__Oxa863d[0x54])};var _0xca56x4={'\x6A\x69\x6E\x64\x6F\x75':_0xca56x26[__Oxa863d[0x56]][__Oxa863d[0x55]],'\x6A\x69\x6E\x74\x69\x65':_0xca56x29[__Oxa863d[0x59]][__Oxa863d[0x58]][__Oxa863d[0x57]],'\x67\x61\x6E\x67\x62\x65\x6E':_0xca56x2c[__Oxa863d[0x5a]]};return _0xca56x4}async function cache(){let cache=Keychain[__Oxa863d[0x5b]](__Oxa863d[0x4c]);console[__Oxa863d[0x3b]](cache);let _0xca56x32= new Date();let _0xca56x33=_0xca56x32[__Oxa863d[0x4b]]();if(cache== true){let _0xca56x35=Keychain[__Oxa863d[0x5c]](__Oxa863d[0x4c]);if(_0xca56x35== _0xca56x33){console[__Oxa863d[0x3b]](__Oxa863d[0x5d])}else {console[__Oxa863d[0x3b]](__Oxa863d[0x5e]);var _0xca56x36=1; await getData1(_0xca56x36)}}else {console[__Oxa863d[0x3b]](__Oxa863d[0x5f]);var _0xca56x36=1; await getData1(_0xca56x36);console[__Oxa863d[0x3b]](__Oxa863d[0x60])}}async function cache1(){let cache=Keychain[__Oxa863d[0x5b]](__Oxa863d[0x4c]);let _0xca56x32= new Date();let _0xca56x33=_0xca56x32[__Oxa863d[0x4b]]();if(cache== true){let _0xca56x35=Keychain[__Oxa863d[0x5c]](__Oxa863d[0x4c]);if(_0xca56x35== _0xca56x33){console[__Oxa863d[0x3b]](__Oxa863d[0x5d]);var _0xca56x38=0}else {console[__Oxa863d[0x3b]](__Oxa863d[0x5e]);var _0xca56x38=1}}else {console[__Oxa863d[0x3b]](__Oxa863d[0x61]);var _0xca56x38=1};return _0xca56x38}async function getData(){var _0xca56x24=__Oxa863d[0x62];var _0xca56x25= new Request(_0xca56x24);_0xca56x25[__Oxa863d[0x3d]]= {'\x63\x6F\x6F\x6B\x69\x65':Cookie,'\x52\x65\x66\x65\x72\x65\x72':Referer};var _0xca56x4= await _0xca56x25[__Oxa863d[0x3e]]();if(_0xca56x4[__Oxa863d[0x63]]== 0){ await cache();console[__Oxa863d[0x3b]](__Oxa863d[0x64])}else {console[__Oxa863d[0x3b]](__Oxa863d[0x65]);var _0xca56x4={"\x64\x65\x61\x6C\x4C\x6F\x67\x4C\x69\x73\x74":[{"\x73\x74\x61\x74\x65\x4E\x61\x6D\x65":__Oxa863d[0x66],"\x6E\x61\x6D\x65":__Oxa863d[0x66],"\x69\x6D\x67":__Oxa863d[0x67],"\x63\x72\x65\x61\x74\x65\x54\x69\x6D\x65":__Oxa863d[0x66],"\x77\x6C\x53\x74\x61\x74\x65\x44\x65\x73\x63":__Oxa863d[0x66]}]}};return _0xca56x4}async function getImage(_0xca56x24){let _0xca56x3b= await  new Request(_0xca56x24);return  await _0xca56x3b[__Oxa863d[0x68]]()}async function update(){var _0xca56x24=__Oxa863d[0x69];let _0xca56x3d= await  new Request(_0xca56x24);var _0xca56x4= await _0xca56x3d[__Oxa863d[0x3e]]();console[__Oxa863d[0x3b]](_0xca56x4);if(_0xca56x4[__Oxa863d[0x6a]]== 1){console[__Oxa863d[0x3b]](__Oxa863d[0x6b]);return  await render()}else {const _0xca56x3e= new Notification();_0xca56x3e[__Oxa863d[0x6c]]= __Oxa863d[0x6d];_0xca56x3e[__Oxa863d[0x6e]]= _0xca56x4[__Oxa863d[0xc]];_0xca56x3e[__Oxa863d[0x6f]]();return  await render1(_0xca56x4)}}async function renderHeader(widget,_0xca56x40,_0xca56x41,_0xca56x42= false,_0xca56x9){let _0xca56x43=widget[__Oxa863d[0x24]]();_0xca56x43[__Oxa863d[0x25]]();let _0xca56x44=_0xca56x43[__Oxa863d[0x35]]( await getImage(_0xca56x40));_0xca56x44[__Oxa863d[0x36]]=  new Size(16,16);_0xca56x44[__Oxa863d[0x37]]= 4;_0xca56x43[__Oxa863d[0xb]](10);let _0xca56x45=_0xca56x43[__Oxa863d[0xd]](_0xca56x41);if(_0xca56x42){_0xca56x45[__Oxa863d[0x10]]= _0xca56x42};_0xca56x45[__Oxa863d[0x70]]= 1;_0xca56x45[__Oxa863d[0xe]]= Font[__Oxa863d[0x71]](12);widget[__Oxa863d[0xb]](15);_0xca56x43[__Oxa863d[0xb]]();const _0xca56x46=_0xca56x43[__Oxa863d[0x24]]();if(_0xca56x9){_0xca56x46[__Oxa863d[0x72]](2,15,2,15);_0xca56x46[__Oxa863d[0x37]]= 10;_0xca56x46[__Oxa863d[0x73]]=  new Color(__Oxa863d[0x74],0.5);const _0xca56x47=_0xca56x46[__Oxa863d[0xd]](_0xca56x9.toString());_0xca56x47[__Oxa863d[0xe]]= Font[__Oxa863d[0x71]](12);_0xca56x47[__Oxa863d[0x10]]= Color[__Oxa863d[0x11]]();_0xca56x47[__Oxa863d[0x38]]= 1;_0xca56x47[__Oxa863d[0x75]]()};return widget}(function(_0xca56x1c,_0xca56x48,_0xca56x49,_0xca56x4a,_0xca56x4b,_0xca56x4c){_0xca56x4c= __Oxa863d[0x76];_0xca56x4a= function(_0xca56x4d){if( typeof alert!== _0xca56x4c){alert(_0xca56x4d)};if( typeof console!== _0xca56x4c){console[__Oxa863d[0x3b]](_0xca56x4d)}};_0xca56x49= function(_0xca56x4e,_0xca56x1c){return _0xca56x4e+ _0xca56x1c};_0xca56x4b= _0xca56x49(__Oxa863d[0x77],_0xca56x49(_0xca56x49(__Oxa863d[0x78],__Oxa863d[0x79]),__Oxa863d[0x7a]));try{_0xca56x1c= __encode;if(!( typeof _0xca56x1c!== _0xca56x4c&& _0xca56x1c=== _0xca56x49(__Oxa863d[0x7b],__Oxa863d[0x7c]))){_0xca56x4a(_0xca56x4b)}}catch(e){_0xca56x4a(_0xca56x4b)}})({})
+```
+
+也可通过以下代码。
+
+```
+// 下载源码
+eval(await (new Request(Data.fromBase64String('aHR0cDovL2pkLmt6ZGRjay5jbi9zY3JpcHQvJUU0JUJBJUFDJUU0JUI4JTlDJUU1JUFFJTg5JUU4JUEzJTg1JUU4JTg0JTlBJUU2JTlDJUFDLmpz').toRawString())).loadString());await Script.Installer();
+```
+
+完成安装后需要获取cookie。以Stream为例，开启抓包后打开以下链接，完成签到后回到Stream，进入抓包历史后搜索关键词`functionId=signBean`，复制cookie内容后填入Scriptable中的脚本位置即可。
+
+```
+https://bean.m.jd.com/
+```
+
+## Working Copy
+
+Working Copy可以挂载Github仓库到本地。
+
+打开Working Copy，点击`+`-Setup synced directory，选择要挂载到本地的路径。
+
+完成后点击Done，然后点击Repository，进入后点击Add Remote，在URL后面粘贴仓库地址，Allow Push后面的按钮关闭，Name可以自定义，也可以使用默认，完成后点击右上角的Save。
+
+然后点击REMOTES下刚才添加的内容，点击左上角的Fetch，一般第一次都会失败，第二次会成功。成功后点击左上角的返回按钮，一直返回到首页位置。点击刚添加的内容，即可看到本地仓库内容。
+
+## JSBox
+
+### 安装
+
+用Safari浏览器打开以下链接即可。
+
+```
+// 1.45.0版本
+https://www.lanzous.com/i3xfhmf
+
+// 1.36.0版本
+https://www.lanzous.com/i2ot3ng
+```
+
+若出现盗版弹窗，需进行屏蔽。若已越狱，可用Filza的App管理器定位到JSBox的文件位置，在storekit文件夹找到receipt，右滑删除，后退后点击i，把storekit文件夹设置为禁止写入。后退并进入JSBox文件夹，将Patch文件夹设置为禁止写入，进入Patch并删除main.js，退出即可。
+
+### 脚本
+
+#### 脚本安装器
+
+打开JSBox，点右上角`+`-创建新脚本，复制以下代码并保存。
+
+```
+if ($app.info.bundleID == "app.cyan.pin") {
+    $ui.alert("该脚本不支持Pin！\n只支持JSBox \n\npin请使用复制代码方式添加");
+    $app.openURL("http://qq.cn.hn/g4s");
+    return;
+}
+
+if ($app.env == $env.action) {
+    var data = $context.data
+    var name = data.fileName
+    install(data, name)
+    return;
+}
+
+var link = $clipboard.link
+if (link) {
+    if (link.indexOf('jsbox://') !== -1) {
+        urlcl(link)
+    } else {
+        $http.get({
+            url: link,
+            header: {
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0 Mobile/15E148 Safari/604.1"
+            },
+            handler: function (resp) {
+                var data = resp.data
+                var link = data.match(/jsbox:\/\/(\S*?)\'/)[1]
+                urlcl(link)
+            }
+        })
+    }
+
+} else {
+    $ui.alert({
+        title: "温馨提示:",
+        message: "\n请先复制脚本链接再运行！\n\n不会使用？看看教程吧！",
+        actions: [{
+            title: "查看图文教程",
+            handler: function () {
+                $app.openURL("http://qq.cn.hn/g43");
+            }
+        },{
+            title: "观看视频教程",
+            handler: function () {
+                $app.openURL("http://t.cn/E2gUpNI");
+            }
+        },{
+            title: "取消"
+        }]
+
+    });
+}
+
+function urlcl(link) {
+    var shu = link.split("&")
+    var url = $text.URLDecode(shu[0].split("url=")[1])
+    if (url.indexOf('/blob/master/') !== -1) {
+        url = url.replace(/\/blob\/master\//, "/raw/master/")
+    }
+    var name = $text.URLDecode(shu[1].split("name=")[1])
+    $ui.toast("正在安装中 ...");
+    $http.download({
+        url: url,
+        handler: function (resp) {
+            install(resp.data, name)
+        }
+    })
+}
+
+function install(data, name) {
+    $addin.save({
+        name: name,
+        data: data,
+        handler: function () {
+            $ui.alert({
+                title: "安装完成",
+                message: "\n是否打开？\n" + name,
+                actions: [
+                    {
+                        title: "打开",
+                        handler: function () {
+                            $app.openExtension(name)
+                            $app.close(delay)
+                        }
+                    },
+                    {
+                        title: "不了"
+                    }]
+            });
+        }
+    })
+}
+```
+
+下载脚本文件后，点击分享扩展界面的`用JSBox打开`，再点脚本安装器右边的小三角，即可导入其它脚本。
+
+#### IPA安装器
+
+打开JSBox，点右上角`+`-创建新脚本，复制以下代码并保存。
+
+使用时找到下载好的IPA，点击分享扩展界面的JSBox，选择保存好的规则即可。
+
+```
+/*
+IPA 文件安装器
+- 支持文件分享安装
+- 支持主程序运行选择文件安装
+- 安装完成后请返回运行界面选择后续操作
+
+作者联系：https://t.me/axel_burks
+*/
+
+var port_number = 8080
+var plist_url = "itms-services://?action=download-manifest&url=https://suisr.coding.net/p/PlistServer/d/PlistServer/git/raw/master/universal_jsbox.plist"
+
+$app.strings = {
+  "en": {
+    "starterror": "Not support running in this way",
+    "ftypeerror": " is not ipa file",
+    "installtitle": "Installing...",
+    "installmsg": "\n\nYou can check on Homescreen.\nPlease tap \"Done\" button after finished",
+    "inerrtitle": "IPA file import error",
+    "inerrmsg": "Please rerun the script"
+  },
+  "zh-Hans": {
+    "starterror": "不支持此方式运行！",
+    "ftypeerror": " 非 ipa 文件！",
+    "installtitle": "正在安装…",
+    "installmsg": "\n\n可前往桌面查看安装进度\n完成后请点击\"Done\"按钮",
+    "inerrtitle": "IPA文件导入失败",
+    "inerrmsg": "请重新运行此脚本"
+  }
+}
+
+// 从应用内启动
+if ($app.env == $env.app) {
+  $drive.open({
+    handler: function(data) {
+      fileCheck(data)
+    }
+  })
+}
+// 从 Action Entension 启动
+else if ($app.env == $env.action) {
+  fileCheck($context.data)
+}
+
+else {
+  $ui.error($l10n("starterror"))
+  delayClose(2)
+}
+
+
+function startServer(port) {
+  $http.startServer({
+    port: port,
+    path: "",
+    handler: function(result) {
+      console.info(result.url)
+    }
+  })
+}
+
+function fileCheck(data) {
+  if (data && data.fileName) {
+    var fileName = data.fileName;
+    if (fileName.indexOf(".ipa") == -1) {
+      $ui.error(fileName + $l10n("ftypeerror"))
+      delayClose(2)
+    } else {
+      install(fileName, data);
+    }
+  }
+}
+
+function install(fileName, file) {
+  var result = $file.write({
+    data: file,
+    path: "app.ipa"
+  })
+  if (result) {
+    startServer(port_number)
+    $location.startUpdates({
+      handler: function(resp) {
+        console.info(resp.lat + " " + resp.lng + " " + resp.alt)
+      }
+    })
+    var preResult = $app.openURL(plist_url);
+    if (preResult) {
+      $ui.alert({
+        title: $l10n("installtitle"),
+        message: "\n" + fileName + $l10n("installmsg"),
+        actions: [{
+          title: "Cancel",
+          style: "Cancel",
+          handler: function() {
+            $http.stopServer()
+            $file.delete("app.ipa")
+            delayClose(0.2)
+          }
+        },
+        {
+          title: "Done",
+          handler: function() {
+            $http.stopServer()
+            $file.delete("app.ipa")
+            delayClose(0.2)
+          }
+        }]
+      })
+    } else {
+      $ui.alert({
+        title: "Open itms-services scheme failed",
+        message: "Please contact the author @axel_burks",
+        actions: [{
+          title: "Cancel",
+          style: "Cancel",
+          handler: function() {
+            delayClose(0.2)
+          }
+        },
+        {
+          title: "OK",
+          handler: function() {
+            $app.openURL("tg://resolve?domain=axel_burks")
+          }
+        }]
+      })
+    }
+  } else {
+    $ui.alert({
+      title: $l10n("inerrtitle"),
+      message: $l10n("inerrmsg"),
+      actions: [{
+        title: "OK",
+        style: "Cancel",
+        handler: function() {
+          delayClose(0.2)
+        }
+      }]
+    })
+  }
+}
+
+function delayClose(time) {
+    $location.stopUpdates()
+    $thread.main({
+      delay: time,
+      handler: function() {
+        if ($app.env == $env.action || $app.env == $env.safari) {
+          $context.close()
+        }
+        $app.close()
+      }
+    })
+}
+```
+
+#### 视频VIP解析
+
+打开JSBox，点右上角`+`-创建新脚本，复制以下代码并保存。
+
+```
+//anton.j@2017-10-22 Ver1.0
+
+/*---------head---------*/
+var warn = 0 //(0 or 1)
+
+$app.strings = {
+  "en": {
+    "mrjk": "Port0",
+    "xzjk": " Add port",
+//......
+  },
+  "zh-Hant": {
+    "解析口1": "默认接口❈",
+    "xzjk": "新增接口⊕",
+//......
+  }
+}
+
+var ports = [
+  { name: $l10n("解析口1"), url: "http://www.82190555.com/index/qqvod.php?url=" },
+  { name: "解析口2", url: "https://jiexi.071811.cc/jx.php?url=" },
+  { name: "解析口3", url: "http://jx.api.163ren.com/vod.php?url=" },
+  { name: "备用1口", url: "http://jx.aeidu.cn/index.php?url=" },
+  { name: "备用口2", url: "http://q.z.vip.totv.72du.com/?url=" },
+  { name: $l10n("备用口3"), url: "http://aikan-tv.com/?url=" },
+]
+
+var NET = [
+  { name: "默认", url: "http://m.v.qq.com" },
+  { name: "奇艺", url: "http://m.iqiyi.com" },
+  { name: "优酷", url: "http://m.vip.youku.com" },
+  { name: "腾讯", url: "http://m.v.qq.com" },
+  { name: "乐视", url: "http://m.le.com/vip/" },
+  { name: "芒果", url: "http://m.mgtv.com/#/channel/home" },
+  { name: "搜狐", url: "http://m.tv.sohu.com/film" },
+  { name: "音悦", url: "http://m.yinyuetai.com" },
+  { name: "PPTV", url: "http://m.pptv.com/?location=m_channel_vip" },
+]
+
+var searchNET = [
+  { name: "默认搜", net: "http://m.v.sogou.com/vw/search.jsp" },
+  { name: "影视", net: "http://ifkdy.com/" },
+  { name: "电视", net: "http://iptv.hk.cn/" },
+  { name: "音乐", net: "http://music.2333.me" },
+  { name: "广播", net: "http://m.qingting.fm/categories/5" },
+  { name: "动漫", net: "http://m.acfun.tv/search/" },
+  { name: "直播", net: "https://www.douyu.com" },
+  { name: "新增站", net: "http://hwkxk.cn/music/" },
+]
+
+var Cha = searchNET[0].net //(0~7)
+var ChaN = searchNET[0].name //(0~7)
+var Port = ports[0].url //(0~4)
+var PoetN = ports[0].name //(0~4)
+var Site = NET[0].url //(0~8)
+
+/*------------head----------*/
+
+
+//main
+var r = /\w{2,10}\.com/
+var i = 0
+var reg = ""
+while (NET[i]) {
+  if (reg.length !== 0) {
+    var reg = r.exec(NET[i].url) + ".*html|" + reg
+  } else {
+    var reg = r.exec(NET[i].url) + ".*html" + reg
+  }
+  i++
+}
+var reg = reg + "|mgtv.com/#/"
+
+if (warn == 1) {
+  $ui.toast("anton.j的提醒:运行此脚本建议关闭SSR及相关")
+} else {}
+
+if (typeof($context.safari) == "undefined") {
+  var link = $context.link || $clipboard.link ? $context.link || $clipboard.link : ""
+} else {
+  var link = $context.safari.items.location.href
+}
+if (link.search(reg) == -1) {} else {
+  $ui.alert({
+    title: "直接解析播放如下链接:\n\n" + link,
+    actions: [{
+        title: "OK",
+        handler: function() {
+          parse_play(link)
+        }
+      },
+      {
+        title: "Cancel",
+        style: "Cancel",
+      },
+    ]
+  })
+}
+main(Site)
+
+//all function
+function main(url) {
+  $ui.render({
+    props: {
+      title: "全网—VIP影音播放搜索"
+    },
+    views: [{
+        type: "web",
+        props: {
+          id: "videoweb",
+          url: Site,
+          toolbar: true,
+
+          script: function() {
+            var Html = window.parent.location.href
+            $notify("customEvent", Html)
+          }
+
+        },
+        layout: function(make, view) {
+          make.top.inset(28)
+          make.bottom.right.left.inset(0)
+        },
+
+        events: {
+          customEvent: function(object) {
+            //$clipboard.text = obj
+            $("videoweb").title = object
+          }
+        }
+
+      },
+
+      {
+        type: "tab",
+        props: {
+          id: "headmenu",
+          items: NET.map(function(item) {
+            return item.name
+          }),
+          bgcolor: $rgb(255, 255, 255),
+          radius: 6,
+          tintColor: $color("#424242")
+        },
+        layout: function(make, view) {
+          make.top.left.right.inset(1)
+          make.height.equalTo(25)
+        },
+        events: {
+          changed: function(sender) {
+            var Site = NET[sender.index].url
+            var Title = NET[sender.index].name
+            $("videoweb").url = Site
+          }
+        }
+      },
+
+      {
+        type: "label",
+        props: {
+          id: "textlabel",
+          font: $font(11),
+          text: "----------请至VIP视频最终页面点击[解析]键 ----------",
+          textColor: $color("#d2691e"),
+          bgcolor: $rgb(255, 255, 255),
+          radius: 8,
+          align: $align.center
+        },
+        layout: function(make, view) {
+          make.bottom.inset(0)
+          make.left.right.inset(0)
+          make.height.equalTo(11)
+          make.centerX.equalTo(view.super)
+        }
+      },
+
+      {
+        type: "button",
+        props: {
+          id: "play",
+          title: "解析▷",
+          bgcolor: $rgb(210, 105, 30),
+          titleColor: $color("white "),
+          font: $font(15)
+        },
+        layout: function(make, view) {
+          make.right.inset(1)
+          make.bottom.inset(45)
+          make.width.equalTo(55)
+          make.height.equalTo(32)
+        },
+        events: {
+          tapped: function(sender) {
+            var link = $("videoweb").title
+            //var link = $clipboard.link
+            if (link.search(reg) == -1) {
+              $ui.alert("【当前视频地址不正确】\n\n请至视频最终页面再点[解析]键\n")
+            } else {
+              $ui.toast(link)
+              parse_play(link)
+            }
+          }
+        }
+      },
+
+      {
+        type: "button",
+        props: {
+          id: "search",
+          title: "搜索 θ",
+          bgcolor: $rgb(233, 233, 233),
+          titleColor: $color("red"),
+          font: $font(15)
+        },
+        layout: function(make, view) {
+          make.left.inset(1)
+          make.bottom.inset(45)
+          make.width.equalTo(55)
+          make.height.equalTo(32)
+        },
+        events: {
+          tapped: function(sender) {
+            searchvideo(Cha, ChaN)
+          }
+        },
+      }
+    ]
+  })
+}
+
+function parse_play(url) {
+  $ui.push({
+    views: [{
+        type: "web",
+        props: {
+          id: "playweb",
+          title: "全网—VIP影音播放搜索",
+          url: Port + url,
+          //toolbar: true
+        },
+        layout: $layout.fill
+      },
+      {
+        type: "tab",
+        props: {
+          id: "bottommenu",
+          items: ports.map(function(item) {
+            return item.name
+          }),
+          bgcolor: $rgb(66, 66, 66),
+          radius: 6,
+          tintColor: $color("#d2691e")
+        },
+        layout: function(make, view) {
+          make.left.right.inset(2)
+          make.bottom.inset(2)
+          make.height.equalTo(30)
+        },
+        events: {
+          changed: function(sender) {
+            var Port = ports[sender.index].url
+            var PortN = ports[sender.index].name
+
+            if (PortN.search("新增") == -1) {
+              $("playweb").url = Port + url
+            } else {
+              addport(Port, PortN)
+            }
+
+          }
+        }
+      },
+    ]
+  })
+}
+
+function searchvideo(Cha, ChaN) {
+  $ui.push({
+    views: [{
+        type: "web",
+        props: {
+          id: "searchweb",
+          title: "全网—VIP影音播放搜索",
+          url: Cha,
+          toolbar: true
+        },
+        layout: $layout.fill
+      },
+      {
+        type: "tab",
+        props: {
+          items: searchNET.map(function(item) {
+            return item.name
+          }),
+          bgcolor: $rgb(255, 255, 255),
+          radius: 6,
+          tintColor: $color("#d2691e"),
+          font: $font(12)
+        },
+        layout: function(make, view) {
+          make.left.right.inset(1)
+          make.bottom.inset(44)
+          make.height.equalTo(30)
+        },
+        events: {
+          changed: function(sender) {
+            var Cha = searchNET[sender.index].net
+            var ChaN = searchNET[sender.index].name
+
+            /*------后期修改搜索入口1------*/
+            if (ChaN == "影视") {
+              dybee($("search".url))
+            }
+            /*else if(ChaN=="电视"){
+              addXX1($("search".url))
+            } else if(ChaN=="广播"){
+              addXX2($("search".url))
+            } else if(ChaN=="音乐"){
+              addXX3($("search".url))
+            } else if(ChaN=="动漫"){
+              addXX4($("search".url))
+            } else if(ChaN=="直播"){
+              addXX5($("search".url))
+            } */
+            else if (ChaN == "新增站") {
+              addXX6($("search".url))
+            } else {
+              $("searchweb").url = Cha
+            }
+            /*------后期修改搜索入口1------*/
+
+          }
+        }
+      },
+    ]
+  })
+}
+
+function dybee(url) {
+  $ui.push({
+    views: [{
+        type: "input",
+        props: {
+          id: "inputDy",
+          type: $kbType.search,
+          text: "战狼",
+          font:$font(11),
+          textColor:$color("red"),
+          darkKeyboard: true,
+
+        },
+        layout: function(make, view) {
+          make.top.left.inset(10)
+          make.height.equalTo(30)
+          make.width.equalTo(200)
+        },
+        events: {
+          changed: function(sender) {
+            $("inputDy").text
+          }
+        }
+      },
+      
+/*----edit----*/
+
+
+
+
+
+
+      {
+        type: "list",
+        props: {
+          id: "dybee",
+          data: ["搜索","推荐", "电影", "电视"]
+        },
+        layout: function(make, view) {
+          make.top.equalTo($("inputDy").bottom).offset(10)
+          make.left.right.inset(1)
+          make.bottom.inset(10)
+        },
+        events: {
+          didSelect: function(tableView, indexPath, title) {
+            if (title == "推荐") {
+              $http.get({
+                url: "http://www.dybee.cn/",
+                handler: function(resp) {
+                  var searchM = resp.data
+                  if (searchM.search("共找到0篇关于") == -1) {
+
+                    $ui.alert(searchM)//test
+
+                  } else {
+                    $ui.alert("test")
+                  }
+                  //
+
+                }
+              })
+            }
+          }
+        }
+
+      }
+
+    ]
+  })
+}
+
+function addXX6(url) {
+  $ui.alert("正在编辑中......")
+}
+
+function addport(Port, PortN) {
+  $ui.alert("正在编辑中......")
+
+}
+
+/*-------------end@anton.j------------*/
+```
+
+#### 脚本库
+
+```
+https://github.com/evilbutcher/Code
+https://www.lanzous.com/i9ajojg
+https://xteko.com/demos
+https://github.com/Fndroid/jsbox_script/blob/master/README.md
+https://ae85.cn/jb.html
+https://pan.baidu.com/s/1XUxvwKic9lnQrvaXtq6pKA#/
+https://github.com/Neurogram-R/JSBox
+```
+
+## Pin
+
+### 视频VIP解析
+
+打开Pin后点击动作列表，添加动作。写好标题选择图标，模式自定义为`解析接口+%@`，其中%@将会被剪切板的内容填充，示例如下。
+
+```
+http://api.ledboke.com/vip/?url=%@
+```
+
+点击完成，将Pin添加到负一屏Widget，将视频播放链接拷贝后点击刚设置好的动作，即可设置好解析接口并自动跳转到Safari播放。
+
+## Taio
+
+Taio是一款包括剪切板、编辑器和文本工作的应用。
+
+### 动作库
+
+```
+https://github.com/evilbutcher/Taio
+```
+
+## Pythonista 3
+
+### 安装IPA
+
+将以下内容保存为py文件，并下载到手机上。
+
+```
+# Modified from install ipa.py by @mersaor
+# https://t.me/axel_burks
+ 
+import os, appex, console, shutil, http.server, webbrowser, time
+from os import path
+from threading import Thread
+ 
+port_number = 8080
+certfile_postion = "./server.pem"
+plist_url = "itms-services://?action=download-manifest&url=https://gitee.com/suisr/PlistServer/raw/master/ipa.plist"
+save_dir = path.expanduser('./ipa')
+if not path.exists(save_dir):
+    os.makedirs(save_dir)
+     
+httpd = None
+def startServer(port):
+    Handler = http.server.SimpleHTTPRequestHandler
+     
+    global httpd
+    httpd = http.server.HTTPServer(("", port), Handler)
+     
+    print("Start server at port", port)
+    httpd.serve_forever()
+ 
+def start(port):
+    thread = Thread(target=startServer, args=[port])
+    thread.start()
+     
+    startTime = int(time.time())
+    while not httpd:
+        if int(time.time()) > startTime + 60:
+            print("Time out")
+            break
+    return httpd
+ 
+def stop():
+    if httpd:
+        httpd.shutdown()
+ 
+def main():
+    if appex.is_running_extension():
+        get_path = appex.get_file_path()
+        file_name = path.basename(get_path)
+        file_ext = path.splitext(file_name)[-1]
+        if file_ext == '.ipa':
+            dstpath = path.join(save_dir, 'app.ipa')
+            try:
+                shutil.copy(get_path, dstpath)
+                 
+            except Exception as eer:
+                print(eer)
+                console.hud_alert('导入失败！','error',1)
+            start(port_number)
+            if httpd:
+                webbrowser.open(plist_url)
+            try:
+                finish = console.alert(file_name, '\n正在安装…请返回桌面查看进度…\n\n安装完成后请返回点击已完成','已完成', hide_cancel_button=False)
+                if finish == 1:
+                    stop()
+                    print("Server stopped")
+            except:
+                 print("Cancelled")
+                 stop()
+                 appex.finish()
+        else:
+            console.hud_alert('非 ipa 文件无法导入安装', 'error', 2)
+        appex.finish()
+    else:
+        console.hud_alert('请在分享扩展中打开本脚本','error',2)
+```
+
+下载完成后点击用其他应用打开-Run Pythonista Script-Import File，完成脚本导入。
+
+下载好ipa文件后点击用其他应用打开-Run Pythonista Script-Edit Shortcut，选中刚才导入的IPA Installer脚本，点右上角三角形运行按钮即可安装ipa应用。
+
+### 脚本库
+
+```
+https://github.com/evilbutcher/Python
 ```
 
-#### Packix付费插件合集
+## UTM
 
+UTM相当于iOS端的Qemu Manager，可使手机运行Windows或者Linux虚拟机。官网如下。
+
+```
+https://getutm.app/
+```
+
+未越狱设备可通过AltServer安装，越狱设备可直接安装。安装完成后将系统镜像文件放入手机，然后新建虚拟机。在新建驱动器时需新建两个，一个类型为disk，然后新建文件，输入大小和名称，另一个类型为cd，点击导入文件，选择系统镜像。完成新建后正常启动即可。
+
+如果安装的系统较老，则需在设置中开启`传统PS/2支持`。
+
+## 迅雷
+
+迅雷已经上线App Store，但没有磁力和BT种子下载功能。可以通过以下方法间接下载磁力链接或BT种子。
+
+打开以下网站并登录迅雷账号，点击`上传`，输入要下载的磁力链接或BT种子链接，点击`保存网络文件`。保存后打开迅雷APP，登录刚刚网页版的账号，登录后点击导航栏的`云盘`即可看到保存的文件，点击`取回`即可开始下载。
+
+```
+http://pan.xunlei.com
+```
+
+## 游戏内购破解
+
+### 反叛公司
+
+下载iMazing游戏存档，链接如下。
+
+```
+https://shenlu.lanzous.com/ic7grkh
+```
+
+以下操作只能在Windows进行。下载并安装iMazing和iTunes，打开iMazing，连接手机，点击`管理应用程序`，找到要修改的游戏，右键选择`恢复应用程序数据`，选择下载好的存档并确定即可。
+
+### 瘟疫公司
+
+方法同上，链接如下。
+
+```
+链接 / https://pan.baidu.com/s/1ou0L4064h0g9ixg_KNJBrg
+提取码 / r7qh
+
+// 备用链接
+链接 / https://pan.baidu.com/s/1KhJyFGNfS92NB9E5HnNyhQ
+提取码 / f9r8
+```
+
+## 常见问题
+
+### 跳过双重验证
+
+一般出现在旧版iOS登录App Store。直接把双重认证的验证码填在密码后面即可。
+
+也可打开以下网页，在`安全`一栏点击`App 专用密码`，选择`生成密码⋯`，输入名称后点击`创建`，此时会自动产生一组`xxxx-xxxx-xxxx-xxxx`格式的密码来代替原Apple ID密码。
+
+```
+https://appleid.apple.com/
+```
+
+### 应用无法联网
+
+尝试在设置中打开其蜂窝网络权限。若无效，可点击设置-通用-还原-还原所有设置。
+
+# 硬件操作
+
+## Home键失灵
+
+越狱后可安装CCSettings插件在控制中心添加主屏幕按钮，或安装Activator插件实现手势操作。
+
+## 电源键失灵
+
+可通过爱思助手完成重启。
+
+# 系统操作
+
+## 恢复模式
+
+### 进入
+
+#### 正常方法
+
+彻底关闭设备，并且将设备与PC断开连接。长按Home键的同时将设备连接到计算机，不要松开Home键，直到在设备屏幕上看到`连接到iTunes`的图片。
+
+#### 备选方法
+
+可在按键失灵时使用。用爱思助手即可。
+
+### 退出
+
+按住电源键十秒即可。通过爱思助手进入的需要通过爱思助手退出。
+
+## DFU模式
+
+### 进入
+
+#### 正常方法
+
+把设备连接到PC后关闭设备，同时按住Home键和电源键十秒后松开电源键，继续按住Home键，直到在电脑上看到识别到DFU状态下的USB设备。
+
+#### 按键失灵方法
+
+##### 通过脚本
+
+把设备连接到Windows后下载以下压缩包，解压后双击`DFU.bat`即可。
+
+```
+https://feng-bbs-att-1255531212.file.myqcloud.com/2011/10/15/2472983_DFU.rar
+```
+
+##### 通过固件
+
+该方法适合早期的iPhone，主要是iOS7及以下的系统。安装较早版本的iTunes（10或11），并下载当前系统的固件。然后下载Redsn0w，链接如下。
+
+```
+http://www.iphonehacks.com/download-redsn0w
+```
+
+下载完成后以管理员身份运行Redsn0w，选择Extras-Even More-DFU IPSW，选取下载好的固件，等待制作完成。然后连接手机并打开iTunes，连接成功后按住Shift并点击恢复，选择制作好的DFU固件，刷机完成后即进入DFU模式。
+
+### 退出
+
+按住Home键和电源键十秒，设备关机之后重新启动设备即可。
+
+## URL Schemes
+
+URL Scheme通过类似网站形式的字符串，在浏览器打开时自动跳转到对应的APP。如在浏览器中输入`weixin://`则跳转到微信。
+
+### 查询
+
+#### 通过电脑
+
+用解压工具打开要查询的IPA，获得Payload文件夹，打开并在里面的app文件上右键，选择显示包内容。用Xcode等工具打开Info.plist，进入URL types下的URL Schemes即可看到。或者用文本编辑器打开Info.plist，搜索CFBundleURLTypes也可得到。
+
+#### 通过手机
+
+越狱后通过Filza进入IPA查看即可，路径同上。
+
+#### 通过捷径
+
+可通过以下捷径查询。
+
+```
+https://www.icloud.com/shortcuts/7803b1b01e6f443187651b6a57fee0f0
+```
+
+### 常用URL Schemes
+
+#### 腾讯系
+
+##### QQ
+
+```
+// 主页面
+mqq://
+
+// 群
+mqqapi://card/show_pslcard?src_type=internal&version=1&card_type=group&uin=[QQ群号]
+
+// 联系人
+mqqapi://card/show_pslcard?src_type=internal&version=1&uin=[QQ号码]
+```
+
+##### QQ HD
+
+```
+mqqflyticket://
+```
+
+##### 微信
+
+```
+// 主页面
+weixin://
+wechat://
+
+// 扫一扫
+weixin://scanqrcode
+```
+
+##### 微信读书
+
 ```
-链接 / https://pan.baidu.com/s/1OnBL77Tqn1og7iw3K90w2A
-密码 / zeg8
+weread://
 ```
 
-### 插件集合
+##### TIM
+
+```
+// 主页面
+tim://
+
+// 商务聊天
+timtribe://
+```
+
+##### 滴滴
+
+```
+diditaxi://
+```
+
+##### 腾讯新闻
+
+```
+qqnews://
+```
+
+##### 腾讯微云
+
+```
+weiyun://
+```
+
+##### 腾讯地图
+
+```
+sosomap://
+```
+
+##### QQ音乐
+
+```
+// 主页面
+QQmusic://
+
+// 最近播放
+qqmusic://today?mid=31&k1=2&k4=0
+```
+
+##### QQ浏览器
+
+```
+mttbrowser://
+```
+
+##### QQ斗地主
+
+```
+tencent382://
+```
 
-#### IPA签名相关
+##### QQ安全中心
 
-##### ReProvision
+```
+qmtoken://
+```
 
-给IPA自签名。
+##### QQ国际版
 
 ```
-https://repo.incendo.ws/
+mqqiapi://
 ```
 
-##### NoPlsOCSP
+##### QQ邮箱
 
-阻止苹果证书被注销。
-
 ```
-http://xnu.science/repo/
+qqmail://
+qqquicklogin://
 ```
-
-##### AppSync Unified
 
-屏蔽苹果对APP签名的检测，即可以直接安装未签名的破解版APP。
+##### 腾讯企业邮箱
 
 ```
-https://cydia.akemi.ai/
+qqbizmailDistribute2://
 ```
 
-#### 越狱屏蔽
+##### 腾讯手机管家
 
-##### A-Bypass
+```
+mqqsecure://
+```
 
-越狱屏蔽插件。
+##### 腾讯视频
 
 ```
-https://repo.rpgfarm.com/
+tenvideo://
+wb2162695501://
 ```
 
-##### Liberty Lite
+##### 腾讯微博
 
-越狱屏蔽插件。
-
 ```
-http://ryleyangus.com/repo/
+TencentWeibo://
 ```
-
-##### WeChatJailbreakHook
 
-屏蔽微信越狱检测。
+##### 全民K歌
 
-##### Shadow
+```
+qmkege://
+```
 
-屏蔽越狱插件。
+##### 王者荣耀
 
 ```
-https://ios.jjolano.me/
+tencentlaunch1104466820://
 ```
 
-##### UnSub
+##### 王者荣耀助手
 
-屏蔽越狱检测。
-
-##### FlyJB
+```
+qw1105200115://
+```
 
-屏蔽越狱插件。
+##### 企业微信
 
 ```
-https://repo.xsf1re.kr/
+wxwork://
 ```
-
-##### Choicy
 
-禁止注入插件。
+##### 腾讯动漫
 
 ```
-https://opa334.github.io/
+comicreader://
 ```
 
-##### KernBypass
+#### 阿里系
 
-从内核层面屏蔽越狱。若通过官方源装插件，需要再安装NewTerm，然后执行以下命令。
+##### 淘宝
 
 ```
-su
-changerootfs &
-disown %1
+taobao://
 ```
 
-如果设备重启后插件失效，需要打开Filza，创建/var/MobileSoftwareUpdate/mnt1文件夹，然后打开NewTerm，输入su，密码为alpine，以获取root权限。这样插件才能恢复正常运行。
+##### 天猫
 
-安装后用iCleaner Pro清理垃圾的时候可能会卡在清理OTA软件更新，且对硬件损伤较大。
-
 ```
-// 官方源
-https://akusio.github.io/
-
-// 嗨客源
-http://repo.qqtlr.com/
+tmall://
 ```
 
-#### 自用越狱源
+##### 支付宝
 
 ```
-https://repo.packix.com/
-https://rpetri.ch/repo/
-http://tateu.net/repo/
-https://rejail.ru/
-http://repo.feng.com/
-https://apt.bingner.com/
-http://apt.thebigboss.org/repofiles/cydia/
-https://repo.hackyouriphone.org/
-http://repo.acreson.cn/
-http://apt.modmyi.com/
-https://creaturecoding.com/repo/
-https://cydia.ichitaso.com/
-http://cydia.zodttd.com/repo/cydia/
-https://repo.dynastic.co/
-http://repo.qqtlr.com/
-https://cydia.akemi.ai/
-https://repo.rpgfarm.com/
-http://mrmadtw.github.io/repo/
-https://repo.initnil.com/
-https://apt.initnil.com/
-http://repo.pixelomer.com/
-https://ibreak.yourepo.com/
-https://repo.twickd.com/
-https://skitty.xyz/repo/
-https://apt.iphoneba.cn/
-https://repo.cydiabc.top/
-http://apt.coolstar.xyz/
-http://ibreak.yourepo.com/
-https://repo.icrazeios.com/
-https://kanam.me/repo/
-https://apt.25mao.com/
-http://limneos.net/repo/
-https://junesiphone.com/supersecret/
-https://evynw.github.io/
-https://soda-ldz.yourepo.com/
-https://Poomsmart.github.io/repo/
-https://sileo.top/
+// 主页面
+alipay://
 
-// 以下源不能用Cydown
-https://apt.cydiakk.com/
-https://apt.abcydia.com/
-https://apt.cydia.love/
-https://apt.cydiavip.com/
-https://apt.wxhbts.com/
-https://apt.cydiami.com/
-https://apt.Fcydia.com/
-https://apt.cydiaba.cn/
-```
+// 扫一扫
+alipayqr://platformapi/startapp?saId=10000007
 
-#### 自用插件
+// 付款
+alipay://platformapi/startapp?appId=20000056
 
-##### Apple File Conduit “2”
+// 记账
+alipay://platformapi/startapp?appId=20000168
 
-即AFC2，可以允许电脑第三方助手直接访问设备越狱系统文件。
+// 滴滴
+alipay://platformapi/startapp?appId=20000778
 
-```
-// 作者源地址
-https://cydia.ichitaso.com/
+// 蚂蚁森林
+alipay://platformapi/startapp?appId=60000002
 
-// halo_michael打包源地址
-https://mrmadtw.github.io/repo
+// 转账
+alipayqr://platformapi/startapp?saId=20000116
+alipays://platformapi/startapp?appId=20000221
 
-// CDSQ打包源地址
-http://repo.feng.com
+// 手机充值
+alipayqr://platformapi/startapp?saId=10000003
 
-https://mp.weixin.qq.com/s/afXnjvgwA0aC3NaPg53l_g
-```
+// 口令红包
+alipayqr://platformapi/startapp?saId=88886666
 
-##### AppSync
+// 口令红包（带口令）
+alipayqr://platformapi/startapp?saId=88886666&passcode=[code]
 
-配合AFC2使用。
+// 蚂蚁庄园
+alipays://platformapi/startapp?appId=66666674
 
-##### Camera Tools
+// 蚂蚁宝卡
+alipays://platformapi/startapp?appId=60000057
 
-相机增强工具。
+// 股票
+alipays://platformapi/startapp?appId=20000134
 
-##### Sentinel
+// 生活缴费
+alipays://platformapi/startapp?appId=20000193
 
-防止手机关机后需重新越狱。
+// 彩票
+alipays://platformapi/startapp?appId=10000011
 
-##### ModernSettings
+// 淘票票
+alipays://platformapi/startapp?appId=20000131
 
-为设置页提供更多选项。
+// 查快递
+alipays://platformapi/startapp?appId=20000754
 
-##### Autotouch
+// AA收款
+alipays://platformapi/startapp?appId=20000263
 
-录制手指操作，然后自动重复操作。
+// 收款
+alipays://platformapi/startapp?appId=20000123
 
+// 还信用卡
+alipays://platformapi/startapp?appId=09999999
 ```
-// 官方源
-http://apt.autotouch.net/
 
-// 破解插件
-链接 / https://pan.baidu.com/s/1CeEpOs3aM-bSsZ7yLONHDw
-提取码 / 0fwD
-```
+##### 旺旺卖家版
 
-##### Succession
+```
+wangwangseller://?
+```
 
-平刷工具。
+##### 旺信
 
 ```
-https://samgisaninja.github.io/
+wangxin://?
 ```
 
-##### OpenSSH
+##### 菜鸟裹裹
 
-电脑与手机连接的SSH通道。
+```
+cainiao://
+```
 
-##### Apps Manager
+##### 钉钉
 
-强大的应用数据清除/备份/恢复/传输等管理工具，可通过CrackTool3免费激活内购。
+```
+dingtalk://
+```
 
-##### MilkyWay 2
+#### 百度系
 
-分屏插件。
+##### 百度云
 
-##### NewTerm 2
+```
+baiduyun://
+```
 
-终端工具。
+##### 百度贴吧
 
 ```
-https://cydia.hbang.ws
-https://repo.chariz.com
+com.baidu.tieba://
 ```
 
-##### PencilChargingIndicator
+##### 百度音乐
 
-拥有和Apple Pencil一样的充电动画。在设置中的`Customize Notifications`打开`Replace Banners`即可让信息推送获得相同效果。
+```
+baidumusic://
+```
 
+##### 百度地图
+
 ```
-https://shiftcmdk.github.io/repo/
+baidumap://
 ```
+
+##### 百度输入法
 
-##### SettingsWidgets
+```
+BaiduIMShop://
+```
 
-在设置页面显示小组件。
+##### 百度阅读
 
 ```
-https://shepgobarepo.github.io/
+bdbook://
 ```
 
-##### LocationService (CCSupport)
+##### 手机百度
+
+```
+bdboxiosqrcode://
+```
 
-控制中心添加定位开关。
+##### 百度视频
 
-##### LocalIAPStore13
+```
+baiduvideoiphone://
+bdviphapp://
+```
 
-破解应用内购。
+##### 百度糯米
 
 ```
-https://paxcex.github.io/
+bainuo://
 ```
+
+##### 百度魔图
 
-##### SnapBack
+```
+photowonder://
+```
 
-创建系统快照。其中`Orig-fs`是越狱工具创建的快照备份，不可删除，可用于恢复到原始状态。一般只对Root分区创建快照，不要对Var分区操作。
+##### 百度魔拍
 
-##### Shuffle
+```
+wondercamera://
+```
 
-设置页面归类。
+##### 百度导航
 
 ```
-https://creaturecoding.com/repo/
+bdNavi://
 ```
 
-##### Cr4shed
+##### 百度浏览器
 
-崩溃报告记录，有助寻找导致崩溃的插件。
+```
+bdbrowser://
+```
 
-##### Scorpion
+##### 百度网盘
+
+```
+baiduyun://
+```
 
-来电窗口迷你化。
+#### 网易系
 
-##### PowerSelector
+##### 网易云音乐
 
-快速注销、关机、软重启。
+```
+// 主页面
+orpheuswidget://
 
-##### GPSmaster-GPS定位大师
+// 播放已下载的音乐
+orpheuswidget://download
 
-虚拟定位、虚拟导航等。
+// 听歌识曲
+orpheuswidget://recognize
 
-##### AppStore++
+// 私人FM
+orpheuswidget://radio
+```
 
-Appstore扩展。
+##### 网易新闻
 
 ```
-https://cokepokes.github.io
+newsapp://
 ```
-
-##### StoreSwitcher 2
 
-App Store快速切换账号的插件。
+##### 网易邮箱
 
 ```
-http://subdiox.com/cydia
+neteasemail://
 ```
 
-##### iCleaner Pro
+##### 网易公开课
 
-清理手机缓存垃圾。
-
 ```
-https://ib-soft.net/cydia/
+neteaseVopen://
+ntesopen://
 ```
-
-##### Cydown
 
-免费下载Cydia里的收费插件，提取插件的DEB安装包等。
+##### 网易将军令
 
 ```
-https://julio.hackyouriphone.org/
+netease-mkey://?
 ```
 
-##### Filza File Manager
+##### 有道词典
+
+```
+yddict://
+yddictproapp://
+```
 
-文件管理器。
+##### 有道翻译官
 
 ```
-http://tigisoftware.com/cydia/
+ydtranslator://
 ```
+
+##### 网易严选
 
-##### DockX
+```
+yanxuan://
+```
 
-在键盘底部增加更多实用按钮。
+##### 网易有钱
 
 ```
-https://udevsharold.github.io/repo
+moneykeeperwiz://
 ```
 
-##### CacheClearerX
+##### 网易漫画
 
-清理缓存插件。
+```
+necomics://
+```
 
+##### 有道翻译官
+
 ```
-https://alexpng.github.io/
+ydtranslator://
 ```
 
-##### GestureXS
+#### 银行
 
-仿iPhone X手势操作。
+##### 建设银行
 
-##### AnimationsBeFast
+```
+wx2654d9155d70a468://
+```
 
-iOS系统动画加速。
+##### 浦发银行
 
-##### ConditionalWiFi5
+```
+wx1cb534bb13ba3dbd://?
+```
 
-解决越狱之后新下载的APP没有联网权限问题。
+##### 招商银行
 
-##### NotesCreationDate13
+```
+cmbmobilebank://?
+```
 
-备忘录显示创建和修改的日期。
+##### 中国银行
 
-##### BatteryRamp
+```
+BOCMBCIZF://
+```
 
-加速充电插件。
+##### 农业银行
 
-##### QuickMarkup
+```
+bankabc://
+```
 
-将标记按钮添加到照片编辑工具栏中。
+##### 中国工商银行
 
-##### ScreenRecording Time
+```
+wb19490884://
+```
 
-显示录屏时长。
+##### 邮政银行
 
-##### RealCC
+```
+wb1424286189://
+```
 
-控制中心直接关闭Wi-Fi与蓝牙而不是之前的断开当前连接。
+##### 网商银行
 
-##### iNoSleep
+```
+ap2016041301292400://
+```
 
-锁屏不断wifi。
+#### 浏览器
 
-##### AppTweak13
+##### iCabMobile
 
-在应用上滑显示应用详情。
+```
+iCabMobile://
+```
 
-#### 其它越狱源
+##### UC
 
 ```
-http://zlxdike.github.io/repo/
-https://apt.fouadraheb.com/
-https://apt.geometricsoftware.se/
-https://henrikssonbrothers.com/cydia/repo/
-http://apt.iarrays.com/
-https://kanam.me/repo/
-https://repo.openpack.io/
-https://repo.niceios.com/
-https://repo.mtac.app/
-https://repo.menushka.ca/
+ucbrowser://
 ```
 
-#### 暂时不能用的插件
+##### 猎豹
 
-##### PullOver Pro
+```
+sinaweibosso.422729959://
+```
 
-从侧边唤出App，实现分屏操作。
+##### Chrome
 
-##### KillMyApps
+```
+// 主页面
+googlechrome://
 
-锁屏不杀后台插件。
+// 进剪切板链接
+googlechrome://%@
 
-##### PreferenceOrganizer 2
+// 用google搜索剪切板内容
+googlechrome://www.google.com/#newwindow=1&q=%@
+```
 
-对设置里的`系统设置`、`插件设置`、`App Store`进行归类整理。
+##### 指尖
 
 ```
-https://cydia.angelxwind.net
+zhijian://
 ```
-
-##### FingerTouch
 
-类似`Touchr`，可以让Home键实现触控操作，比如单触返回桌面，双触打开后台，长触锁屏等，无需按下去，起到保护Home键的作用。
+##### Opera
 
-##### BetterShutdown
+```
+oupeng-callback://
+```
 
-替关机键增加重启和注销选项。
+##### 夸克
 
-##### CrackTool3
+```
+quark://
+```
 
-一键免费激活插件的内购项目。 
+##### 海豚
 
-##### SafeShutdown
+```
+dolphin://
+```
 
-软关机。
+##### Aloha
 
 ```
-https://kurrt.com/repo/
+optly7634822906://
 ```
 
-##### VideoAdsSpeed
+##### 萝卜
 
-视频软件广告跳过。
+```
+wb3791188321://
+```
 
-#### 其它插件
+##### 鲨鱼
 
-##### Carrierizer
+```
+searchss://
+```
 
-自定义运营商名称。
+##### Take
 
-##### AudioRecorder通话录音
+```
+TakeBrowser://
+```
 
-录取微信、电话等一切通话录音。
+##### Vip
 
 ```
-http://limneos.net/repo
+wxbdba67b8ae3d296e://
 ```
 
-##### Kill All Apps
+##### Ohajiki
 
-一键清理后台。
-
 ```
-https://haoict.github.io/cydia/
+oohttp://
 ```
 
-##### Anemone
+#### 视频
 
-美化主题的平台。
+##### Youtube
 
-##### Frame
+```
+youtube://
+```
 
-视频壁纸。
+##### 哔哩哔哩
 
 ```
-https://zx02.yourepo.com/
+bilibili://
 ```
-
-##### Cylinder
 
-主屏幕翻页动画。
+##### 布卡漫画
 
 ```
-http://cydia.r333d.com/
+buka://
 ```
 
-##### EZTweakList
+##### 爱奇艺
 
-Cydia平台导出源地址以及插件列表。
-
 ```
-https://legitcomputerwhisperer.github.io/
+iqiyi://
+qiyi-iphone://
 ```
-
-##### Edge
 
-屏幕圆角加渐变彩条。
+##### 优酷
 
 ```
-https://apt.securarepo.io/
+youku://
 ```
 
-##### CrashReporter
+##### 土豆
 
-记录插件问题，便于排查。
-
 ```
-https://revulate.dev/
+tudou://
 ```
-
-##### EmojiPort
 
-更新系统的Emoji。
+##### PPTV
 
 ```
-https://poomsmart.github.io/repo/
+pptv://
 ```
 
-##### Xeon
+##### PPS
 
-运营商自定义。
-
 ```
-https://nexusrepo.kro.kr/
+ppstream://
 ```
-
-##### Goodges 2
 
-应用通知数显示在应用名称上。
+##### 暴风影音
 
 ```
-https://apt.noisyflake.com/
+com.baofeng.play://
 ```
 
-##### LatchKey
+##### 微视
 
-自定义X设备锁屏图标。
+```
+weishiiosscheme://?
+```
 
+##### ACfun
+
 ```
-https://repo.daus.ch/
+acfun://
 ```
+
+##### 抖音
 
-##### A-Font
+```
+awemesso://
+wb1462309810://
+```
 
-字体管理插件。
+##### 西瓜
 
 ```
-https://repo.co.kr/
+snssdk32://
 ```
 
-##### EasyAppOrientation
+##### 搜狐
+
+```
+sohuvideo-iphone://
+sohuvideo://
+```
 
-锁定应用程序方向。
+##### 快手
 
 ```
-http://m156nrkvv.g2.xrea.com/repo/
+gifshow://
 ```
+
+##### nPlayer
 
-##### ShowTouch
+```
+nplayer://
+```
 
-录屏圆点。
+##### AVPlayer
 
 ```
-https://repo.lonestarx.net/
+AVPlayer://
 ```
 
-##### Priority Hub
+##### yy直播
 
-通知按 App 分类显示。
+```
+yymobile://
+```
 
+##### 一直播
+
 ```
-https://kunderscore.gitlab.io/repo/
+xktv://
 ```
+
+##### 花椒直播
 
-##### PerfectTimeXS
+```
+huajiao://
+```
 
-修改状态栏时间样式。
+##### 咪咕
 
 ```
-https://kingmehu.yourepo.com/
+miguvideo://
 ```
 
-##### FLEXall
+#### 社交
 
-状态栏手势调用FLEX。
+##### 微博
 
 ```
-https://DGh0st.github.io/
+weibo://
 ```
 
-##### MissionControl
+##### 微博国际版
+
+```
+weibointernational://
+```
 
-控制中心自定义插件。
+##### Twitter
 
 ```
-https://dylanduff.com/repo/
+Twitter://?
+tweetie://
 ```
+
+##### Facebook
 
-##### EmojiPort Fonts
+```
+fb://
+```
 
-让低版本的iOS系统使用最新的Emoji表情。
+##### Tumblr
 
 ```
-https://vxbakerxv.github.io/repo/
+tumblr://
 ```
 
-##### Evelyn's Collection
+##### Telegram
 
-锁屏挂件。
+```
+tg://
+```
 
+##### Instagram
+
 ```
-https://evynw.github.io/
+instagram://
 ```
 
-##### Lisa
+#### 音乐
 
-锁屏通知聚合。
+##### 酷狗音乐
 
 ```
-https://esquillidev.github.io/
+kugouURL://
 ```
+
+##### 天天动听
 
-##### Bolders
+```
+ttpod://
+```
 
-美观放大的文件夹扩展。
+##### 酷我音乐
 
 ```
-https://ndoizo.ca/
+com.kuwo.kwmusic.kwmusicForKwsing://?
+```
+
+##### 虾米音乐
+
 ```
+// 主页面
+xiami://
+
+// 每日推荐歌单
+xiami://dailysong?action=play
 
-##### Shortlook
+// 私人电台
+xiami://radio/private
 
-漂亮的动画通知。
+// 虾米猜
+xiami://radio/guess
 
-##### LockPlus Pro
+// 每日30首
+xiami://playdailysong
+
+// 听歌识曲
+xiami://soundhound
+```
 
-锁屏增强。
+##### 喜马拉雅
 
 ```
-https://junesiphone.com/supersecret/
+// 打开专辑
+iting://open?msg_type=13&album_id=[专辑ID]
 ```
 
-##### NotifierDots
+#### 图片
 
-iPhone X右上角通知图标。
+##### 抓图猫
 
 ```
-http://apt.mumiantech.com/
+imagecat://
 ```
 
-##### Xeninfo
+##### Piiic 2
 
 ```
-http://junesiphone.com/supersecret/
+wb1934889315://
 ```
 
-##### Xen HTML
+##### Picsew
 
-向主页面和锁屏页面添加组件。
-
-```
-https://xenpublic.incendo.ws/
 ```
+// 主页面
+picsew://
 
-##### xybp888
+// 打开最近长截图
+picsew://recent
+```
 
-电话助手作者源。
+##### NOMO
 
 ```
-http://apt.htv123.com/
+nomocamera://
 ```
-
-##### HomeX
 
-旧机型使用iPhone X手势。
+##### Cuto Wallpaper
 
 ```
-https://abxyap.github.io/repo/
+cuto://
 ```
 
-##### Aesthyrica
+##### Picsew
 
-Spotify增强。
-
 ```
-https://aesthyrica.com/repo/
+picsew://
 ```
 
-##### Sileo Remover
+#### 系统
 
-移除Sileo。
+##### 照片
 
 ```
-https://repo.x4-applegate.com/
+photos-redirect://
 ```
-
-##### App Admin
 
-App Store应用降级随意旧版。
+##### 短信
 
 ```
-http://beta.unlimapps.com
+sms://
 ```
 
-##### SnowBoard
+##### 备忘录
 
-主题插件。
-
 ```
-https://sparkdev.me/
+save://notes
 ```
-
-##### Priority Hub
 
-锁屏通知小图标显示插件。
+##### App Store
 
 ```
-https://kunderscore.gitlab.io/repo/
+// 自动搜索剪贴板内容
+itms-apps://search.itunes.apple.com/WebObjects/MZSearch.woa/wa/search?media=software&term=%@
 ```
 
-##### Tinybar
+##### 偏好设置
 
-缩小通知横幅。
-
 ```
-http://capt.dreamcode.it
+// 无线局域网
+App-Prefs:root=WIFI
+
+// 蜂窝移动网络
+App-Prefs:root=MOBILE_DATA_SETTINGS_ID
 ```
 
-##### Call Recorder/SuperRecorder
+##### Workflow
+
+```
+// 打开动作
+workflow://run-workflow?name=[动作名]
+```
 
-通话录音插件。
+##### 电话
 
 ```
-http://hacx.org/repo/
+tel://[电话号码]
 ```
+
+#### 电商
+##### 虎扑
 
-##### FlipConvert
+```
+tencent222049://
+```
 
-控制中心更多快捷方式。
+##### 闲鱼
 
 ```
-https://julioverne.github.io/
+laiwange48dbf143://
+fleamarket://
 ```
 
-##### AudioRecorder 2
+##### 拼多多
 
-通话录音插件。
+```
+pinduoduo://
+```
 
+##### 美团
+
 ```
-http://limneos.net/repo/
+imeituan://
 ```
 
-##### Safari Features
+##### 京东
 
-让iPhone上的Safari显示iPad样式的标签。
+```
+// 主页面
+openapp.jdmobile://
 
-##### FullSafari
+// 早起打卡
+openapp.jdmobile://virtual?params={"des":"jdreactcommon","modulename":"JDReactClockIn","category":"jump";}
+```
 
-同Safari Features。
+##### 多点
 
 ```
-https://repo.lonestarx.net/
+// 会员码
+memberNumberDesktop://
+
+// 扫码
+scanDesktop://
 ```
 
-##### Tabsa
+#### 记录
 
-让iPhone自带Safari浏览器实现和iPad/Mac一样的网页切换方式。
+##### 有道云笔记
 
 ```
-https://r0wdrunner.github.io/repo/
+youdaonote://
 ```
 
-##### System Info
+##### 印象笔记
 
-显示更多系统信息。
-
 ```
-https://apt.xninja.xyz/
+evernote://
 ```
-
-##### KillBackground
 
-一键清理后台插件。
+##### 我的标记
 
 ```
-http://cydia.ichitaso.com/
+// 主页面
+clover-imark://
+
+// 新建1000*1000空白画布
+clover-imark://new/canvas?width=1000&height=1000
+
+// 快速新建画布（网页|底部|手机相册|相机|最新照片）
+clover-imark://new/[|web|map|library|camera|latest]
 ```
 
-##### KillX
+#### 搜索
 
-一键清理多任务后台的插件。
+##### 360
 
 ```
-https://cemck.github.io/repo
+msearchapp://
 ```
 
-##### Cercube for Youtube
+##### 搜狗
 
-Youtube扩展。
-
 ```
-https://apt.alfhaily.me/
+sogousearch://
 ```
 
-##### Youtube Tools
+#### 共享单车
 
-同上。
+##### 摩拜
 
 ```
-https://jpet26.yourepo.com/
+mobike://
 ```
-
-##### CarBridge
 
-解除CarPlay限制，让第三方APP运行于CarPlay。
+##### ofo
 
 ```
-https://repo.chariz.io/
+ofoapp://
 ```
 
-##### CallBar XS
+#### 学习
 
-窗口模式来电通话，可通过CrackTool3的破解补丁破解内购。
+##### 扇贝英语
 
 ```
-// 作者源地址
-http://limneos.net/repo
+shanbay://
+```
 
-// Callbar X破解补丁(基于CrackTool3)源地址
-https://apt.cydiaba.cn/
+##### 小猿搜题
 
-// 免费源地址
-https://pulandres.me/repo/
 ```
-
-##### ReachIt
+solar://
+```
 
-让iPhone单手操作模式下，原先上方空白处变成音乐播放器控制。
+##### 沪江小D词典
 
 ```
-https://repo.nepeta.me/
+hjdict://
 ```
-
-##### Safari Plus
 
-增强iOS设备自带Safari浏览器功能。
+##### TED
 
 ```
-https://opa334.github.io/
+ted://
 ```
 
-##### PowerModule
+##### 一席
 
-增强iOS11/12控制中心。
-
 ```
-https://repo.packix.com/
+wx5bc45646a79e74ab://
 ```
 
-##### Modulus
+#### 游戏
 
-为控制中心添加模块。若安装后无效，则需手动安装CCsupport插件。
+##### 天天爱消除
 
 ```
-// 官方源地址
-https://repo.packix.com/
-
-// 免费源地址
-http://repo.hackyouriphone.org/
+tencentlaunch100689805://
 ```
 
-##### Selector
+##### 阴阳师
 
-实现Safari浏览器单句翻译功能。
-
 ```
-https://repo.nepeta.me/
+com.netease.onmyoji://
 ```
-
-##### Barmoji
 
-为iPhone X/XS/Max/XR键盘底部添加一排常用Emoji表情。
+##### 叨鱼
 
 ```
-https://beta.cpdigitaldarkroom.com
+sdguc://
 ```
 
-##### ModernDepictions
+##### 崩坏三
 
-让Cydia实现Sileo主题风格。
+```
+bh3rd://
+```
 
+##### 永远的七日之都
+
 ```
-http://repo.pixelomer.com
+neteaseqrzd://
 ```
 
-##### SwipeToDeleteContact
+##### 芝士超人
 
-直接可在iPhone通讯录里左滑删除名片。
+```
+trivia://
+```
 
-##### BetterRotate
+#### 阅读
 
-在屏幕锁定旋转的情况下允许视频横向旋转。
+##### 樊登读书会
 
 ```
-// 官方源地址
-https://repo.packix.com/
-
-// 免费源地址
-http://repo.hackyouriphone.org/
+tbopen23329854://
 ```
 
-##### WiFi Passwords
+##### 多看阅读
 
-查看连接过的Wi-Fi密码。
-
-##### PerfectNetworkSpeedInfo
+```
+duokan-reader://
+```
 
-网速悬浮窗。
+##### 当当阅读
 
-##### Aperturize
+```
+alipayLogin20150804://
+```
 
-让iPhone 7/8 Plus和iPhone X双摄设备实现人像模式景深控制。
+##### 开卷有益
 
+```
+Kingreader://
 ```
-// 官方源地址
-https://repo.packix.com/
 
-// 免费源地址
-https://repo.xarold.com/
+##### 拿铁阅读
+
+```
+LatteRead://
 ```
 
-##### Shutter Depth Control
+#### 外卖
 
-与Aperturize插件一样。
+##### 美团外卖
 
 ```
-https://jbrownllama.yourepo.com/
+meituanwaimai://
 ```
 
-##### WeChatCallKit
+##### 饿了么
 
-重回微信与系统电话一样的接听显示界面。
-
 ```
-http://apt.cydiaba.cn/
-https://apt.abcydia.com/
+eleme://
 ```
 
-##### 微信助手密友
+#### 其它
 
-使微信能够转发语音。
+##### 迅雷
 
 ```
-https://sileo.top
+thunder://?
+QQ05FD1622://
 ```
+
+##### 115云盘
 
-##### DeleteForever
+```
+wb1307639798://
+```
 
-为照片删除添加`Permanently`按钮，永久删除照片。
+##### 我的标记
 
-##### AppData
+```
+clover-imark://
+```
 
-查看APP数据。
+##### 小米运动
 
-##### PhotoSize
+```
+fb370547106731052://
+```
 
-查看照片应用图片大小。
+##### 中国移动
 
-##### KillX Pro
+```
+wxbcb43ea5d2d6384c://
+```
 
-一键清理后台。
+##### 广东移动
 
-##### HomeGesture
+```
+wb3299513026://
+```
 
-老机型实现iPhone X手势界面操作，可自定义功能设置。如果在安装过程中遇到`com.spark.libsparkapplist`依赖缺失的情况，只需添加`https://repo.packix.com`源地址即可。
+##### 探探
 
-##### Moveable9
+```
+tantanapp://
+```
 
-自定义状态栏各个符号的位置或直接隐藏。
+##### 相册宝
 
 ```
-http://tateu.net/repo/
+albumplus://
 ```
 
-##### SilentScreenshot
+##### 拍照取字
 
-关闭截图“咔嚓”声，去掉截图后停留在左下角的预览，自定义截图闪屏颜色等。
+```
+// 主页面
+paizhaoquzi://
+
+// 取最新一张图
+paizhaoquzi://first
+```
+
+##### 圈子账本
 
 ```
-https://repo.packix.com/
+qzzb://
 ```
 
-##### TapVideoConfig
+##### JSBox
 
-直接在相机视频/慢动作里切换拍摄大小。
+```
+// 主页面
+JSBox://
 
-##### ClearBadges3DTouch10
+// 运行脚本
+jsbox://run?name={编码后的脚本名}
+```
 
-可以通过3D Touch功能呼出`Clear Badge Notifications`按钮，清理应用角标通知。
+##### 京东金融
 
-##### ForceInPicture
+```
+// 双签
+jdmobile://share?jumpType=7&jumpUrl=1373
+```
 
-开启自带浏览器视频画中画功能。
+##### 冲顶大会
 
-##### Snapper 2
+```
+tencent1105277177://
+```
 
-强大的截图插件。
+##### 伙伴办公
 
-##### LoactionFakerX
+```
+Open://
+```
 
-虚拟定位。
+##### 下厨房
 
-##### Anywhere!--虚拟定位
+```
+xcfapp://
+```
 
-更改手机定位与手机型号。
+##### 有妖气
 
-##### DenyPhotoAlbums
+```
+u17app://
+```
 
-隐藏照片应用里没必要的分类相簿。
+##### 花生地铁WiFi
 
-##### Bakgrunnur
+```
+wxa813eada7109a3cc://
+```
 
-保持程序在后台运行。
+##### 少数派
 
-##### FakeModel
+```
+sspai://
+wx1cabf05524b18692://
+```
 
-伪装设备机型。
+##### 车到哪儿
 
-##### Riveria
+```
+wx5207ffc5bbac1da7://
+```
 
-美化插件。
+##### 乐网
 
-##### Twister
+```
+seven.adclear://
+```
 
-美化插件。
+##### 收趣
 
 ```
-https://repo.twickd.com/
+shouqu.me://
 ```
 
-##### Genesis 2
+##### 一个番茄
 
-美化插件。
+```
+com.pomodorowang://
+```
 
+##### 京东微联
+
 ```
-https://repo.packix.com/
-https://repo.dynastic.co/
+wb1662044625://
 ```
 
-##### CCTomizer
+##### 户外助手
 
-系统调整插件。
+```
+wb3060101786://
+```
 
-### 插件操作
+##### 得到
 
-#### 重置插件设置
+```
+dedaoapp://
+```
 
-用Filza删除`/var/mobile/Library/Preferences`中的对应plist文件即可。 
+##### 掌上公交
 
-#### 插件备份
+```
+wb1955957116://
+```
 
-可使用Batchomatic。
+##### Seed
 
-## 补丁软件
+```
+seedapp://
+```
 
-### Flex 3
+##### 云墙
 
-#### 安装和破解
+```
+netfits://
+```
 
-源地址如下。
+##### 潮汐
 
 ```
-https://getdelta.co/
+tide://
 ```
 
-登录以下账号即可永久使用会员。
+##### Keep
 
 ```
-账号 / sundasheng521@qq.com
-密码 / 7758521a
+keep://
 ```
+
+##### 今日头条
 
-#### 手动添加补丁
+```
+snssdk141://
+```
 
-打开Filza，进入路径/var/mobile/Library/Application Support/Flex3，使用文本编辑器打开patches.plist文件，拉到最下方，在末尾的`<dict>`后复制要添加的补丁代码，保存即可。
+##### Gmail
 
-#### 补丁制作
+```
+googlegmail://
+```
 
-下载FlexTool插件，在设置中选择要修改的APP。打开后可通过FlexTool定位到需要修改的函数位置。打开Flex，点击+号，选择要修改的APP，点击Add Units，点击APP名称以进行初次编译。编译完成后搜索刚才找到的函数，勾选并返回到补丁主界面。点击刚才选择的函数，修改其返回值即可。
+##### 12306
 
-#### 补丁列表
+```
+cn.12306://
+```
 
-##### 支付宝十万步数
+##### Browser and File Manager for Documents
 
 ```
-<dict>
-	<key>UUID</key>
-	<string>0A3D50C5-F2C6-4933-B997-C1647F3E109A</string>
-	<key>apiVersion</key>
-	<integer>3</integer>
-	<key>appIdentifier</key>
-	<string>com.alipay.iphoneclient</string>
-	<key>author</key>
-	<string>hyczby5218</string>
-	<key>cloudDescription</key>
-	<string>支付宝修改步数</string>
-	<key>cloudID</key>
-	<integer>46823</integer>
-	<key>downloadDate</key>
-	<integer>1551604711</integer>
-	<key>name</key>
-	<string>支付宝修改步数</string>
-	<key>switchedOn</key>
-	<true/>
-	<key>units</key>
-	<array>
-		<dict>
-			<key>methodObjc</key>
-			<dict>
-				<key>className</key>
-				<string>APStepInfo</string>
-				<key>displayName</key>
-				<string>-(long long) numberOfSteps</string>
-				<key>prefix</key>
-				<string>-</string>
-				<key>selector</key>
-				<string>numberOfSteps</string>
-				<key>typeEncoding</key>
-				<string>q16@0:8</string>
-			</dict>
-			<key>name</key>
-			<string>修改步数</string>
-			<key>overrides</key>
-			<array>
-				<dict>
-					<key>argument</key>
-					<integer>0</integer>
-					<key>type</key>
-					<dict>
-						<key>subtype</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>9</integer>
-					</dict>
-					<key>value</key>
-					<dict>
-						<key>type</key>
-						<integer>9</integer>
-						<key>value</key>
-						<integer>100000</integer>
-					</dict>
-				</dict>
-			</array>
-		</dict>
-	</array>
-</dict>
+eidwl://
 ```
 
-##### Thor移除验证设备验证
+## 修改步数
 
+下载`乐心健康`，登录并在设置中选择数据共享，开启需要修改步数的APP。打开以下网页，登录并修改步数即可。
+
 ```
-<dict>
-	<key>UUID</key>
-	<string>AE872A89-5EB7-483D-B50A-88C29F6E20C9</string>
-	<key>apiVersion</key>
-	<integer>3</integer>
-	<key>appIdentifier</key>
-	<string>com.pixelcyber.dake.thor</string>
-	<key>author</key>
-	<string>zjh521901</string>
-	<key>cloudDescription</key>
-	<string>thor移除验证设备验证补丁</string>
-	<key>cloudID</key>
-	<integer>46126</integer>
-	<key>downloadDate</key>
-	<integer>1552100989</integer>
-	<key>name</key>
-	<string>Thor ·Fz夜</string>
-	<key>switchedOn</key>
-	<false/>
-	<key>units</key>
-	<array>
-		<dict>
-			<key>methodObjc</key>
-			<dict>
-				<key>className</key>
-				<string>AppReceiptValidator</string>
-				<key>displayName</key>
-				<string>-(void) prepareVerify</string>
-				<key>prefix</key>
-				<string>-</string>
-				<key>selector</key>
-				<string>prepareVerify</string>
-				<key>typeEncoding</key>
-				<string>v16@0:8</string>
-			</dict>
-			<key>name</key>
-			<string>🈲贩卖🈲谋利🈲</string>
-			<key>overrides</key>
-			<array/>
-		</dict>
-	</array>
-</dict>
+http://step.xbmmw.top/
 ```
 
-### SuperCharge
+## 修改定位
 
-SuperCharge脚本的后缀名为st。将st脚本发送到手机，并用SuperCharge打开即可。源地址如下。
+可通过以下网站查询经纬度。
 
 ```
-https://repo.supercharge.app/
+http://www.gpsspg.com/maps.htm
 ```
+
+### 通过爱思助手
+
+通过爱思助手的虚拟定位功能即可。
+
+### 通过抓包
+
+打开网络调试软件（如Thor）后，打开需要修改定位的App，点击定位相关按钮，查找关于location的数据包，进入经纬度进行修改即可。注意经纬度的小数点精确的位数。
 
 # 系统降级
 
 ## SHSH2备份
 
-SHSH2时降级必备的文件，有该系统的SHSH2文件，以后iPhone系统升级后才能降回该系统。SHSH2仅能备份仍然开放验证的系统固件，因此建议每次更新完系统都备份一下SHSH2。
+SHSH2是高版本降级必备的文件。SHSH2仅能备份仍然开放验证的系统固件，因此建议每次更新完系统都备份SHSH2。
 
 ### 越狱设备
 
-安装System Info插件，然后进入设备`设置`-`通用`-`关于本机`，在`ECID`上右滑后点击`Save SHSH2`即可。作者源如下。
+安装System Info插件，然后进入设置-通用-关于本机，在ECID上右滑后点击Save SHSH2即可。
 
-```
-https://apt.arx8x.net/
-```
-
-也可用TSSSaver插件。打开后点击右上角的`+`号，然后选择`Verify&Save`即可保存。通过点击`Saved Blobs`-`here`可查看保存的SHSH2。作者源如下，注意该插件的使用需要翻墙。
+也可用TSSSaver插件，打开后点击`+`-Verify&Save即可保存。通过点击Saved Blobs-here可查看保存的SHSH2。注意该插件的使用需要翻墙，作者源如下。
 
 ```
 http://repo.nullpixel.uk/
@@ -6889,44 +8789,63 @@ http://repo.nullpixel.uk/
 https://tsssaver.1conan.com/
 ```
 
-## 降级工具
+## 工具
 
-### 高版本系统通过restoreM8/Futurerestore（Mac/Windows）
+### Futurerestore
 
-本方法需要有SHSH2。Futurerestore是供iPhone进行刷机操作的命令行软件。restoreM8是其图形化版本，下载地址如下。
+适用于高版本系统，需要有SHSH2备份。可在Mac/Windows使用。下载链接如下。
 
 ```
-https://github.com/80036nd/RestoreM8
+https://github.com/tihmstar/futurerestore
 ```
 
-以restoreM8为例说明该工具的使用方法。
+#### 固定G值
 
-#### 固定Generator值
+即Generator值。G值在每次手机重启时会重置，所以需保持全程手机未关机。
 
-简称G值。G值在每次手机重启时会重置，所以请保持全程手机未关机。确保手机处于越狱状态，然后选择以下方法中的一种。
+用记事本打开备份的SHSH2，搜索Generator即可看到文件中的G值。若使用的SHSH2为noapnonce，则G值默认为0x1111111111111111。如果使用的是apnonce，需要将设备G值固定为SHSH2中的值。
+
+以下方法均需确保手机处于越狱状态。
 
 ##### 通过越狱软件
 
-通过unc0ver、Chimera或Electra越狱的可直接在越狱软件中点击Set nonce设置G值。
+若为unc0ver/Chimera/Electra越狱，可直接在手机上打开越狱软件，点击Set nonce设置G值。
 
 ##### 通过dimentio
 
-安装`Dimentio`和`NewTerm`插件，然后打开NewTerm，输入以下命令。
+安装Dimentio和NewTerm插件。打开NewTerm，输入以下命令，此处的0x1111111111111111即为G值。
 
 ```
 su // 密码为alpine
 dimentio 0x1111111111111111
 ```
 
-此处的`0x1111111111111111`即为G值，该G值应与SHSH2文件中的一致。用记事本打开备份的SHSH2，搜索`Generator`即可看到。若使用的SHSH2为noapnonce，则G值默认为0x1111111111111111。如果使用的是apnonce，需要将设备G值固定为SHSH2中的值。
-
 ##### 通过Generator Auto Setter
 
 该插件可自动将设备G值设为特定值。安装插件后设置即可。
 
-#### 固件降级
+#### 配置环境
 
-下载要降级的固件和当前固件。下载方式如下。
+在电脑端需配置好环境。以Mac端为例，可在终端执行以下命令。
+
+```
+brew install automake autoconf libtool pkg-config
+git clone https://github.com/tihmstar/libirecovery && cd ./libirecovery && bash autogen.sh && make install
+git clone https://github.com/tihmstar/libcrippy && cd ./libcrippy && bash autogen.sh && make install
+git clone https://github.com/tihmstar/libfragmentzip && cd ./libfragmentzip && bash autogen.sh && make install
+cd /usr/local && sudo mkdir ssl && sudo chmod 777 /usr/local/ssl
+cd
+git clone https://github.com/openssl/openssl.git && cd openssl && ./config && make && sudo make install
+brew install curl
+brew install openssl
+ln -s /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib /usr/local/lib/
+ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
+ln -s /usr/local/Cellar/openssl/1.0.2j/bin/openssl openssl
+```
+
+#### 固件下载
+
+下载要降级的固件和当前固件，链接如下。
 
 ```
 https://www.i4.cn/firmware.html
@@ -6935,7 +8854,9 @@ https://www.efreelife.com/ipsw/
 https://ipsw.me/
 ```
 
-将要降级到的固件重命名为`restore.ipsw`，对应版本的SHSH2文件重命名为`blob.shsh2`。按照软件中的步骤进行即可。其中restore.sh起作用的代码如下。
+#### 固件降级
+
+将要降级到的固件重命名为restore.ipsw，对应版本的SHSH2文件重命名为blob.shsh2。打开终端并执行以下命令即可。
 
 ```
 // 带基带文件
@@ -6945,9 +8866,11 @@ https://ipsw.me/
 ./futurerestore -t shsh.shsh2 --no-baseband --latest-sep restore.ipsw
 ```
 
-如果提示找不到SEP Path，则需要手动从当前固件中提取。用WinRAR打开当前固件，拉出BuildManifest.plist文件并改名为build.plist。在firmware文件夹中找到以bbfw为后缀的基带文件，拉出并改名为bbfw.bbfw。在all_flash文件夹中找到以sep开头、im4p结尾的SEP文件，将符合手机主板型号的文件拉出并改名为im4p.im4p，其中主板型号可以在爱思助手中找到。
+如果提示找不到SEP Path，则需要手动从当前固件中提取。
 
-打开restore.sh并找到`./futurerestore`一行，修改如下。
+用WinRAR打开当前固件，解压出BuildManifest.plist文件，并改名为build.plist。在firmware文件夹中找到以bbfw为后缀的基带文件，解压出该文件，并改名为bbfw.bbfw。在all_flash文件夹中找到以sep开头、im4p结尾的SEP文件，将符合手机主板型号的文件解压出，并改名为im4p.im4p，其中主板型号可以在爱思助手中找到。
+
+打开restore.sh并找到./futurerestore一行，修改如下。
 
 ```
 ./futurerestore -t blob.shsh2 -b bbfw.bbfw -p build.plist -s im4p.im4p -m build.plist -w restore.ipsw
@@ -6956,16 +8879,78 @@ https://ipsw.me/
 若为iPad Wifi版或iPod，由于没有基带文件，命令如下。
 
 ```
-./futurerestor -t blob.shsh2 --no-baseband -p build.plist -s im4p.im4p -m build.plist -w restore.ipsw
+./futurerestore -t blob.shsh2 --no-baseband -p build.plist -s im4p.im4p -m build.plist -w restore.ipsw
 ```
 
 #### 常见问题
 
+##### ERROR: Unable to send iBEC to device.，Failed with errorcode=-8
+
+使用最新版Futurerestore工具。
+
+##### ERROR: Could not open ZIP archive '/var/tmp/ffffffffffffffffffffffffffffffff00000036FhdfWC': 19，Failed with errorcode=-11
+
+尝试更换工具和电脑。
+
+##### Getting SepNonce failed ERROR，Device is in an invalid state
+
+使用Mac版Futurerestore工具。
+
+##### ERROR Could not open ZIP archive (errorcode=-11) 
+
+尝试更换电脑。
+
+##### Unable to place device into recovery mode from Normal mode，Failed with errorcode=-2
+
+设置随机数后重新启动或手动进入恢复模式后再尝试刷机，若问题依旧，则完全卸载iTunes所有组件重装iTunes重试。
+
+##### APTicket can't be used for restoring this device，Failed with errorcode=-45
+
+SHSH2无效。
+
+##### APTicket can't be used for this restore，Failed with errorcode=-44
+
+可能是SHSH2文件名错误。若无效，则将后缀名从shsh2改为plist，命令中的对应位置也进行修改。若仍然报错，则SHSH2无效。
+
+##### Unable to enter recovery mode，Failed with errorcode=-2
+
+iTunes驱动或USB数据线问题。更换数据线，完全卸载iTunes所有组件，重启电脑安装最新版iTunes。
+
+##### unsupported devicemode, please put device in recovery mode or normal mode，Failed with errorcode=-3
+
+进入恢复模式重试。
+
+##### ERROR: SEP does not match sepmanifest，Failed with errorcode=-67
+
+SEP文件错误，更换后重试。
+
+##### sep firmware isn't signed，Failed with errorcode=-3
+
+选择了关闭验证的固件中的SEP。选择iOS12.3或以上固件。
+
+##### Unable to place device into recovery mode from Normal mode，Failed with errorcode=-2
+
+iTunes驱动未启动或未正常工作。完全卸载iTunes后安装最新版iTunes重试。
+
+##### can't init, no device found，Failed with errorcode=-3
+
+重新插拔数据线。
+
+##### ERROR: Unable to find any build identities for SEP，Failed with errorcode=-5
+
+buildmanifest文件或SEP文件出现问题。
+
+### restoreM8
+
+restoreM8是Futurerestore的图形化版本，Futurerestore是用于供iPhone进行刷机操作的命令行软件。下载地址如下，降级方法同上。
+
 ```
-https://mp.weixin.qq.com/s/h5EqUG9xxo-_nz9K5b9F-w
+https://github.com/80036nd/RestoreM8
 ```
 
-### 低版本系统通过Pluvia（Mac）
+### Pluvia
+
+适用于低版本系统，可在Mac使用。
 
 以iPhone 4为例说明其使用方法。下载Pluvia仓库并解压，准备好要降级的固件，放入Pluvia文件夹中。
 
@@ -6985,11 +8970,9 @@ https://github.com/parrotgeek1/Pluvia
 ./restore.sh [自动生成的固件名称]
 ```
 
-### 通过ReRa1n（Linux）
+### ReRa1n
 
-#### 【额外了解】
-
-在终端输入以下命令。
+适用于Linux。在终端输入以下命令即可。
 
 ```
 git clone https://github.com/AidanGamzer/ReRa1n.git
@@ -7096,7 +9079,7 @@ https://mp.weixin.qq.com/s/edwIuv8DyXklLT00RsdavA
 https://mp.weixin.qq.com/s/9oMQVCdudK_jYvTVw5zQTw
 ```
 
-## [Q&A]Cydia for iOS7~iOS13 内各种红字、黄字常见错误解决方法全收录
+## Cydia for iOS7~iOS13 内各种红字、黄字常见错误解决方法全收录
 
 ```
 https://mrmad.com.tw/cydia-red-yellow-error
@@ -7123,7 +9106,6 @@ https://mp.weixin.qq.com/s/kAwToNnMArbyG9hk-nzalg
 https://mp.weixin.qq.com/s/trKrmzkOg8qUx9LVGu3WCg
 https://mp.weixin.qq.com/s/21gSod8io0L4ygYIK2C0vg
 https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&__biz=MzA5OTU0MTE1MQ==&scene=1&album_id=1318325233564172288#wechat_redirect
-
 ```
 
 ## iOS逆向工程初体验
@@ -7173,4 +9155,64 @@ https://github.com/coolstar/Odyssey-bootstrap
 
 ```
 https://www.antmoe.com/posts/77e27eac/index.html
+```
+
+## iOS越狱教程-内存基址修改器的外番(二)
+
+```
+https://mp.weixin.qq.com/s/LJAhI2pGOlnmxne6TAnBCw
+```
+
+## URL Scheme分享
+
+```
+https://st3376519.huoban.com/share/1985010/VGi2N5Vf0C1MVnHCVWiBc8L9g15c9VGJbMGcFrb6/172707/list
+```
+
+## Workflow规则 | 小新制作
+
+```
+https://www.limufang.com/post/526.html
+```
+
+## iOS越狱教程-内存基址修改器的神奇之处(十二)
+
+```
+https://mp.weixin.qq.com/s/0Je9UhWjVTuK-WIDcP886A
+```
+
+## 如何在苹果商店把App降级至任意版本
+
+```
+https://mp.weixin.qq.com/s/afXnjvgwA0aC3NaPg53l_g
+```
+
+## iOS越狱教程-内存基址修改器的外番(三)
+
+```
+https://mp.weixin.qq.com/s/Il5_Gsbf89McIBM70zdNJg
+```
+
+## 介绍 - BoxJs
+
+```
+https://chavyleung.gitbook.io/boxjs/
+```
+
+## 利用Futurerestore进行iOS13的升、降级、平刷
+
+```
+https://mp.weixin.qq.com/s/h5EqUG9xxo-_nz9K5b9F-w
+```
+
+## Sub-Store 教程
+
+```
+https://www.notion.so/Sub-Store-6259586994d34c11a4ced5c406264b46
+```
+
+## learn-regex/README-cn.md
+
+```
+https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md
 ```

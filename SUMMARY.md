@@ -27,7 +27,6 @@
 
 ## Computer
 
-* [Mac和Linux下终端优化](Computer/Mac和Linux下终端优化.md)
 * [各种系统的安装与配置](Computer/各种系统的安装与配置.md)
 * [多方式引导启动系统](Computer/多方式引导启动系统.md)
 * [系统和硬件的相关知识及维护](Computer/系统和硬件的相关知识及维护.md)
