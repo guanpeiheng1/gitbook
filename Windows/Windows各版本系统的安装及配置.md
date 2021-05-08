@@ -57,6 +57,12 @@ http://toastytech.com/index.html
 https://www.thecollectionbook.info/information/downloads/
 ```
 
+对于Windows 10，可打开以下链接并按F12，切换为手机浏览视图即可看到下载按钮。
+
+```
+https://www.microsoft.com/zh-cn/software-download/windows10/
+```
+
 ## 驱动
 
 ```
@@ -71,19 +77,19 @@ https://labmice.techtarget.com/drivers/default.htm
 http://driverpacks.net/driverpacks/windows/xp
 ```
 
-## 论坛与博客
-
-```
-http://cndos.fam.cx/forum/
-https://forum.exetools.com/
-http://www.zxinc.org/index.htm
-```
-
 # 各系统安装
 
 对于虚拟机，若为ISO镜像，直接挂载安装即可。若为自解压包，则需要先把解压出来的文件全部复制到要安装分区的根目录，然后进入DOS环境，打开Setup.exe完成安装。DOS环境可从微PE工具箱制作的U盘进入，也可通过挂载微PE工具箱或者纯DOS的ISO镜像的方式。
 
 对于实体机，可能需要在虚拟机的安装流程基础上添加步骤。
+
+## MS-DOS 5
+
+### 现成虚拟机
+
+```
+https://jamesfriend.com.au/pce-js/ibmpc-games/
+```
 
 ## MS-DOS 6.22
 
@@ -207,12 +213,6 @@ https://www.cr173.com/soft/20363.html
 
 用`NTFS4DOS`即可。
 
-#### 其它配置
-
-```
-https://www.cubic.org/docs/configuring.htm
-```
-
 ### 常用命令
 
 #### doskey
@@ -241,6 +241,12 @@ a // 显示hello
 
 ```
 https://winworldpc.com/product/windows-10/104
+```
+
+### 现成虚拟机
+
+```
+https://copy.sh/v86/?profile=windows1
 ```
 
 ### 虚拟机安装
@@ -315,6 +321,12 @@ WIN86
 
 ```
 ed2k://|file|SC_Windows31.exe|8472384|84037137FFF3932707F286EC852F2ABC|/
+```
+
+### 现成虚拟机
+
+```
+https://jamesfriend.com.au/pce-js/ibmpc-win/
 ```
 
 ### 虚拟机安装
@@ -514,12 +526,20 @@ https://winworldpc.com/product/windows-nt-3x/patches
 
 ## Windows 95
 
+Windows 95基于MS-DOS，行为与Windows 3.x相同。启动Windows 95时，都会先启动MS-DOS，然后Command.com在Windows目录中启动win.com。
+
 ### 下载
 
 该镜像为ISO格式。
 
 ```
 https://www.jb51.net/softs/160869.html
+```
+
+### 现成虚拟机
+
+```
+https://github.com/felixrieseberg/windows95
 ```
 
 ### 虚拟机安装
@@ -768,14 +788,32 @@ https://erpman1.tripod.com/w9xmeupd.html
 https://diarywind.com/blog/e/g13_084_win_98_se_1_win98_1.html
 ```
 
-#### 常见错误
+### 常见错误
 
-具体可参考以下链接。
+#### 没有关机声音
+
+禁用快速关机选项。
+
+若无效，则打开`C:\Windows\WIN.INI`，在`load=`和`run=`前面加上`rem `，如下。然后保存。
+
+对于`C:\Windows\SYSTEM.INI`，则对`[386Enh]`下结尾为`.386`的`Device=`添加`rem `。
 
 ```
-http://www.aumha.org/win4/a/shutdown.php
-http://educ.jmu.edu/~jarvislb/utils/shutdown.html
+rem load=...
+rem run=...
 ```
+
+若仍无效，则删除或重命名CONFIG.SYS与AUTOEXEC.BAT，使其启动时不起作用。
+
+若仍无效，则在设备管理器中转到系统设备，然后转到高级电源管理。单击设置选项卡，然后取消选中启用电源管理。
+
+若仍无效，则进入控制面板-电源管理，将关闭显示器和关闭硬盘都设置为从不。
+
+若仍无效，则在设备管理器中转到系统设备，双击PCI Bus，进入IRQ指导选项卡，取消勾选使用IRQ指导。
+
+若仍无效，则在设备管理器中转到系统设备，选择即插即用BIOS-设置，勾选禁用NVRAM/ESCD更新。
+
+若仍无效，可尝试卸载杀毒程序，或禁用BIOS中的`Resume by Ring and LAN`。
 
 ### 安装程序参数说明
 
@@ -3033,6 +3071,13 @@ for %%i in (*.exe) do %%i /r
 
 ## 系统激活
 
+系统版本解释如下。
+
+|     版本    |               说明               |
+|-------------|----------------------------------|
+| RTL Edition | 零售版，只能激活一台电脑         |
+| VOL Edition | 批量授权版，可用MARK密钥永久激活 |
+
 Windows 7以上可用KMSAuto激活系统，下载链接如下。
 
 ```
@@ -3173,4 +3218,10 @@ http://retro.remotecpu.com/win2k.php
 
 ```
 https://tieba.baidu.com/p/6289561988?red_tag=2476268029
+```
+
+## Win95/98 Shutdown Problems
+
+```
+http://educ.jmu.edu/~jarvislb/utils/shutdown.html
 ```

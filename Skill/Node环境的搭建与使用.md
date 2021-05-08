@@ -82,7 +82,7 @@ nrm use taobao
 ### 对于nvm安装
 
 ```
-nvm install lts/* --reinstall-packages-from=default --latest-npm
+nvm install --lts --latest-npm --reinstall-packages-from=node
 ```
 
 ### 对于独立程序
@@ -94,11 +94,14 @@ npm install -g node
 
 ## 更新下载包
 
-在终端执行以下命令安装`ncu`并更新依赖包到最新版本。
-
 ```
-npm install -g npm-check-updates
-ncu -u
+npm install -g npm-check     # 安装npm-check
+npm-check                    # 查看系统插件是否需要升级
+npm install -g npm-upgrade   # 安装npm-upgrade
+npm-upgrade        # 更新package.json
+# 在执行npm-upgrade命令后会要求输入yes或者no，直接输入Yes或Y即可
+npm update -g      # 更新全局插件
+npm update --save  # 更新系统插件
 ```
 
 ## 查看安装过的模块
@@ -143,6 +146,17 @@ source ~/.bash_profile
 ```
 
 ## 卸载node和npm
+
+### 对于nvm安装
+
+```
+nvm uninstall [版本号]
+
+# 版本通过以下命令查看
+nvm list
+```
+
+### 对于独立程序
 
 在终端执行以下命令以卸载。
 

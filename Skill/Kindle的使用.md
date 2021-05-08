@@ -15,6 +15,12 @@ Kindle的使用技巧总结。
 
 # 电子书获取
 
+## 在线阅读
+
+```
+http://1984.wang/
+```
+
 ## 普通电子书
 
 ```
@@ -101,15 +107,15 @@ http://it-ebooks.flygon.net/
 ## 东野圭吾作品集
 
 ```
-// azw3&mobi格式
+# azw3&mobi格式
 链接 / https://share.weiyun.com/5bL0FMv
 密码 / ny6ghu
  
-// epub格式
+# epub格式
 链接 / https://share.weiyun.com/53bONhM
 密码 / 406if9
 
-// 入门级英文原著（mobi & epub格式）
+# 入门级英文原著（mobi&epub格式）
 链接 / https://share.weiyun.com/5pFArBv
 密码 / bg15jd
 ```

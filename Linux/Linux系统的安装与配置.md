@@ -200,9 +200,11 @@ chmod +x interactive.py
 ./interactive.py
 ```
 
-## 终端设置
+## 终端相关
 
-### 设置默认Shell
+### 终端设置
+
+#### 设置默认Shell
 
 使用`zsh`为默认shell，可应用插件和主题，实现默认的bash所不能实现的功能。
 
@@ -225,7 +227,7 @@ sudo apt-get install zsh
 chsh -s /bin/zsh
 ```
 
-### 安装agnoster主题字体
+#### 安装agnoster主题字体
 
 在终端输入下列命令以安装`powerline fonts`项目。
 
@@ -242,11 +244,11 @@ git clone https://github.com/powerline/fonts
 样式采用Tango
 ```
 
-### oh-my-zsh
+#### oh-my-zsh
 
 oh-my-zsh可用于加强zsh终端。
 
-#### 安装
+##### 安装
 
 终端输入以下命令安装。
 
@@ -284,9 +286,9 @@ DEFAULT_USER=$USER
 source ~/.zshrc
 ```
 
-#### 插件
+##### 插件
 
-##### zsh-syntax-highlighting
+###### zsh-syntax-highlighting
 
 语法高亮插件，在终端输入以下命令安装。
 
@@ -303,7 +305,7 @@ plugins=(
 )
 ```
 
-##### zsh-autosuggestions
+###### zsh-autosuggestions
 
 自动建议补全插件，在终端输入以下命令安装。
 
@@ -319,7 +321,7 @@ plugins=(
 )
 ```
 
-##### auto-jump
+###### auto-jump
 
 自动跳转插件，在终端输入以下命令安装。
 
@@ -329,7 +331,7 @@ cd autojump
 ./install.py or ./uninstall.py
 ```
 
-##### incr
+###### incr
 
 自动补全插件。打开下面网站下载incr插件，并放置于`/.oh-my-zsh/customs/plugins/incr`中（若无则新建）。
 
@@ -343,7 +345,7 @@ https://mimosa-pudica.net/zsh-incremental.html
 source $ZSH/custom/plugins/incr/incr*.zsh
 ```
 
-### proxychains-ng
+#### proxychains-ng
 
 proxychains-ng可用于终端翻墙。通过以下链接下载仓库压缩包并解压。
 
@@ -383,6 +385,14 @@ socks5 127.0.0.1 9050
 
 ```
 proxychains curl http://www.google.com
+```
+
+### 常用命令
+
+#### 检查json文件
+
+```
+jq . config.json
 ```
 
 # 使用技巧

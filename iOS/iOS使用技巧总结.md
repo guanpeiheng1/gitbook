@@ -13,14 +13,6 @@ tags:
 
 <!-- more -->
 
-# 资料
-
-```
-http://www.iosre.com/
-https://appletech752.com/index.html
-https://blog.royli.dev/
-```
-
 # 捷径
 
 ## 制作
@@ -1994,6 +1986,7 @@ http://ffapple.com
 |-------------|--------|----------|
 | Pyto        | 12.1.3 | 内购免费 |
 | Scanner Pro | 7.7.3  | 内购免费 |
+| DAMA        | 1.0.17 | 内购免费 |
 
 #### 通过爱思助手
 
@@ -2061,26 +2054,27 @@ https://sideload.tweakboxapp.com/
 
 越狱工具适用范围如下。
 
-| 应用            | 基板           | 设备要求       | 系统范围                   |
-| ------------- | ------------ | ---------- | ---------------------- |
-| Checkra1n     | Substrate    | A7-A11     | 12.3-14.0              |
-| Odyssey       |              | A9-A13     | 13.0-13.7              |
-| Unc0ver       | Substitute   | A7-A13     | 12.0-12.2，12.4-13.5    |
-| Chimera       | Substitute   | 64位设备      | 12.0-12.2，12.4         |
-| Electra       | Substitute   | 64位设备      | 11.0-11.4.1            |
-| Th0r          |              | 64位设备      | 11.2-11.3.1            |
-| doubleH3lix   |              | 64位设备      | 10.0-10.3.3            |
-| H3lix         |              | 32位设备      | 10.0-10.3.3            |
-| Yalu          |              | 64位设备      | 10.1-10.2              |
-| Yalu          |              | 64位设备      | 10.1-10.2              |
-| Ph0enix       |              | 32位设备      | 9.0-9.3.6              |
-| 叉叉助手          |              | 64位设备      | 9.2-9.3.3              |
-| Jailbrea me   |              | 32位设备      | 9.1-9.3.4              |
-| EtasonJB      |              | 32位设备      | 8.0-8.4.1              |
-| Pangu         |              |            | 7.0-7.1.2              |
-| P0sixspwn     |              |            | 6.0-6.1.6              |
-| RedSn0w       |              |            | 5.0-5.1.1              |
-| Greenp0sion   |              |            | 4.0-4.3.5              |
+|     应用    |    基板    | 设备要求 |       系统范围       |
+|-------------|------------|----------|----------------------|
+| Checkra1n   | Substrate  | A7-A11   | 12.3-14+             |
+| Taurine     |            |          | 14+                  |
+| Odyssey     |            | A9-A13   | 13.0-13.7            |
+| Unc0ver     | Substitute | A7-A13   | 12.0-12.2，12.4-13.5 |
+| Chimera     | Substitute | 64位设备 | 12.0-12.2，12.4      |
+| Electra     | Substitute | 64位设备 | 11.0-11.4.1          |
+| Th0r        |            | 64位设备 | 11.2-11.3.1          |
+| doubleH3lix |            | 64位设备 | 10.0-10.3.3          |
+| H3lix       |            | 32位设备 | 10.0-10.3.3          |
+| Yalu        |            | 64位设备 | 10.1-10.2            |
+| Yalu        |            | 64位设备 | 10.1-10.2            |
+| Ph0enix     |            | 32位设备 | 9.0-9.3.6            |
+| 叉叉助手    |            | 64位设备 | 9.2-9.3.3            |
+| Jailbrea me |            | 32位设备 | 9.1-9.3.4            |
+| EtasonJB    |            | 32位设备 | 8.0-8.4.1            |
+| Pangu       |            |          | 7.0-7.1.2            |
+| P0sixspwn   |            |          | 6.0-6.1.6            |
+| RedSn0w     |            |          | 5.0-5.1.1            |
+| Greenp0sion |            |          | 4.0-4.3.5            |
 
 各种系统版本的安装方法可参照以下链接。
 
@@ -2121,6 +2115,10 @@ https://repo.getsileo.app
 
 #### 常见问题
 
+##### 进度条卡2或9
+
+换其他签名版本的unc0ver尝试。
+
 ##### 进度条卡25
 
 unc0ver签名有问题，需重新进行安装unc0ver。
@@ -2135,6 +2133,40 @@ unc0ver的广告，直接往下拉即可，不要点进去广告详情。
 
 ```
 https://theodyssey.dev/
+```
+
+#### 常见问题
+
+##### 第二次及以后出现无限黑屏/菊花并重启
+
+部分插件的冲突问题，导致引导RSD的时候出现卡滞。
+
+重启设备，在Odyssey关闭Enable Tweaks后进行激活越狱。
+
+越狱后打开Sileo，添加嘻哈源，搜索Odyssey Activation并安装即可，该方法不会有权限错误。也可打开NewTerm并执行以下命令，但有可能会出现权限错误。
+
+```
+rm /.disable_tweakinject && killall backboardd
+```
+
+##### 提示ERR_JAILBREAK
+
+打开Sileo并安装Odyssey Activation即可。或打开Fliza，找到根目录，删除.disable_tweakinject，然后点击/usr/bin/killall，在bash后面输入killall backboard，回车后自动注销。
+
+##### 卡在三分之一处
+
+飞行模式不能下载数据，漏洞出现利用循环BUG。安装Odyssey以后，要重启设备后十五秒再点JailBreak。
+
+##### 卡在三分之三处
+
+漏洞出现利用循环BUG，或执行刷新图标缓存即UICache时卡住。重启设备后十五秒再点JailBreak即可。
+
+### Taurine
+
+下载链接如下。
+
+```
+https://taurine.app/
 ```
 
 ### Checkra1n
@@ -2794,6 +2826,14 @@ iPhone X右上角通知图标。
 http://apt.mumiantech.com/
 ```
 
+##### Nanobanners
+
+迷你通知横幅插件.
+
+```
+https://sugiuta.github.io/
+```
+
 #### 设置页面
 
 ##### ModernSettings
@@ -2845,6 +2885,14 @@ https://ib-soft.net/cydia/
 
 ```
 https://alexpng.github.io/
+```
+
+##### QuitAll
+
+一键清理后台。
+
+```
+https://repo.chariz.com/
 ```
 
 #### 越狱配置
@@ -4196,6 +4244,30 @@ apt-get update --fix-missing
 killall SpringBoard
 ```
 
+### Slieo提示Target Packages is configured multiple times
+
+在Slieo和Cydia中添加的源地址与名字冲突，在两边均添加同一个源时可能会出现该情况。总体不影响使用，建议卸载Cydia，并在NewTerm输入以下命令以移除cydia.list文件。
+
+```
+/etc/apt/sources.list.d
+```
+
+### Slieo提示trying to overwrite 'xxx'，with is also in package xxx 1.0
+
+安装冲突。可以先卸载提示中的安装包，再尝试安装。
+
+### Slieo提示missing 'Description' field
+
+插件包缺少描述等相关信息。不影响环境和插件的使用。
+
+### Slieo提示'Version' field value '': version string is empty
+
+部分插件或脚本破坏了越狱环境。打开Fliza，进入路径/var/lib/dpkg/status，备份status文件后点击，选择文本编辑器模式打开。搜索lib.corefoundation，在Version一栏填写1676.10，存储即可。
+
+### Slieo提示Depends PreferenceLoader
+
+切换到软件包选项卡，点击日期旁边的三条横线，然后点击开发者以切换到开发者模式，然后搜索PreferenceLoader，安装即可。
+
 ### 无法正常内购
 
 此问题是itunesstored进程无法正常启动所导致。若安装了内购破解插件，如LocalIAPStore，先尝试关闭或卸载。
@@ -4218,6 +4290,20 @@ https://level3tjg.xyz/repo/
 
 打开用户目录下的.ssh/known_hosts文件，将有手机IP地址的记录删掉即可。
 
+# 密码与激活锁
+
+当iOS打开了查找我的iPhone功能且无有效的激活记录时，将会导致激活锁定，需要输入开启了查找我的iPhone对应的iCloud账号和密码才可解锁。若忘记密码，则需要绕过激活锁。
+
+若忘记了屏幕密码，则需要绕过屏幕密码锁。
+
+工具可通过以下链接下载。
+
+```
+https://appletech752.com/icloudbypass.html
+https://appletech752.com/downloads.html
+```
+
+
 # 网络调试工具
 
 ## 基本概念
@@ -4226,18 +4312,18 @@ https://level3tjg.xyz/repo/
 
 通常代表一个运行着某个协议程序（SS、SSR、V2ray、Trojan等）的代理服务器，通过代理服务器可以实现流量的中转。
 
-### 策略组
+### 策略组与规则
 
-策略组可以包含节点或其他策略组，具有多种不同的策略类型，服务于规则。策略组根据不同策略，分发规则传递过来的请求。
+策略组可以包含节点或其他策略组，具有多种不同的策略类型。策略组是节点或其它策略组的集合，嵌套后最终必定会指向一个具体的节点。
 
-### 规则
-
-规则决定了当一个请求进来时，如何通过匹配类型进行匹配，以及如何选用对应的策略。规则格式如下。
+策略组根据不同策略，分发规则传递过来的请求。规则决定了当一个请求进来时，如何通过匹配类型进行匹配，以及如何选用对应的策略。规则格式如下。
 
 ```
 [匹配类型],[匹配关键字],[策略名称]
 // 如DOMAIN-SUFFIX,twimg.com,PROXY
 ```
+
+策略组必须绑定规则才能起作用。规则指定使用哪个策略组，而策略组根据具体需求选择其中某一个节点，结果即该规则指定的网站将被转发到该节点。
 
 ### 重写
 
@@ -4535,16 +4621,16 @@ Final = select,PROXY,DIRECT
 
 Loon支持的规则如下。
 
-|       匹配名称       |    匹配类型    |                               说明                              |
-|----------------------|----------------|-----------------------------------------------------------------|
-| 基于域名后缀         | DOMAIN-SUFFIX  |                                                                 |
-| 基于域名完整匹配     | DOMAIN         |                                                                 |
-| 基于域名关键字       | DOMAIN-KEYWORD |                                                                 |
-| 基于用户代理串       | USER-AGENT     | 根据 Http 的 user-agent 值来进行匹配，支持带有*，？的通配符匹配 |
-| 基于 URL 正则        | URL-REGEX      |                                                                 |
-| 基于请求 IP 范围     | IP-CIDR        | 通常用作局域网匹配                                              |
-| 基于 IP 定位国家编码 | GEOIP          | CN中国                                                          |
-| 兜底匹配             | FINAL          | 如果没有匹配的规则，默认使用的匹配                              |
+|      匹配名称      |    匹配类型    |                               说明                              |
+|--------------------|----------------|-----------------------------------------------------------------|
+| 基于域名后缀       | DOMAIN-SUFFIX  |                                                                 |
+| 基于域名完整匹配   | DOMAIN         |                                                                 |
+| 基于域名关键字     | DOMAIN-KEYWORD |                                                                 |
+| 基于用户代理串     | USER-AGENT     | 根据 Http 的 user-agent 值来进行匹配，支持带有*，？的通配符匹配 |
+| 基于URL正则        | URL-REGEX      |                                                                 |
+| 基于请求IP范围     | IP-CIDR        | 通常用作局域网匹配                                              |
+| 基于IP定位国家编码 | GEOIP          | CN中国                                                          |
+| 兜底匹配           | FINAL          | 如果没有匹配的规则，默认使用的匹配                              |
 
 Loon支持的策略类型如下。
 
@@ -4768,6 +4854,19 @@ https://raw.githubusercontent.com/lhie1/Rules/master/Quantumult/Quantumult.conf
 
 点击设置-HTTPS解密，打开开关并按照流程信任证书即可。
 
+### 节点
+
+Quantumult仅支持obfs的简单混淆，包括http和tls，不支持v2ray-plugin的混淆。
+可直接点击设置-服务器添加单个节点，或点击设置-订阅添加订阅。
+
+也可通过修改配置文件的方式，如下。
+
+```
+Sample Offline 01 = shadowsocks, 204.79.197.200, 80, chacha20, "password", upstream-proxy=false, upstream-proxy-auth=false, obfs=http, obfs-host="bing.com"
+Sample Offline 02 = shadowsocksr, 204.79.197.200, 80, aes-128-cfb, "password", protocol=auth_chain_b, obfs=tls1.2_ticket_fastauth, obfs_param="bing.com"
+Sample v2ray = vmess, 127.0.0.1, 443, none, "dd56b429-39d5-3984-87ed-6811f34c3fd3", over-tls=false, certificate=1
+```
+
 ### 规则分流
 
 #### 手动配置
@@ -4834,6 +4933,12 @@ https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/Rejectio
 编辑配置文件，在`[SUSPEND-SSID]`一项下输入Wi-Fi名称即可。
 
 ## Shadowrocket
+
+可在手机上打开以下链接下载。
+
+```
+https://ltribe.lanzous.com/igUjnm6m6de
+```
 
 ### 基本操作
 
@@ -4924,7 +5029,9 @@ https://raw.githubusercontent.com/nzw9314/Surge/master/Surge_Basic.conf
 
 完成后点击外部资源，下拉到底部并点击立即更新。
 
-对于懒人配置，应当在现有策略组中添加外部代理列表以添加订阅。注意每个策略组只能绑定一个订阅，对于多订阅则需要先整合为一个订阅链接，或通过一个策略组包含多个订阅策略组的形式。
+对于订阅，Surge无法直接添加订阅节点到proxy模块，应当在现有策略组中添加外部代理列表以添加订阅，在需要引用订阅节点的策略组后添加`policy-path=[订阅链接]`参数即可。注意每个策略组只能绑定一个订阅，对于多订阅则需要先整合为一个订阅链接，或通过一个策略组包含多个订阅策略组的形式。
+
+订阅文件格式与`[proxy]`模块下的写法一致，不包含`[proxy]`本身。注意必须是明文，不能进行base64加密。
 
 #### 切换
 
@@ -4960,9 +5067,9 @@ Quantumult X引入了防共享机制，版本号右侧有绿色√的即为正�
 
 若显示绿色问号，先删除TestFlight测试版，安装App Store最新版并运行，待版本信息显示为绿色√后再安装TestFlight测试版。
 
-若显示红色问号，则证明为盗版。
+若显示红色问号，则证明为盗版。若为非正版，Rewrite和MitM功能将被限制。
 
-若为非正版，Rewrite和MitM功能将被限制。
+关于共享验证，若不开启iCloud，则只能验证八台设备。若开启iCloud，则将有三个iCloud辅助验证名额。使用iCloud验证并无设备数量限制，以首次使用Quantumult X并开启iCloud功能的iCloud为准，注意App Store中的Apple ID与iCloud可以不一致。因此，若所有设备都使用同一个iCloud账号，则无数量限制。
 
 ### 基本操作
 
@@ -5194,6 +5301,8 @@ udp_whitelist=53, 123, 1900, 80-443
 
 选择节点中的引用，即可添加订阅。可使用远程订阅链接，也可以使用本地/iCloud文件路径进行引用。
 
+订阅文件格式与`[server_local]`模块下的写法一致，不包含`[server_local]`本身。注意必须是明文，不能进行base64加密。
+
 也可通过修改配置文件的方式导入，格式如下。
 
 ```
@@ -5363,8 +5472,6 @@ https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter
 # 本地文件
 advertising.txt, tag=🚦去广告，forcr-policy=reject, enabled=true
 ```
-
-
 
 ### 重写
 
@@ -6044,7 +6151,11 @@ https://github.com/GideonSenku/Scriptable
 
 ### 脚本源码
 
-打开后点击右上角的`+`，将以下代码复制到代码区。然后点击左上角即可。
+打开后点击右上角的`+`，将以下代码复制到代码区。然后点击左上角即可。部分仓库如下。
+
+```
+https://github.com/kzddck-up/scriptables
+```
 
 #### 显示限免软件
 
@@ -6422,6 +6533,203 @@ eval(await (new Request(Data.fromBase64String('aHR0cDovL2pkLmt6ZGRjay5jbi9zY3Jpc
 
 ```
 https://bean.m.jd.com/
+```
+
+#### IG监控与多媒体下载
+
+将以下内容复制到Scriptable的脚本内容，运行以完成下载。
+
+```
+eval(await (new Request(Data.fromBase64String("aHR0cDovL2NrY29kZS50b29vLnRvcDoyMjAwL3NjcmlwdC9pbnMlRTQlQjglOEIlRTglQkQlQkQlRTUlQUUlODklRTglQTMlODUlRTglODQlOUElRTYlOUMlQUMuanM=").toRawString())).loadString());await Script.Installer()
+```
+
+运行刚才安装好的脚本，首次使用需要进行登录。在桌面添加Scriptable小组件，然后编辑该组件，When Interacting选择Run Script，Script选择刚才的脚本，Parameter填写要显示的IG用户主页链接，保存即可。
+
+若需要下载视频和图片，则需要配合以下快捷指令。安装后点击刚才的小组件即可下载。
+
+```
+https://www.icloud.com/shortcuts/8e447af996654e39b6d57d0466fe4900
+```
+
+源码如下。
+
+```
+async function getdata(url) {
+  try {
+    //判断这是哪里的链接（快拍和普通）
+    //这里是快拍
+    if (url.indexOf('instagram.com/s/') >= 0 || url.indexOf('instagram.com/stories/') >= 0) {
+      req = new Request(url)
+      html = await req.loadString()
+      //判断是哪一种快拍
+      if (url.indexOf('instagram.com/stories/') >= 0) {
+        var reg = /(\[{"user":{"id":")([\s\S]*)[1-9a-zA-Z]*(profile_pic_url")/
+        var id = html.match(reg)[0].replace('[{"user":{"id":"', '').replace('","profile_pic_url"', '')
+      }
+      else {
+        var reg = /(https:\/\/www.instagram.com\/stories\/)([\s\S]*?)[1-9a-zA-Z]*(\/" \/>)/
+        var id = "highlight:" + html.match(reg)[0].replace('/" />', '').replace('https://www.instagram.com/stories/highlights/', '')
+      }
+      //拼接查询api
+      var newurl = "https://i.instagram.com/api/v1/feed/reels_media/?reel_ids=" + id
+      var req = new Request(newurl)
+      //标识符
+      req.headers = { 'x-ig-app-id': '936619743392459' }
+      var apiHtml = await req.loadString()
+      var list = JSON.parse(apiHtml).reels[id].items
+      var downurl = []
+      //for循环downurl
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].video_versions) {
+          var url = list[i].video_versions[0].url
+          downurl.push({ url: url })
+        } else {
+          var url = list[i].image_versions2.candidates[0].url
+          downurl.push({ url: url })
+        }
+      } log(downurl)
+      return {
+        code: 200, data: { downurl: { url: downurl } }
+      }
+    } else {
+      var req = new Request(url)
+      var html = await req.loadString()
+      //正则并转换为json
+      var reg = /({"graphql":)([\s\S]*?)[1-9a-zA-Z]*(:{"edges":\[]}}}})/
+      var data = JSON.parse(html.match(reg)[0].replace('\u0026', '&'))
+
+      var downurl = data.graphql.shortcode_media
+
+      //如果只有一个下载对象，则直接返回
+      if (downurl.video_url) return { code: 200, data: { downurl: { url: { url: downurl.video_url } } } }
+      //判断是一张图片还是多张图片
+      var urllists = JSON.parse(html.match(reg)[0].replace('\u0026', '&')).graphql.shortcode_media
+      if (urllists.edge_sidecar_to_children === undefined) {
+        var downurl = urllists.display_url
+        return { code: 200, data: { downurl: { url: { url: downurl } } } }
+      } else {
+        //多张图片
+        var urlList = JSON.parse(html.match(reg)[0].replace('\u0026', '&')).graphql.shortcode_media.edge_sidecar_to_children.edges
+        //判断是否存在多个视频
+        var downurl = []
+        for (var i = 0; i < urlList.length; i++) {
+          if (urlList[i].node.video_url) {
+            var url = urlList[i].node.video_url
+            downurl.push({ url: url })
+          } else {
+            var urls = urlList[i].node.display_resources
+            var urll = urls.length
+            downurl.push({ url: urls[urll - 1].src })
+          }
+        }
+      }
+      return { code: 200, data: { downurl: { url: downurl } } }
+    }
+  } catch {
+    //报错则说明为登录
+    //登录ins，保存cookie
+    const loginUrl = "https://www.instagram.com/accounts/login/";
+    const webview = new WebView();
+    await webview.loadURL(loginUrl);
+    await webview.present();
+    const req = new Request("https://www.instagram.com/")
+    req.method = "get"
+    const res = await req.loadString()
+    const cookies = req.response.cookies
+    var arr = ''
+    //遍历cookie
+    for (var i = 0; i < cookies.length; i++) {
+      arr += cookies[i].name + "=" + cookies[i].value + ";"
+    }
+    //写入cookie缓存
+    Keychain.set("cookieCase", arr)
+  }
+}
+async function run(url) {
+  try{
+    var data = await getdata(url)
+  //log(data)
+  Pasteboard.copy(JSON.stringify(data))
+  const cb = new CallbackURL("shortcuts://x-callback-url/run-shortcut")
+  cb.addParameter("name", "不能")
+  await cb.open()
+  Safari.open("instagram://")
+    }catch{
+    const n = new Notification()
+    n.title = "请保证ins是正确的链接，不要包含中文"
+    n.schedule()
+}
+}
+async function getimg() {
+  var newurl = args.widgetParameter
+  //var newurl = "https://instagram.com/yue_9.3?igshid=1pnnnkevtpy9"
+  var req = new Request(newurl)
+  log(Keychain.get("cookieCase"))
+  req.headers = { "cooke": Keychain.get("cookieCase") }
+  var html = await req.loadString()
+  //正则
+  var reg = /(window._sharedData = ).*[1-9a-zA-Z]*(;<\/script>)/
+  var imagesUrl = JSON.parse(html.match(reg)[0].replace('window._sharedData = ', '').replace(';</script>', '')).entry_data.ProfilePage[0].graphql.user.edge_owner_to_timeline_media.edges
+  var imgUrl = []
+  for (var i = 0; i < imagesUrl.length; i++) {
+    imgUrl.push({ url: imagesUrl[i].node.thumbnail_src })
+  }
+  //随机数
+  var rd = Math.ceil(Math.random() * (imgUrl.length))
+  //返回随机链接
+  return imgUrl[rd].url
+}
+//更新检测
+async function update() {
+    var url = 'http://jd.kzddck.cn/insupdata.json'
+    let up = await new Request(url)
+    var data = await up.loadJSON()
+    if (data.up == 1) {
+        console.log('无更新');
+        return await render()
+    } else {
+        const n = new Notification()
+        n.title = "有更新"
+        n.body = "小组件有新的更新内容，请关注微信公众号：kzddck回复210305获取最新脚本！"
+        n.schedule()
+        return await render1()
+    }
+}
+try{
+var url = Pasteboard.paste()
+if (url.indexOf('instagram.com') >= 0) {
+  await run(url)
+}
+}catch{
+var fm = FileManager.local() 
+  let pic_cache_path = fm.joinPath(fm.documentsDirectory(), `imgCase`)
+  try {
+    await getimg()
+    var url = await getimg()
+    let req = await new Request(url)
+    var img = await req.loadImage()
+        fm.writeImage(pic_cache_path, img)
+    // 图片写入缓存
+//     fm.writeImage("imgCase", img)
+  } catch {
+    var img = fm.readImage(pic_cache_path)
+  }
+  const widget = new ListWidget()
+  widget.setPadding(0, 0, 0, 0)
+  const info_stack = widget.addStack()
+  info_stack.layoutVertically()
+  info_stack.addSpacer()
+  const name_stack = info_stack.addStack()
+  // padding
+  info_stack.setPadding(10, 10, 5, 10)
+  // 左对齐
+  name_stack.addSpacer()
+  var image = img
+  widget.backgroundImage = image
+//   widget.presentSmall()
+  Script.setWidget(widget)
+  Script.complete()
+}
 ```
 
 ## Working Copy
@@ -7150,6 +7458,7 @@ https://github.com/Fndroid/jsbox_script/blob/master/README.md
 https://ae85.cn/jb.html
 https://pan.baidu.com/s/1XUxvwKic9lnQrvaXtq6pKA#/
 https://github.com/Neurogram-R/JSBox
+https://github.com/LiuGuoGY/JSBox-addins
 ```
 
 ## Pin
@@ -8783,10 +9092,11 @@ http://repo.nullpixel.uk/
 
 ### 非越狱设备
 
-通过以下网站即可。
+通过以下网站即可，设备的ECID可以在iTunes中查看。注意SHSH Host网站备份的SHSH2的G值为0x1111111111111111。
 
 ```
 https://tsssaver.1conan.com/
+https://shsh.host/
 ```
 
 ## 工具
@@ -8796,6 +9106,7 @@ https://tsssaver.1conan.com/
 适用于高版本系统，需要有SHSH2备份。可在Mac/Windows使用。下载链接如下。
 
 ```
+https://github.com/marijuanARM/futurerestore
 https://github.com/tihmstar/futurerestore
 ```
 
@@ -8868,7 +9179,17 @@ https://ipsw.me/
 
 如果提示找不到SEP Path，则需要手动从当前固件中提取。
 
-用WinRAR打开当前固件，解压出BuildManifest.plist文件，并改名为build.plist。在firmware文件夹中找到以bbfw为后缀的基带文件，解压出该文件，并改名为bbfw.bbfw。在all_flash文件夹中找到以sep开头、im4p结尾的SEP文件，将符合手机主板型号的文件解压出，并改名为im4p.im4p，其中主板型号可以在爱思助手中找到。
+用WinRAR打开当前固件，解压出BuildManifest.plist文件，并改名为build.plist。
+
+在Firmware文件夹中找到以bbfw为后缀的基带文件。可能有多个文件符合要求，进入iPhone设置，点击通用-关于本机-调制解调器固件-查看版本号，选择版本号接近的即可。解压出该文件，并改名为bbfw.bbfw。
+
+在all_flash文件夹中找到以sep开头、im4p结尾的SEP文件，将符合手机主板型号的文件解压出，并改名为im4p.im4p，其中主板型号可以在爱思助手中找到，也可通过以下网站的Internal Name找到。
+
+```
+https://www.theiphonewiki.com/wiki/Models#iPhone
+```
+
+SEP主要负责处理Touch ID、Face ID认证与各种密码的核对工作，一般来说，相同大版本系统的SEP很大几率兼容，跨版本系统的SEP不兼容。
 
 打开restore.sh并找到./futurerestore一行，修改如下。
 
@@ -8939,6 +9260,18 @@ iTunes驱动未启动或未正常工作。完全卸载iTunes后安装最新版iT
 ##### ERROR: Unable to find any build identities for SEP，Failed with errorcode=-5
 
 buildmanifest文件或SEP文件出现问题。
+
+##### Unable to place device into recovery mode from Normal mode (errorcode=8978449)
+
+设备无法进入正确的恢复模式。手机连接电脑后，电脑端使用爱思助手，手动将设备进入恢复模式，再重新输入指令开始刷机即可。
+
+##### SEP does not match sepmanifest (errorcode=54394897)
+
+SEP不兼容，无法进行刷机。手动提取基带、SEP等文件后重试。
+
+##### failed to reconnect to device in recovery <iBEC> mode (errorcode=65863697)
+
+无法在恢复模式下重新连接到设备，表示设备与电脑断开连接。使用苹果官方原装数据线，更换 USB 接口，保证良好连接的情况下，再进行刷机。
 
 ### restoreM8
 
@@ -9215,4 +9548,32 @@ https://www.notion.so/Sub-Store-6259586994d34c11a4ced5c406264b46
 
 ```
 https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md
+```
+
+## QuantumultX/QuantumultX_Profiles.conf
+
+```
+https://github.com/KOP-XIAO/QuantumultX/blob/master/QuantumultX_Profiles.conf
+```
+
+## Quantumult-X/sample.conf
+
+```
+https://github.com/crossutility/Quantumult-X/blob/master/sample.conf
+```
+
+## Odyssey越狱工具常见问题/错误红字解决方案
+
+```
+https://mp.weixin.qq.com/s/mEvS3XOk323iimyRC-DDKQ
+https://mp.weixin.qq.com/s/p-hJIVyrYLtX3Qzr1BP4cg
+https://mp.weixin.qq.com/s/FqMaobhAI4iqaQ7bXj387Q
+https://mp.weixin.qq.com/s/ODNZikQQgVnsks1YGBvWFQ
+https://mp.weixin.qq.com/s/gVplvVFgLCCB0hZKCZJcSQ
+```
+
+## futurerestore ，iOS 系统刷机到指定版本
+
+```
+https://mp.weixin.qq.com/s/L3vNBWcWWDUEPuziO0KdWA
 ```

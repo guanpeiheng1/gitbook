@@ -18,7 +18,7 @@ tags:
 
 ### Homebrew
 
-Homebrew类似于Linux的apt-get软件包管理器。
+Homebrew是类似于Linux的apt-get软件包管理器。
 
 #### 安装与卸载
 
@@ -27,10 +27,10 @@ Homebrew类似于Linux的apt-get软件包管理器。
 在终端输入以下命令即可。
 
 ```
-// 安装
+# 安装
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-// 卸载
+# 卸载
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
 ```
 
@@ -39,12 +39,69 @@ Homebrew类似于Linux的apt-get软件包管理器。
 ###### 最新方法
 
 ```
-// 安装
+# 安装
 /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
 
-// 卸载
+# 卸载
 /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/HomebrewUninstall.sh)"
 ```
+
+或以下命令。
+
+```
+# 安装
+/bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install.sh)"
+
+# 卸载
+/bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/uninstall.sh)"
+```
+
+若命令执行中卡在`Cloning into '/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core'`，可执行以下命令后再重新执行脚本。
+
+```
+cd "$(brew --repo)/Library/Taps/"
+mkdir homebrew && cd homebrew
+git clone git://mirrors.ustc.edu.cn/homebrew-core.git
+```
+
+若为安装cask时卡住，则为以下命令。
+
+```
+cd "$(brew --repo)/Library/Taps/"
+cd homebrew
+git clone https://mirrors.ustc.edu.cn/homebrew-cask.git
+```
+
+<details>
+<summary>【进阶】对于M1芯片</summary>
+
+M1芯片需要使用ARM版的Homebrew，安装路径为/opt/homebrew。安装完成后须在终端输入以下命令以设置环境变量。
+
+```
+# bash用户
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.bash_profile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# zsh用户
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+也可在M1芯片安装普通的x86版，命令如下。
+
+```
+arch -x86_64 /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install.sh)"
+```
+
+若同时安装了两个版本，需要在~/.zshrc或~/.bash_profile添加以下命令。
+
+```
+alias abrew='arch -arm64 /opt/homebrew/bin/brew'
+alias ibrew='arch -x86_64 /usr/local/bin/brew'
+```
+
+保存后，在终端输入`abrew`表示使用ARM版，输入`ibrew`表示使用x86版。
+</details>
 
 ###### 失效教程
 
@@ -91,17 +148,17 @@ rm -rf ~/Library/Caches/Homebrew
 #### 更换默认源
 
 ```
-// 中国科学技术大学源
-// 替换核心软件仓库
+# 中国科学技术大学源
+## 替换核心软件仓库
 cd "$(brew --repo)"
 git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
 
-// 替换cask软件仓库
+## 替换cask软件仓库
 cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
 git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
 
-// 替换Bottles源
-// 以下二选一
+## 替换Bottles源
+## 以下二选一
 （bash用户）
 echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' >> ~/.bash_profile
 source ~/.bash_profile
@@ -111,17 +168,17 @@ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 source ~/.zshrc
 
 
-// 清华大学源
-// 替换核心软件仓库
+# 清华大学源
+## 替换核心软件仓库
 cd "$(brew --repo)"
 git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
 
-// 替换cask软件仓库
+## 替换cask软件仓库
 cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
 git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
 
-// 替换Bottles源
-// 以下二选一
+## 替换Bottles源
+## 以下二选一
 （bash用户）
 echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles' >> ~/.bash_profile
 source ~/.bash_profile
@@ -129,6 +186,12 @@ source ~/.bash_profile
 （zsh用户）
 echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles' >> ~/.zshrc
 source ~/.zshrc
+```
+
+也可通过以下链接获取换源命令。
+
+```
+https://brew.idayer.com/guide/change-source
 ```
 
 完成后在终端输入以下命令更新Homebrew。
@@ -140,16 +203,43 @@ brew upgrade
 
 #### 常用命令
 
-|          命令         |      操作      |
-|-----------------------|----------------|
-| brew help             | 帮助           |
-| brew list             | 列出安装包     |
-| brew update           | 更新Homebrew   |
-| brew upgrade          | 更新包         |
-| brew install [包名]   | 安装包         |
-| brew uninstall [包名] | 卸载包         |
-| brew -v               | Homebrew版本   |
-| brew search [包名]    | 搜索可安装的包 |
+|           命令           |        操作        |
+|--------------------------|--------------------|
+| brew help                | 帮助               |
+| brew list                | 列出安装包         |
+| brew update              | 更新Homebrew       |
+| brew upgrade             | 更新包             |
+| brew install [包名]      | 安装包             |
+| brew install [包名]@版本 | 安装固定的包       |
+| brew uninstall [包名]    | 卸载包             |
+| brew info [包名]         | 查看包信息         |
+| brew -v                  | Homebrew版本       |
+| brew search [包名]       | 搜索可安装的包     |
+| brew autoremove          | 自动卸载未用包     |
+| brew cleanup             | 清理所有包的旧版本 |
+| brew outdated            | 查看需要更新的包   |
+
+#### 常见问题
+
+##### brew install xxx 404
+
+bottles镜像地址更新，须在~/.zshrc或~/.bash_profile中修改HOMEBREW_BOTTLE_DOMAIN的值。可通过更换默认源中的链接获取最新的bottles镜像地址。
+
+##### command not found: brew
+
+对于ARM版，需安装步骤添加环境变量。
+
+对于x86版，可尝试在~/.zshrc或~/.bash_profile手动添加以下环境变量。
+
+```
+# bash用户
+echo 'eval "$(/usr/local/Homebrew/bin/brew shellenv)"' >> ~/.bash_profile
+eval "$(/usr/local/Homebrew/bin/brew shellenv)"
+
+# zsh用户
+echo 'eval "$(/usr/local/Homebrew/bin/brew shellenv)"' >> ~/.zshrc
+eval "$(/usr/local/Homebrew/bin/brew shellenv)"
+```
 
 ### 设置zsh为默认Shell
 
@@ -199,10 +289,10 @@ https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 推荐使用以下主题。
 
 ```
-ZSH_THEME="trapd00r"
+ZSH_THEME="agnoster"
 ```
 
-在文件末尾加入以下代码后按`Esc`，然后输入`:wq`并回车，保存并退出。
+在文件末尾加入以下代码，以在终端不显示电脑名称。输入后按`Esc`，然后输入`:wq`并回车，保存并退出。
 
 ```
 DEFAULT_USER=$USER
@@ -212,6 +302,58 @@ DEFAULT_USER=$USER
 
 ```
 source ~/.zshrc
+```
+
+使用agnoster主题需要安装Powerline字体。在终端运行以下命令。
+
+```
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+```
+
+在终端菜单点击偏好设置，在描述文件选项卡新建一个描述文件，将文本的字体修改为Powerline系的字体，注意需要在字体集中选择所有字体才能找到。保存后将该配置文件设置为默认，然后重启终端即可。
+
+若希望改变主题默认配色，可在配置文件中配置相应的ANSI颜色。
+
+
+#### 外置主题
+
+除使用oh-my-zsh内置主题，也可安装其它外置主题。
+
+##### Powerlevel10k
+
+终端输入以下命令。
+
+```
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+在~/.zshrc修改以下内容，保存后重启终端。
+
+```
+POWERLEVEL9K_MODE="nerdfont-complete"
+ZSH_THEME="powerlevel10k/powerlevel10k
+```
+
+该主题需要使用Nerd Fonts。打开以下链接，下载Hack.zip后解压，安装其中的所有字体。
+
+```
+https://github.com/ryanoasis/nerd-fonts/releases
+```
+
+完成后在终端的偏好设置中，将配置文件的字体设置为Hack Nerd Font。在终端自动配置流程将被触发，若未被触发，可运行以下命令。
+
+```
+p10k configure
+```
+
+#### 更新
+
+在终端输入以下命令即可。
+
+```
+upgrade_oh_my_zsh
 ```
 
 #### 插件
@@ -318,6 +460,18 @@ pc curl http://www.google.com
 ## 终端命令
 
 macOS中用`\40`代表空格。
+
+### 安装Xcode Command Line
+
+```
+xcode-select --install
+```
+
+若提示`不能下载该软件，因为网络出现问题`，可打开以下链接，并搜索`Command Line`。可以通过在Mac App Store搜索Xcode，通过查看适合本机系统的Xcode版本以确定应当使用的Command Line版本。下载后安装即可。
+
+```
+https://developer.apple.com/download/more/
+```
 
 ### 文件比较
 
@@ -426,12 +580,6 @@ sysctl -a | grep waketime
 log show --last 1d | grep "Wake reason"
 ```
 
-### 查看睡眠唤醒原因
-
-```
-pmset -g log | grep -Ei 'wake.*due'
-```
-
 ### 检查AppleALC和Lilu是否工作正常
 
 ```
@@ -460,12 +608,6 @@ sudo shutdown -h now
 
 ```
 sudo trimforce enable
-```
-
-### 关闭硬盘摔落保护功能
-
-```
-sudo pmset -a sms 0
 ```
 
 ### 一键查询硬件信息
@@ -500,10 +642,10 @@ sudo cp -R KextToInstall.kext /System/Library/Extensions
 
 #### 修复权限和重建缓存
 
-重建缓存可用以下终端命令，也可在磁盘工具中选择macOS磁盘并点击修复。以下命令仅适用于Catalina系统及以下。
+Mac不使用内核文件进行引导，而使用预链接内核。重建缓存即重建内核缓存/预链接内核。可用以下终端命令，也可在磁盘工具中选择macOS磁盘并点击修复。以下命令仅适用于Catalina系统及以下。
 
 ```
-// 修复权限
+# 修复权限
 sudo chmod -Rf 755 /S*/L*/E*
 sudo chown -Rf 0:0 /S*/L*/E*
 sudo chmod -Rf 755 /L*/E*
@@ -511,12 +653,13 @@ sudo chown -Rf 0:0 /L*/E*
 sudo rm -Rf /S*/L*/PrelinkedKernels/*
 sudo rm -Rf /S*/L*/Caches/com.apple.kext.caches/*
 
-// 重建缓存（法一）
+# 重建缓存（法一）
+# 将-U后面的改为其它路径，即可在其它盘上进行重建缓存
 sudo touch -f /S*/L*/E*
 sudo touch -f /L*/E*
 sudo kextcache -Boot -U /
 
-// 重建缓存（法二）
+# 重建缓存（法二）
 sudo kextcache -i /
 ```
 
@@ -589,6 +732,12 @@ sudo pmset -a standby 0
 
 // 重置设置
 pmset -a restoredefaults
+
+// 查看睡眠唤醒原因
+pmset -g log | grep -Ei 'wake.*due'
+
+// 关闭硬盘摔落保护功能
+sudo pmset -a sms 0
 ```
 
 下表为参数含义对照。
@@ -734,7 +883,29 @@ source .zshrc
 exec /bin/bash
 ```
 
+### 查看EFI版本
+
+EFI32或EFI64。
+
+```
+ioreg -l -p IODeviceTree | grep firmware-abi
+```
+
 # 系统技巧
+
+## 查看系统版本
+
+点击菜单栏中的关于本机即可。或在磁盘工具中也能看到磁盘对应的系统版本。
+
+## 系统网络在线重装
+
+在开机时按住以下快捷键之一即可。
+
+|         快捷键         |                        效果                       |
+|------------------------|---------------------------------------------------|
+| Command+R              | 重新安装当前系统版本                              |
+| Option+Command+R       | 升级到最新版macOS                                 |
+| Shift+Option+Command+R | 安装出厂时的macOS或与其最接近的官方仍在提供的版本 |
 
 ## 访问Mac共享
 
@@ -879,6 +1050,14 @@ launchctl unload -wF com.apple.metadata.mds.spindump.plist
 #launchctl unload -wF org.cups.cups-lpd.plist
 ```
 
+## 更换字体
+
+打开/System/Library/Frameworks/ApplicationServices.framework/Frameworks/CoreText.framework/Resources/DefaultFontFallbacks.plist，将STHeitiSC-Light进行修改即可，如冬青黑体简体中文W3为HiraginoSansGB-W3。
+
+## 远程控制
+
+可通过iMessage，打开后选择或新建对方的信息会话，点击右上角后选择共享即可。
+
 # 操作技巧
 
 ## Menu Bar操作
@@ -963,6 +1142,10 @@ defaults write com.apple.finder AppleShowAllFiles -bool false
 // 或defaults write com.apple.finder AppleShowAllFiles NO
 ```
 
+## 删除所有短信
+
+设置短信为保留30天，然后设置日期，拨动往后的几个月份直至短信被删除即可。
+
 # 软件技巧
 
 ## 破解百度网盘客户端限速
@@ -1028,11 +1211,19 @@ https://github.com/phracker/MacOSX-SDKs
 
 # 常用APP
 
-## 破解APP库
+## APP库
+
+### 普通
 
 ```
 https://github.com/catofmrlu/MacApps
 https://github.com/hemanth/awesome-pwa
+https://www.macupdate.com/
+```
+
+### 破解
+
+```
 http://mac-torrent-download.net
 https://cmacapps.com
 https://xclient.info/
@@ -1272,6 +1463,14 @@ Touchbar养宠物。
 
 ```
 https://www.cr173.com/mac/1100456.html
+```
+
+### Classic Finder
+
+模仿旧版Finder。
+
+```
+https://bitbucket.org/bszyman/classic-finder-app/downloads/
 ```
 
 # Python 3
@@ -1591,8 +1790,26 @@ https://www.jianshu.com/p/a1c2495b02aa
 https://www.jianshu.com/p/fdaa8be7f6c3
 ```
 
-## 使用 VMWare 安装 macOS 虚拟机使用 Surge 作为代理网关
+## Mac 重装系统教程(二)：网络在线重装
 
 ```
-https://blog.skk.moe/post/macos-vmware-surge-gateway/
+https://m.sohu.com/a/325579861_654244
+```
+
+## OS X 默认字体的讨论与修改方法
+
+```
+https://blog.royli.dev/2018/os-x-mo-ren-zi-ti-de-tao-lun-yu-xiu-gai-fang-fa-2d38abb1
+```
+
+## 这篇 iTerm2 + Oh My Zsh 教程手把手让你成为这条街最靓的仔
+
+```
+https://segmentfault.com/a/1190000022813972
+```
+
+## 镜像快速安装Homebrew教程
+
+```
+https://brew.idayer.com/
 ```

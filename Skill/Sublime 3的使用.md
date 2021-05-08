@@ -121,9 +121,9 @@ Sublime的语言包。
 
 查询快捷键的冲突。安装后按`Ctrl+Shift+P`，输入`FindKeyConflicts`即可查看相关内容。
 
-### Sublimerge
+### HexViewer
 
-两段代码的差异比较。
+十六进制显示。安装后需要点击Tools-Packages-Hex Viewer-Toggle Hex View以在本文件启用。
 
 ### Markdown相关
 
@@ -284,6 +284,12 @@ contexts:
       scope: comment.number-sign
 ```
 
+# 分屏显示
+
+点击菜单栏上的视图-布局，即可选择不同的布局模式。
+
+若希望两边同时显示同一个文档，可选择该文档，点击文件-克隆文件，然后把标签页拉到另一边即可。
+
 # 参考教程
 
 ## Sublime text3 Version 3.2.2, Build 3211破解
@@ -314,4 +320,16 @@ https://blog.csdn.net/a7442358/article/details/84063491
 
 ```
 https://blog.butanediol.me/2020/05/17/%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA-Sublime-Text-%E7%9A%84-Quantumult-X-%E8%AF%AD%E6%B3%95%E9%AB%98%E4%BA%AE/
+```
+
+## Sublime Text3插件 --- HexViewer的使用（16进制显示）
+
+```
+https://blog.csdn.net/zldz14/article/details/82183530
+```
+
+## Sublime Text 如何一个代码双屏显示代码上下部分？
+
+```
+https://www.zhihu.com/question/32381975
 ```

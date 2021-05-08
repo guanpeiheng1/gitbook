@@ -4,15 +4,15 @@
 
 Payton's blog站点备份。以后可能会针对部分教程编写专门的电子书。
 
-```text
-https://paytonguan.github.io/
+```
+https://paytonguan.github.io/blog
 ```
 
 ## 存档
 
 以下文章未迁移。
 
-```text
+```
 ## Study
 * [代码题选摘](Computer/Some-Codes.md)——存在本地，未上传
 

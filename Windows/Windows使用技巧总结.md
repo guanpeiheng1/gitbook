@@ -333,13 +333,42 @@ hostname -I | awk '{print $1}'
 
 记住输出的IP地址。打开VcXsrv，选择One window without titlebar后点击下一步，然后选择Open session via XDMCP后点击下一步。在Connect to host输入框中输入刚才的IP地址后点击下一步。选择Clipboard和Disable access control，取消选择Native opengl，然后点击下一步，完成即可。
 
-## 打印机共享
+## 设置打印机
 
-在连接有打印机的主机上设置打印机为共享。
+### 网络打印机安装
 
-在需要连接共享打印机的电脑上打开控制面板，选择程序和功能-启用或关闭Windows功能，勾选打印与文件服务、SMB 1.0/CIFS文件共享支持，确定并安装。然后打开设备管理器，对于较老的打印机，需点击操作-添加过时硬件，选择手动从列表选择，找到打印机并点击下一步。
+将打印机插入网口，配置好IP地址。安装打印机驱动后，在电脑上添加网络打印机，选择没有端口的打印机，再选择不共享这台打印机即可。
 
-然后选择创建新端口，端口类型为Local Port，端口名称为`\\[IP地址]\[打印机名称]`。添加后选择`从磁盘安装`，选择驱动程序中的INF文件后，在列表中点击对应打印机的型号，完成安装即可。
+如果出现可以Ping通打印机但无法搜索安装打印机的情况，重启打印机即可。
+
+### 本地打印机共享
+
+在连接有打印机的主机上设置打印机为共享，然后进入网络与共享中心，点击更改高级共享设置-启用文件和打印机共享。
+
+在需要连接共享打印机的电脑上打开控制面板，选择程序和功能-启用或关闭Windows功能，勾选打印与文件服务、SMB 1.0/CIFS文件共享支持，确定并安装。
+
+对于普通打印机，在文件管理器输入连接有打印机的主机的IP地址，注意需要添加双反斜杠，即`\\[IP地址]`。正常情况下即访问到电脑资源，若需要输入用户名和密码，则输入主机的用户名和密码即可。进入后双击打印机安装即可，若安装失败，则安装打印机驱动后重试。
+
+对于较老的打印机，打开设备管理器，点击操作-添加过时硬件，选择手动从列表选择，找到打印机并点击下一步。然后选择创建新端口，端口类型为Local Port，端口名称为`\\[IP地址]\[打印机名称]`。添加后选择`从磁盘安装`，选择驱动程序中的INF文件后，在列表中点击对应打印机的型号，完成安装。
+
+### 常见问题
+
+#### 无法打开添加打印机
+
+打开服务选项，找到Print Spooler这个服务的选项，点击启动即可。
+
+#### 无法安装打印机驱动
+
+切换到管理员用户即可。
+
+#### Ping不通网络打印机
+
+检查打印机端口线路是否正常，打印机是否接入正确的端口。若无问题，则刷新打印机IP，开启端口。仍无效，则关闭打印机所有正在打印的任务，然后打开运行，输入spool，找到printers文件夹，删除所有文件，再打开命令提示符并输入以下命令以重启打印机服务即可。
+
+```
+net stop spooler
+net start spooler
+```
 
 ## 开启卓越模式电源计划
 
@@ -442,22 +471,116 @@ ipconfig/displaydns
 ipconfig/flushdns
 ```
 
+## 降低CPU占用率
+
+按Win+R打开运行，输入services.msc打开服务，禁用HomeGroup开头、Diagnostics开头与Connected User Experiences and Telemetry服务。
+
+按Win+R打开运行，输入regedit打开服务注册表编辑器，点击HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TimeBroker，找到Start值，双击打开，设置数值数据为4。
+
+关闭Windows更新中的更新来自多个位置。
+
+打开系统设置-个性化-锁屏界面，将Windows聚焦改为其他背景模式。
+
+关闭Windows提示。
+
+## 驱动安装
+
+### 显卡
+
+#### AMD
+
+先卸载Windows自动安装的显卡驱动，再安装AMD官方的显卡驱动即可。ATI Mobility Radeon HD 3400 Series显卡驱动下载链接如下。
+
+```
+链接 / https://pan.baidu.com/s/1slDL7Y1
+提取码 / heyd
+```
+
 # 操作技巧
 
 ## 快速打开网站
 
 进入浏览器快捷方式属性，在目标后空一格并输入网址即可。
 
-## 批量修改后缀名
+## 远程控制
 
-复制以下代码到记事本，并另存为bat文件，使用时双击打开即可。注意，本bat文件对文件夹内的所有文件均适用。
+### Mac连接到Windows
+
+在App Store下载Microsoft Remote Deskto‪p，注意需要切换到美区账号。也可通过以下链接。
 
 ```
-// 修改gif为jpg
+https://apps.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12
+```
+
+在Windows下打开系统属性，将远程登录设置允许远程协助，并允许任意版本桌面连接。完成后在Mac的远程登录客户端输入IP或主机名即可完成远程登录。
+
+### Windows连接到Mac
+
+以VNCViewer为例，下载链接如下。
+
+```
+https://www.realvnc.com/en/connect/download/viewer/
+```
+
+在Mac开启屏幕共享，然后在Windows的VNCViewer输入用户名密码即可。
+
+也可使用TigerVNC，方式与VNCViewer一致，注意在软件设置中开启`Allow loopback connections`，即允许本地接入。
+
+## 批处理脚本
+
+复制以下代码到记事本，并另存为bat文件，使用时双击打开即可。
+
+### 批量修改后缀名
+
+注意，本bat文件对文件夹内的所有文件均适用。
+
+```
+# 修改gif为jpg
 ren *.gif *.jpg
 
-// 修改所有文件为jpg
+# 修改所有文件为jpg
 ren *.* *.jpg
+```
+
+### 可信任站点设置
+
+```
+# 可信任站点设置
+# 网址及地址，改写成你自己需要设置的网址及地址
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\baidu.com\www" /v http /t REG_DWORD /d 0x00000002 /f
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\8.8.4.8" /v http /t REG_DWORD /d 0x00000002 /f
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\test.com.cn" /v http /t REG_DWORD /d 0x00000002 /f
+
+# 主页设置
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main" /v "Start Page" /t reg_sz /d www.google.com /f
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main" /v "Default_Page_URL" /t reg_sz /d www.google.com /f
+# 主页死锁！
+reg add "HKCU\Software\Policies\Microsoft\Internet Explorer\Control Panel" /v HomePage /d 1 /f >nul
+# 异议！该指令用于解除死锁！
+reg delete "HKCU\Software\Policies\Microsoft\Internet Explorer\Control Panel" /v HomePage /f
+pause
+```
+
+## Python脚本
+
+### 批量打印
+
+```
+import win32api
+import win32print
+import os
+def printer_loading(filename):
+    win32api.ShellExecute (
+    0,
+    "print",
+    filename,
+    '/d:"%s"' % win32print.GetDefaultPrinter (),
+    ".",
+    0
+    )
+path='D:/文件夹'
+for filenames in os.listdir(path):
+    printer_loading(os.path.join(path,filenames))
 ```
 
 # 软件技巧
@@ -780,6 +903,16 @@ J2MV9-JYYQ6-JM44K-QMYTH-8RB2W
 https://www.52pojie.cn/thread-1086314-1-1.html
 ```
 
+## 文件管理
+
+### nexusfile
+
+适用于Windows的快速强大的文件管理器。
+
+```
+http://www.xiles.net/
+```
+
 ## 截图
 
 ### Snipaste
@@ -993,6 +1126,91 @@ Soar360@live.com
 GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE8qHqNY5QaaRxmO3YSMHxlv2EYpjdwLcPwfeTG7kUdnhKE0vVy4RidP6Y2wZ0q74f47fzsZo45JE2hfQBFi2O9Jldjp1mW8HUpTtLA2a5/sQytXJUQl/QKO0jUQY4pa5CCx20sV1ClOTZtAGngSOJtIOFXK599sBr5aIEFyH0K7H4BoNMiiDMnxt1rD8Vb/ikJdhGMMQr0R4B+L3nWU97eaVPTRKfWGDE8/eAgKzpGwrQQoDh+nzX1xoVQ8NAuH+s4UcSeQ==
 ```
 
+### EditPlus
+
+注册码在线网站如下。
+
+```
+https://51.ruyo.net/test/editplus-generate.html
+```
+
+源码如下。
+
+```
+var list = [0,49345,49537,320,49921,960,640,49729,50689,1728,1920,51009,1280,50625,50305,1088,52225,3264,3456,52545,3840,53185,52865,3648,2560,51905,52097,2880,51457,2496,2176,51265,55297,6336,6528,55617,6912,56257,55937,6720,7680,57025,57217,8000,56577,7616,7296,56385,5120,54465,54657,5440,55041,6080,5760,54849,53761,4800,4992,54081,4352,53697,53377,4160,61441,12480,12672,61761,13056,62401,62081,12864,13824,63169,63361,14144,62721,13760,13440,62529,15360,64705,64897,15680,65281,16320,16000,65089,64001,15040,15232,64321,14592,63937,63617,14400,10240,59585,59777,10560,60161,11200,10880,59969,60929,11968,12160,61249,11520,60865,60545,11328,58369,9408,9600,58689,9984,59329,59009,9792,8704,58049,58241,9024,57601,8640,8320,57409,40961,24768,24960,41281,25344,41921,41601,25152,26112,42689,42881,26432,42241,26048,25728,42049,27648,44225,44417,27968,44801,28608,28288,44609,43521,27328,27520,43841,26880,43457,43137,26688,30720,47297,47489,31040,47873,31680,31360,47681,48641,32448,32640,48961,32000,48577,48257,31808,46081,29888,30080,46401,30464,47041,46721,30272,29184,45761,45953,29504,45313,29120,28800,45121,20480,37057,37249,20800,37633,21440,21120,37441,38401,22208,22400,38721,21760,38337,38017,21568,39937,23744,23936,40257,24320,40897,40577,24128,23040,39617,39809,23360,39169,22976,22656,38977,34817,18624,18816,35137,19200,35777,35457,19008,19968,36545,36737,20288,36097,19904,19584,35905,17408,33985,34177,17728,34561,18368,18048,34369,33281,17088,17280,33601,16640,33217,32897,16448];
+var hexchars = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+var regcode = new Array(29);
+var i = 0, j = 0, k = 0;
+var len, temp, sum, result;
+var username = document.getElementById("username").value;
+username = username.replace(/^\s+|\s+$/g, "");
+ 
+for(i = 0;i < 5;i++,k++)
+{
+    for(j = 0;j < 5;j++,k++)
+    {
+        regcode[k] = hexchars[parseInt(Math.random() * 16)];
+    }
+    if(k == 29)
+        break;
+    regcode[k] = '-';
+}
+    
+len = username.length;
+ 
+sum = 1;
+for(i = 0;i < len;i++)
+    sum += username.charCodeAt(i);
+temp = (parseInt( (sum + 23) / 6 ) + 3) * 7 % 16;
+regcode[6] = hexchars[temp & 0xF];
+
+sum = 1;
+for(i = 0;i < len;i++)
+    sum += username.charCodeAt(i);
+temp = parseInt( (3 * sum + 39) / 8 ) % 16;
+regcode[9] = hexchars[temp & 0xF];
+
+sum = 1;
+for(i = 0;i < len;i++)
+    sum += username.charCodeAt(i);
+temp = parseInt( (3 * sum + 19) / 9 ) % 16;
+regcode[7] = hexchars[temp & 0xF];
+
+sum = 1;
+for(i = 0;i < len;i++)
+    sum += username.charCodeAt(i);
+temp = parseInt( (sum + 10) / 3 ) * 8 % 16;
+regcode[10] = hexchars[temp & 0xF];
+
+sum = 1;
+for(i = 0;i < len;i++)
+    sum += username.charCodeAt(i);
+temp = (parseInt( (9 * sum + 10) / 3 ) + 36) % 16;
+regcode[4] = hexchars[temp & 0xF];
+
+sum = 1;
+for(i = 0;i < len;i++)
+    sum += username.charCodeAt(i);
+temp =  parseInt( (5 * sum + 11) / 5 ) % 16;
+regcode[8] = hexchars[temp & 0xF];
+ 
+result = 0;
+for(i = 0;i < len;i++)
+    result = ((result >> 8) & 0xFF) ^ list[username.charCodeAt(i) ^ (result & 0xFF)];
+result = result.toString(16).toUpperCase();
+regcode[2] = result.charAt(0);
+regcode[3] = result.charAt(1);
+
+len = regcode.length;
+result = 0;
+for(i = 2;i < len;i++)
+    result = ((result >> 8) & 0xFF) ^ list[regcode[i].toString().charCodeAt(0) ^ (result & 0xFF)];
+result = result.toString(16).toUpperCase();
+regcode[0] = result.charAt(0);
+regcode[1] = result.charAt(1);
+console.log(regcode.join(''));
+```
+
 ## 本地搜索
 
 ### Everything
@@ -1079,7 +1297,7 @@ https://ltribe.lanzous.com/icUNjdo4o1g
 https://github.com/felixse/FluentTerminal
 ```
 
-## 网络调试
+## 网络调试与优化
 
 ### PsPing
 
@@ -1155,6 +1373,20 @@ mv tcpping tcping
 http://www.hostbuf.com/t/989.html
 ```
 
+### cFosSpeed
+
+网络质量以及本地延迟优化软件。网站需要翻墙才能打开。
+
+```
+http://www.cfos.de/zh-cn/index.htm
+```
+
+破解版如下。
+
+```
+https://pan.baidu.com/s/1mhBC7Ja
+```
+
 ## 流程图
 
 ### draw.io
@@ -1179,6 +1411,40 @@ https://www.lanzoux.com/i5E9bgedkng
 
 ```
 https://www.lanzoux.com/ii7PNgedi8j
+```
+
+## 操作录制
+
+### Quite Imposing Plus 5
+
+```
+https://axu.lanzoux.com/iQEOoidfl4b
+```
+
+### Acrobat DC 2020
+
+```
+https://pan-yz.chaoxing.com/external/m/file/474329810964955136
+```
+
+### TinyTask
+
+```
+https://axu.lanzoux.com/iG9inidfnba
+```
+
+## 浏览器
+
+### pcxFirefox
+
+```
+https://sourceforge.net/projects/pcxfirefox/files/Release/Firefox/
+```
+
+### 增强版Chrome
+
+```
+https://shuax.com/project/chrome/
 ```
 
 ## 其它
@@ -1269,12 +1535,6 @@ https://wwi.lanzous.com/i6FHJk3b1di
 https://lanren.lanzous.com/iJPgojk0lfa
 ```
 
-### 增强版Chrome
-
-```
-https://shuax.com/project/chrome/
-```
-
 # 常见问题
 
 ## 分区表错误导致硬盘无法识别
@@ -1286,6 +1546,18 @@ https://shuax.com/project/chrome/
 对于XP系统，需要先选择菜单栏的工具-文件夹选项-查看，取消勾选`使用简单文件共享`后确定。在需要操作的文件上右键选择属性-安全-高级-所有者，选择`Administrators`并勾选`替换子容器及对象的所有者`，确定即可。
 
 如果仍然不行，则点击安全-添加-高级-立即查找，然后一路确定即可。
+
+## 蓝屏
+
+一般由硬件的驱动与软件程序的不兼容造成程序的冲突而引起，或主机内部系统程序造成硬件执行异常。
+
+### 0xc000014c启动视窗界面失败
+
+计算机确认操作冲突由此造成的数据的不一致，导致系统无法处理异常而崩溃。在PE界面，打开命令提示符，输入如下指令即可。
+
+```
+copy C:\windows\system32\config\RegBack\* C:\windows\system32\config
+```
 
 # 参考教程
 
@@ -1348,4 +1620,46 @@ https://51.ruyo.net/14528.html
 
 ```
 https://www.52pojie.cn/thread-1320716-1-1.html
+```
+
+## window10怎么降低CPU利用率过高问题
+
+```
+https://jingyan.baidu.com/article/d5c4b52b96c251da570dc548.html
+```
+
+## win10降低cpu使用率的四种方法
+
+```
+http://www.qiuyexitong.com/article/2005.html
+```
+
+## windows10下AMD显卡驱动无法安装的解决方法
+
+```
+https://jingyan.baidu.com/article/7908e85cb3701aaf481ad2d9.html
+```
+
+## 桌维网管实典
+
+```
+https://hoochanlon.github.io/helpdesk-guide/
+```
+
+## Python实现批量打印功能
+
+```
+http://www.lanqibing.com/python%E5%AE%9E%E7%8E%B0%E6%89%B9%E9%87%8F%E6%89%93%E5%8D%B0%E5%8A%9F%E8%83%BD/
+```
+
+## 构建自己的远程接入系统
+
+```
+https://zhuanlan.zhihu.com/p/146548321
+```
+
+## EditPlus注册码在线生成，附开源算法代码
+
+```
+https://51.ruyo.net/4780.html
 ```
